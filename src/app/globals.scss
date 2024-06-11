@@ -1,0 +1,25 @@
+@import "./_variables";
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  -webkit-transition-duration: 250ms;
+  transition-duration: 250ms;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  // font-family: var(--font-manrope);
+
+  font-style: normal;
+  // background-color: $secondary50;
+}
