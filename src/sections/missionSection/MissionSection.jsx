@@ -2,7 +2,7 @@ import React from 'react'
 
 const MissionSection = () => {
     return (
-        <div>Mission Section</div>
+        <section>Mission Section</section>
     )
 }
 

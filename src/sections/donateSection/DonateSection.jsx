@@ -2,7 +2,7 @@ import React from 'react'
 
 const DonateSection = () => {
     return (
-        <div>Donate Section</div>
+        <section>Donate Section</section>
     )
 }
 

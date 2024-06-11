@@ -2,7 +2,7 @@ import React from 'react'
 
 const NewsSection = () => {
     return (
-        <div>News Section</div>
+        <section>News Section</section>
     )
 }
 

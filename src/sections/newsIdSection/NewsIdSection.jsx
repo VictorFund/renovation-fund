@@ -2,7 +2,7 @@ import React from 'react'
 
 const NewsIdSection = () => {
     return (
-        <div>NewsId Section</div>
+        <section>NewsId Section</section>
     )
 }
 

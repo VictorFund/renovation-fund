@@ -2,7 +2,7 @@ import React from 'react'
 
 const StatuteSection = () => {
     return (
-        <div>StatuteSection</div>
+        <section>StatuteSection</section>
     )
 }
 
