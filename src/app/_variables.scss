@@ -2,3 +2,24 @@ $mobile: "360px";
 $tablet: "768px";
 $laptop: "1024px";
 $desktop: "1440px";
+// @media screen and (min-width: $tablet) {
+
+// }
+
+// @media screen and (min-width: $laptop) {
+
+// }
+
+// @media screen and (min-width: $desktop) {
+
+// }
+
+$textColor: rgba(25, 43, 57, 1);
+$accentColor: rgba(242, 101, 21, 1);
+
+$bodyColor: rgba(250, 250, 255, 1);
+
+$sectionPaddingMobile: 40px 80px;
+$sectionPaddingTablet: 40px 80px;
+$sectionPaddingLaptop: 40px 80px;
+$sectionPaddingDesktop: 40px 80px;
