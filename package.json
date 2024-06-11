@@ -2,6 +2,8 @@
   "name": "renovation-fund",
   "version": "0.1.0",
   "private": true,
+  "figma": "https://www.figma.com/design/6xzQJfnNyHMfxZE4Gigpu9/%D0%92%D0%A4?node-id=3-2&t=qEsGw69pmyLCkFim-0",
+
   "scripts": {
     "dev": "next dev",
     "build": "next build",

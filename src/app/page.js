@@ -1,3 +1,9 @@
 export default function Home() {
-  return <>hello</>;
+  return (
+    <>
+      <section style={{ height: "50vh" }}>
+        <div className="container">hello</div>
+      </section>
+    </>
+  );
 }

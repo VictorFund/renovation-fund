@@ -1,0 +1,59 @@
+@import "./_variables";
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  -webkit-transition-duration: 250ms;
+  transition-duration: 250ms;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-700);
+  font-style: normal;
+  color: $textColor;
+  background-color: $bodyColor;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+}
+
+header,
+footer {
+  width: inherit;
+  max-width: inherit;
+}
+section {
+  width: 100%;
+  background-color: aqua;
+  padding: $sectionPaddingMobile;
+
+  @media screen and (min-width: $desktop) {
+    padding: $sectionPaddingDesktop;
+  }
+}
+.container {
+  background-color: aquamarine;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
