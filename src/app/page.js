@@ -4,15 +4,6 @@ export default function Home() {
       <section style={{ height: "50vh" }}>
         <div className="container">hello</div>
       </section>
-      <section style={{ height: "50vh" }}>
-        <div className="container">hello</div>
-      </section>{" "}
-      <section style={{ height: "50vh" }}>
-        <div className="container">hello</div>
-      </section>{" "}
-      <section style={{ height: "50vh" }}>
-        <div className="container">hello</div>
-      </section>
     </>
   );
 }
