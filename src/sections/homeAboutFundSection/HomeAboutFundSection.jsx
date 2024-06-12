@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const HomeAboutFundSection = () => {
-    return (
-        <section>
-            <div>HomeAboutFund Section</div>
-        </section>
-    )
-}
+  return (
+    <section>
+      <div className="container">
+        <h2 className="sectionTitle">HomeAboutFund Section</h2>
+      </div>
+    </section>
+  );
+};
 
-export default HomeAboutFundSection
+export default HomeAboutFundSection;

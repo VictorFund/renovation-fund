@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
 
 const HeroSection = () => {
-    return (
-        <section>HeroSection</section>
-    )
-}
+  return (
+    <section>
+      <div className="container">
+        <h2 className="sectionTitle">HeroSection</h2>
+      </div>
+    </section>
+  );
+};
 
-export default HeroSection
+export default HeroSection;

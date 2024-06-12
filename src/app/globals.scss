@@ -18,7 +18,8 @@ html {
 
 body {
   min-height: 100vh;
-  font-family: var(--font-700);
+  font-family: var(--lightSerif);
+  font-weight: 300;
   font-style: normal;
   color: $textColor;
   background-color: $bodyColor;
@@ -44,16 +45,34 @@ footer {
 }
 section {
   width: 100%;
-  background-color: aqua;
-  padding: $sectionPaddingMobile;
+  // background-color: aqua;
+  padding: $topBottomPaddingMobile $sidePaddingMobile;
 
   @media screen and (min-width: $desktop) {
-    padding: $sectionPaddingDesktop;
+    padding: $topBottomPaddingMobile $sidePaddingMobile;
   }
 }
 .container {
-  background-color: aquamarine;
+  // background-color: aquamarine;
+  width: 100%;
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
+}
+.sectionTitle {
+  font-family: var(--mediumSerif);
+  font-weight: 500;
+
+  @media screen and (min-width: $desktop) {
+    font-size: 128px;
+  }
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
 }
