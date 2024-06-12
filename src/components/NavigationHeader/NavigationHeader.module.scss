@@ -1,0 +1,9 @@
+@import "../../app/variables";
+
+.headerNav {
+  font-family: var(--montserrat);
+  font-size: 24px;
+  font-weight: 400;
+  display: flex;
+  gap: 32px;
+}

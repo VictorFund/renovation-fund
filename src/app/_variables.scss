@@ -19,7 +19,14 @@ $accentColor: rgba(242, 101, 21, 1);
 
 $bodyColor: rgba(250, 250, 255, 1);
 
-$sectionPaddingMobile: 40px 80px;
-$sectionPaddingTablet: 40px 80px;
-$sectionPaddingLaptop: 40px 80px;
-$sectionPaddingDesktop: 40px 80px;
+$topBottomPaddingMobile: 40px;
+$sidePaddingMobile: 80px;
+
+$topBottomPaddingTablet: 40px;
+$sidePaddingTablet: 80px;
+
+$topBottomPaddingLaptop: 40px;
+$sidePaddingLaptop: 80px;
+
+$topBottomPaddingDesktop: 40px;
+$sidePaddingDesktop: 80px;

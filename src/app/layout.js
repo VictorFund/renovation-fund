@@ -1,24 +1,9 @@
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
-import KyivTypeSerifBold from "next/font/local";
-import "./globals.scss";
-import FeedbackForm from "@/components/Forms/FeedbackForm/FeedbackForm";
 
-const textFont = KyivTypeSerifBold({
-  src: "./fonts/KyivTypeSerif-Bold.woff2",
-  display: "swap",
-  variable: "--font-700",
-});
-const titleFont = KyivTypeSerifBold({
-  src: "./fonts/KyivTypeSerif-Medium.woff2",
-  display: "swap",
-  variable: "--font-500",
-});
-const linksFont = KyivTypeSerifBold({
-  src: "./fonts/KyivTypeSerif-Regular.woff2",
-  display: "swap",
-  variable: "--font-400",
-});
+import "./globals.scss";
+import ModalSection from "@/sections/modalSection/ModalSection";
+import { fonts } from "@/fonts/getFonts";
 
 export const metadata = {
   title: "Charity fund",
@@ -28,11 +13,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${textFont.variable} ${titleFont.variable}`}>
-        {/* <body className={myFont.className}> */}
+      <body className={fonts}>
         <Header />
-        <main>{children}
-          <FeedbackForm />
+        <main>
+          {children}
+          <ModalSection />
         </main>
         <Footer />
       </body>
