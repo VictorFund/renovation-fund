@@ -26,6 +26,7 @@ export const POST = async (request) => {
         await connectToDB();
 
         await newNews.save();
+        console.log("DB was connected")
 
         return new NextResponse('News has been created.', { status: 201 });
     } catch (err) {
