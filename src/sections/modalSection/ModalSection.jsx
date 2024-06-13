@@ -1,7 +1,7 @@
 import FeedbackForm from "@/components/Forms/FeedbackForm/FeedbackForm";
 import React from "react";
 
-const ModalSection = () => {
+const FormSection = (ci) => {
   return (
     <section>
       <div className="container">
@@ -11,4 +11,4 @@ const ModalSection = () => {
   );
 };
 
-export default ModalSection;
+export default FormSection;
