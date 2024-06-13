@@ -2,8 +2,8 @@ import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 
 import "./globals.scss";
-import ModalSection from "@/sections/modalSection/ModalSection";
 import { fonts } from "@/fonts/getFonts";
+import FormSection from "@/sections/modalSection/ModalSection";
 
 export const metadata = {
   title: "Charity fund",
@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <Header />
         <main>
           {children}
-          <ModalSection />
+          <FormSection />
         </main>
         <Footer />
       </body>

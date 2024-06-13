@@ -43,9 +43,9 @@ footer {
   width: inherit;
   max-width: inherit;
 }
+
 section {
   width: 100%;
-  // background-color: aqua;
   padding: $topBottomPaddingMobile $sidePaddingMobile;
 
   @media screen and (min-width: $desktop) {
@@ -53,12 +53,12 @@ section {
   }
 }
 .container {
-  // background-color: aquamarine;
   width: 100%;
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
 }
+
 .sectionTitle {
   font-family: var(--mediumSerif);
   font-weight: 500;
@@ -67,6 +67,7 @@ section {
     font-size: 128px;
   }
 }
+
 a {
   text-decoration: none;
   color: inherit;

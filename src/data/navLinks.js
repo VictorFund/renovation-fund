@@ -1,15 +1,6 @@
 export const navLinks = [
   {
-    title: "Проєкти",
-    href: "/projects",
-  },
-  {
-    title: "Новини",
-    href: "/news",
-  },
-  {
     title: "Про фонд",
-    href: "/partnership",
     subMenu: [
       { title: "Місія", href: "/mission" },
       { title: "Статут", href: "/statute" },
@@ -17,15 +8,19 @@ export const navLinks = [
       { title: "Контакти", href: "/contacts" },
     ],
   },
+
   {
-    title: "Партнери",
-    href: "/partnership",
+    title: "Проєкти",
+    subMenu: [
+      { title: "Новини", href: "/news" },
+      { title: "Звітність", href: "/reporting" },
+    ],
   },
 
   {
     title: "Підтримати",
-    href: "/donate",
     subMenu: [
+      { title: "Реквізити", href: "/donate" },
       { title: "Партнерство", href: "/partnership" },
       { title: "Звітність", href: "/reporting" },
     ],
