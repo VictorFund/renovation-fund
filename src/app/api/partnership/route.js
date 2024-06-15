@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
 import { connectToDB } from "@/utils/connectToDB";
-import { News } from "@/models/newsSchema";
+import { Partner } from "@/models/partnerSchema";
 
 
 export const GET = async (request) => {
     try {
         await connectToDB();
 
-        const data = await News.find();
+        const data = await Partner.find();
 
         return new NextResponse(JSON.stringify(data), { status: 200 })
     } catch (error) {
@@ -20,14 +20,14 @@ export const GET = async (request) => {
 export const POST = async (request) => {
     const body = await request.json();
 
-    const newNews = new News(body);
+    const newPartner = new Partner(body);
 
     try {
         await connectToDB();
 
-        await newNews.save();
+        await newPartner.save();
 
-        return new NextResponse('News has been created.', { status: 201 });
+        return new NextResponse('Partner has been created.', { status: 201 });
     } catch (err) {
         return new NextResponse(err, { status: 500 });
     }

@@ -3,13 +3,13 @@ import React from 'react'
 import { GetDataWithPathname } from '@/fetch/clientFetch';
 
 
-const PartnershipSection = () => {
+const DashboardUsersSection = () => {
     const { data } = GetDataWithPathname();
     console.log('data', data)
 
     return (
-        <section>Partnership Section</section>
+        <section>DashboardUsers Section</section>
     )
 }
 
-export default PartnershipSection
+export default DashboardUsersSection

@@ -28,6 +28,36 @@ const projectSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        state: {
+            type: String,
+            enum: ['Announced', 'Current', 'Realized'],
+            required: true,
+            default: 'Announced',
+        },
+        startDate: {
+            type: Date,
+            default: Date.now
+        },
+        sum: {
+            type: String,
+            required: true,
+        },
+        mission: {
+            type: String,
+            required: true,
+        },
+        goal: {
+            type: String,
+            required: true,
+        },
+        audience: {
+            type: String,
+            required: true,
+        },
+        concept: {
+            type: String,
+            required: true,
+        },
     },
     { timestamps: true }
 );
