@@ -1,6 +1,11 @@
+// "use client"
 import React from "react";
+// import { GetDataForHomeByCollection } from "@/fetch/clientFetch";
 
 const HomeNewsSection = () => {
+  // const { data } = GetDataForHomeByCollection('news');
+  // console.log('data', data)
+
   return (
     <section>
       <div className="container">

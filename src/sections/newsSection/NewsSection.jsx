@@ -1,6 +1,6 @@
 "use client"
-import { GetDataWithPathname } from '@/fetch/clientFetch';
 import React from 'react'
+import { GetDataWithPathname } from '@/fetch/clientFetch';
 
 const NewsSection = () => {
     const { data } = GetDataWithPathname();

@@ -1,0 +1,22 @@
+@import "../../variables";
+
+.layoutContainer {
+    display: none;
+
+    @media screen and (min-width:$tablet) {
+        display: block;
+        width: 100%;
+        max-width: 1440px;
+        padding-top: 140px;
+    }
+}
+
+.successWelcome {
+    text-align: center;
+    color: #5680eb;
+}
+
+.errorWelcome {
+    text-align: center;
+    color: #f41313;
+}
