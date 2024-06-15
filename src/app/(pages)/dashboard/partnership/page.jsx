@@ -1,5 +1,5 @@
+import DashboardPartnershipSection from '@/sections/dashboard/dashboardPartnershipSection/DashboardPartnershipSection'
 import React from 'react'
-import DashboardPartnershipSection from '@/sections/dashboard/dashboardPartnershipSection/dashboardPartnershipSection'
 
 
 const DashboardPartnershipPage = () => {
