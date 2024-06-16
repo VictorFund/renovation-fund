@@ -21,8 +21,8 @@ export const GetDataWithPathname = () => {
         changedPathname = pathname.slice(10);
     }
 
-    console.log("pathname", pathname);
-    console.log("changedPathname", changedPathname);
+    // console.log("pathname", pathname);
+    // console.log("changedPathname", changedPathname);
 
     const fetcher = (...args) =>
         fetch(...(args)).then((res) => res.json());

@@ -35,8 +35,7 @@ const projectSchema = new mongoose.Schema(
             default: 'Announced',
         },
         startDate: {
-            type: Date,
-            default: Date.now
+            type: String,
         },
         sum: {
             type: String,
