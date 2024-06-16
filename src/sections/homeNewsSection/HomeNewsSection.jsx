@@ -4,7 +4,7 @@ import React from "react";
 
 const HomeNewsSection = () => {
   // const { data } = GetDataForHomeByCollection('news');
-  // console.log('data', data)
+  // console.log('newsData', data)
 
   return (
     <section>
