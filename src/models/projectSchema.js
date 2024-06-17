@@ -45,7 +45,15 @@ const projectSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        missionEn: {
+            type: String,
+            required: true,
+        },
         goal: {
+            type: String,
+            required: true,
+        },
+        goalEn: {
             type: String,
             required: true,
         },
@@ -53,7 +61,15 @@ const projectSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        audienceEn: {
+            type: String,
+            required: true,
+        },
         concept: {
+            type: String,
+            required: true,
+        },
+        conceptEn: {
             type: String,
             required: true,
         },

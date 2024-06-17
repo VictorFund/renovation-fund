@@ -13,7 +13,7 @@ export const navLinks = [
     title: "Проєкти",
     subMenu: [
       { title: "Новини", href: "/news" },
-      { title: "Звітність", href: "/reporting" },
+      { title: "Звітність", href: "https://drive.google.com/drive/folders/1nSssAqs06TKHyJj2PwsSnqj3smaMMeXu?usp=drive_link" }, // to GoogleDisk
     ],
   },
 
@@ -22,7 +22,7 @@ export const navLinks = [
     subMenu: [
       { title: "Реквізити", href: "/donate" },
       { title: "Партнерство", href: "/partnership" },
-      { title: "Звітність", href: "/reporting" },
+      { title: "Звітність", href: "https://drive.google.com/drive/folders/1nSssAqs06TKHyJj2PwsSnqj3smaMMeXu?usp=drive_link" }, // to GoogleDisk
     ],
   },
 ];
