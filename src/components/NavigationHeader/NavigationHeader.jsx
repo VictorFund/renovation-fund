@@ -1,12 +1,15 @@
 "use client";
+"use client";
 
+import { SiteContext } from "@/context/siteContext";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { navLinks } from "../../data/navLinks";
 import styles from "./NavigationHeader.module.scss";
 
 const NavigationHeader = () => {
   const [activeMenu, setActiveMenu] = useState(null);
+  const { burgerMenu, setBurgermenu } = useContext(SiteContext);
 
   const toggleNav = (title) => {
     setActiveMenu(activeMenu === title ? null : title);
@@ -16,10 +19,23 @@ const NavigationHeader = () => {
   };
 
   return (
-    <ul className={styles.headerNav}>
+    <ul
+      className={
+        burgerMenu
+          ? `${styles.headerNav} ${styles.headerNavBurger}`
+          : `${styles.headerNav}`
+      }
+    >
       {navLinks.map((el) => {
         return (
-          <li key={el.title} className={styles.navItem}>
+          <li
+            key={el.title}
+            className={
+              activeMenu === el.title
+                ? `${styles.navItem} ${styles.navItemActive}`
+                : `${styles.navItem}`
+            }
+          >
             <p
               className={styles.navItemTitle}
               onClick={() => toggleNav(el.title)}
@@ -45,6 +61,7 @@ const NavigationHeader = () => {
                     href={item.href}
                     className={styles.navLink}
                     onClick={closeMenu}
+                    target={item.target ? item.target : null}
                   >
                     {item.title}
                   </Link>

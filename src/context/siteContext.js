@@ -1,9 +1,15 @@
-import React from 'react'
+"use client";
 
-const siteContext = () => {
-    return (
-        <div>siteContext</div>
-    )
-}
+import React, { createContext, useState } from "react";
 
-export default siteContext
+export const SiteContext = createContext();
+
+export const SiteProvider = ({ children }) => {
+  const [burgerMenu, setBurgermenu] = useState(false);
+
+  return (
+    <SiteContext.Provider value={{ burgerMenu, setBurgermenu }}>
+      {children}
+    </SiteContext.Provider>
+  );
+};
