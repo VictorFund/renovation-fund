@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
+import BurgerBtn from "../Buttons/BurgerBtn/BurgerBtn";
+import Logo from "../Logo/Logo";
 import NavigationHeader from "../NavigationHeader/NavigationHeader";
 import styles from "./Header.module.scss";
 
@@ -8,10 +8,9 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={`container ${styles.container}`}>
-        <Link href="/">
-          <Image src="/images/Logo.webp" width={282} height={60} alt="logo" />
-        </Link>
+        <Logo />
         <NavigationHeader />
+        <BurgerBtn />
       </div>
     </header>
   );

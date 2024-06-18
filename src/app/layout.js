@@ -4,6 +4,7 @@ import Header from "@/components/Header/Header";
 import "./globals.scss";
 import { fonts } from "@/fonts/getFonts";
 import FormSection from "@/sections/modalSection/ModalSection";
+import { SiteProvider } from "@/context/siteContext";
 
 export const metadata = {
   title: "Charity fund",
@@ -14,12 +15,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={fonts}>
-        <Header />
-        <main>
-          {children}
-          <FormSection />
-        </main>
-        <Footer />
+        <SiteProvider>
+          <Header />
+          <main>
+            {children}
+            <FormSection />
+          </main>
+          <Footer />
+        </SiteProvider>
       </body>
     </html>
   );
