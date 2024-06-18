@@ -16,7 +16,7 @@
 .title {
   font-family: var(--mediumSerif);
   font-weight: 500;
-  font-size: 32px;
+  font-size: 30px;
   color: $textColor;
   display: flex;
   flex-direction: column;
@@ -73,8 +73,11 @@
   font-weight: 400;
   font-size: 16px;
   color: $textColor;
+  margin-bottom: 24px;
   @media screen and (min-width: $tablet) {
+    font-weight: 400;
     font-size: 24px;
+    margin-bottom: 0px;
   }
 
   @media screen and (min-width: $laptop) {
@@ -90,13 +93,14 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   column-gap: 29px;
   color: $accentColor;
   font-family: var(--montserrat);
   font-weight: 500;
-  font-size: 24px;
+  font-size: 20px;
   @media screen and (min-width: $tablet) {
+    align-items: flex-end;
   }
 
   @media screen and (min-width: $laptop) {
@@ -176,7 +180,7 @@
   // height: 144px;
   & img {
     padding-bottom: 64px;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   @media screen and (min-width: $tablet) {
