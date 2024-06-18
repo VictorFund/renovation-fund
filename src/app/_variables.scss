@@ -1,7 +1,7 @@
-$mobile: "360px";
-$tablet: "768px";
-$laptop: "1024px";
-$desktop: "1440px";
+$mobile: '360px';
+$tablet: '768px';
+$laptop: '1024px';
+$desktop: '1440px';
 
 // @media screen and (min-width: $mobile) {
 
@@ -23,11 +23,11 @@ $accentColor: rgb(242, 101, 21);
 
 $bodyColor: rgba(250, 250, 255, 1);
 
-$topBottomPaddingMobile: 40px;
-$sidePaddingMobile: 80px;
+$topBottomPaddingMobile: 20px;
+$sidePaddingMobile: 20px;
 
-$topBottomPaddingTablet: 40px;
-$sidePaddingTablet: 80px;
+$topBottomPaddingTablet: 20px;
+$sidePaddingTablet: 32px;
 
 $topBottomPaddingLaptop: 40px;
 $sidePaddingLaptop: 80px;

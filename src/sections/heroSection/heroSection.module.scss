@@ -1,0 +1,234 @@
+@import '../../app/variables';
+
+// .hero {
+//   padding-top: 88px;
+//   @media screen and (min-width: $tablet) {
+//     padding-top: 104px;
+//   }
+//   @media screen and (min-width: $laptop) {
+//     padding-top: 140px;
+//   }
+//   @media screen and (min-width: $desktop) {
+//     padding-top: 133px;
+//   }
+// }
+
+.title {
+  font-family: var(--mediumSerif);
+  font-weight: 500;
+  font-size: 32px;
+  color: $textColor;
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  margin-bottom: 24px;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 48px;
+    row-gap: 24px;
+    margin-bottom: 45px;
+  }
+
+  @media screen and (min-width: $laptop) {
+    font-size: 72px;
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-weight: 500;
+    font-size: 96px;
+    margin-bottom: 48px;
+  }
+}
+
+.titleItem {
+  text-align: end;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.infoContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media screen and (min-width: $tablet) {
+    width: 37%;
+  }
+
+  @media screen and (min-width: $laptop) {
+    width: 22%;
+  }
+}
+
+.heroSubtitle {
+  font-family: var(--montserrat);
+  font-weight: 400;
+  font-size: 16px;
+  color: $textColor;
+  @media screen and (min-width: $tablet) {
+    font-size: 24px;
+  }
+
+  @media screen and (min-width: $laptop) {
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 24px;
+  }
+}
+
+.statistics {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  column-gap: 29px;
+  color: $accentColor;
+  font-family: var(--montserrat);
+  font-weight: 500;
+  font-size: 24px;
+  @media screen and (min-width: $tablet) {
+  }
+
+  @media screen and (min-width: $laptop) {
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 24px;
+  }
+}
+
+.number {
+  font-family: var(--lightSerif);
+  font-weight: 400;
+  font-size: 96px;
+  color: $textColor;
+  @media screen and (min-width: $tablet) {
+    font-size: 64px;
+  }
+
+  @media screen and (min-width: $laptop) {
+    font-size: 72px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 96px;
+  }
+}
+
+.svgPluse {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 10px;
+  left: 60px;
+  @media screen and (min-width: $tablet) {
+    left: 40px;
+  }
+
+  @media screen and (min-width: $laptop) {
+    left: 60px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    left: 60px;
+  }
+}
+
+.contentGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.contentGroupItem {
+  text-align: end;
+}
+
+.socialList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.svgSocialLink {
+  width: 40px;
+  height: 40px;
+  fill: #97979a;
+  // border: 1px solid #97979a;
+  border-radius: 50%;
+}
+
+.imgContainer {
+  position: relative;
+  width: 90vw;
+  height: 244px;
+  // height: 144px;
+  & img {
+    padding-bottom: 64px;
+    object-fit: cover;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 410px;
+    height: 242px;
+    & img {
+      padding-bottom: 0px;
+    }
+  }
+
+  @media screen and (min-width: $laptop) {
+    width: 610px;
+    height: 360px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 910px;
+    height: 460px;
+  }
+}
+
+.btn {
+  position: absolute;
+  bottom: 0;
+  border-radius: 57px;
+  border: none;
+  width: 100%;
+  height: 48px;
+  color: #ffffff;
+  background-color: $accentColor;
+  font-family: var(--montserrat);
+  font-weight: 400;
+  font-size: 20px;
+  outline: none;
+  cursor: pointer;
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+
+  @media screen and (min-width: $laptop) {
+    display: block;
+    bottom: 18px;
+    right: 0;
+    bottom: 8px;
+    width: 293px;
+    height: 84px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    bottom: 18px;
+    width: 433px;
+    height: 88px;
+    font-size: 24px;
+  }
+}
