@@ -14,7 +14,7 @@ const notoSans = Noto_Sans({
 });
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
-  weight: ["400"],
+  weight: ["400", "600"],
   variable: "--montserrat",
 });
 
