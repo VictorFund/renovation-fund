@@ -14,9 +14,13 @@
     width: 72px;
     height: 60px;
   }
-  @media screen and (min-width: $desktop) {
+
+  @media screen and (min-width: $laptop) {
     display: none;
   }
+  // @media screen and (min-width: $desktop) {
+  //   display: none;
+  // }
 }
 
 .icon {
