@@ -39,7 +39,6 @@ const projectSchema = new mongoose.Schema(
         },
         sum: {
             type: String,
-            required: true,
         },
         mission: {
             type: String,
@@ -72,6 +71,13 @@ const projectSchema = new mongoose.Schema(
         conceptEn: {
             type: String,
             required: true,
+        },
+        link: {
+            type: String,
+        },
+        isApproved: {
+            type: Boolean,
+            default: false,
         },
     },
     { timestamps: true }

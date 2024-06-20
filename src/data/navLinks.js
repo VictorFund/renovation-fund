@@ -3,7 +3,7 @@ export const navLinks = [
     title: "Про фонд",
     subMenu: [
       { title: "Місія", href: "/mission" },
-      { title: "Статут", href: "/statute" },
+      // { title: "Статут", href: "/statute" },
       { title: "Команда", href: "/team" },
       { title: "Контакти", href: "/contacts" },
     ],

@@ -1,7 +1,7 @@
 export const authConfig = {
     pages: {
         // когда результатом вызова authorized будет false - выполняется redirect на прописанный в signIn адрес
-        signIn: "/dashboard",
+        signIn: "/dashboard/login",
     },
     providers: [],
     callbacks: {
@@ -27,26 +27,27 @@ export const authConfig = {
             const isAuthorised = auth?.user;
 
             const isOnPrincipalPages = request.nextUrl?.pathname.startsWith('/dashboard/users');
-            const isOnMainDashboard = request.nextUrl?.pathname.endsWith('dashboard');
+            const isOnAdminPages = request.nextUrl?.pathname.startsWith('/dashboard/news') || request.nextUrl?.pathname.startsWith('/dashboard/partnership') || request.nextUrl?.pathname.startsWith('/dashboard/projects') || request.nextUrl?.pathname.startsWith('/dashboard/team') || request.nextUrl?.pathname.startsWith('/dashboard/users')
             const isOnAuthPages = request.nextUrl?.pathname.endsWith('login') || request.nextUrl?.pathname.endsWith('register');
-            const isOnAdminPages = request.nextUrl?.pathname.startsWith('/dashboard/')
+            const isOnMainDashboard = request.nextUrl?.pathname.endsWith('dashboard');
 
-            // //ONLY OWNER CAN REACH isOnPrincipalPages
-            // if (isOnPrincipalPages && !isPrincipal) {
-            //     return false;
-            // }
-            // //ONLY ADMINS CAN REACH isOnAdminPages
-            // if (isOnAdminPages && !isAdmin) {
-            //     return false;
-            // }
-            // // ONLY UNAUTHENTICATED CAN REACH LOGIN PAGE
-            // if (isOnAuthPages && isAuthorised) {
-            //     return Response.redirect(new URL('/dashboard', request.nextUrl))
-            // }
-            // // ONLY AUTHENTICATED CAN REACH MAIN DASHBOARD PAGE
-            // if (isOnMainDashboard && !isAuthorised) {
-            //     return Response.redirect(new URL('/dashboard/login', request.nextUrl))
-            // }
+
+            //ONLY OWNER CAN REACH isOnPrincipalPages
+            if (isOnPrincipalPages && !isPrincipal) {
+                return false;
+            }
+            //ONLY ADMINS CAN REACH isOnAdminPages
+            if (isOnAdminPages && !isAdmin) {
+                return false;
+            }
+            // ONLY UNAUTHENTICATED CAN REACH LOGIN PAGE
+            if (isOnAuthPages && isAuthorised) {
+                return Response.redirect(new URL('/dashboard', request.nextUrl))
+            }
+            // ONLY AUTHENTICATED CAN REACH MAIN DASHBOARD PAGE
+            if (isOnMainDashboard && !isAuthorised) {
+                return Response.redirect(new URL('/dashboard/login', request.nextUrl))
+            }
 
             return true;
         }
