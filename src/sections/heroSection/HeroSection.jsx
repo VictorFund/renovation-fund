@@ -1,5 +1,6 @@
 'use client';
 
+import Button from '@/components/Buttons/Button/Button';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import styles from './heroSection.module.scss';
@@ -29,12 +30,9 @@ const socialLinks = [
 
 const HeroSection = () => {
   const [isSmallScreenImg, setIsSmallScreenImg] = useState(false);
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-
   useEffect(() => {
     const handleResize = () => {
       setIsSmallScreenImg(window.innerWidth < 1024);
-      setIsSmallScreen(window.innerWidth > 767);
     };
     handleResize();
     window.addEventListener('resize', handleResize);
@@ -44,23 +42,19 @@ const HeroSection = () => {
   }, []);
   return (
     <section className="topSection">
-      <div className="container">
+      <div className={`container ${styles.hero}`}>
         <h1 className={styles.title}>
           <span>Запалимо вогонь</span>{' '}
           <span className={styles.titleItem}>Державотворчий!</span>
         </h1>
-        {!isSmallScreen && (
-          <h3 className={styles.heroSubtitle}>
-            Благодійний фонд Перемоги та Відновлення
-          </h3>
-        )}
+        <h3 className={styles.heroSubtitle + ' ' + styles.heroSubtitleMini}>
+          Благодійний фонд Перемоги та Відновлення
+        </h3>
         <div className={styles.contentContainer}>
           <div className={styles.infoContainer}>
-            {isSmallScreen && (
-              <h3 className={styles.heroSubtitle}>
-                Благодійний фонд Перемоги та Відновлення
-              </h3>
-            )}
+            <h3 className={styles.heroSubtitle + ' ' + styles.heroSubtitleMaxi}>
+              Благодійний фонд Перемоги та Відновлення
+            </h3>
             <div className={styles.statistics}>
               <p className={styles.number}>2</p>
               <svg className={styles.svgPluse}>
@@ -92,7 +86,9 @@ const HeroSection = () => {
               fill="true"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 910px, 460px"
             />
-            <button className={styles.btn}>Задонатити</button>
+            <div className={styles.btnContainer}>
+              <Button costumBtn={styles.costumBtn} />
+            </div>
           </div>
         </div>
       </div>
