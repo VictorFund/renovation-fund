@@ -20,21 +20,30 @@ const partnerSchema = new mongoose.Schema(
         //     type: String,
         //     required: true,
         // },
-        description: {
-            type: String,
-            required: true,
-        },
-        descriptionEn: {
-            type: String,
-            required: true,
-        },
+        // description: {
+        //     type: String,
+        //     required: true,
+        // },
+        // descriptionEn: {
+        //     type: String,
+        //     required: true,
+        // },
         siteLink: {
             type: String,
             required: true,
         },
         logo: {
-            type: String,
-            required: true,
+            type: String, // if logo isn't exist - show default logo (in frontend)
+            // required: true,
+        },
+        // чи головні партнери
+        isMainPartner: {
+            type: Boolean,
+            default: false,
+        },
+        isApproved: {
+            type: Boolean,
+            default: false,
         },
     },
     { timestamps: true }

@@ -1,8 +1,7 @@
-// import DashboardNavigation from "@/components/DashboardNavigation/DashboardNavigation";
-// import { handleLogout } from '@/auth/actions';
-import styles from './page.module.scss';
+import DashboardNavigation from '@/components/dashboard/DashboardNavigation/DashboardNavigation';
 import { auth } from '@/auth/auth';
-
+import { handleLogout } from '@/auth/actions';
+import styles from './page.module.scss';
 
 
 export default async function DashboardLayout({ children }) {
@@ -10,7 +9,7 @@ export default async function DashboardLayout({ children }) {
     console.log('session', session)
 
     return <div className={styles.layoutContainer}>
-        {/* <DashboardNavigation handleLogout={handleLogout} session={session} /> */}
+        <DashboardNavigation handleLogout={handleLogout} session={session} />
         {children}
     </div>
 }

@@ -28,6 +28,13 @@ const newsSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        link: {
+            type: String,
+        },
+        isApproved: {
+            type: Boolean,
+            default: false,
+        },
     },
     { timestamps: true }
 );
