@@ -1,0 +1,31 @@
+@import "../../../app/variables";
+
+.btn {
+  background-color: $accentColor;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 48px;
+  border-radius: 30px;
+  @media screen and (min-width: $tablet) {
+    width: 72px;
+    height: 60px;
+  }
+
+  @media screen and (min-width: $laptop) {
+    display: none;
+  }
+  // @media screen and (min-width: $desktop) {
+  //   display: none;
+  // }
+}
+
+.icon {
+  width: 18px;
+  height: 12px;
+  fill: $bodyColor;
+  stroke: $bodyColor;
+}
