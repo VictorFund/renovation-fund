@@ -47,7 +47,7 @@
   text-align: end;
 }
 
-.contentContainer {
+.heroContainer {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -58,7 +58,7 @@
   }
 }
 
-.infoContainer {
+.contentContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -109,7 +109,7 @@
   }
 }
 
-.statistics {
+.currentProjects {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -136,7 +136,7 @@
   }
 }
 
-.number {
+.projectsNumber {
   font-family: var(--lightSerif);
   font-weight: 400;
   font-size: 96px;
@@ -173,30 +173,30 @@
   }
 }
 
-.contentGroup {
+.projectsGroup {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.contentGroupItem {
+.projectsGroupItem {
   text-align: end;
 }
 
-.socialList {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+// .socialList {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+// }
 
-.svgSocialLink {
-  width: 40px;
-  height: 40px;
-  fill: #fafaff;
-  background-color: #a4a4a6;
-  border: 1px solid #a4a4a6;
-  border-radius: 50%;
-}
+// .svgSocialLink {
+//   width: 40px;
+//   height: 40px;
+//   fill: #fafaff;
+//   background-color: #a4a4a6;
+//   border: 1px solid #a4a4a6;
+//   border-radius: 50%;
+// }
 
 .imgContainer {
   position: relative;
@@ -246,15 +246,17 @@
     bottom: 4px;
   }
   @media screen and (min-width: $desktop) {
-    bottom: 18px;
-    right: 30px;
+    bottom: 8px;
+    // bottom: 18px;
+    right: 0px;
+    // right: 30px;
   }
 }
 
 .costumBtn {
   @media screen and (min-width: $laptop) {
-    width: max-content;
-    justify-content: center;
-    column-gap: 40px;
+    // width: max-content;
+    // justify-content: center;
+    // column-gap: 40px;
   }
 }
