@@ -1,0 +1,37 @@
+@import "../../../app/variables";
+
+.linkBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 280px;
+  height: 48px;
+  padding: 14px 52px;
+  background-color: $accentColor;
+  border-radius: 56px;
+  color: $white;
+  font-family: var(--montserrat);
+  font-weight: 400;
+  font-size: 16px;
+  @media screen and (min-width: $tablet) {
+    width: 192px;
+    height: 52px;
+    padding: 16px 24px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 312px;
+    height: 72px;
+    font-size: 24px;
+  }
+}
+
+.icon {
+  fill: $white;
+  width: 16px;
+  height: 16px;
+  @media screen and (min-width: $desktop) {
+    width: 28px;
+    height: 28px;
+  }
+}

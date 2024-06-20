@@ -38,7 +38,7 @@ const BurgerBtn = ({ className }) => {
       }}
     >
       {burgerMenu ? (
-        <svg className={styles.icon}>
+        <svg className={`${styles.icon} ${styles.close}`}>
           <use href="/sprite.svg#icon-close"></use>
         </svg>
       ) : (

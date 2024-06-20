@@ -13,14 +13,12 @@
   @media screen and (min-width: $tablet) {
     width: 72px;
     height: 60px;
+    margin-right: 40px;
   }
 
-  @media screen and (min-width: $laptop) {
+  @media screen and (min-width: $desktop) {
     display: none;
   }
-  // @media screen and (min-width: $desktop) {
-  //   display: none;
-  // }
 }
 
 .icon {
@@ -28,4 +26,9 @@
   height: 12px;
   fill: $bodyColor;
   stroke: $bodyColor;
+}
+
+.close {
+  width: 32px;
+  height: 32px;
 }
