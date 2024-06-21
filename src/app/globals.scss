@@ -80,9 +80,16 @@ section {
 .sectionTitle {
   font-family: var(--mediumSerif);
   font-weight: 500;
+  font-size: 32px;
+  margin-bottom: 24px;
+  @media screen and (min-width: $tablet) {
+    font-size: 48px;
+    margin-bottom: 32px;
+  }
 
-  @media screen and (min-width: $desktop) {
-    font-size: 128px;
+  @media screen and (min-width: $laptop) {
+    font-size: 64px;
+    margin-bottom: 40px;
   }
 }
 

@@ -1,0 +1,21 @@
+@import '../../app/variables';
+
+.socialList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.svgSocialLink {
+  width: 40px;
+  height: 40px;
+  fill: $bodyColor;
+  border: 1px solid #a4a4a6;
+  background-color: #a4a4a6;
+  border-radius: 50%;
+  // &:hover,
+  // &:focus {
+  //   border: 1px solid #3b6f7d;
+  //   background-color: #3b6f7d;
+  // }
+}
