@@ -3,6 +3,7 @@ import React from 'react'
 import { GetDataWithPathname } from '@/fetch/clientFetch';
 import DashboardNewsItem from '@/components/dashboard/DashboardNewsItem/DashboardNewsItem';
 import DashboardNewsFormUpdate from '@/components/dashboard/DashboardNewsFormUpdate/DashboardNewsFormUpdate';
+import Loader from '@/components/Loader/Loader';
 
 
 const DashboardNewsIdSection = () => {
@@ -12,7 +13,7 @@ const DashboardNewsIdSection = () => {
     return (
         <section>
             {isLoading
-                ? <p>Loading...</p>
+                ? <Loader />
                 : <>
                     <h1>DashboardNewsId Section</h1>
                     <DashboardNewsItem />

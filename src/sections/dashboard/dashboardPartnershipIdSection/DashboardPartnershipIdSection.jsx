@@ -3,6 +3,7 @@ import React from 'react'
 import { GetDataWithPathname } from '@/fetch/clientFetch';
 import DashboardPartnershipItem from '@/components/dashboard/DashboardPartnershipItem/DashboardPartnershipItem';
 import DashboardPartnershipFormUpdate from '@/components/dashboard/DashboardPartnershipFormUpdate/DashboardPartnershipFormUpdate';
+import Loader from '@/components/Loader/Loader';
 
 
 const DashboardPartnershipIdSection = () => {
@@ -12,7 +13,7 @@ const DashboardPartnershipIdSection = () => {
     return (
         <section>
             {isLoading
-                ? <p>Loading...</p>
+                ? <Loader />
                 : <>
                     <h1>DashboardPartnershipId Section</h1>
                     <DashboardPartnershipItem />

@@ -20,11 +20,11 @@ const projectSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        description: {
+        shortDescription: {
             type: String,
             required: true,
         },
-        descriptionEn: {
+        shortDescriptionEn: {
             type: String,
             required: true,
         },
@@ -69,6 +69,14 @@ const projectSchema = new mongoose.Schema(
             required: true,
         },
         conceptEn: {
+            type: String,
+            required: true,
+        },
+        description: {
+            type: String,
+            required: true,
+        },
+        descriptionEn: {
             type: String,
             required: true,
         },
