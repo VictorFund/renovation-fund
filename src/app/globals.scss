@@ -59,12 +59,15 @@ section {
 
 .topSection {
   padding-top: 88px;
+
   @media screen and (min-width: $tablet) {
     padding-top: 104px;
   }
+
   @media screen and (min-width: $laptop) {
     padding-top: 140px;
   }
+
   @media screen and (min-width: $desktop) {
     padding-top: 133px;
   }
@@ -77,13 +80,33 @@ section {
   margin-right: auto;
 }
 
-.sectionTitle {
+.homeSectionTitle {
   font-family: var(--mediumSerif);
   font-weight: 500;
   font-size: 32px;
   margin-bottom: 24px;
+
   @media screen and (min-width: $tablet) {
     font-size: 48px;
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: $laptop) {
+    font-size: 64px;
+    margin-bottom: 40px;
+  }
+}
+
+.sectionTitle {
+  font-family: var(--mediumSerif);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 48px;
+    line-height: 1.2;
     margin-bottom: 32px;
   }
 
