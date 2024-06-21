@@ -2,7 +2,7 @@
 import React from 'react'
 import { GetDataWithPathname } from '@/fetch/clientFetch';
 import DashboardUser from '@/components/dashboard/DashboardUser/DashboardUser';
-import Loading from '@/components/Loading/Loading';
+import Loader from '@/components/Loader/Loader';
 
 
 const DashboardUsersSection = () => {
@@ -11,7 +11,7 @@ const DashboardUsersSection = () => {
 
     return (
         <section>
-            {isLoading ? <Loading />
+            {isLoading ? <Loader />
                 : <>
                     <h1>DashboardUsers Section</h1>
                     {data.map(item => <DashboardUser key={item.email} />)}
