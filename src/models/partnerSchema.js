@@ -16,6 +16,10 @@ const partnerSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        isMainPartner: {
+            type: Boolean,
+            default: false,
+        },
         // image: {
         //     type: String,
         //     required: true,
@@ -28,19 +32,15 @@ const partnerSchema = new mongoose.Schema(
         //     type: String,
         //     required: true,
         // },
-        siteLink: {
-            type: String,
-            required: true,
-        },
         logo: {
             type: String, // if logo isn't exist - show default logo (in frontend)
             // required: true,
         },
-        // чи головні партнери
-        isMainPartner: {
-            type: Boolean,
-            default: false,
+        siteLink: {
+            type: String,
+            required: true,
         },
+        // чи головні партнери        
         isApproved: {
             type: Boolean,
             default: false,

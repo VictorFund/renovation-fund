@@ -23,8 +23,8 @@ const HeroSection = () => {
     <section className="topSection">
       <div className={`container ${styles.hero}`}>
         <h1 className={styles.title}>
-          <span>Запалимо вогонь</span>{' '}
-          <span className={styles.titleItem}>Державотворчий!</span>
+          <span>Спільними зусиллями</span>{' '}
+          <span className={styles.titleItem}>відбудуємо країну</span>
         </h1>
         <h3 className={styles.heroSubtitle + ' ' + styles.heroSubtitleMini}>
           Благодійний фонд Перемоги та Відновлення
