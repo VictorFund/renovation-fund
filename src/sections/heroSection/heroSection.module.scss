@@ -18,7 +18,7 @@
 .title {
   font-family: var(--mediumSerif);
   font-weight: 500;
-  font-size: 30px;
+  font-size: 24px;
   color: $textColor;
   display: flex;
   flex-direction: column;
@@ -32,7 +32,7 @@
   }
 
   @media screen and (min-width: $laptop) {
-    font-size: 72px;
+    font-size: 52px;
     margin-bottom: 32px;
   }
 
@@ -64,7 +64,7 @@
   flex-direction: column;
   justify-content: space-between;
   @media screen and (min-width: $tablet) {
-    width: 32%;
+    width: 35%;
   }
 
   @media screen and (min-width: $laptop) {
@@ -201,23 +201,26 @@
 .imgContainer {
   position: relative;
   width: 100%;
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 33px;
+  height: 144px;
+  // height: 250px;
+  // display: flex;
+  // justify-content: center;
+  // margin-bottom: 33px;
   & img {
-    padding-bottom: 64px;
-    object-fit: contain;
+    // padding-bottom: 64px;
+    object-fit: inherit;
   }
   @media screen and (min-width: $mobile) {
-    height: 290px;
+    // height: 290px;
+    height: 190px;
   }
 
   @media screen and (min-width: $tablet) {
     width: 410px;
     height: 242px;
     & img {
-      padding-bottom: 0px;
+      object-fit: contain;
+      // padding-bottom: 0px;
     }
   }
 
@@ -234,29 +237,33 @@
 
 .btnContainer {
   position: absolute;
+  right: 0px;
+
   bottom: 0;
-  width: 100%;
+  // width: 100%;
+  @media screen and (min-width: $mobile) {
+    // width: max-content;
+    right: 12px;
+    bottom: 8px;
+  }
   @media screen and (min-width: $tablet) {
-    display: none;
+    // width: max-content;
+    right: 0px;
+    bottom: 5px;
   }
   @media screen and (min-width: $laptop) {
-    display: block;
-    width: max-content;
     right: 16px;
-    bottom: 4px;
   }
   @media screen and (min-width: $desktop) {
     bottom: 8px;
-    // bottom: 18px;
     right: 0px;
-    // right: 30px;
   }
 }
 
-.costumBtn {
-  @media screen and (min-width: $laptop) {
-    // width: max-content;
-    // justify-content: center;
-    // column-gap: 40px;
-  }
-}
+// .costumBtn {
+//   @media screen and (min-width: $laptop) {
+//     // width: max-content;
+//     // justify-content: center;
+//     // column-gap: 40px;
+//   }
+// }
