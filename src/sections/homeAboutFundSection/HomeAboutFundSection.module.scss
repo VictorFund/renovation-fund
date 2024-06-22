@@ -74,7 +74,8 @@
   border-radius: 54px;
   border: none;
   box-shadow: 2px 2px 4px 0 rgba(75, 75, 78, 0.5);
-  background-color: #fafaff;
+  background-color: $bodyColor;
+  color: $textColor;
   cursor: pointer;
   outline: none;
   &:hover .arrow,
@@ -100,7 +101,7 @@
 .arrow {
   width: 16px;
   height: 16px;
-  fill: #192b39;
+  fill: $textColor;
   @media screen and (min-width: $tablet) {
     width: 24px;
     height: 24px;
