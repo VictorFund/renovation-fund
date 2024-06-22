@@ -5,7 +5,7 @@ const HomeAboutFundSection = () => {
   return (
     <section>
       <div className="container">
-        <h2 className="sectionTitle">Про Фонд*</h2>
+        <h2 className="homeSectionTitle">Про Фонд*</h2>
         <div className={styles.aboutContainer}>
           <ul className={styles.contentList}>
             <li className={styles.text}>
