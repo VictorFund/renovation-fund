@@ -73,6 +73,22 @@ section {
   }
 }
 
+// mission
+.pageSection {
+  padding-top: 88px;
+  padding-bottom: 32px;
+
+  @media screen and (min-width: $tablet) {
+    padding-top: 112px;
+    padding-bottom: 40px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 125px;
+    padding-bottom: 80px;
+  }
+}
+
 .container {
   width: 100%;
   max-width: 1280px;
@@ -97,20 +113,20 @@ section {
   }
 }
 
+//mission
 .sectionTitle {
   font-family: var(--mediumSerif);
   font-weight: 500;
   font-size: 24px;
-  line-height: 1.1;
+  line-height: 1.2;
   margin-bottom: 24px;
 
   @media screen and (min-width: $tablet) {
     font-size: 48px;
-    line-height: 1.2;
     margin-bottom: 32px;
   }
 
-  @media screen and (min-width: $laptop) {
+  @media screen and (min-width: $desktop) {
     font-size: 64px;
     margin-bottom: 40px;
   }
