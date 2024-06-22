@@ -57,6 +57,23 @@ section {
   }
 }
 
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
 .topSection {
   padding-top: 88px;
 
@@ -89,13 +106,6 @@ section {
   }
 }
 
-.container {
-  width: 100%;
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .homeSectionTitle {
   font-family: var(--mediumSerif);
   font-weight: 500;
@@ -119,25 +129,49 @@ section {
   font-weight: 500;
   font-size: 24px;
   line-height: 1.2;
-  margin-bottom: 24px;
 
   @media screen and (min-width: $tablet) {
     font-size: 48px;
-    margin-bottom: 32px;
   }
 
   @media screen and (min-width: $desktop) {
     font-size: 64px;
-    margin-bottom: 40px;
   }
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+// mission, titleCardText in UI design
+.titleCardText {
+  font-family: var(--montserrat);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+
+  @media screen and (min-width: $tablet) {
+    font-weight: 400;
+    font-size: 24px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 40px;
+  }
 }
 
-ul,
-ol {
-  list-style: none;
+//mission, regularText in UI design
+.regularText {
+  font-family: var(--montserrat);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+
+  @media screen and (min-width: $tablet) {
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    font-size: 24px;
+  }
+}
+
+.accentText {
+  color: $accentColor;
 }
