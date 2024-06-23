@@ -27,12 +27,12 @@ const HeroSection = () => {
           <span className={styles.titleItem}>відбудуємо країну</span>
         </h1>
         <h3 className={styles.heroSubtitle + ' ' + styles.heroSubtitleMini}>
-          Благодійний фонд Перемоги та Відновлення
+          Благодійний фонд «Перемоги та Відновлення»
         </h3>
         <div className={styles.heroContainer}>
           <div className={styles.contentContainer}>
             <h3 className={styles.heroSubtitle + ' ' + styles.heroSubtitleMaxi}>
-              Благодійний фонд Перемоги та Відновлення
+              Благодійний фонд «Перемоги та Відновлення»
             </h3>
             <div className={styles.currentProjects}>
               <p className={styles.projectsNumber}>2</p>
