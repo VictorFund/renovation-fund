@@ -1,1 +1,1 @@
-export default contactsData = {}
+export const contactsData = {}
