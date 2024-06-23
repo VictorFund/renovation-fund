@@ -92,17 +92,17 @@ ol {
 
 // mission
 .pageSection {
-  padding-top: 88px;
-  padding-bottom: 32px;
+  padding-top: 96px;
+  padding-bottom: 24px;
 
   @media screen and (min-width: $tablet) {
-    padding-top: 112px;
-    padding-bottom: 40px;
+    padding-top: 117px;
+    padding-bottom: 32px;
   }
 
   @media screen and (min-width: $desktop) {
     padding-top: 125px;
-    padding-bottom: 80px;
+    padding-bottom: 40px;
   }
 }
 
@@ -174,4 +174,16 @@ ol {
 
 .accentText {
   color: $accentColor;
+}
+
+.footer {
+  padding: 24px $sidePaddingMobile 32px;
+
+  @media screen and (min-width: $tablet) {
+    padding: 32px $sidePaddingTablet;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 50px $sidePaddingDesktop 52px;
+  }
 }
