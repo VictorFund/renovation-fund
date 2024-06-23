@@ -1,0 +1,90 @@
+@import '../../app/variables';
+
+.partnership {
+}
+
+.title {
+  margin-bottom: 24px;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.partnershipList {
+  display: -ms-grid;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, 1fr);
+  @media screen and (min-width: $tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  @media screen and (min-width: $laptop) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media screen and (min-width: $desktop) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
+.partnershipItem {
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 54px;
+  box-shadow: 1px 1px 10px 0 rgba(75, 75, 78, 0.5);
+  padding: 56px;
+  row-gap: 32px;
+  @media screen and (min-width: $tablet) {
+    padding: 56px;
+    row-gap: 40px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 45px;
+  }
+}
+
+.imgContainer {
+  position: relative;
+  width: 55%;
+  height: 30vw;
+  // width: 91px;
+  // height: 92px;
+  & img {
+    object-fit: contain;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 128px;
+    height: 125px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.partnershipTitle {
+  font-family: var(--montserrat);
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  color: $textColor;
+  @media screen and (min-width: $tablet) {
+    font-weight: 400;
+    font-size: 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 40px;
+  }
+}
