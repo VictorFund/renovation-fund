@@ -30,6 +30,7 @@
   @media screen and (min-width: $desktop) {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    margin-bottom: 40px;
   }
 }
 
@@ -87,4 +88,40 @@
   @media screen and (min-width: $desktop) {
     font-size: 40px;
   }
+}
+
+.partnershipSmallList {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 40px;
+}
+
+.partnershipSmallItem {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 32px;
+  height: 100%;
+  border-radius: 54px;
+  box-shadow: 1px 1px 10px 0 rgba(75, 75, 78, 0.5);
+}
+
+.imgSmallContainer {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  margin-bottom: 32px;
+
+  & img {
+    object-fit: contain;
+  }
+}
+
+.partnershipSmallTitle {
+  font-family: var(--montserrat);
+  font-weight: 400;
+  font-size: 32px;
+  text-align: center;
+  color: $textColor;
 }
