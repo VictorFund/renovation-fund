@@ -20,11 +20,11 @@ const projectSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        description: {
+        shortDescription: {
             type: String,
             required: true,
         },
-        descriptionEn: {
+        shortDescriptionEn: {
             type: String,
             required: true,
         },
@@ -39,7 +39,6 @@ const projectSchema = new mongoose.Schema(
         },
         sum: {
             type: String,
-            required: true,
         },
         mission: {
             type: String,
@@ -72,6 +71,21 @@ const projectSchema = new mongoose.Schema(
         conceptEn: {
             type: String,
             required: true,
+        },
+        description: {
+            type: String,
+            required: true,
+        },
+        descriptionEn: {
+            type: String,
+            required: true,
+        },
+        link: {
+            type: String,
+        },
+        isApproved: {
+            type: Boolean,
+            default: false,
         },
     },
     { timestamps: true }

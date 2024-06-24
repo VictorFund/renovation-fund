@@ -7,7 +7,7 @@
   display: flex;
   position: absolute;
   right: 0;
-  top: 96px;
+  top: 0;
   flex-direction: column;
   background-color: $bodyColor;
   width: 100vw;
@@ -17,31 +17,32 @@
   padding: 16px;
   overflow: hidden;
 
-  &::before {
-    content: "";
-    width: 100%;
-    height: 1px;
-    background-color: $BorderColor;
-  }
   &::after {
     content: url("../../../public/images/pattern.webp");
     position: absolute;
-    top: 54px;
-    transform: translate(-50%, 0%) rotate(8deg);
+    transform: translate(-50%, 20%) rotate(8deg);
+  }
+
+  & li {
+    z-index: 200;
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding-left: $sidePaddingTablet;
+    padding-right: $sidePaddingTablet;
   }
 
   @media screen and (min-width: $desktop) {
     position: static;
     flex-direction: row;
     padding: 0;
-    padding-top: 24px;
+    padding-top: 16px;
     width: fit-content;
     height: 100%;
     gap: 32px;
     overflow: visible;
     transform: translateX(0%);
 
-    &::before,
     &::after {
       display: none;
     }
@@ -50,6 +51,27 @@
 
 .headerNavBurger {
   transform: translateX(0%);
+}
+
+.mobMenuHeader {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $BorderColor;
+  padding-bottom: 16px;
+  // z-index: 10;
+}
+
+.langSwitcher {
+  margin: 0;
+  @media screen and (min-width: $desktop) {
+    display: none;
+  }
+}
+.burgerBtn {
+  margin: 0;
+  @media screen and (min-width: $tablet) {
+    margin-left: auto;
+  }
 }
 
 .navItem {
@@ -61,6 +83,7 @@
   width: 60%;
   margin-left: auto;
   margin-right: 0;
+  // z-index: 10;
   @media screen and (min-width: $desktop) {
     width: fit-content;
   }
@@ -74,17 +97,17 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  // height: 100%;
   background-color: $bodyColor;
   position: relative;
   z-index: 10;
   cursor: pointer;
   font-weight: 600;
-  @media screen and (min-width: $desktop) {
-    padding-top: 4px;
-    height: 100%;
-    font-weight: 400;
-  }
+
+  // @media screen and (min-width: $laptop) {
+  //   padding-top: 4px;
+  //   height: 100%;
+  //   font-weight: 400;
+  // }
 }
 .arrow {
   width: 12px;
@@ -100,11 +123,19 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  gap: 12px;
+  gap: 24px;
   z-index: 0;
   background-color: $bodyColor;
   transform: translateY(-120%);
 }
 .active {
   transform: translateY(0%);
+}
+
+.navLink {
+  @media screen and (min-width: $desktop) {
+    padding: 16px 24px;
+    border-bottom: 1px solid $textColor;
+    font-size: 20px;
+  }
 }

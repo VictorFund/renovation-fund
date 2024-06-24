@@ -9,7 +9,7 @@ const HomeNewsSection = () => {
   return (
     <section>
       <div className="container">
-        <h2 className="sectionTitle"> HomeNews Section</h2>
+        <h2 className="homeSectionTitle"> HomeNews Section</h2>
       </div>
     </section>
   );

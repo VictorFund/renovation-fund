@@ -1,0 +1,62 @@
+@import '../../../app/variables';
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 136px;
+  height: 38px;
+  // width: 100%;
+  // height: 48px;
+  padding: 9px 18px;
+  // padding: 16px 47px;
+  font-family: var(--montserrat);
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 57px;
+  border: none;
+  color: $white;
+  background-color: $accentColor;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: #ff5c00;
+
+    & .arrow {
+      transform: rotate(90deg);
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding: 14px 24px;
+    width: 192px;
+    height: 52px;
+  }
+  @media screen and (min-width: $laptop) {
+    width: 222px;
+    height: 57px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 14px 28px;
+    width: 312px;
+    height: 72px;
+    font-size: 24px;
+  }
+}
+
+.arrow {
+  display: none;
+  @media screen and (min-width: $tablet) {
+    display: block;
+    fill: $white;
+    width: 16px;
+    height: 15px;
+  }
+  @media screen and (min-width: $laptop) {
+    width: 24px;
+    height: 22px;
+  }
+}

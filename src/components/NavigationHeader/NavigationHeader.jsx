@@ -1,10 +1,11 @@
 "use client";
-"use client";
 
 import { SiteContext } from "@/context/siteContext";
 import Link from "next/link";
 import React, { useContext, useState } from "react";
 import { navLinks } from "../../data/navLinks";
+import BurgerBtn from "../Buttons/BurgerBtn/BurgerBtn";
+import LangSwitcher from "../LangSwitcher/LangSwitcher";
 import styles from "./NavigationHeader.module.scss";
 
 const NavigationHeader = () => {
@@ -14,8 +15,10 @@ const NavigationHeader = () => {
   const toggleNav = (title) => {
     setActiveMenu(activeMenu === title ? null : title);
   };
-  const closeMenu = () => {
+
+  const closeMenu = (e) => {
     setActiveMenu(null);
+    setBurgermenu(false);
   };
 
   return (
@@ -26,6 +29,10 @@ const NavigationHeader = () => {
           : `${styles.headerNav}`
       }
     >
+      <li className={styles.mobMenuHeader}>
+        <LangSwitcher className={styles.langSwitcher} />
+        <BurgerBtn className={styles.burgerBtn} />
+      </li>
       {navLinks.map((el) => {
         return (
           <li
@@ -61,7 +68,7 @@ const NavigationHeader = () => {
                     href={item.href}
                     className={styles.navLink}
                     onClick={closeMenu}
-                    target={item.target ? item.target : null}
+                    target={item.target ? item.target : "_self"}
                   >
                     {item.title}
                   </Link>

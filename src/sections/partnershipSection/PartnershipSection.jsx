@@ -1,15 +1,38 @@
-// "use client"
-import React from 'react'
-// import { GetDataWithPathname } from '@/fetch/clientFetch';
-
+'use client';
+import React from 'react';
+import styles from './PartnershipSection.module.scss';
+import { GetDataWithPathname } from '@/fetch/clientFetch';
+import { CldImage } from 'next-cloudinary';
 
 const PartnershipSection = () => {
-    // const { data } = GetDataWithPathname();
-    // console.log('data', data)
+  const { data } = GetDataWithPathname('partnership');
+  //   console.log('data', data);
 
-    return (
-        <section>Partnership Section</section>
-    )
-}
+  return (
+    <section className="topSection">
+      <div className={`container ${styles.partnership}`}>
+        <h1 className={`sectionTitle ${styles.title}`}>Партнерство</h1>
 
-export default PartnershipSection
+        <ul className={styles.partnershipList}>
+          {data?.map(({ slug, title, siteLink, logo }) => (
+            <li key={slug}>
+              <a
+                href={siteLink}
+                target="_blank"
+                aria-label={title}
+                className={styles.partnershipItem}
+              >
+                <figure className={styles.imgContainer}>
+                  <CldImage src={logo} alt={title} fill={true} />
+                </figure>
+                <h3 className={styles.partnershipTitle}>{title}</h3>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+};
+
+export default PartnershipSection;

@@ -1,7 +1,7 @@
-$mobile: '360px';
-$tablet: '768px';
-$laptop: '1024px';
-$desktop: '1440px';
+$mobile: "360px";
+$tablet: "768px";
+$laptop: "1024px";
+$desktop: "1440px";
 
 // @media screen and (min-width: $mobile) {
 
@@ -18,11 +18,14 @@ $desktop: '1440px';
 
 // }
 
-$textColor: rgb(25, 43, 57);
-$accentColor: rgb(242, 101, 21);
-$BorderColor: rgba(188, 188, 188, 1);
-
-$bodyColor: rgba(250, 250, 255, 1);
+$textColor: #192b39;
+$accentColor: #f26515;
+$BorderColor: #bcbcbc;
+$borderColorLangSwitch: #4b4b4e80;
+$dateBgColor: #aacee780;
+$line: #396a787a;
+$bodyColor: #fafaff;
+$white: #ffffff;
 
 $topBottomPaddingMobile: 20px;
 $sidePaddingMobile: 20px;

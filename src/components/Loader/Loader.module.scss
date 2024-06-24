@@ -1,0 +1,12 @@
+@import "../../app/variables";
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    font-size: 50px;
+    font-weight: 700;
+    color: $accentColor;
+}
