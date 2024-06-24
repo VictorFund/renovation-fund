@@ -1,0 +1,99 @@
+.form {
+    width: 280px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    row-gap: 24px;
+
+    //   @media screen and (min-width: $mobile) {
+    //     width: 312px;
+    //   }
+
+    //   @media screen and (min-width: $tablet) {
+    //     width: 474px;
+    //   }
+
+    //   @media screen and (min-width: $laptop) {
+    //     width: 568px;
+    //   }
+
+    //   @media screen and (min-width: $desktop) {
+    //     width: 636px;
+    //   }
+}
+
+.inputWrap {
+    width: 100%;
+    position: relative;
+}
+
+.input {
+    height: 60px;
+    width: 100%;
+    border-radius: 16px;
+    padding-left: 24px;
+}
+
+.input::placeholder {
+    // font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(75, 75, 78, 0.5);
+}
+
+.textarea::placeholder {
+    // font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(75, 75, 78, 0.5);
+}
+
+.textarea {
+    resize: none;
+    height: 180px;
+}
+
+.error {
+    position: absolute;
+    bottom: 2px;
+    right: 100px;
+    color: rgba(213, 0, 0, 1);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    //   @media screen and (min-width: $laptop) {
+    //     top: 60px;
+    //     font-size: 14px;
+    //   }
+}
+
+.socSvg {
+    width: 24px;
+    height: 24px;
+
+    //   @media screen and (min-width: 1440px) {
+    //     width: 32px;
+    //     height: 32px;
+    //   }
+}
+
+.inputRadio:checked .socSvg {
+    transform: scale(1.25);
+}
+
+.submitButton {
+    width: 100%;
+    height: 52px;
+    border-radius: 100px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.2;
+}
