@@ -1,0 +1,110 @@
+@import '../../app/variables';
+
+.title {
+    margin-bottom: 24px;
+
+    @media screen and (min-width: $tablet) {
+        margin-bottom: 32px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 40px;
+    }
+}
+
+.subtitle {
+    margin-bottom: 32px;
+
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 40px;
+    }
+}
+
+.imgWrapper {
+    width: 100%;
+    height: 50.94vw;
+    position: relative;
+    border-radius: 53px;
+    overflow: hidden;
+    margin-bottom: 24px;
+
+    @media screen and (min-width: $tablet) {
+        height: 53.78vw;
+        margin-bottom: 32px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 1279px;
+        height: 749px;
+        margin-bottom: 40px;
+    }
+}
+
+.img {
+    object-fit: cover;
+}
+
+.textWrapper {
+    // text-indent: 3%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    margin-bottom: 24px;
+
+    @media screen and (min-width: $tablet) {
+        row-gap: 10px;
+        margin-bottom: 32px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 40px;
+    }
+}
+
+.btn {
+    padding: 16px 24px;
+    width: 280px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 54px;
+    border: transparent;
+    box-shadow: 2px 2px 4px 0 $borderColorLangSwitch;
+    background-color: $accentColor;
+    color: $white ;
+    font-family: var(--montserrat);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.2;
+    cursor: pointer;
+
+    @media screen and (min-width: $tablet) {
+        padding: 24px 32px;
+        width: 704px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 24px;
+
+        &:hover .arrow,
+        &:focus .arrow {
+            transform: rotate(90deg);
+        }
+    }
+
+    @media screen and (min-width: $desktop) {
+        padding: 32px 40px;
+        width: 650px;
+        margin: 0;
+    }
+}
+
+.arrow {
+    display: none;
+
+    @media screen and (min-width: $tablet) {
+        display: block;
+        width: 24px;
+        height: 24px;
+        fill: $white;
+    }
+}

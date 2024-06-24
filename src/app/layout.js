@@ -3,7 +3,7 @@ import Header from "@/components/Header/Header";
 
 import "./globals.scss";
 import { fonts } from "@/fonts/getFonts";
-import FormSection from "@/sections/modalSection/ModalSection";
+// import FormSection from "@/sections/modalSection/ModalSection";
 import { SiteProvider } from "@/context/siteContext";
 
 export const metadata = {
@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
           <Header />
           <main>
             {children}
-            <FormSection />
+            {/* <FormSection /> */}
           </main>
           <Footer />
         </SiteProvider>

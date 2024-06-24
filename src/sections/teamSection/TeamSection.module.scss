@@ -1,0 +1,123 @@
+@import '../../app/variables';
+
+.title {
+  margin-bottom: 24px;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.teamList {
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 24px;
+
+  @media screen and (min-width: $tablet) {
+    row-gap: 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    row-gap: 40px;
+  }
+}
+
+.teamCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px 30px;
+  box-shadow: 1px 1px 10px 0 rgba(75, 75, 78, 0.5);
+  border-radius: 50px;
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+    padding: 44px 54px;
+    column-gap: 51px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 32px 49px;
+  }
+}
+
+.imgContainer {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 70vw;
+  margin-bottom: 16px;
+  & img {
+    border-radius: 24px;
+    object-fit: cover;
+  }
+
+  @media screen and (min-width: $tablet) {
+    min-width: 224px;
+    height: 231px;
+    margin: auto 0px;
+  }
+  @media screen and (min-width: $laptop) {
+    height: 40vw;
+  }
+
+  @media screen and (min-width: $desktop) {
+    min-width: 432px;
+    height: 447px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: $tablet) {
+    justify-content: space-around;
+  }
+}
+
+.contetnTitle {
+  font-family: var(--montserrat);
+  font-weight: 400;
+  font-size: 40px;
+  color: $textColor;
+  margin-bottom: 16px;
+  text-align: center;
+  @media screen and (min-width: $tablet) {
+    text-align: start;
+    font-size: 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-size: 40px;
+  }
+}
+
+.contentDesc {
+  font-family: var(--montserrat);
+  font-weight: 500;
+  font-size: 16px;
+  color: $textColor;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  &:hover,
+  &:focus {
+    display: block;
+  }
+  @media screen and (min-width: $tablet) {
+    display: block;
+    text-align: start;
+    font-weight: 400;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-weight: 500;
+    font-size: 24px;
+  }
+}

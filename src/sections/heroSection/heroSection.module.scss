@@ -18,7 +18,7 @@
 .title {
   font-family: var(--mediumSerif);
   font-weight: 500;
-  font-size: 30px;
+  font-size: 24px;
   color: $textColor;
   display: flex;
   flex-direction: column;
@@ -32,7 +32,7 @@
   }
 
   @media screen and (min-width: $laptop) {
-    font-size: 72px;
+    font-size: 52px;
     margin-bottom: 32px;
   }
 
@@ -47,7 +47,7 @@
   text-align: end;
 }
 
-.contentContainer {
+.heroContainer {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -58,13 +58,13 @@
   }
 }
 
-.infoContainer {
+.contentContainer {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   @media screen and (min-width: $tablet) {
-    width: 32%;
+    width: 35%;
   }
 
   @media screen and (min-width: $laptop) {
@@ -109,7 +109,7 @@
   }
 }
 
-.statistics {
+.currentProjects {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -136,7 +136,7 @@
   }
 }
 
-.number {
+.projectsNumber {
   font-family: var(--lightSerif);
   font-weight: 400;
   font-size: 96px;
@@ -173,51 +173,54 @@
   }
 }
 
-.contentGroup {
+.projectsGroup {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.contentGroupItem {
+.projectsGroupItem {
   text-align: end;
 }
 
-.socialList {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+// .socialList {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+// }
 
-.svgSocialLink {
-  width: 40px;
-  height: 40px;
-  fill: #fafaff;
-  background-color: #a4a4a6;
-  border: 1px solid #a4a4a6;
-  border-radius: 50%;
-}
+// .svgSocialLink {
+//   width: 40px;
+//   height: 40px;
+//   fill: #fafaff;
+//   background-color: #a4a4a6;
+//   border: 1px solid #a4a4a6;
+//   border-radius: 50%;
+// }
 
 .imgContainer {
   position: relative;
   width: 100%;
-  height: 250px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 33px;
+  height: 144px;
+  // height: 250px;
+  // display: flex;
+  // justify-content: center;
+  // margin-bottom: 33px;
   & img {
-    padding-bottom: 64px;
-    object-fit: contain;
+    // padding-bottom: 64px;
+    object-fit: inherit;
   }
   @media screen and (min-width: $mobile) {
-    height: 290px;
+    // height: 290px;
+    height: 190px;
   }
 
   @media screen and (min-width: $tablet) {
     width: 410px;
     height: 242px;
     & img {
-      padding-bottom: 0px;
+      object-fit: contain;
+      // padding-bottom: 0px;
     }
   }
 
@@ -234,27 +237,33 @@
 
 .btnContainer {
   position: absolute;
+  right: 0px;
+
   bottom: 0;
-  width: 100%;
+  // width: 100%;
+  @media screen and (min-width: $mobile) {
+    // width: max-content;
+    right: 12px;
+    bottom: 8px;
+  }
   @media screen and (min-width: $tablet) {
-    display: none;
+    // width: max-content;
+    right: 0px;
+    bottom: 5px;
   }
   @media screen and (min-width: $laptop) {
-    display: block;
-    width: max-content;
     right: 16px;
-    bottom: 4px;
   }
   @media screen and (min-width: $desktop) {
-    bottom: 18px;
-    right: 30px;
+    bottom: 8px;
+    right: 0px;
   }
 }
 
-.costumBtn {
-  @media screen and (min-width: $laptop) {
-    width: max-content;
-    justify-content: center;
-    column-gap: 40px;
-  }
-}
+// .costumBtn {
+//   @media screen and (min-width: $laptop) {
+//     // width: max-content;
+//     // justify-content: center;
+//     // column-gap: 40px;
+//   }
+// }

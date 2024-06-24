@@ -1,32 +1,11 @@
 'use client';
 
-import Button from '@/components/Buttons/Button/Button';
+import ButtonLink from '@/components/Buttons/ButtonLink/ButtonLink';
+import SocialLinks from '@/components/SocialLinks/SocialLinks';
+import { socialLinks } from '@/data/socialLinks.data';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import styles from './heroSection.module.scss';
-
-const socialLinks = [
-  {
-    id: 1,
-    src: 'icon-telegram',
-    href: '#',
-  },
-  {
-    id: 2,
-    src: 'icon-WhatsApp',
-    href: '#',
-  },
-  {
-    id: 3,
-    src: 'icon-messager',
-    href: '#',
-  },
-  {
-    id: 4,
-    src: 'icon-viber',
-    href: '#',
-  },
-];
 
 const HeroSection = () => {
   const [isSmallScreenImg, setIsSmallScreenImg] = useState(false);
@@ -44,38 +23,28 @@ const HeroSection = () => {
     <section className="topSection">
       <div className={`container ${styles.hero}`}>
         <h1 className={styles.title}>
-          <span>Запалимо вогонь</span>{' '}
-          <span className={styles.titleItem}>Державотворчий!</span>
+          <span>Спільними зусиллями</span>{' '}
+          <span className={styles.titleItem}>відбудуємо країну</span>
         </h1>
         <h3 className={styles.heroSubtitle + ' ' + styles.heroSubtitleMini}>
-          Благодійний фонд Перемоги та Відновлення
+          Благодійний фонд «Перемоги та Відновлення»
         </h3>
-        <div className={styles.contentContainer}>
-          <div className={styles.infoContainer}>
+        <div className={styles.heroContainer}>
+          <div className={styles.contentContainer}>
             <h3 className={styles.heroSubtitle + ' ' + styles.heroSubtitleMaxi}>
-              Благодійний фонд Перемоги та Відновлення
+              Благодійний фонд «Перемоги та Відновлення»
             </h3>
-            <div className={styles.statistics}>
-              <p className={styles.number}>2</p>
+            <div className={styles.currentProjects}>
+              <p className={styles.projectsNumber}>2</p>
               <svg className={styles.svgPluse}>
                 <use href="sprite.svg#icon-plus" />
               </svg>
-              <p className={styles.contentGroup}>
+              <p className={styles.projectsGroup}>
                 <span>поточних</span>{' '}
-                <span className={styles.contentGroupItem}>проектів</span>
+                <span className={styles.projectsGroupItem}>проектів</span>
               </p>
             </div>
-            <ul className={styles.socialList}>
-              {socialLinks.map(({ id, src, href }) => (
-                <li key={id}>
-                  <a href={href}>
-                    <svg className={styles.svgSocialLink}>
-                      <use href={`sprite.svg#${src}`} />
-                    </svg>
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <SocialLinks />
           </div>
           <div className={styles.imgContainer}>
             <Image
@@ -87,7 +56,11 @@ const HeroSection = () => {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 910px, 460px"
             />
             <div className={styles.btnContainer}>
-              <Button costumBtn={styles.costumBtn} />
+              <ButtonLink
+                costumBtn={styles.costumBtn}
+                href="/donate"
+                title="Підтримати"
+              />
             </div>
           </div>
         </div>
