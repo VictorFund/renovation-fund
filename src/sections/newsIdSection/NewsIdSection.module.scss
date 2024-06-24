@@ -60,9 +60,7 @@
     object-fit: cover;
 }
 
-.text {
-    // text-indent: 5em each-line;
-    // text-indent: 3%;
+.textWrapper {
     margin-bottom: 24px;
 
     @media screen and (min-width: $tablet) {
@@ -71,6 +69,23 @@
 
     @media screen and (min-width: $desktop) {
         margin-bottom: 40px;
+    }
+}
+
+.text {
+    // text-indent: 5em each-line;
+    text-indent: 3%;
+}
+
+.text:not(:last-child) {
+    margin-bottom: 8px;
+
+    @media screen and (min-width: $tablet) {
+        margin-bottom: 16px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 20px;
     }
 }
 
