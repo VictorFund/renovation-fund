@@ -6,16 +6,17 @@ import Link from "next/link";
 import React, { useContext } from "react";
 import styles from "./Logo.module.scss";
 
-const Logo = () => {
-  const { burgerMenu, setBurgermenu } = useContext(SiteContext);
+const Logo = ({ className, id }) => {
+  const { setBurgermenu } = useContext(SiteContext);
 
   return (
     <Link
       href="/"
-      className={styles.logoWrapp}
+      className={`${styles.logoWrapp} ${className}`}
       onClick={() => {
         setBurgermenu(false);
       }}
+      id={id}
     >
       <Image
         src="/images/Logo.webp"

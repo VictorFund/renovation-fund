@@ -83,11 +83,12 @@
   width: 60%;
   margin-left: auto;
   margin-right: 0;
-  // z-index: 10;
+
   @media screen and (min-width: $desktop) {
     width: fit-content;
   }
 }
+
 .navItemActive {
   height: fit-content;
   gap: 24px;
@@ -102,12 +103,6 @@
   z-index: 10;
   cursor: pointer;
   font-weight: 600;
-
-  // @media screen and (min-width: $laptop) {
-  //   padding-top: 4px;
-  //   height: 100%;
-  //   font-weight: 400;
-  // }
 }
 .arrow {
   width: 12px;
@@ -134,7 +129,7 @@
 
 .navLink {
   @media screen and (min-width: $desktop) {
-    padding: 16px 24px;
+    padding: 16px 0px;
     border-bottom: 1px solid $textColor;
     font-size: 20px;
   }
