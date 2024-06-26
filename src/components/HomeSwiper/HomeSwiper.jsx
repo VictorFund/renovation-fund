@@ -8,29 +8,41 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "./HomeSwiper.css";
 import Link from "next/link";
+import { useWindowResize } from "@/hooks/useWindowResize";
+import ButtonLink from "../Buttons/ButtonLink/ButtonLink";
 
 const HomeSwiper = ({ items }) => {
   // console.log(items);
-
+  const { isMobile } = useWindowResize();
   return (
     <Swiper
       spaceBetween={30}
-      navigation={true}
+      // navigation={true}
+      loop={true}
       modules={[Navigation]}
       className="homeSwiper"
     >
       {items.map((el) => {
         return (
           <SwiperSlide key={el.slug}>
-            <div className="wrapp" href={el.link}>
+            <div className="wrapp">
               <div className="txtWrapp">
-                <h3>{el.title}</h3>
-                <p>{el.createdAt}</p>
-                <p>{el.shortDescription}</p>
-                <div className="btnsBlock">
-                  <button>1</button>
-                  <button>2</button>
-                </div>
+                <h4 className="title">{el.title}</h4>
+                {isMobile && <p className="createdAt">{el.createdAt}</p>}
+                {!isMobile && (
+                  <>
+                    <p className="descr">{el.shortDescription}</p>
+
+                    <div className="btnsBlock">
+                      <ButtonLink
+                        id={el.slug}
+                        title="Детальніше"
+                        href={`projects/${el.slug}`}
+                      />
+                      <ButtonLink title="Задонатити" href="/donate" />
+                    </div>
+                  </>
+                )}
               </div>
               <div className="imgWrapp">
                 <Image
