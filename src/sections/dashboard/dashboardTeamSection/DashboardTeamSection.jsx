@@ -1,24 +1,23 @@
 "use client"
-import React from 'react'
-import { GetDataWithPathname } from '@/fetch/clientFetch';
 import DashboardCoworker from '@/components/dashboard/DashboardCoworker/DashboardCoworker';
 import DashboardCoworkerFormCreate from '@/components/dashboard/DashboardCoworkerFormCreate/DashboardCoworkerFormCreate';
 import Loader from '@/components/Loader/Loader';
+import { GetDataWithPathname } from '@/fetch/clientFetch';
+import styles from './DashboardTeamSection.module.scss'
 
 
 const DashboardTeamSection = () => {
-    const { data, isLoading } = GetDataWithPathname();
+    const { data, isLoading, mutate } = GetDataWithPathname();
     console.log('data', data)
 
     return (
         <section>
             {isLoading
                 ? <Loader />
-                : <>
-                    <h1>DashboardTeamSection</h1>
-                    {data.map(item => <DashboardCoworker key={item.slug} />)}
-                    <DashboardCoworkerFormCreate />
-                </>
+                : <div className={styles.container}>
+                    <div className={styles.cardsList}>{data.map(item => <DashboardCoworker key={item.slug} data={item} />)}</div>
+                    <DashboardCoworkerFormCreate mutate={mutate} />
+                </div>
             }
         </section>
     )

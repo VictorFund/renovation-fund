@@ -1,0 +1,26 @@
+@import "../../../app/variables";
+
+
+.card {
+    flex: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 16px;
+    border-radius: 32px;
+    background-color: $bodyColor;
+    box-shadow: 1px 1px 10px 0px $shadow;
+}
+
+.coworkerImgWrapper {
+    width: 414px;
+    height: 387px;
+    position: relative;
+    overflow: hidden;
+}
+
+.coworkerImg {
+    object-fit: cover;
+    object-position: top;
+}
