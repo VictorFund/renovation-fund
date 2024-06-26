@@ -1,0 +1,40 @@
+.homeSwiper {
+  height: 300px;
+  padding-bottom: 38px;
+}
+
+.homeSwiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+.homeSwiper .wrapp {
+  width: 300px;
+  height: 100%;
+  overflow: hidden;
+  overflow: auto;
+  border-radius: 32px;
+  box-shadow: 2px 2px 4px rgba(75, 75, 78, 0.502);
+
+  /* @media screen and (min-width: 1440px) {
+    border-radius: 50px;
+  } */
+}
+
+.homeSwiper .txtWrapp {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(170, 206, 231, 0.502);
+}
+
+.homeSwiper .imgWrapp {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.homeSwiper .imgWrapp .img {
+  object-fit: cover;
+}
+
+/* .swiper-slide .wrapp  */
