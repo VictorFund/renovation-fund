@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { usePathname } from "next/navigation";
 import LogoutBtn from '../LogoutBtn/LogoutBtn';
 import { dashboardPages } from '@/data/dashboardPages';
-import styles from '../DashboardComponents.module.scss';
+import styles from './DashboardNavigation.module.scss';
 
 
 const DashboardNavigation = ({ handleLogout, session }) => {
@@ -15,7 +15,7 @@ const DashboardNavigation = ({ handleLogout, session }) => {
 
 
     return (
-        <div className={styles.navigationContainer}>
+        <div className={`container ${styles.navigationContainer}`}>
 
             {session?.user.email === process.env.NEXT_PUBLIC_OWNER && ((ownerPages.map((item) => {
                 return (<Link key={item.title} className={pathName === item.path ? `${styles.pageLink} ${styles.active}` : `${styles.pageLink}`} href={item.path}>{item.title}</Link>)

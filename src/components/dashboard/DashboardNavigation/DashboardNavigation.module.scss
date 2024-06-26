@@ -1,0 +1,54 @@
+@import "../../../app/variables";
+
+
+.navigationContainer {
+    display: none;
+
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 50px;
+    }
+}
+
+.navigationContainer .pageLink {
+    // font-family: var(--font-noto-sans);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.6;
+    color: ffffff;
+
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        // background-image: $gradient;
+        bottom: 0;
+        left: 0;
+    }
+
+    &:hover,
+    &:focus {
+        &::after {
+            animation: animate 0.5s linear forwards;
+        }
+    }
+}
+
+@keyframes animate {
+    to {
+        width: 100%;
+    }
+}
+
+.navigationContainer .active {
+    &::after {
+        width: 100%;
+    }
+}
