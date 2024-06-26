@@ -16,35 +16,143 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 58px;
+  margin-bottom: 24px;
   @media screen and (min-width: $tablet) {
+    margin-bottom: 32px;
   }
 
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: $laptop) {
+    margin-bottom: 58px;
     align-items: center;
     flex-direction: row;
   }
 }
 
-.btn {
+.accordionTitleContainer {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  width: 100%;
+  padding-bottom: 8px;
+
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid $accentColor;
+  outline: none;
+  cursor: pointer;
+  @media screen and (min-width: $tablet) {
+    width: 60%;
+  }
+  @media screen and (min-width: $laptop) {
+    display: none;
+  }
+}
+
+.titleAccordion {
   font-family: var(--montserrat);
-  font-weight: 400;
-  font-size: 40px;
+  font-weight: 500;
+  font-size: 16px;
+  color: $accentColor;
+  @media screen and (min-width: $tablet) {
+    font-size: 24px;
+  }
+}
+
+.arrow {
+  width: 14px;
+  height: 9px;
+}
+
+.activeArrow {
+  transform: rotate(180deg);
+}
+
+.accordionBtnContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  row-gap: 16px;
+  @media screen and (min-width: $tablet) {
+    width: 60%;
+    row-gap: 24px;
+  }
+}
+
+.accordionOpen {
+  height: 119px;
+  opacity: 1;
+  @media screen and (min-width: $tablet) {
+    height: 150px;
+  }
+}
+
+.accordionClose {
+  height: 0;
+  opacity: 0;
+}
+
+.accordionBtnItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  width: 100%;
+
+  font-family: var(--montserrat);
+  font-weight: 500;
+  font-size: 16px;
   color: $textColor;
   background-color: transparent;
   border: none;
+  // border-bottom: 2px solid $textColor;
   outline: none;
   cursor: pointer;
   &:hover,
   &:focus {
     color: $accentColor;
+    & .checkin {
+      stroke: $accentColor;
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    font-size: 24px;
+  }
+}
+
+.checkin {
+  width: 14px;
+  height: 10px;
+  stroke: $textColor;
+  fill: transparent;
+}
+
+.btn {
+  display: none;
+  @media screen and (min-width: $laptop) {
+    display: block;
+    position: relative;
+    font-family: var(--montserrat);
+    font-weight: 400;
+    color: $textColor;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      color: $accentColor;
+    }
+    font-size: 28px;
   }
 }
 
 .active {
   color: $accentColor;
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: $laptop) {
     &::after {
       content: '';
       display: block;

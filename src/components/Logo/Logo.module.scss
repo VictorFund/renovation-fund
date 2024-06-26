@@ -1,6 +1,7 @@
 @import "../../app/variables";
 
 .logoWrapp {
+  display: inline-block;
   width: 148px;
   height: 48px;
   position: relative;
@@ -13,9 +14,4 @@
     width: 282px;
     height: 60px;
   }
-
-  // @media screen and (min-width: $desktop) {
-  //   width: 282px;
-  //   height: 60px;
-  // }
 }
