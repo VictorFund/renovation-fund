@@ -183,35 +183,14 @@
   text-align: end;
 }
 
-// .socialList {
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-// }
-
-// .svgSocialLink {
-//   width: 40px;
-//   height: 40px;
-//   fill: #fafaff;
-//   background-color: #a4a4a6;
-//   border: 1px solid #a4a4a6;
-//   border-radius: 50%;
-// }
-
 .imgContainer {
   position: relative;
   width: 100%;
   height: 144px;
-  // height: 250px;
-  // display: flex;
-  // justify-content: center;
-  // margin-bottom: 33px;
   & img {
-    // padding-bottom: 64px;
     object-fit: inherit;
   }
   @media screen and (min-width: $mobile) {
-    // height: 290px;
     height: 190px;
   }
 
@@ -220,7 +199,6 @@
     height: 242px;
     & img {
       object-fit: contain;
-      // padding-bottom: 0px;
     }
   }
 
@@ -240,14 +218,11 @@
   right: 0px;
 
   bottom: 0;
-  // width: 100%;
   @media screen and (min-width: $mobile) {
-    // width: max-content;
     right: 12px;
     bottom: 8px;
   }
   @media screen and (min-width: $tablet) {
-    // width: max-content;
     right: 0px;
     bottom: 5px;
   }
@@ -259,11 +234,3 @@
     right: 0px;
   }
 }
-
-// .costumBtn {
-//   @media screen and (min-width: $laptop) {
-//     // width: max-content;
-//     // justify-content: center;
-//     // column-gap: 40px;
-//   }
-// }
