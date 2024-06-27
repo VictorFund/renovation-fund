@@ -31,7 +31,7 @@ const HomeProjectsSection = () => {
             <use href="sprite.svg#icon-vector"></use>
           </svg>
         </div> */}
-        <HomeSwiper items={data} />
+        <HomeSwiper items={data} dataName="projects" />
       </div>
     </section>
   );
