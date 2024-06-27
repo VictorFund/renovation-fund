@@ -12,7 +12,7 @@ const ProjectItem = ({ slug, title, image, shortDescription }) => {
       <div className={styles.contentProject}>
         <h4 className={styles.projectTitle}>{title}</h4>
         <p className={styles.projectDesc}>{shortDescription}</p>
-        <Link href={`/project/${slug}`} className={styles.btn}>
+        <Link href={`/projects/${slug}`} className={styles.btn}>
           Підтримати
         </Link>
       </div>

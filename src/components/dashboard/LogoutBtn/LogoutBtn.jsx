@@ -1,4 +1,4 @@
-import styles from "../DashboardComponents.module.scss";
+import styles from "./LogoutBtn.module.scss";
 
 
 const LogoutBtn = ({ handleLogout }) => {
