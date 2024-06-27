@@ -1,15 +1,15 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "./HomeSwiper.css";
 import Link from "next/link";
 import { useWindowResize } from "@/hooks/useWindowResize";
 import ButtonLink from "../Buttons/ButtonLink/ButtonLink";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "./homeSwiper.css";
 
 const HomeSwiper = ({ items }) => {
   // console.log(items);
