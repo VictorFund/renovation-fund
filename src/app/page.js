@@ -7,10 +7,10 @@ import HomeProjectsSection from "@/sections/homeProjectsSection/HomeProjectsSect
 export default function Home() {
   return (
     <>
-      {/* <HeroSection /> */}
+      <HeroSection />
       <HomeAboutFundSection />
       <HomeProjectsSection />
-      {/* <HomePartnersSection /> */}
+      <HomePartnersSection />
       <HomeNewsSection />
     </>
   );
