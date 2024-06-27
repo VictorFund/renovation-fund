@@ -1,6 +1,7 @@
 import React from "react";
 import BurgerBtn from "../Buttons/BurgerBtn/BurgerBtn";
-import LinkBtn from "../Buttons/LinkBtn/LinkBtn";
+import ButtonLink from "../Buttons/ButtonLink/ButtonLink";
+
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
 import Logo from "../Logo/Logo";
 import NavigationHeader from "../NavigationHeader/NavigationHeader";
@@ -14,7 +15,8 @@ const Header = () => {
         <NavigationHeader />
         <LangSwitcher className={styles.LangSwitcher} />
         <BurgerBtn />
-        <LinkBtn id={styles.supportBtn} href="/donate" title="Підтримати" />
+
+        <ButtonLink id={styles.supportBtn} href="/donate" title="Підтримати" />
       </div>
     </header>
   );

@@ -1,15 +1,18 @@
-// "use client"
+import TitleLink from "@/components/Buttons/TitleLink/TitleLink";
+import HomeSwiper from "@/components/HomeSwiper/HomeSwiper";
+import { getData } from "@/fetch/serverFetch";
 import React from "react";
-// import { GetDataForHomeByCollection } from "@/fetch/clientFetch";
+
+const data = await getData("news");
+// console.log("data", data);
 
 const HomeNewsSection = () => {
-  // const { data } = GetDataForHomeByCollection('news');
-  // console.log('newsData', data)
-
   return (
     <section>
       <div className="container">
-        <h2 className="homeSectionTitle"> HomeNews Section</h2>
+        <TitleLink href="/news" title="Новини" />
+
+        <HomeSwiper items={data} />
       </div>
     </section>
   );

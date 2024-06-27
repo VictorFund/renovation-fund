@@ -1,0 +1,33 @@
+@import "../../../app/variables";
+
+.link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  max-width: 400px;
+
+  @media screen and (min-width: $tablet) {
+    width: fit-content;
+    margin: 0;
+  }
+}
+
+.icon {
+  fill: $textColor;
+  width: 24px;
+  height: 24px;
+  margin-left: 40px;
+  @media screen and (min-width: $tablet) {
+    width: 36px;
+    height: 36px;
+  }
+
+  @media screen and (min-width: $laptop) {
+    width: 42px;
+    height: 42px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 48px;
+    height: 48px;
+  }
+}

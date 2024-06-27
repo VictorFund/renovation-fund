@@ -1,9 +1,17 @@
 .homeSwiper {
-  height: 380px;
+  /* height: 380px; */
   font-family: var(--montserrat);
   font-weight: 400;
   margin-left: -20px;
   margin-right: -20px;
+  padding-bottom: 40px;
+
+  /* @media screen and (min-width: 768px) {
+    height: 352px;
+  }
+  @media screen and (min-width: 1440px) {
+    height: 617px;
+  } */
 }
 
 .homeSwiper .swiper-slide {
@@ -15,8 +23,9 @@
 .homeSwiper .wrapp {
   /* width: 280px; */
   width: 100%;
-  max-width: 400px;
-  height: 340px;
+  aspect-ratio: 1280 / 537;
+  /* max-width: 400px; */
+  /* height: 340px; */
   border-radius: 32px;
   box-shadow: 2px 2px 4px rgba(75, 75, 78, 0.502);
   overflow: hidden;
@@ -31,6 +40,14 @@
     flex-direction: row-reverse;
     gap: 40px;
     border-radius: 50px;
+    max-width: none;
+    width: 100%;
+    padding: 32px 24px;
+    /* height: 312px; */
+  }
+  @media screen and (min-width: 1440px) {
+    gap: 54px;
+    /* height: 537px; */
   }
 }
 
@@ -38,12 +55,27 @@
   padding-bottom: 16px;
   border-bottom: 1px solid rgba(170, 206, 231, 0.502);
   width: 100%;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    border-bottom: none;
+  }
 }
 .homeSwiper .txtWrapp .title {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.2;
   margin-bottom: 8px;
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+  }
+  @media screen and (min-width: 1440px) {
+    font-size: 40px;
+  }
 }
 .homeSwiper .txtWrapp .createdAt {
   font-weight: 300;
@@ -52,6 +84,13 @@
 .homeSwiper .txtWrapp .descr {
   font-weight: 500;
 }
+.homeSwiper .btnsBlock {
+  display: flex;
+  justify-content: space-between;
+}
+.homeSwiper .btnsBlock a {
+  background-color: aqua;
+}
 
 .homeSwiper .imgWrapp {
   width: 100%;
@@ -59,6 +98,12 @@
   overflow: hidden;
   position: relative;
   border-radius: 24px;
+
+  @media screen and (min-width: 768px) {
+    height: 100%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    flex: 1;
+  }
 }
 
 .homeSwiper .imgWrapp .img {

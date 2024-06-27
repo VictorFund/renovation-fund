@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import React, { useMemo, useState } from 'react';
-import styles from './ProjectsSection.module.scss';
-import { GetDataWithPathname } from '@/fetch/clientFetch';
-import ProjectItem from '@/components/ProjectItem/ProjectItem';
-import { projectsCategories } from '@/data/projectsCategories.data';
+import React, { useMemo, useState } from "react";
+import styles from "./ProjectsSection.module.scss";
+import { GetDataWithPathname } from "@/fetch/clientFetch";
+import ProjectItem from "@/components/ProjectItem/ProjectItem";
+import { projectsCategories } from "@/data/projectsCategories.data";
 
 export const ProjectsSection = () => {
-  const [activeTab, setActiveTab] = useState('');
+  const [activeTab, setActiveTab] = useState("");
   const [activeAccordion, setActiveAccordion] = useState(false);
   const { data } = GetDataWithPathname();
   // console.log('data', data);
@@ -38,7 +38,7 @@ export const ProjectsSection = () => {
             onClick={() => setActiveAccordion((prevState) => !prevState)}
           >
             <p className={styles.titleAccordion}>
-              {currentTab ? currentTab.title : 'Виберіть проєкт'}
+              {currentTab ? currentTab.title : "Виберіть проєкт"}
             </p>
             <svg
               className={`${styles.arrow} ${
@@ -83,7 +83,7 @@ export const ProjectsSection = () => {
               type="button"
               className={
                 activeTab === stateTitle
-                  ? styles.btn + ' ' + styles.active
+                  ? styles.btn + " " + styles.active
                   : styles.btn
               }
               onClick={() => handleTabClick(stateTitle)}

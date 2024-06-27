@@ -10,6 +10,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "./homeSwiper.css";
+import { CldImage } from "next-cloudinary";
 
 const HomeSwiper = ({ items }) => {
   // console.log(items);
@@ -35,7 +36,6 @@ const HomeSwiper = ({ items }) => {
 
                     <div className="btnsBlock">
                       <ButtonLink
-                        id={el.slug}
                         title="Детальніше"
                         href={`projects/${el.slug}`}
                       />
@@ -45,7 +45,7 @@ const HomeSwiper = ({ items }) => {
                 )}
               </div>
               <div className="imgWrapp">
-                <Image
+                <CldImage
                   className="img"
                   src={el.image}
                   alt={el.title}
