@@ -113,11 +113,16 @@
   gap: 40px;
 
   & svg {
-    background-color: $bodyColor;
     background-color: $textColor;
     border: none;
     width: 24px;
     height: 24px;
+    &:hover {
+      background-color: $bodyColor;
+      fill: $textColor;
+      border: 1px solid $accentColor;
+      scale: 1.2;
+    }
   }
   @media screen and (min-width: $tablet) {
     gap: 16px;
