@@ -1,25 +1,32 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { useWindowResize } from "@/hooks/useWindowResize";
 import ButtonLink from "../Buttons/ButtonLink/ButtonLink";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Keyboard, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "./homeSwiper.css";
+import { CldImage } from "next-cloudinary";
 
-const HomeSwiper = ({ items }) => {
-  // console.log(items);
+const HomeSwiper = ({ items, dataName, btnClassName }) => {
   const { isMobile } = useWindowResize();
   return (
     <Swiper
       spaceBetween={30}
-      // navigation={true}
+      navigation={true}
       loop={true}
-      modules={[Navigation]}
+      keyboard={{
+        enabled: true,
+        onlyInViewport: true,
+      }}
+      speed={3000}
+      autoplay={{
+        delay: 2500,
+        pauseOnMouseEnter: true,
+      }}
+      modules={[Navigation, Keyboard, Autoplay]}
       className="homeSwiper"
     >
       {items.map((el) => {
@@ -35,17 +42,19 @@ const HomeSwiper = ({ items }) => {
 
                     <div className="btnsBlock">
                       <ButtonLink
-                        id={el.slug}
                         title="Детальніше"
-                        href={`projects/${el.slug}`}
+                        href={`${dataName}/${el.slug}`}
+                        costumBtn={btnClassName === true ? `leftMarging` : ""}
                       />
-                      <ButtonLink title="Задонатити" href="/donate" />
+                      {dataName === "projects" && (
+                        <ButtonLink title="Підтримати" href="/donate" />
+                      )}
                     </div>
                   </>
                 )}
               </div>
               <div className="imgWrapp">
-                <Image
+                <CldImage
                   className="img"
                   src={el.image}
                   alt={el.title}
