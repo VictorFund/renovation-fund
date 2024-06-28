@@ -3,7 +3,7 @@ import DashboardCoworker from '@/components/dashboard/DashboardCoworker/Dashboar
 import DashboardCoworkerFormUpdate from '@/components/dashboard/DashboardCoworkerFormUpdate/DashboardCoworkerFormUpdate';
 import Loader from '@/components/Loader/Loader';
 import { GetDataWithPathname } from '@/fetch/clientFetch';
-import styles from './DashboardTeamIdSection.module.scss'
+import styles from '../DashboardSections.module.scss'
 
 
 const DashboardTeamIdSection = () => {

@@ -6,8 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { dashboardCoworkerCreateSchema } from "@/yupSchemas/dashboardCoworkerCreateSchema";
 import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudinary";
 import { getDashboardSession } from "@/utils/getDashboardSession";
-import styles from './DashboardCoworkerFormCreate.module.scss'
-import { boolean } from "yup";
+import styles from '../DashboardComponents.module.scss'
 
 
 const DashboardCoworkerFormCreate = ({ mutate }) => {
@@ -54,14 +53,14 @@ const DashboardCoworkerFormCreate = ({ mutate }) => {
     }, [isSubmitSuccessful, reset]);
 
     return (
-        <div className={styles.formContainer}>
+        <div className={styles.dataFormContainer}>
             <form
                 onSubmit={handleSubmit(onSubmit)}
-                className={styles.form}
+                className={styles.dataForm}
                 noValidate
             >
                 <h3 className={styles.formTitle}>
-                    Створення картки нового співробітника
+                    Створення картки співробітника
                 </h3>
 
                 <div className={styles.inputGroup}>
@@ -130,7 +129,7 @@ const DashboardCoworkerFormCreate = ({ mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <input
+                    <textarea
                         type='text'
                         className={styles.formInput}
                         id='description'
@@ -144,7 +143,7 @@ const DashboardCoworkerFormCreate = ({ mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <input
+                    <textarea
                         type='text'
                         className={styles.formInput}
                         id='descriptionEn'
@@ -176,7 +175,7 @@ const DashboardCoworkerFormCreate = ({ mutate }) => {
                     className={styles.formButton}
                     disabled={isErrors || isSubmitting}
                 >
-                    Створити
+                    Зберегти інформацію
                 </button>
             </form>
         </div>

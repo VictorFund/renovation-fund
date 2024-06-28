@@ -1,25 +1,28 @@
+
 import * as yup from "yup";
 
 
-export const dashboardCoworkerCreateSchema = yup.object({
-    slug: yup
+export const dashboardNewsUpdateSchema = yup.object({
+    newSlug: yup
         .string()
         .required("Slug - обов’язкове поле"),
-    name: yup
+    newTitle: yup
         .string()
-        .required("Ім’я - обов’язкове поле"),
-    nameEn: yup
+        .required("Заголовок - обов’язкове поле"),
+    newTitleEn: yup
         .string()
-        .required("Ім’я англійською - обов’язкове поле"),
-    photo: yup
+        .required("Заголовок англійською - обов’язкове поле"),
+    newImage: yup
         .string()
         .required("Фото - обов’язкове поле"),
-    description: yup
+    newDescription: yup
         .string()
         .required("Опис - обов’язкове поле"),
-    descriptionEn: yup
+    newDescriptionEn: yup
         .string()
         .required("Опис англійською - обов’язкове поле"),
-    isApproved: yup
+    newLink: yup
+        .string(),
+    newIsApproved: yup
         .boolean()
 });

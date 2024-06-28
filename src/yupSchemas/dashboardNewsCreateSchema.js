@@ -1,17 +1,17 @@
 import * as yup from "yup";
 
 
-export const dashboardCoworkerCreateSchema = yup.object({
+export const dashboardNewsCreateSchema = yup.object({
     slug: yup
         .string()
         .required("Slug - обов’язкове поле"),
-    name: yup
+    title: yup
         .string()
-        .required("Ім’я - обов’язкове поле"),
-    nameEn: yup
+        .required("Заголовок - обов’язкове поле"),
+    titleEn: yup
         .string()
-        .required("Ім’я англійською - обов’язкове поле"),
-    photo: yup
+        .required("Заголовок англійською - обов’язкове поле"),
+    image: yup
         .string()
         .required("Фото - обов’язкове поле"),
     description: yup
@@ -20,6 +20,8 @@ export const dashboardCoworkerCreateSchema = yup.object({
     descriptionEn: yup
         .string()
         .required("Опис англійською - обов’язкове поле"),
+    link: yup
+        .string(),
     isApproved: yup
         .boolean()
 });
