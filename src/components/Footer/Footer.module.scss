@@ -16,6 +16,11 @@
     font-style: normal;
   }
 
+  & a:hover {
+    color: $hoverBtnColor;
+    text-shadow: 0px 0px 2px rgba(255, 94, 0, 0.5);
+  }
+
   & h3 {
     font-style: normal;
     font-size: 32px;
@@ -51,11 +56,6 @@
   align-items: center;
   gap: 32px;
 
-  & a:hover {
-    color: $accentColor;
-    filter: brightness(1.1);
-  }
-
   @media screen and (min-width: $tablet) {
     flex-direction: row;
     justify-content: space-between;
@@ -64,9 +64,10 @@
 }
 
 .blockWrapp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   @media screen and (min-width: $tablet) {
-    display: flex;
-    flex-direction: column;
     flex: 1;
     align-items: flex-start;
 
@@ -113,17 +114,24 @@
   gap: 40px;
 
   & svg {
-    background-color: $bodyColor;
     background-color: $textColor;
     border: none;
     width: 24px;
     height: 24px;
+    &:focus,
+    &:hover {
+      background-color: $bodyColor;
+      fill: $textColor;
+      border: 1px solid $hoverBtnColor;
+      scale: 1.2;
+    }
   }
   @media screen and (min-width: $tablet) {
     gap: 16px;
   }
   @media screen and (min-width: $desktop) {
     width: 100%;
+    max-width: 176px;
     & svg {
       width: 32px;
       height: 32px;
@@ -143,6 +151,7 @@
 
 .tabletNavLink {
   display: none;
+
   @media screen and (min-width: $tablet) {
     display: inline-block;
   }
@@ -158,11 +167,6 @@
 
   & a {
     color: $accentColor;
-    &:hover {
-      filter: brightness(1.1);
-      text-shadow: 1px 1px 24px rgba(255, 255, 255, 0.4);
-      font-weight: 600;
-    }
   }
 
   @media screen and (min-width: $tablet) {
