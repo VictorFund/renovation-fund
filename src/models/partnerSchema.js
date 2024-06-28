@@ -20,18 +20,6 @@ const partnerSchema = new mongoose.Schema(
             type: Boolean,
             default: false,
         },
-        // image: {
-        //     type: String,
-        //     required: true,
-        // },
-        // description: {
-        //     type: String,
-        //     required: true,
-        // },
-        // descriptionEn: {
-        //     type: String,
-        //     required: true,
-        // },
         logo: {
             type: String, // if logo isn't exist - show default logo (in frontend)
             // required: true,

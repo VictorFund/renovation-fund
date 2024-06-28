@@ -1,13 +1,14 @@
 "usr client"
 import { CldImage } from 'next-cloudinary'
-import styles from './DashboardCoworker.module.scss'
+import styles from '../DashboardComponents.module.scss'
 
 
 const DashboardCoworker = ({ data }) => {
 
 
     return (
-        <div className={styles.card}>
+        <div className={styles.itemCard}>
+            <p>Показувати на сайті?  {data.isApproved ? "Так" : "Ні"}</p>
             <p>{data.slug}</p>
             <p>{data.name}</p>
             <p>{data.nameEn}</p>
@@ -22,7 +23,6 @@ const DashboardCoworker = ({ data }) => {
                     alt={`Photo of ${data.nameEn}`}
                 />
             </div>
-            <p>Показувати на сайті?  {data.isApproved ? "Так" : "Ні"}</p>
         </div>
     )
 }

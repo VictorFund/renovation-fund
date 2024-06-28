@@ -1,5 +1,6 @@
 @import "../../app/variables";
 
+// FORMS
 
 .authForm {
     display: flex;
@@ -41,3 +42,79 @@
     font-size: 20px;
     color: #d50000;
 }
+
+.dataFormContainer {
+    flex: 1;
+}
+
+.dataForm {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    border-radius: 32px;
+    background-color: $bodyColor;
+    box-shadow: 1px 1px 10px 0px $shadow;
+}
+
+// ITEMS
+
+.itemCard {
+    flex: 1;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    border-radius: 32px;
+    background-color: $bodyColor;
+    box-shadow: 1px 1px 10px 0px $shadow;
+}
+
+// COWORKER
+
+.coworkerImgWrapper {
+    width: 414px;
+    height: 387px;
+    position: relative;
+    overflow: hidden;
+}
+
+.coworkerImg {
+    object-fit: cover;
+    object-position: top;
+}
+
+// NEWS
+
+.newsImgWrapper {
+    width: 414px;
+    height: 387px;
+    position: relative;
+    overflow: hidden;
+}
+
+.newsImg {
+    object-fit: cover;
+}
+
+.newsDescriptionWrapper p:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+// PARTNERSHIP
+
+.partnershipImgWrapper {
+    width: 414px;
+    height: 387px;
+    position: relative;
+    overflow: hidden;
+}
+
+.partnershipImg {
+    object-fit: cover;
+}
+
+// PROJECT
+
+
+// USER

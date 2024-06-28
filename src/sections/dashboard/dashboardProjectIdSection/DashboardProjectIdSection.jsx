@@ -1,24 +1,23 @@
 "use client"
-import React from 'react'
-import { GetDataWithPathname } from '@/fetch/clientFetch';
 import DashboardProjectItem from '@/components/dashboard/DashboardProjectItem/DashboardProjectItem';
 import DashboardProjectFormUpdate from '@/components/dashboard/DashboardProjectFormUpdate/DashboardProjectFormUpdate';
 import Loader from '@/components/Loader/Loader';
+import { GetDataWithPathname } from '@/fetch/clientFetch';
+import styles from '../DashboardSections.module.scss'
 
 
 const DashboardProjectIdSection = () => {
-    const { data, isLoading } = GetDataWithPathname();
+    const { data, isLoading, mutate } = GetDataWithPathname();
     console.log('data', data)
 
     return (
         <section>
             {isLoading
                 ? <Loader />
-                : <>
-                    <h1>DashboardProjectId Section</h1>
-                    <DashboardProjectItem />
-                    <DashboardProjectFormUpdate />
-                </>
+                : <div className={styles.container}>
+                    <DashboardProjectItem data={data} isLoading={isLoading} />
+                    <DashboardProjectFormUpdate data={data} mutate={mutate} />
+                </div>
             }
         </section>
     )

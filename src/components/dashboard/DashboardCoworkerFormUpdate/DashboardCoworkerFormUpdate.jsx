@@ -7,7 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { dashboardCoworkerUpdateSchema } from "@/yupSchemas/dashboardCoworkerUpdateSchema";
 import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudinary";
 import { getDashboardSession } from "@/utils/getDashboardSession";
-import styles from "./DashboardCoworkerFormUpdate.module.scss";
+import styles from "../DashboardComponents.module.scss";
 
 
 const DashboardCoworkerFormUpdate = ({ data, mutate }) => {
@@ -81,10 +81,10 @@ const DashboardCoworkerFormUpdate = ({ data, mutate }) => {
     }, [isSubmitSuccessful, reset]);
 
     return (
-        <div className={styles.formContainer}>
+        <div className={styles.dataFormContainer}>
             <form
                 onSubmit={handleSubmit(onSubmit)}
-                className={styles.form}
+                className={styles.dataForm}
                 noValidate
             >
                 <h3 className={styles.formTitle}>Редагування картки співробітника</h3>
@@ -148,30 +148,14 @@ const DashboardCoworkerFormUpdate = ({ data, mutate }) => {
                         options={{ multiple: false }}
                         uploadPreset='unsigned_preset'
                     >
-                        Update photo (WEBP)
+                        Оновити фото (WEBP)
                     </CldUploadButton>
 
-                    <p className={styles.error}>{errors.photo?.message}</p>
+                    <p className={styles.error}>{errors.newPhoto?.message}</p>
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <input
-                        type='text'
-                        className={styles.formInput}
-                        id='newDescriptionEn'
-                        placeholder=' '
-                        {...register("newDescriptionEn")}
-                    />
-                    <label htmlFor='newDescriptionEn' className={styles.formLabel}>
-                        New DescriptionEn
-                    </label>
-                    <p className={styles.error}>
-                        {errors.newDescriptionEn?.message}
-                    </p>
-                </div>
-
-                <div className={styles.inputGroup}>
-                    <input
+                    <textarea
                         type='text'
                         className={styles.formInput}
                         id='newDescription'
@@ -183,6 +167,22 @@ const DashboardCoworkerFormUpdate = ({ data, mutate }) => {
                     </label>
                     <p className={styles.error}>
                         {errors.newDescription?.message}
+                    </p>
+                </div>
+
+                <div className={styles.inputGroup}>
+                    <textarea
+                        type='text'
+                        className={styles.formInput}
+                        id='newDescriptionEn'
+                        placeholder=' '
+                        {...register("newDescriptionEn")}
+                    />
+                    <label htmlFor='newDescriptionEn' className={styles.formLabel}>
+                        New DescriptionEn
+                    </label>
+                    <p className={styles.error}>
+                        {errors.newDescriptionEn?.message}
                     </p>
                 </div>
 
@@ -204,7 +204,7 @@ const DashboardCoworkerFormUpdate = ({ data, mutate }) => {
                     type='submit'
                     className={styles.formButton}
                     disabled={isErrors || isSubmitting}
-                >Оновити</button>
+                >Оновити інформацію</button>
             </form>
         </div>
     );
