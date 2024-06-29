@@ -1,11 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { useState, useEffect } from "react";
+import { useForm, useController } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { feedbackFormSchema } from "@/yupSchemas/feedbackFormShema";
+import Checkboxes from "./Checkboxes";
+import { socialLinks } from "@/data";
 
-import styles from "./formStyles.module.scss";
+import styles from "./FormStyles.module.scss";
 
 const FeedbackForm = () => {
     const initialValues = {
@@ -15,35 +17,50 @@ const FeedbackForm = () => {
             email: "",
             theme: "",
             comment: "",
-            calback: "",
+            calback: [],
+            // controlled: [],
         },
         resolver: yupResolver(feedbackFormSchema),
         mode: "onChange",
     };
 
     const form = useForm(initialValues);
-    const { register, handleSubmit, formState, reset } = form;
-    const { errors, isSubmitSuccessful, isErrors, isSubmitting, dirtyFields } =
-        formState;
+    const { register, handleSubmit, formState, reset, control } = form;
+    const { errors, isSubmitSuccessful, isValid, isSubmitting } = formState;
+
+    const { field } = useController({
+        control,
+        name: "calback",
+    });
+
+    const [value, setValue] = useState(field.value || []);
+
+    // const calbackVar = register("calback");
+    // console.log("calback:", getValues("calback"));
+    // console.log("isViber::", getValues("calback").includes("Viber"));
+    // console.log("isValid:", isValid);
 
     useEffect(() => {
         if (isSubmitSuccessful) {
             reset();
+            setValue([]);
         }
     }, [isSubmitSuccessful, reset]);
 
     const onSubmit = (data) => {
-        console.log("data", data);
+        console.log("feedbackFormData:", data);
     };
     return (
         <div>
-            <h2>Зв’яжись з нами</h2>
             <form
                 onSubmit={handleSubmit(onSubmit)}
                 className={styles.form}
                 noValidate
             >
                 <div className={styles.inputWrap}>
+                    <svg className={styles.iconMark}>
+                        <use href='/sprite.svg#snowflake'></use>
+                    </svg>
                     <p className={styles.error}>{errors.name?.message}</p>
 
                     <input
@@ -52,10 +69,17 @@ const FeedbackForm = () => {
                         placeholder='Ім’я'
                         maxLength='30'
                         autoComplete='off'
-                        className={styles.input}
+                        className={
+                            errors.name
+                                ? `${styles.input} ${styles.errorInput}`
+                                : styles.input
+                        }
                     />
                 </div>
                 <div className={styles.inputWrap}>
+                    <svg className={styles.iconMark}>
+                        <use href='/sprite.svg#snowflake'></use>
+                    </svg>
                     <p className={styles.error}>{errors.tel?.message}</p>
 
                     <input
@@ -64,10 +88,17 @@ const FeedbackForm = () => {
                         placeholder='Номер телефона'
                         maxLength='13'
                         autoComplete='off'
-                        className={styles.input}
+                        className={
+                            errors.tel
+                                ? `${styles.input} ${styles.errorInput}`
+                                : styles.input
+                        }
                     />
                 </div>
                 <div className={styles.inputWrap}>
+                    <svg className={styles.iconMark}>
+                        <use href='/sprite.svg#snowflake'></use>
+                    </svg>
                     <p className={styles.error}>{errors.email?.message}</p>
 
                     <input
@@ -75,10 +106,17 @@ const FeedbackForm = () => {
                         {...register("email")}
                         placeholder='Адреса електронної пошти'
                         autoComplete='off'
-                        className={styles.input}
+                        className={
+                            errors.email
+                                ? `${styles.input} ${styles.errorInput}`
+                                : styles.input
+                        }
                     />
                 </div>
                 <div className={styles.inputWrap}>
+                    <svg className={styles.iconMark}>
+                        <use href='/sprite.svg#snowflake'></use>
+                    </svg>
                     <p className={styles.error}>{errors.theme?.message}</p>
 
                     <input
@@ -86,7 +124,11 @@ const FeedbackForm = () => {
                         {...register("theme")}
                         placeholder='Тема'
                         autoComplete='off'
-                        className={styles.input}
+                        className={
+                            errors.theme
+                                ? `${styles.input} ${styles.errorInput}`
+                                : styles.input
+                        }
                     />
                 </div>
                 <div className={`${styles.inputWrap} ${styles.textareaWrap}`}>
@@ -99,84 +141,32 @@ const FeedbackForm = () => {
                         {...register("comment")}
                     />
                 </div>
-                <div className={`${styles.inputWrap} ${styles.radioWrap}`}>
-                    <p className={styles.error}>{errors.calback?.message}</p>
-                    <span>
-                        <label htmlFor='telegram'>
-                            <svg className={styles.socSvg}>
-                                <use
-                                    href='/sprite.svg#icon-telegram'
-                                    className={styles.socIcon}
-                                ></use>
-                            </svg>
-                        </label>
-                        <input
-                            type='radio'
-                            id='telegram'
-                            {...register("calback")}
-                            value='Telegram'
-                            className={styles.inputRadio}
-                        />
-                    </span>
 
-                    <span>
-                        <label htmlFor='whatsApp'>
-                            <svg className={styles.socSvg}>
-                                <use
-                                    href='/sprite.svg#icon-WhatsApp'
-                                    className={styles.socIcon}
-                                ></use>
-                            </svg>
-                        </label>
-                        <input
-                            id='whatsApp'
-                            type='radio'
-                            {...register("calback")}
-                            value='WhatsApp'
-                            className={styles.inputRadio}
-                        />
-                    </span>
-
-                    <span>
-                        <label htmlFor='messenger'>
-                            <svg className={styles.socSvg}>
-                                <use
-                                    href='/sprite.svg#icon-messager'
-                                    className={styles.socIcon}
-                                ></use>
-                            </svg>
-                        </label>
-                        <input
-                            type='radio'
-                            {...register("calback")}
-                            id='messenger'
-                            value='Messenger'
-                            className={styles.inputRadio}
-                        />
-                    </span>
-
-                    <span>
-                        <label htmlFor='viber'>
-                            <svg className={styles.socSvg}>
-                                <use
-                                    href='/sprite.svg#icon-viber'
-                                    className={styles.socIcon}
-                                ></use>
-                            </svg>
-                        </label>
-                        <input
-                            type='radio'
-                            {...register("calback")}
-                            id='viber'
-                            value='Viber'
-                            className={styles.inputRadio}
-                        />
-                    </span>
+                <div
+                    className={`${styles.inputWrap} ${styles.inputCheckboxWrap}`}
+                >
+                    <p className={`${styles.error} ${styles.errorCheckbox}`}>
+                        {errors.calback?.message}
+                    </p>
+                    <p className={styles.checkboxTitle}>
+                        Оберіть мессенджер для зв’язку
+                    </p>
+                    <Checkboxes
+                        field={field}
+                        options={socialLinks}
+                        value={value}
+                        setValue={setValue}
+                    />
                 </div>
+
                 <button
                     type='submit'
-                    disabled={isErrors || isSubmitting}
-                    className={styles.submitButton}
+                    disabled={isSubmitting}
+                    className={
+                        isValid
+                            ? `${styles.submitButton} ${styles.activeBtn}`
+                            : styles.submitButton
+                    }
                 >
                     Надіслати заявку
                 </button>

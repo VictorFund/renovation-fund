@@ -1,3 +1,5 @@
+@import "@/app/variables";
+
 .form {
     width: 280px;
     display: -webkit-box;
@@ -39,17 +41,24 @@
     width: 100%;
     border-radius: 16px;
     padding-left: 24px;
+    border: none;
+    outline: none;
+    box-shadow: 2px 2px 4px 0px rgba(75, 75, 78, 0.5);
+}
+
+.errorInput {
+    border: 1px solid $accentColor;
 }
 
 .input::placeholder {
-    // font-family: Montserrat;
+    font-family: var(--montserrat);
     font-size: 16px;
     font-weight: 400;
     color: rgba(75, 75, 78, 0.5);
 }
 
 .textarea::placeholder {
-    // font-family: Montserrat;
+    font-family: var(--montserrat);
     font-size: 16px;
     font-weight: 400;
     color: rgba(75, 75, 78, 0.5);
@@ -58,21 +67,17 @@
 .textarea {
     resize: none;
     height: 180px;
+    padding-top: 24px;
 }
 
-.error {
+.iconMark {
     position: absolute;
-    bottom: 2px;
-    right: 100px;
-    color: rgba(213, 0, 0, 1);
-
-    font-size: 13px;
-    font-weight: 600;
-
-    //   @media screen and (min-width: $laptop) {
-    //     top: 60px;
-    //     font-size: 14px;
-    //   }
+    width: 10px;
+    height: 10px;
+    top: 15px;
+    right: 15px;
+    fill: $accentColor;
+    // stroke: $accentColor;
 }
 
 .socSvg {
@@ -85,15 +90,80 @@
     //   }
 }
 
-.inputRadio:checked .socSvg {
-    transform: scale(1.25);
+.boxChecked,
+.boxNoChecked {
+    display: none;
+}
+
+.span:has(.boxChecked) .socSvg {
+    fill: $accentColor;
+    // stroke: $accentColor;
+}
+
+.span:has(.boxNoChecked) .socSvg {
+    fill: $BorderColor;
+    // stroke: $BorderColor;
+}
+
+.checkboxWrap {
+    width: 176px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.inputCheckboxWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkboxTitle {
+    width: 176px;
+    text-align: center;
+    margin-bottom: 32px;
+    font-family: var(--montserrat);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
 }
 
 .submitButton {
     width: 100%;
     height: 52px;
     border-radius: 100px;
-    font-weight: 500;
+    font-family: var(--montserrat);
+    font-weight: 400;
     font-size: 16px;
     line-height: 1.2;
+    border: none;
+    outline: none;
+    box-shadow: 2px 2px 4px 0px rgba(75, 75, 78, 0.5);
+    background-color: rgba(250, 250, 255, 1);
+    color: rgba(25, 43, 57, 1);
+}
+
+.activeBtn {
+    background-color: $accentColor;
+    color: #fff;
+}
+
+.error {
+    position: absolute;
+    bottom: 2px;
+    right: 100px;
+    color: $accentColor;
+
+    font-family: var(--montserrat);
+    font-size: 12px;
+    font-weight: 300;
+
+    //   @media screen and (min-width: $laptop) {
+    //     top: 60px;
+    //     font-size: 14px;
+    //   }
+}
+
+.errorCheckbox {
+    bottom: -20px;
 }

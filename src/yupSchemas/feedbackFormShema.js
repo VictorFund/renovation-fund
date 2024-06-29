@@ -1,6 +1,9 @@
 import * as yup from "yup";
+import { socialLinks } from "@/data";
 
 const regexPhone = /^\+\d{12}$/;
+
+const titleArray = socialLinks.map(i => i.title)
 
 export const feedbackFormSchema = yup.object({
     name: yup
@@ -21,6 +24,28 @@ export const feedbackFormSchema = yup.object({
     comment: yup
         .string(),
     calback: yup
-        .string()
-        .required("Messenger is required")
+        .array()
+        .test({
+            name: "calback",
+            test(value, ctx) {
+
+                const isChecked = titleArray.some(Set.prototype.has, new Set(value));
+
+
+                if (value.length === 0) {
+                    return ctx.createError({
+                        message: "Array Empty",
+                    });
+                }
+
+                if (!isChecked) {
+                    return ctx.createError({
+                        message: "There is no values!",
+                    });
+                }
+
+                return true;
+            },
+        })
+
 });
