@@ -1,5 +1,5 @@
 export const getData = async (folderName) => {
-  const res = await fetch(`${process.env.DB_URL}/api/${folderName}`, {
+  const res = await fetch(`${process.env.URL}/api/${folderName}`, {
     cache: "no-store",
   });
   //   console.log(res);

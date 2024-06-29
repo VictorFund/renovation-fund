@@ -86,7 +86,7 @@ const DashboardPartnershipFormCreate = ({ mutate }) => {
                         {...register("title")}
                     />
                     <label htmlFor='title' className={styles.formLabel}>
-                        Title
+                        Заголовок
                     </label>
                     <p className={styles.error}>{errors.title?.message}</p>
                 </div>
@@ -100,22 +100,22 @@ const DashboardPartnershipFormCreate = ({ mutate }) => {
                         {...register("titleEn")}
                     />
                     <label htmlFor='titleEn' className={styles.formLabel}>
-                        TitleEn
+                        Заголовок англійською
                     </label>
                     <p className={styles.error}>{errors.titleEn?.message}</p>
                 </div>
 
-                <div className={styles.inputGroup}>
+                <div className={styles.checkboxInputGroup}>
+                    <label htmlFor='isMainPartner' className={styles.checkboxLabel}>
+                        Головний партнер
+                    </label>
                     <input
                         type='checkbox'
-                        className={styles.formInput}
+                        className={styles.checkbox}
                         id='isMainPartner'
                         placeholder=' '
                         {...register("isMainPartner")}
                     />
-                    <label htmlFor='isMainPartner' className={styles.formLabel}>
-                        IsMainPartner
-                    </label>
                     <p className={styles.error}>{errors.isMainPartner?.message}</p>
                 </div>
 
@@ -124,7 +124,7 @@ const DashboardPartnershipFormCreate = ({ mutate }) => {
                         name='logo'
                         className={styles.uploadBtn}
                         onUpload={(result, widget) => {
-                            if (getValues("phologoto") !== "") {
+                            if (getValues("logo") !== "") {
                                 const publicId = getValues("logo");
                                 handleDeleteImgFromCloudinary(publicId);
                             }
@@ -151,28 +151,28 @@ const DashboardPartnershipFormCreate = ({ mutate }) => {
                         {...register("siteLink")}
                     />
                     <label htmlFor='siteLink' className={styles.formLabel}>
-                        SiteLink
+                        Посилання на ресурс
                     </label>
                     <p className={styles.error}>{errors.siteLink?.message}</p>
                 </div>
 
-                <div className={styles.inputGroup}>
+                <div className={styles.checkboxInputGroup}>
+                    <label htmlFor='isApproved' className={styles.checkboxLabel}>
+                        Розміщення на сайті
+                    </label>
                     <input
                         type='checkbox'
-                        className={styles.formInput}
+                        className={styles.checkbox}
                         id='isApproved'
                         placeholder=' '
                         {...register("isApproved")}
                     />
-                    <label htmlFor='isApproved' className={styles.formLabel}>
-                        IsApproved
-                    </label>
                     <p className={styles.error}>{errors.isApproved?.message}</p>
                 </div>
 
                 <button
                     type='submit'
-                    className={styles.formButton}
+                    className={styles.submitBtn}
                     disabled={isErrors || isSubmitting}
                 >
                     Зберегти інформацію

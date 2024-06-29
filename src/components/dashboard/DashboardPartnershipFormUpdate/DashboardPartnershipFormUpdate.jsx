@@ -112,7 +112,7 @@ const DashboardPartnershipFormUpdate = ({ data, mutate }) => {
                         {...register("newTitle")}
                     />
                     <label htmlFor='newTitle' className={styles.formLabel}>
-                        New Title
+                        Новий заголовок
                     </label>
                     <p className={styles.error}>{errors.newTitle?.message}</p>
                 </div>
@@ -126,22 +126,22 @@ const DashboardPartnershipFormUpdate = ({ data, mutate }) => {
                         {...register("newTitleEn")}
                     />
                     <label htmlFor='newTitleEn' className={styles.formLabel}>
-                        New TitleEn
+                        Новий заголовок англійською
                     </label>
                     <p className={styles.error}>{errors.newTitleEn?.message}</p>
                 </div>
 
-                <div className={styles.inputGroup}>
+                <div className={styles.checkboxInputGroup}>
+                    <label htmlFor='newIsMainPartner' className={styles.checkboxLabel}>
+                        Головний партнер
+                    </label>
                     <input
                         type='checkbox'
-                        className={styles.formInput}
+                        className={styles.checkbox}
                         id='newIsMainPartner'
                         placeholder=' '
                         {...register("newIsMainPartner")}
                     />
-                    <label htmlFor='newIsMainPartner' className={styles.formLabel}>
-                        New IsMainPartner
-                    </label>
                     <p className={styles.error}>{errors.newIsMainPartner?.message}</p>
                 </div>
 
@@ -177,30 +177,30 @@ const DashboardPartnershipFormUpdate = ({ data, mutate }) => {
                         {...register("newSiteLink")}
                     />
                     <label htmlFor='newSiteLink' className={styles.formLabel}>
-                        New SiteLink
+                        Нове посилання на ресурс
                     </label>
                     <p className={styles.error}>
                         {errors.newSiteLink?.message}
                     </p>
                 </div>
 
-                <div className={styles.inputGroup}>
+                <div className={styles.checkboxInputGroup}>
+                    <label htmlFor='newIsApproved' className={styles.checkboxLabel}>
+                        Розміщення на сайті
+                    </label>
                     <input
                         type='checkbox'
-                        className={styles.formInput}
+                        className={styles.checkbox}
                         id='newIsApproved'
                         placeholder=' '
                         {...register("newIsApproved")}
                     />
-                    <label htmlFor='newIsApproved' className={styles.formLabel}>
-                        New IsApproved
-                    </label>
                     <p className={styles.error}>{errors.newIsApproved?.message}</p>
                 </div>
 
                 <button
                     type='submit'
-                    className={styles.formButton}
+                    className={styles.submitBtn}
                     disabled={isErrors || isSubmitting}
                 >Оновити інформацію</button>
             </form>
