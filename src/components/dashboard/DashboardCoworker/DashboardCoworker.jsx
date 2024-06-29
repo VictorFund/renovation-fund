@@ -8,12 +8,12 @@ const DashboardCoworker = ({ data }) => {
 
     return (
         <div className={styles.itemCard}>
-            <p>Показувати на сайті?  {data.isApproved ? "Так" : "Ні"}</p>
-            <p>{data.slug}</p>
-            <p>{data.name}</p>
-            <p>{data.nameEn}</p>
-            <p>{data.description}</p>
-            <p>{data.descriptionEn}</p>
+            <p>Показувати на сайті?  <span className='accentText'>{data.isApproved ? "ТАК" : "НІ"}</span></p>
+            <p><span className='accentText'>Slug:</span> {data.slug}</p>
+            <p><span className='accentText'>Ім’я:</span> {data.name}</p>
+            <p><span className='accentText'>Ім’я англійською :</span> {data.nameEn}</p>
+            <p><span className='accentText'>Опис:</span> {data.description}</p>
+            <p><span className='accentText'>Опис англійською:</span> {data.descriptionEn}</p>
             <div className={styles.coworkerImgWrapper}>
                 <CldImage
                     className={styles.coworkerImg}

@@ -24,10 +24,10 @@ const DashboardNewsItem = ({ data, isLoading }) => {
 
     return (
         <div className={styles.itemCard}>
-            <p>Показувати на сайті?  {changedData.isApproved ? "Так" : "Ні"}</p>
-            <p>{changedData.slug}</p>
-            <p>{changedData.title}</p>
-            <p>{changedData.titleEn}</p>
+            <p>Показувати на сайті? <span className='accentText'>{changedData.isApproved ? "Так" : "Ні"}</span></p>
+            <p><span className='accentText'>Slug:</span> {changedData.slug}</p>
+            <p><span className='accentText'>Заголовок:</span> {changedData.title}</p>
+            <p><span className='accentText'>Заголовок англійською:</span> {changedData.titleEn}</p>
             <div className={styles.newsImgWrapper}>
                 <CldImage
                     className={styles.newsImg}
@@ -38,12 +38,14 @@ const DashboardNewsItem = ({ data, isLoading }) => {
                 />
             </div>
             <div className={styles.newsDescriptionWrapper}>
+                <span className='accentText'>Опис:</span>
                 {changedData.description.map((item, index) => <p key={index}>{item}</p>)}
             </div>
             <div className={styles.newsDescriptionWrapper}>
+                <span className='accentText'>Опис англійською:</span>
                 {changedData.descriptionEn.map((item, index) => <p key={index}>{item}</p>)}
             </div>
-            {changedData.link && <p>{changedData.link}</p>}
+            {changedData.link && <p><span className='accentText'>Посилання на ресурс:</span> {changedData.link}</p>}
         </div>
     )
 }

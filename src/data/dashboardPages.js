@@ -1,27 +1,27 @@
 export const dashboardPages = [
     {
         path: '/dashboard/news',
-        title: "News",
+        title: "Новини",
         access: "admin",
     },
     {
         path: '/dashboard/partnership',
-        title: "Partnership",
+        title: "Партнери",
         access: "admin",
     },
     {
         path: '/dashboard/projects',
-        title: "Projects",
+        title: "Проєкти",
         access: "admin",
     },
     {
         path: '/dashboard/team',
-        title: "Team",
+        title: "Команда",
         access: "admin",
     },
     {
         path: '/dashboard/users',
-        title: "Users",
+        title: "Користувачі",
         access: "owner",
     },
 ]

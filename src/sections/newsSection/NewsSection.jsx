@@ -1,13 +1,30 @@
 "use client"
-import React from 'react'
+import Link from 'next/link';
+import Loader from '@/components/Loader/Loader';
 import { GetDataWithPathname } from '@/fetch/clientFetch';
+import { sortArrayByUpdate } from '@/utils/sortArrayByUpdate';
+import styles from './NewsSection.module.scss'
+
 
 const NewsSection = () => {
-    const { data } = GetDataWithPathname();
-    console.log('data', data)
+    const { data, isLoading } = GetDataWithPathname();
+
+    let sortedByUpdateData = [];
+    if (!isLoading) {
+        sortedByUpdateData = sortArrayByUpdate(data)
+    }
+
 
     return (
-        <section>News Section</section>
+        <section className="pageSection">
+            <div className="container">
+                {isLoading
+                    ? <Loader />
+                    : <div>
+                        {sortedByUpdateData.map((item, index) => <Link key={index} href={`/news/${item.slug}`} className={styles.item}>{item.title}</Link>)}
+                    </div>}
+            </div>
+        </section>
     )
 }
 

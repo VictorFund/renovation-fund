@@ -112,7 +112,7 @@ const DashboardCoworkerFormUpdate = ({ data, mutate }) => {
                         {...register("newName")}
                     />
                     <label htmlFor='newName' className={styles.formLabel}>
-                        New Name
+                        Нове ім’я
                     </label>
                     <p className={styles.error}>{errors.newName?.message}</p>
                 </div>
@@ -126,7 +126,7 @@ const DashboardCoworkerFormUpdate = ({ data, mutate }) => {
                         {...register("newNameEn")}
                     />
                     <label htmlFor='newNameEn' className={styles.formLabel}>
-                        New NameEn
+                        Нове ім’я англійською
                     </label>
                     <p className={styles.error}>{errors.newNameEn?.message}</p>
                 </div>
@@ -155,23 +155,21 @@ const DashboardCoworkerFormUpdate = ({ data, mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='newDescription'
                         placeholder=' '
                         {...register("newDescription")}
                     />
-                    <label htmlFor='newDescription' className={styles.formLabel}>
-                        New Description
-                    </label>
+                    <label htmlFor='newDescription' className={styles.formLabel}>Новий опис</label>
                     <p className={styles.error}>
                         {errors.newDescription?.message}
                     </p>
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='newDescriptionEn'
@@ -179,30 +177,28 @@ const DashboardCoworkerFormUpdate = ({ data, mutate }) => {
                         {...register("newDescriptionEn")}
                     />
                     <label htmlFor='newDescriptionEn' className={styles.formLabel}>
-                        New DescriptionEn
+                        Новий опис англійською
                     </label>
                     <p className={styles.error}>
                         {errors.newDescriptionEn?.message}
                     </p>
                 </div>
 
-                <div className={styles.inputGroup}>
+                <div className={styles.checkboxInputGroup}>
+                    <label htmlFor='newIsApproved' className={styles.checkboxLabel}>Розміщення на сайті</label>
                     <input
                         type='checkbox'
-                        className={styles.formInput}
+                        className={styles.checkbox}
                         id='newIsApproved'
                         placeholder=' '
                         {...register("newIsApproved")}
                     />
-                    <label htmlFor='newIsApproved' className={styles.formLabel}>
-                        New IsApproved
-                    </label>
                     <p className={styles.error}>{errors.newIsApproved?.message}</p>
                 </div>
 
                 <button
                     type='submit'
-                    className={styles.formButton}
+                    className={styles.submitBtn}
                     disabled={isErrors || isSubmitting}
                 >Оновити інформацію</button>
             </form>

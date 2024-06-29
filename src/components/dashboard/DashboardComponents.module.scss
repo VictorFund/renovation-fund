@@ -1,6 +1,6 @@
 @import "../../app/variables";
 
-// FORMS
+//AUTH FORMS
 
 .authForm {
     display: flex;
@@ -43,6 +43,8 @@
     color: #d50000;
 }
 
+// DATA FORMS
+
 .dataFormContainer {
     flex: 1;
 }
@@ -57,6 +59,120 @@
     box-shadow: 1px 1px 10px 0px $shadow;
 }
 
+.formTitle {
+    text-align: center;
+    font-family: var(--montserrat);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2;
+    color: $accentColor;
+}
+
+.inputGroup {
+    position: relative;
+    width: 100%;
+}
+
+.formInput {
+    width: 100%;
+    padding: 20px 30px;
+    outline: none;
+    border-radius: 16px;
+    border-color: transparent;
+    background-color: inherit;
+    box-shadow: 2px 2px 4px 0px $shadow;
+    font-family: var(--montserrat);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+
+    &:focus+.formLabel,
+    &:not(:placeholder-shown)+.formLabel {
+        transform: translateY(-190%) scale(0.9);
+        transition-duration: 250ms;
+    }
+}
+
+.inputGroup textarea {
+    height: 120px;
+    resize: none;
+}
+
+.formLabel {
+    position: absolute;
+    top: 20px;
+    left: 32px;
+    pointer-events: none;
+    transition-duration: 250ms;
+}
+
+.error {
+    position: absolute;
+    top: -17px;
+    right: 10px;
+    color: red;
+    font-size: 14px;
+}
+
+.uploadBtn {
+    width: 100%;
+    padding: 20px 30px;
+    outline: none;
+    border-radius: 16px;
+    border-color: transparent;
+    background-color: $bodyColor;
+    box-shadow: 1px 1px 10px 0px $shadow;
+    font-family: var(--montserrat);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+    cursor: pointer;
+}
+
+// isApprovedInputGroup
+.checkboxInputGroup {
+    width: 100%;
+    padding: 20px 30px;
+    outline: none;
+    border-radius: 16px;
+    border-color: transparent;
+    box-shadow: 2px 2px 4px 0px $shadow;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--montserrat);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+// isApprovedLabel
+.checkboxLabel {
+    cursor: pointer;
+}
+
+// formCheckbox
+.checkbox {
+    width: 24px;
+    cursor: pointer;
+}
+
+.submitBtn {
+    padding: 20px 24px;
+    width: 305px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 54px;
+    border: transparent;
+    box-shadow: 2px 2px 4px 0 $borderColorLangSwitch;
+    background-color: $accentColor;
+    color: $white ;
+    font-family: var(--montserrat);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.2;
+    cursor: pointer;
+}
+
 // ITEMS
 
 .itemCard {
@@ -68,6 +184,16 @@
     border-radius: 32px;
     background-color: $bodyColor;
     box-shadow: 1px 1px 10px 0px $shadow;
+    font-family: var(--montserrat);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.link {
+    width: 30vw;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 // COWORKER
@@ -116,5 +242,19 @@
 
 // PROJECT
 
+.projectImgWrapper {
+    width: 414px;
+    height: 387px;
+    position: relative;
+    overflow: hidden;
+}
+
+.projectImg {
+    object-fit: cover;
+}
+
+.projectDescriptionWrapper p:not(:last-child) {
+    margin-bottom: 16px;
+}
 
 // USER

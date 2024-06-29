@@ -115,7 +115,7 @@ const DashboardNewsFormUpdate = ({ data, mutate }) => {
                         {...register("newTitle")}
                     />
                     <label htmlFor='newTitle' className={styles.formLabel}>
-                        New Title
+                        Новий заголовок
                     </label>
                     <p className={styles.error}>{errors.newTitle?.message}</p>
                 </div>
@@ -129,7 +129,7 @@ const DashboardNewsFormUpdate = ({ data, mutate }) => {
                         {...register("newTitleEn")}
                     />
                     <label htmlFor='newTitleEn' className={styles.formLabel}>
-                        New TitleEn
+                        Новий заголовок англійською
                     </label>
                     <p className={styles.error}>{errors.newTitleEn?.message}</p>
                 </div>
@@ -166,8 +166,7 @@ const DashboardNewsFormUpdate = ({ data, mutate }) => {
                         {...register("newDescription")}
                     />
                     <label htmlFor='newDescription' className={styles.formLabel}>
-                        New Description
-                    </label>
+                        Новий опис                    </label>
                     <p className={styles.error}>
                         {errors.newDescription?.message}
                     </p>
@@ -182,8 +181,7 @@ const DashboardNewsFormUpdate = ({ data, mutate }) => {
                         {...register("newDescriptionEn")}
                     />
                     <label htmlFor='newDescriptionEn' className={styles.formLabel}>
-                        New DescriptionEn
-                    </label>
+                        Новий опис англійською                    </label>
                     <p className={styles.error}>
                         {errors.newDescriptionEn?.message}
                     </p>
@@ -198,28 +196,28 @@ const DashboardNewsFormUpdate = ({ data, mutate }) => {
                         {...register("newLink")}
                     />
                     <label htmlFor='newLink' className={styles.formLabel}>
-                        New Link
+                        Нове посилання на ресурс
                     </label>
                     <p className={styles.error}>{errors.newLink?.message}</p>
                 </div>
 
-                <div className={styles.inputGroup}>
+                <div className={styles.checkboxInputGroup}>
+                    <label htmlFor='newIsApproved' className={styles.checkboxLabel}>
+                        Розміщення на сайті
+                    </label>
                     <input
                         type='checkbox'
-                        className={styles.formInput}
+                        className={styles.checkbox}
                         id='newIsApproved'
                         placeholder=' '
                         {...register("newIsApproved")}
                     />
-                    <label htmlFor='newIsApproved' className={styles.formLabel}>
-                        New IsApproved
-                    </label>
                     <p className={styles.error}>{errors.newIsApproved?.message}</p>
                 </div>
 
                 <button
                     type='submit'
-                    className={styles.formButton}
+                    className={styles.submitBtn}
                     disabled={isErrors || isSubmitting}
                 >Оновити інформацію</button>
             </form>

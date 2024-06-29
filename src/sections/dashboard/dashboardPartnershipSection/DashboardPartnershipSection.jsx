@@ -3,12 +3,17 @@ import DashboardPartnershipItem from '@/components/dashboard/DashboardPartnershi
 import DashboardPartnershipFormCreate from '@/components/dashboard/DashboardPartnershipFormCreate/DashboardPartnershipFormCreate';
 import Loader from '@/components/Loader/Loader';
 import { GetDataWithPathname } from '@/fetch/clientFetch';
+import { sortArrayByUpdate } from '@/utils/sortArrayByUpdate';
 import styles from '../DashboardSections.module.scss'
 
 
 const DashboardPartnershipSection = () => {
     const { data, isLoading, mutate } = GetDataWithPathname();
-    console.log('data', data)
+
+    let sortedByUpdateData = [];
+    if (!isLoading) {
+        sortedByUpdateData = sortArrayByUpdate(data)
+    }
 
 
     return (
@@ -17,7 +22,7 @@ const DashboardPartnershipSection = () => {
                 ? <Loader />
                 : <div className={styles.container}>
                     <div className={styles.cardsList}>
-                        {data.map(item => <DashboardPartnershipItem key={item.slug} data={item} />)}
+                        {sortedByUpdateData.map(item => <DashboardPartnershipItem key={item.slug} data={item} />)}
                     </div>
                     <DashboardPartnershipFormCreate mutate={mutate} />
                 </div>

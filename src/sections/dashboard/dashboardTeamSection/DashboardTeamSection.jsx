@@ -3,19 +3,25 @@ import DashboardCoworker from '@/components/dashboard/DashboardCoworker/Dashboar
 import DashboardCoworkerFormCreate from '@/components/dashboard/DashboardCoworkerFormCreate/DashboardCoworkerFormCreate';
 import Loader from '@/components/Loader/Loader';
 import { GetDataWithPathname } from '@/fetch/clientFetch';
+import { sortArrayByUpdate } from '@/utils/sortArrayByUpdate';
 import styles from '../DashboardSections.module.scss'
 
 
 const DashboardTeamSection = () => {
     const { data, isLoading, mutate } = GetDataWithPathname();
-    console.log('data', data)
+
+    let sortedByUpdateData = [];
+    if (!isLoading) {
+        sortedByUpdateData = sortArrayByUpdate(data)
+    }
+
 
     return (
         <section>
             {isLoading
                 ? <Loader />
                 : <div className={styles.container}>
-                    <div className={styles.cardsList}>{data.map(item => <DashboardCoworker key={item.slug} data={item} />)}</div>
+                    <div className={styles.cardsList}>{sortedByUpdateData.map(item => <DashboardCoworker key={item.slug} data={item} />)}</div>
                     <DashboardCoworkerFormCreate mutate={mutate} />
                 </div>
             }

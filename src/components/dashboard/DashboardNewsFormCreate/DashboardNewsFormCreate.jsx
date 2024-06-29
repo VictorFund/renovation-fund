@@ -87,7 +87,7 @@ const DashboardNewsFormCreate = ({ mutate }) => {
                         {...register("title")}
                     />
                     <label htmlFor='title' className={styles.formLabel}>
-                        Title
+                        Заголовок
                     </label>
                     <p className={styles.error}>{errors.title?.message}</p>
                 </div>
@@ -101,9 +101,9 @@ const DashboardNewsFormCreate = ({ mutate }) => {
                         {...register("titleEn")}
                     />
                     <label htmlFor='titleEn' className={styles.formLabel}>
-                        TitleEn
+                        Заголовок англійською
                     </label>
-                    <p className={styles.error}>{errors.namtitleEneEn?.message}</p>
+                    <p className={styles.error}>{errors.titleEn?.message}</p>
                 </div>
 
                 <div className={styles.inputGroup}>
@@ -138,7 +138,7 @@ const DashboardNewsFormCreate = ({ mutate }) => {
                         {...register("description")}
                     />
                     <label htmlFor='description' className={styles.formLabel}>
-                        Description
+                        Опис
                     </label>
                     <p className={styles.error}>{errors.description?.message}</p>
                 </div>
@@ -152,7 +152,7 @@ const DashboardNewsFormCreate = ({ mutate }) => {
                         {...register("descriptionEn")}
                     />
                     <label htmlFor='descriptionEn' className={styles.formLabel}>
-                        DescriptionEn
+                        Опис англійською
                     </label>
                     <p className={styles.error}>{errors.descriptionEn?.message}</p>
                 </div>
@@ -166,28 +166,28 @@ const DashboardNewsFormCreate = ({ mutate }) => {
                         {...register("link")}
                     />
                     <label htmlFor='link' className={styles.formLabel}>
-                        Link
+                        Посилання на ресурс
                     </label>
                     <p className={styles.error}>{errors.link?.message}</p>
                 </div>
 
-                <div className={styles.inputGroup}>
+                <div className={styles.checkboxInputGroup}>
+                    <label htmlFor='isApproved' className={styles.checkboxLabel}>
+                        Розміщення на сайті
+                    </label>
                     <input
                         type='checkbox'
-                        className={styles.formInput}
+                        className={styles.checkbox}
                         id='isApproved'
                         placeholder=' '
                         {...register("isApproved")}
                     />
-                    <label htmlFor='isApproved' className={styles.formLabel}>
-                        IsApproved
-                    </label>
                     <p className={styles.error}>{errors.isApproved?.message}</p>
                 </div>
 
                 <button
                     type='submit'
-                    className={styles.formButton}
+                    className={styles.submitBtn}
                     disabled={isErrors || isSubmitting}
                 >
                     Зберегти інформацію

@@ -1,21 +1,28 @@
 "use client"
-import React from 'react'
-import { GetDataWithPathname } from '@/fetch/clientFetch';
 import DashboardUser from '@/components/dashboard/DashboardUser/DashboardUser';
 import Loader from '@/components/Loader/Loader';
+import { GetDataWithPathname } from '@/fetch/clientFetch';
+import { sortArrayByUpdate } from '@/utils/sortArrayByUpdate';
+import styles from '../DashboardSections.module.scss';
 
 
 const DashboardUsersSection = () => {
-    const { data, isLoading } = GetDataWithPathname();
-    console.log('data', data)
+    const { data, isLoading, mutate } = GetDataWithPathname();
+
+    let sortedByUpdateData = [];
+    if (!isLoading) {
+        sortedByUpdateData = sortArrayByUpdate(data)
+    }
+
 
     return (
         <section>
             {isLoading ? <Loader />
-                : <>
-                    <h1>DashboardUsers Section</h1>
-                    {data.map(item => <DashboardUser key={item.email} />)}
-                </>
+                :
+                <div className={styles.userCardsList}>
+                    {sortedByUpdateData.map(item => <DashboardUser key={item.email} data={item} mutate={mutate} />)}
+                </div>
+
             }</section>
     )
 }
