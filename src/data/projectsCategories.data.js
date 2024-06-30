@@ -1,19 +1,19 @@
 export const projectsCategories = [
   {
     id: 1,
-    stateTitle: 'Announced',
+    stateTitle: 'Анонсований',
     title: 'Анонсовані проєкти',
     titleEn: 'Announced projects',
   },
   {
     id: 2,
-    stateTitle: 'Current',
+    stateTitle: 'Поточний',
     title: 'Поточні проєкти',
     titleEn: 'Current projects',
   },
   {
     id: 3,
-    stateTitle: 'Implemented',
+    stateTitle: 'Реалізований',
     title: 'Реалізовані проєкти',
     titleEn: 'Implemented projects',
   },

@@ -8,7 +8,6 @@ import styles from '../DashboardSections.module.scss'
 
 const DashboardNewsIdSection = () => {
     const { data, isLoading, mutate } = GetDataWithPathname();
-    console.log('data', data)
 
 
     return (

@@ -14,8 +14,8 @@ const DashboardProjectsSection = () => {
     if (!isLoading) {
         sortedByUpdateData = sortArrayByUpdate(data)
     }
-    console.log('data', data)
-    console.log('sortedByUpdateData', sortedByUpdateData)
+
+    
     return (
         <section>
             {isLoading

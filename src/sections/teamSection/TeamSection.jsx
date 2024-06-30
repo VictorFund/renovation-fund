@@ -1,13 +1,13 @@
 'use client';
-
 import React from 'react';
 import styles from './TeamSection.module.scss';
 import { GetDataForHomeByCollection } from '@/fetch/clientFetch';
 import { CldImage } from 'next-cloudinary';
 
+
 const TeamSection = () => {
   const { data } = GetDataForHomeByCollection('team');
-  console.log('data', data);
+
 
   return (
     <section className="topSection">

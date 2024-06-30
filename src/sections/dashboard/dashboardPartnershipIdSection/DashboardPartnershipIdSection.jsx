@@ -8,8 +8,8 @@ import styles from '../DashboardSections.module.scss'
 
 const DashboardPartnershipIdSection = () => {
     const { data, isLoading, mutate } = GetDataWithPathname();
-    console.log('data', data)
 
+    
     return (
         <section>
             {isLoading

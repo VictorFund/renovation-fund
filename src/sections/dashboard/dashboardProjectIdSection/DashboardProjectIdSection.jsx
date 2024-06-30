@@ -8,7 +8,7 @@ import styles from '../DashboardSections.module.scss'
 
 const DashboardProjectIdSection = () => {
     const { data, isLoading, mutate } = GetDataWithPathname();
-    console.log('data', data)
+
 
     return (
         <section>

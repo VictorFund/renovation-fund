@@ -37,41 +37,25 @@
 
 
 "use client"
-import React from 'react'
+import Link from 'next/link'
 import { CldImage } from 'next-cloudinary'
+import Loader from '@/components/Loader/Loader'
 import HorizontalLine from '@/components/HorizontalLine/HorizontalLine'
 import { GetDataWithPathname } from '@/fetch/clientFetch'
-import styles from './NewsIdSection.module.scss'
-import Loader from '@/components/Loader/Loader'
-import Link from 'next/link'
 import { formatDate } from '@/utils/formatDate'
-
+import { changeStringTypeToArray } from '@/utils/changeStringTypeToArray'
+import styles from './NewsIdSection.module.scss'
 
 
 const NewsIdSection = () => {
     const { data, isLoading } = GetDataWithPathname();
-    console.log('data', data)
 
     const formattedDate = formatDate(data?.createdAt);
 
-    let changedData = { ...data }
+    let changedData = {}
     if (!isLoading) {
-        if (
-            typeof changedData.description === "string" &&
-            typeof changedData.descriptionEn === "string"
-        ) {
-            if (changedData.description.includes(" | ") || changedData.descriptionEn.includes(" | ")) {
-                changedData.description = changedData.description.split(" | ");
-                changedData.descriptionEn = changedData.descriptionEn.split(" | ");
-            }
-            else {
-                changedData.description = [changedData.description];
-                changedData.descriptionEn = [changedData.descriptionEn];
-            }
-        }
+        changedData = changeStringTypeToArray(data);
     }
-
-    console.log('changedData', changedData)
 
 
     return (
