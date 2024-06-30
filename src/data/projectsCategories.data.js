@@ -13,7 +13,7 @@ export const projectsCategories = [
   },
   {
     id: 3,
-    stateTitle: 'Completed',
+    stateTitle: 'Implemented',
     title: 'Реалізовані проєкти',
     titleEn: 'Implemented projects',
   },

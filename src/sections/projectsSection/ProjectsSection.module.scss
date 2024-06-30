@@ -12,9 +12,16 @@
 }
 
 .btnContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   margin-bottom: 24px;
   @media screen and (min-width: $tablet) {
@@ -26,108 +33,6 @@
     align-items: center;
     flex-direction: row;
   }
-}
-
-.accordionTitleContainer {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 24px;
-  width: 100%;
-  padding-bottom: 8px;
-
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px solid $accentColor;
-  outline: none;
-  cursor: pointer;
-  @media screen and (min-width: $tablet) {
-    width: 60%;
-  }
-  @media screen and (min-width: $laptop) {
-    display: none;
-  }
-}
-
-.titleAccordion {
-  font-family: var(--montserrat);
-  font-weight: 500;
-  font-size: 16px;
-  color: $accentColor;
-  @media screen and (min-width: $tablet) {
-    font-size: 24px;
-  }
-}
-
-.arrow {
-  width: 14px;
-  height: 9px;
-}
-
-.activeArrow {
-  transform: rotate(180deg);
-}
-
-.accordionBtnContainer {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  row-gap: 16px;
-  @media screen and (min-width: $tablet) {
-    width: 60%;
-    row-gap: 24px;
-  }
-}
-
-.accordionOpen {
-  height: 119px;
-  opacity: 1;
-  @media screen and (min-width: $tablet) {
-    height: 150px;
-  }
-}
-
-.accordionClose {
-  height: 0;
-  opacity: 0;
-}
-
-.accordionBtnItem {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 8px;
-  width: 100%;
-
-  font-family: var(--montserrat);
-  font-weight: 500;
-  font-size: 16px;
-  color: $textColor;
-  background-color: transparent;
-  border: none;
-  // border-bottom: 2px solid $textColor;
-  outline: none;
-  cursor: pointer;
-  &:hover,
-  &:focus {
-    color: $accentColor;
-    & .checkin {
-      stroke: $accentColor;
-    }
-  }
-  @media screen and (min-width: $tablet) {
-    font-size: 24px;
-  }
-}
-
-.checkin {
-  width: 14px;
-  height: 10px;
-  stroke: $textColor;
-  fill: transparent;
 }
 
 .btn {
@@ -181,6 +86,8 @@
 .projectsList {
   display: -ms-grid;
   display: grid;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   grid-template-columns: repeat(1, 1fr);
   row-gap: 24px;

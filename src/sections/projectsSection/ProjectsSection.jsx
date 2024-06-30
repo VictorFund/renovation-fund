@@ -1,16 +1,17 @@
-"use client";
+'use client';
 
-import React, { useMemo, useState } from "react";
-import styles from "./ProjectsSection.module.scss";
-import { GetDataWithPathname } from "@/fetch/clientFetch";
-import ProjectItem from "@/components/ProjectItem/ProjectItem";
-import { projectsCategories } from "@/data/projectsCategories.data";
+import React, { useMemo, useState } from 'react';
+import styles from './ProjectsSection.module.scss';
+import { GetDataWithPathname } from '@/fetch/clientFetch';
+import ProjectItem from '@/components/ProjectItem/ProjectItem';
+import { projectsCategories } from '@/data/projectsCategories.data';
+import { ProjectAccordio } from '@/components/ProjectAccordio/ProjectAccordio';
+import Loader from '@/components/Loader/Loader';
 
 export const ProjectsSection = () => {
-  const [activeTab, setActiveTab] = useState("");
-  const [activeAccordion, setActiveAccordion] = useState(false);
-  const { data } = GetDataWithPathname();
-  // console.log('data', data);
+  const [activeTab, setActiveTab] = useState('');
+  const { data, isLoading } = GetDataWithPathname();
+  console.log(data);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -23,59 +24,11 @@ export const ProjectsSection = () => {
       .sort((a, b) => new Date(a.date) - new Date(b.date));
   }, [data, activeTab]);
 
-  const currentTab = projectsCategories.find(
-    (project) => project.stateTitle === activeTab
-  );
-
   return (
     <section className="topSection">
       <div className={`container ${styles.projects}`}>
         <h1 className={`sectionTitle ${styles.title}`}>Проєкти</h1>
-        <div className={styles.btnContainer}>
-          <button
-            className={styles.accordionTitleContainer}
-            type="button"
-            onClick={() => setActiveAccordion((prevState) => !prevState)}
-          >
-            <p className={styles.titleAccordion}>
-              {currentTab ? currentTab.title : "Виберіть проєкт"}
-            </p>
-            <svg
-              className={`${styles.arrow} ${
-                activeAccordion && styles.activeArrow
-              }`}
-            >
-              <use href="sprite.svg#icon-vector"></use>
-            </svg>
-          </button>
-
-          <div
-            className={` 
-                ${styles.accordionBtnContainer} 
-                ${
-                  activeAccordion ? styles.accordionOpen : styles.accordionClose
-                }`}
-          >
-            {projectsCategories.map(({ id, title, stateTitle }) => (
-              <button
-                key={id}
-                type="button"
-                className={styles.accordionBtnItem}
-                onClick={() => {
-                  handleTabClick(stateTitle);
-                  setActiveAccordion(false);
-                }}
-              >
-                <span>{title}</span>
-                {activeTab === stateTitle && (
-                  <svg className={styles.checkin}>
-                    <use href="sprite.svg#icon-checkMark"></use>
-                  </svg>
-                )}
-              </button>
-            ))}
-          </div>
-        </div>
+        <ProjectAccordio activeTab={activeTab} setActiveTab={setActiveTab} />
         <div className={styles.btnContainer}>
           {projectsCategories.map(({ id, title, stateTitle }) => (
             <button
@@ -83,7 +36,7 @@ export const ProjectsSection = () => {
               type="button"
               className={
                 activeTab === stateTitle
-                  ? styles.btn + " " + styles.active
+                  ? styles.btn + ' ' + styles.active
                   : styles.btn
               }
               onClick={() => handleTabClick(stateTitle)}
@@ -92,23 +45,27 @@ export const ProjectsSection = () => {
             </button>
           ))}
         </div>
-        <ul className={styles.projectsList}>
-          {filteredData.map(
-            ({ slug, isApproved, title, image, shortDescription }) => {
-              if (isApproved) {
-                return (
-                  <ProjectItem
-                    key={slug}
-                    slug={slug}
-                    title={title}
-                    image={image}
-                    shortDescription={shortDescription}
-                  />
-                );
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <ul className={styles.projectsList}>
+            {filteredData.map(
+              ({ slug, isApproved, title, image, shortDescription }) => {
+                if (isApproved) {
+                  return (
+                    <ProjectItem
+                      key={slug}
+                      slug={slug}
+                      title={title}
+                      image={image}
+                      shortDescription={shortDescription}
+                    />
+                  );
+                }
               }
-            }
-          )}
-        </ul>
+            )}
+          </ul>
+        )}
       </div>
     </section>
   );
