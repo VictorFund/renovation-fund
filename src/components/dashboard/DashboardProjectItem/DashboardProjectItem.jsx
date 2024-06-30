@@ -1,34 +1,23 @@
 "usr client"
 import { CldImage } from 'next-cloudinary'
+import { changeStringTypeToArray } from '@/utils/changeStringTypeToArray';
 import styles from '../DashboardComponents.module.scss'
 
 
 const DashboardProjectItem = ({ data, isLoading }) => {
-    let changedData = { ...data };
+    let changedData = {};
 
     if (!isLoading) {
-        if (
-            typeof changedData.description === "string" &&
-            typeof changedData.descriptionEn === "string"
-        ) {
-            if (changedData.description.includes(" | ") || changedData.descriptionEn.includes(" | ")) {
-                changedData.description = changedData.description.split(" | ");
-                changedData.descriptionEn = changedData.descriptionEn.split(" | ");
-            }
-            else {
-                changedData.description = [changedData.description];
-                changedData.descriptionEn = [changedData.descriptionEn];
-            }
-        }
+        changedData = changeStringTypeToArray(data);
     }
-    console.log('data', data)
-    console.log('changedData', changedData)
+
+
     return (
         <div className={styles.itemCard}>
-            <p>Показувати на сайті?  {changedData.isApproved ? "Так" : "Ні"}</p>
-            <p>{changedData.slug}</p>
-            <p>{changedData.title}</p>
-            <p>{changedData.titleEn}</p>
+            <p>Показувати на сайті? <span className='accentText'>{changedData.isApproved ? "Так" : "Ні"}</span></p>
+            <p><span className='accentText'>Slug:</span> {changedData.slug}</p>
+            <p><span className='accentText'>Заголовок:</span> {changedData.title}</p>
+            <p><span className='accentText'>Заголовок англійською:</span> {changedData.titleEn}</p>
             <div className={styles.projectImgWrapper}>
                 <CldImage
                     className={styles.projectImg}
@@ -38,26 +27,28 @@ const DashboardProjectItem = ({ data, isLoading }) => {
                     alt={`Photo of ${changedData.titleEn}`}
                 />
             </div>
-            <p>{changedData.shortDescription}</p>
-            <p>{changedData.shortDescriptionEn}</p>
-            <p>{changedData.state}</p>
-            {changedData.startDate && <p>{changedData.startDate}</p>}
-            {changedData.sum && <p>{changedData.sum}</p>}
-            <p>{changedData.mission}</p>
-            <p>{changedData.missionEn}</p>
-            <p>{changedData.goal}</p>
-            <p>{changedData.goalEn}</p>
-            <p>{changedData.audience}</p>
-            <p>{changedData.audienceEn}</p>
-            <p>{changedData.concept}</p>
-            <p>{changedData.conceptEn}</p>
+            <p><span className='accentText'>Короткий опис:</span> {changedData.shortDescription}</p>
+            <p><span className='accentText'>Короткий опис англійською:</span> {changedData.shortDescriptionEn}</p>
+            <p><span className='accentText'>Стан:</span> {changedData.state}</p>
+            {changedData.startDate && <p><span className='accentText'>Дата початку:</span> {changedData.startDate}</p>}
+            {changedData.sum && <p><span className='accentText'>Сума:</span> {changedData.sum}</p>}
+            <p><span className='accentText'>Місія:</span> {changedData.mission}</p>
+            <p><span className='accentText'>Місія англійською:</span> {changedData.missionEn}</p>
+            <p><span className='accentText'>Мета:</span> {changedData.goal}</p>
+            <p><span className='accentText'>Мета англійською:</span> {changedData.goalEn}</p>
+            <p><span className='accentText'>Аудиторія:</span> {changedData.audience}</p>
+            <p><span className='accentText'>Аудиторія англійською:</span> {changedData.audienceEn}</p>
+            <p><span className='accentText'>Концепт:</span> {changedData.concept}</p>
+            <p><span className='accentText'>Концепт англійською:</span> {changedData.conceptEn}</p>
             <div className={styles.projectDescriptionWrapper}>
+                <span className='accentText'>Опис:</span>
                 {changedData.description.map((item, index) => <p key={index}>{item}</p>)}
             </div>
             <div className={styles.projectDescriptionWrapper}>
+                <span className='accentText'>Опис англійською:</span>
                 {changedData.descriptionEn.map((item, index) => <p key={index}>{item}</p>)}
             </div>
-            {changedData.link && <p className={styles.link}>{changedData.link}</p>}
+            {changedData.link && <p className={styles.link}><span className='accentText'>Посилання на ресурс:</span> {changedData.link}</p>}
         </div>
     )
 }

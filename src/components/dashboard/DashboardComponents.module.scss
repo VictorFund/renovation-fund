@@ -129,7 +129,36 @@
     cursor: pointer;
 }
 
-// isApprovedInputGroup
+.radioInputGroup {
+    width: 100%;
+    padding: 20px 30px;
+    outline: none;
+    border-radius: 16px;
+    border-color: transparent;
+    box-shadow: 2px 2px 4px 0px $shadow;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    font-family: var(--montserrat);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.radioItemWrapper {
+    display: flex;
+    column-gap: 10px;
+    margin-left: 10%;
+}
+
+.radioLabel {
+    cursor: pointer;
+}
+
+.radio {
+    cursor: pointer;
+}
+
 .checkboxInputGroup {
     width: 100%;
     padding: 20px 30px;
@@ -145,12 +174,10 @@
     line-height: 1.2;
 }
 
-// isApprovedLabel
 .checkboxLabel {
     cursor: pointer;
 }
 
-// formCheckbox
 .checkbox {
     width: 24px;
     cursor: pointer;
@@ -193,7 +220,7 @@
 .link {
     width: 30vw;
     overflow: hidden;
-    white-space: nowrap;
+    white-space: wrap;
 }
 
 // COWORKER

@@ -1,25 +1,14 @@
 "usr client"
 import { CldImage } from 'next-cloudinary'
+import { changeStringTypeToArray } from '@/utils/changeStringTypeToArray';
 import styles from '../DashboardComponents.module.scss'
 
 
 const DashboardNewsItem = ({ data, isLoading }) => {
-    let changedData = { ...data };
+    let changedData = {};
 
     if (!isLoading) {
-        if (
-            typeof changedData.description === "string" &&
-            typeof changedData.descriptionEn === "string"
-        ) {
-            if (changedData.description.includes(" | ") || changedData.descriptionEn.includes(" | ")) {
-                changedData.description = changedData.description.split(" | ");
-                changedData.descriptionEn = changedData.descriptionEn.split(" | ");
-            }
-            else {
-                changedData.description = [changedData.description];
-                changedData.descriptionEn = [changedData.descriptionEn];
-            }
-        }
+        changedData = changeStringTypeToArray(data);
     }
 
     return (

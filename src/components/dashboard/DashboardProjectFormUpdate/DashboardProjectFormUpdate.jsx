@@ -197,7 +197,7 @@ const DashboardProjectFormUpdate = ({ data, mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='newShortDescription'
@@ -213,7 +213,7 @@ const DashboardProjectFormUpdate = ({ data, mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='newShortDescriptionEn'
@@ -228,41 +228,48 @@ const DashboardProjectFormUpdate = ({ data, mutate }) => {
                     </p>
                 </div>
 
-                <div className={styles.inputGroup}>
-                    <input
-                        type='radio'
-                        className={styles.formInput}
-                        id='fieldAnnounced'
-                        value="Announced"
-                        placeholder=' '
-                        {...register("newState")}
+                <div className={styles.radioInputGroup}>
+                    <p>Стан проєкту:</p>
+                    <div className={styles.radioItemWrapper}>
+                        <input
+                            type='radio'
+                            className={styles.radio}
+                            id='fieldAnnounced'
+                            value="Анонсований"
+                            placeholder=' '
+                            {...register("newState")}
 
-                    />
-                    <label htmlFor='fieldAnnounced' className={styles.formLabel}>
-                        Анонсований
-                    </label>
-                    <input
-                        type='radio'
-                        className={styles.formInput}
-                        id='fieldCurrent'
-                        value="Current"
-                        placeholder=' '
-                        {...register("newState")}
-                    />
-                    <label htmlFor='fieldCurrent' className={styles.formLabel}>
-                        Поточний
-                    </label>
-                    <input
-                        type='radio'
-                        className={styles.formInput}
-                        id='fieldRealized'
-                        value="Realized"
-                        placeholder=' '
-                        {...register("newState")}
-                    />
-                    <label htmlFor='fieldRealized' className={styles.formLabel}>
-                        Реалізований
-                    </label>
+                        />
+                        <label htmlFor='fieldAnnounced' className={styles.radioLabel}>
+                            Анонсований
+                        </label>
+                    </div>
+                    <div className={styles.radioItemWrapper}>
+                        <input
+                            type='radio'
+                            className={styles.radio}
+                            id='fieldCurrent'
+                            value="Поточний"
+                            placeholder=' '
+                            {...register("newState")}
+                        />
+                        <label htmlFor='fieldCurrent' className={styles.radioLabel}>
+                            Поточний
+                        </label>
+                    </div>
+                    <div className={styles.radioItemWrapper}>
+                        <input
+                            type='radio'
+                            className={styles.radio}
+                            id='fieldImplemented'
+                            value="Реалізований"
+                            placeholder=' '
+                            {...register("newState")}
+                        />
+                        <label htmlFor='fieldImplemented' className={styles.radioLabel}>
+                            Реалізований
+                        </label>
+                    </div>
                     <p className={styles.error}>{errors.state?.message}</p>
                 </div>
 
@@ -300,7 +307,7 @@ const DashboardProjectFormUpdate = ({ data, mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='newMission'
@@ -316,7 +323,7 @@ const DashboardProjectFormUpdate = ({ data, mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='newMissionEn'
@@ -332,7 +339,7 @@ const DashboardProjectFormUpdate = ({ data, mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='newGoal'
@@ -348,7 +355,7 @@ const DashboardProjectFormUpdate = ({ data, mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='newGoalEn'
@@ -364,7 +371,7 @@ const DashboardProjectFormUpdate = ({ data, mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='newAudience'
@@ -380,7 +387,7 @@ const DashboardProjectFormUpdate = ({ data, mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='newAudienceEn'
@@ -396,7 +403,7 @@ const DashboardProjectFormUpdate = ({ data, mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='newConcept'
@@ -412,7 +419,7 @@ const DashboardProjectFormUpdate = ({ data, mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='newConceptEn'

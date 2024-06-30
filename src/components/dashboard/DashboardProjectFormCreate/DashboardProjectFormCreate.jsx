@@ -143,7 +143,7 @@ const DashboardProjectFormCreate = ({ mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='shortDescription'
@@ -151,13 +151,13 @@ const DashboardProjectFormCreate = ({ mutate }) => {
                         {...register("shortDescription")}
                     />
                     <label htmlFor='shortDescription' className={styles.formLabel}>
-                        Опис англійською
+                        Короткий опис
                     </label>
                     <p className={styles.error}>{errors.shortDescription?.message}</p>
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='shortDescriptionEn'
@@ -170,41 +170,48 @@ const DashboardProjectFormCreate = ({ mutate }) => {
                     <p className={styles.error}>{errors.shortDescriptionEn?.message}</p>
                 </div>
 
-                <div className={styles.inputGroup}>
-                    <input
-                        type='radio'
-                        className={styles.formInput}
-                        id='fieldAnnounced'
-                        value="Announced"
-                        placeholder=' '
-                        {...register("state")}
-                        defaultChecked
-                    />
-                    <label htmlFor='fieldAnnounced' className={styles.formLabel}>
-                        Анонсований
-                    </label>
-                    <input
-                        type='radio'
-                        className={styles.formInput}
-                        id='fieldCurrent'
-                        value="Current"
-                        placeholder=' '
-                        {...register("state")}
-                    />
-                    <label htmlFor='fieldCurrent' className={styles.formLabel}>
-                        Поточний
-                    </label>
-                    <input
-                        type='radio'
-                        className={styles.formInput}
-                        id='fieldRealized'
-                        value="Realized"
-                        placeholder=' '
-                        {...register("state")}
-                    />
-                    <label htmlFor='fieldRealized' className={styles.formLabel}>
-                        Реалізований
-                    </label>
+                <div className={styles.radioInputGroup}>
+                    <p>Стан проєкту:</p>
+                    <div className={styles.radioItemWrapper}>
+                        <input
+                            type='radio'
+                            className={styles.radio}
+                            id='fieldAnnounced'
+                            value="Анонсований"
+                            placeholder=' '
+                            {...register("state")}
+                            defaultChecked
+                        />
+                        <label htmlFor='fieldAnnounced' className={styles.radioLabel}>
+                            Анонсований
+                        </label>
+                    </div>
+                    <div className={styles.radioItemWrapper}>
+                        <input
+                            type='radio'
+                            className={styles.radio}
+                            id='fieldCurrent'
+                            value="Поточний"
+                            placeholder=' '
+                            {...register("state")}
+                        />
+                        <label htmlFor='fieldCurrent' className={styles.radioLabel}>
+                            Поточний
+                        </label>
+                    </div>
+                    <div className={styles.radioItemWrapper}>
+                        <input
+                            type='radio'
+                            className={styles.radio}
+                            id='fieldImplemented'
+                            value="Реалізований"
+                            placeholder=' '
+                            {...register("state")}
+                        />
+                        <label htmlFor='fieldImplemented' className={styles.radioLabel}>
+                            Реалізований
+                        </label>
+                    </div>
                     <p className={styles.error}>{errors.state?.message}</p>
                 </div>
 
@@ -237,7 +244,7 @@ const DashboardProjectFormCreate = ({ mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='mission'
@@ -251,7 +258,7 @@ const DashboardProjectFormCreate = ({ mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='missionEn'
@@ -265,7 +272,7 @@ const DashboardProjectFormCreate = ({ mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='goal'
@@ -279,7 +286,7 @@ const DashboardProjectFormCreate = ({ mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='goalEn'
@@ -293,7 +300,7 @@ const DashboardProjectFormCreate = ({ mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='audience'
@@ -307,7 +314,7 @@ const DashboardProjectFormCreate = ({ mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='audienceEn'
@@ -321,7 +328,7 @@ const DashboardProjectFormCreate = ({ mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='concept'
@@ -335,7 +342,7 @@ const DashboardProjectFormCreate = ({ mutate }) => {
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <textarea
+                    <input
                         type='text'
                         className={styles.formInput}
                         id='conceptEn'
