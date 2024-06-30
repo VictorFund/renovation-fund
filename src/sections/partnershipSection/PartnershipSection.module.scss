@@ -17,6 +17,8 @@
 .partnershipList {
   display: -ms-grid;
   display: grid;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   grid-template-columns: repeat(1, 1fr);
   @media screen and (min-width: $tablet) {
@@ -36,9 +38,16 @@
 }
 
 .partnershipItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%;
   border-radius: 54px;
   box-shadow: 1px 1px 10px 0 rgba(75, 75, 78, 0.5);
@@ -91,6 +100,8 @@
 .partnershipSmallList {
   display: none;
   @media screen and (min-width: $laptop) {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
     column-gap: 20px;
@@ -99,9 +110,16 @@
 }
 
 .partnershipSmallItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 30px 32px;
   height: 100%;
   border-radius: 54px;

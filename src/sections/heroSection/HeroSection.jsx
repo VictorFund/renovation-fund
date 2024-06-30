@@ -57,7 +57,7 @@ const HeroSection = () => {
             />
             <div className={styles.btnContainer}>
               <ButtonLink
-                costumBtn={styles.costumBtn}
+                customBtn={styles.customBtn}
                 href="/donate"
                 title="Підтримати"
               />
