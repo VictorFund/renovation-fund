@@ -4,7 +4,7 @@ import { SiteContext } from "@/context/siteContext";
 import React, { useContext, useEffect } from "react";
 import styles from "./BurgerBtn.module.scss";
 
-const BurgerBtn = ({ className }) => {
+const BurgerBtn = ({ className, id }) => {
   const { burgerMenu, setBurgermenu } = useContext(SiteContext);
 
   useEffect(() => {
@@ -32,7 +32,8 @@ const BurgerBtn = ({ className }) => {
 
   return (
     <button
-      className={`${styles.btn} ${className}`}
+      className={`headerBtnsSmall`}
+      id={styles.btn}
       onClick={() => {
         setBurgermenu(!burgerMenu);
       }}

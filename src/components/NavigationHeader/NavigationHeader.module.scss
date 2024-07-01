@@ -20,7 +20,8 @@
   &::after {
     content: url("../../../public/images/pattern.webp");
     position: absolute;
-    transform: translate(-50%, 20%) rotate(8deg);
+    transform: translate(120%, 20%) rotate(90deg);
+    transition-duration: 2s;
   }
 
   & li {
@@ -36,12 +37,13 @@
     position: static;
     flex-direction: row;
     padding: 0;
-    padding-top: 16px;
     width: fit-content;
     height: 100%;
     gap: 32px;
     overflow: visible;
     transform: translateX(0%);
+    align-items: flex-start;
+    padding-top: 20px;
 
     &::after {
       display: none;
@@ -51,14 +53,37 @@
 
 .headerNavBurger {
   transform: translateX(0%);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-bottom: 32px;
+
+  &::after {
+    transform: translate(-50%, 20%) rotate(8deg);
+  }
+
+  @media screen and (orientation: landscape) and (max-height: $laptop) {
+    overflow: scroll;
+  }
+}
+
+.headerNavBurgerActiveMenu {
+  overflow: scroll;
 }
 
 .mobMenuHeader {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid $BorderColor;
   padding-bottom: 16px;
-  // z-index: 10;
+  position: relative;
+
+  @media screen and (min-width: $desktop) {
+    display: none;
+  }
+}
+
+.line {
+  position: absolute;
+  bottom: 0;
 }
 
 .langSwitcher {
@@ -77,29 +102,34 @@
 .navItem {
   display: flex;
   gap: 0;
-  height: 56px;
-  overflow: hidden;
-  flex-direction: column;
   width: 60%;
-  margin-left: auto;
-  margin-right: 0;
+  transform: translateX(50%);
+
+  & a {
+    background-color: transparent;
+  }
+
+  @media screen and (min-width: $tablet) {
+    transform: translateX(0%);
+    margin-left: auto;
+  }
 
   @media screen and (min-width: $desktop) {
+    margin: 0;
     width: fit-content;
   }
 }
 
-.navItemActive {
-  height: fit-content;
-  gap: 24px;
+.navItemSubmenu {
+  flex-direction: column;
+  overflow: visible;
 }
 
 .navItemTitle {
   display: flex;
   align-items: center;
   gap: 12px;
-  background-color: $bodyColor;
-  position: relative;
+  width: max-content;
   z-index: 10;
   cursor: pointer;
   font-weight: 600;
@@ -117,22 +147,39 @@
   transform: rotate(360deg);
 }
 
+.subMenuWrapp {
+  height: 0;
+  overflow: hidden;
+  @media screen and (min-width: $desktop) {
+    width: 40px;
+    margin-top: 8px;
+  }
+}
+
+.subMenuWrappActive {
+  height: fit-content;
+  @media screen and (min-width: $desktop) {
+    overflow: visible;
+  }
+}
+
 .linksWrapp {
   display: flex;
   flex-direction: column;
-  position: relative;
   gap: 24px;
-  z-index: 0;
-  background-color: $bodyColor;
-  transform: translateY(-120%);
-}
-.active {
-  transform: translateY(0%);
+  padding-top: 32px;
+
+  @media screen and (min-width: $desktop) {
+    width: max-content;
+    background-color: $bodyColor;
+    gap: 0;
+    padding: 0;
+  }
 }
 
 .navLink {
   @media screen and (min-width: $desktop) {
-    padding: 16px 0px;
+    padding: 16px 24px;
     border-bottom: 1px solid $textColor;
     font-size: 20px;
   }

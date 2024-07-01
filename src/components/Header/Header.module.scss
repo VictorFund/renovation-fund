@@ -22,6 +22,21 @@
   justify-content: space-between;
 }
 
+#smallLogo {
+  display: inline-block;
+  width: 32px;
+  @media screen and (min-width: $desktop) {
+    display: none;
+  }
+}
+
+#logo {
+  display: none;
+  @media screen and (min-width: $laptop) {
+    display: inline-block;
+  }
+}
+
 .LangSwitcher {
   display: none;
   @media screen and (min-width: $tablet) {
@@ -31,18 +46,26 @@
 
 #supportBtn {
   display: none;
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: 400px) {
     display: flex;
-    height: 60px;
+    width: 172px;
+    height: 48px;
     font-size: 18px;
+
+    padding: 14px 24px;
+    justify-content: center;
+
     & svg {
       width: 16px;
       height: 16px;
     }
   }
-  @media screen and (min-width: $desktop) {
+
+  @media screen and (min-width: $tablet) {
     width: 276px;
+    height: 60px;
     font-size: 24px;
+    justify-content: space-between;
 
     & svg {
       width: 28px;
