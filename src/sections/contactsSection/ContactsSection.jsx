@@ -1,9 +1,13 @@
-import React from 'react'
+import FeedbackForm from "@/components/Forms/FeedbackForm";
 
 const ContactsSection = () => {
     return (
-        <section>Contacts Section</section>
-    )
-}
+        <section className='topSection'>
+            <div className='container'>
+                <FeedbackForm />
+            </div>
+        </section>
+    );
+};
 
-export default ContactsSection
+export default ContactsSection;
