@@ -34,49 +34,71 @@ const NavigationHeader = () => {
         <BurgerBtn className={styles.burgerBtn} />
       </li>
       {navLinks.map((el) => {
-        return (
-          <li
-            key={el.title}
-            className={
-              activeMenu === el.title
-                ? `${styles.navItem} ${styles.navItemActive}`
-                : `${styles.navItem}`
-            }
-          >
-            <p
-              className={styles.navItemTitle}
-              onClick={() => toggleNav(el.title)}
+        if (el.subMenu) {
+          return (
+            <li
+              key={el.title}
+              className={
+                activeMenu === el.title
+                  ? `${styles.navItem} ${styles.navItemActive}`
+                  : `${styles.navItem}`
+              }
             >
-              {el.title}
-              <svg
-                className={`${styles.arrow} ${
-                  activeMenu === el.title ? styles.arrActive : ""
+              <p
+                className={styles.navItemTitle}
+                onClick={() => toggleNav(el.title)}
+              >
+                {el.title}
+                <svg
+                  className={`${styles.arrow} ${
+                    activeMenu === el.title ? styles.arrActive : ""
+                  }`}
+                >
+                  <use href="sprite.svg#icon-vector"></use>
+                </svg>
+              </p>
+              <nav
+                className={`${styles.linksWrapp} ${
+                  activeMenu === el.title ? styles.active : ""
                 }`}
               >
-                <use href="sprite.svg#icon-vector"></use>
-              </svg>
-            </p>
-            <nav
-              className={`${styles.linksWrapp} ${
-                activeMenu === el.title ? styles.active : ""
-              }`}
+                {el.subMenu?.map((item) => {
+                  return (
+                    <Link
+                      key={item.title}
+                      href={item.href}
+                      className={styles.navLink}
+                      onClick={closeMenu}
+                      target={item.target ? item.target : "_self"}
+                    >
+                      {item.title}
+                    </Link>
+                  );
+                })}
+              </nav>
+            </li>
+          );
+        } else {
+          return (
+            <li
+              key={el.title}
+              className={
+                activeMenu === el.title
+                  ? `${styles.navItem} ${styles.navItemActive}`
+                  : `${styles.navItem}`
+              }
+              onClick={() => toggleNav(el.title)}
             >
-              {el.subMenu.map((item) => {
-                return (
-                  <Link
-                    key={item.title}
-                    href={item.href}
-                    className={styles.navLink}
-                    onClick={closeMenu}
-                    target={item.target ? item.target : "_self"}
-                  >
-                    {item.title}
-                  </Link>
-                );
-              })}
-            </nav>
-          </li>
-        );
+              <Link
+                href={el.href}
+                target={el.target ? el.target : null}
+                className={styles.navItemTitle}
+              >
+                {el.title}
+              </Link>
+            </li>
+          );
+        }
       })}
     </ul>
   );
