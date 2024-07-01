@@ -1,0 +1,169 @@
+@import "@/app/variables";
+
+.form {
+    width: 280px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    row-gap: 24px;
+
+    //   @media screen and (min-width: $mobile) {
+    //     width: 312px;
+    //   }
+
+    //   @media screen and (min-width: $tablet) {
+    //     width: 474px;
+    //   }
+
+    //   @media screen and (min-width: $laptop) {
+    //     width: 568px;
+    //   }
+
+    //   @media screen and (min-width: $desktop) {
+    //     width: 636px;
+    //   }
+}
+
+.inputWrap {
+    width: 100%;
+    position: relative;
+}
+
+.input {
+    height: 60px;
+    width: 100%;
+    border-radius: 16px;
+    padding-left: 24px;
+    border: none;
+    outline: none;
+    box-shadow: 2px 2px 4px 0px rgba(75, 75, 78, 0.5);
+}
+
+.errorInput {
+    border: 1px solid $accentColor;
+}
+
+.input::placeholder {
+    font-family: var(--montserrat);
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(75, 75, 78, 0.5);
+}
+
+.textarea::placeholder {
+    font-family: var(--montserrat);
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(75, 75, 78, 0.5);
+}
+
+.textarea {
+    resize: none;
+    height: 180px;
+    padding-top: 24px;
+}
+
+.iconMark {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 15px;
+    right: 15px;
+    fill: $accentColor;
+    // stroke: $accentColor;
+}
+
+.socSvg {
+    width: 24px;
+    height: 24px;
+
+    //   @media screen and (min-width: 1440px) {
+    //     width: 32px;
+    //     height: 32px;
+    //   }
+}
+
+.boxChecked,
+.boxNoChecked {
+    display: none;
+}
+
+.span:has(.boxChecked) .socSvg {
+    fill: $accentColor;
+    // stroke: $accentColor;
+}
+
+.span:has(.boxNoChecked) .socSvg {
+    fill: $BorderColor;
+    // stroke: $BorderColor;
+}
+
+.checkboxWrap {
+    width: 176px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.inputCheckboxWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkboxTitle {
+    width: 176px;
+    text-align: center;
+    margin-bottom: 32px;
+    font-family: var(--montserrat);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.submitButton {
+    width: 100%;
+    height: 52px;
+    border-radius: 100px;
+    font-family: var(--montserrat);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+    border: none;
+    outline: none;
+    box-shadow: 2px 2px 4px 0px rgba(75, 75, 78, 0.5);
+    background-color: rgba(250, 250, 255, 1);
+    color: rgba(25, 43, 57, 1);
+}
+
+.activeBtn {
+    background-color: $accentColor;
+    color: #fff;
+}
+
+.error {
+    position: absolute;
+    bottom: 2px;
+    right: 100px;
+    color: $accentColor;
+
+    font-family: var(--montserrat);
+    font-size: 12px;
+    font-weight: 300;
+
+    //   @media screen and (min-width: $laptop) {
+    //     top: 60px;
+    //     font-size: 14px;
+    //   }
+}
+
+.errorCheckbox {
+    bottom: -20px;
+}
