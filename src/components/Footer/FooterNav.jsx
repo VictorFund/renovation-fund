@@ -35,12 +35,13 @@ const FooterNav = ({ className, tabletNavLink, navWrapp }) => {
               href="https://drive.google.com/drive/folders/1nSssAqs06TKHyJj2PwsSnqj3smaMMeXu?usp=drive_link"
               className={tabletNavLink}
               target="_blank"
+              rel="noopener noreferrer"
             >
               Звітність
             </Link>
           </>
         )}
-        <Link href={"/"}>Конфіденційність</Link>
+        <Link href='/documentation/privacy-policy.pdf' target="_blank" rel="noopener noreferrer">Конфіденційність</Link>
       </nav>
     </div>
   );

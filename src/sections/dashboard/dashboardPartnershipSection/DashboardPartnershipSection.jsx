@@ -22,7 +22,7 @@ const DashboardPartnershipSection = () => {
                 ? <Loader />
                 : <div className={styles.container}>
                     <div className={styles.cardsList}>
-                        {sortedByUpdateData.map(item => <DashboardPartnershipItem key={item.slug} data={item} />)}
+                        {sortedByUpdateData.map(item => <DashboardPartnershipItem key={item.slug} data={item} mutate={mutate} />)}
                     </div>
                     <DashboardPartnershipFormCreate mutate={mutate} />
                 </div>

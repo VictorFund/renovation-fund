@@ -14,6 +14,7 @@ const Footer = () => {
             <a
               href="https://maps.app.goo.gl/Rh6PxCxxDbAd3p7q6"
               target="_blank"
+              rel="noopener noreferrer"
               className={styles.street}
             >
               м.Київ,
