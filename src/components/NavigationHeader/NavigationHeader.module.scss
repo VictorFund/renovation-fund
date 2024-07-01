@@ -102,11 +102,14 @@
 .navItem {
   display: flex;
   gap: 0;
-  width: 60%;
-  transform: translateX(50%);
+  transform: translateX(25%);
 
   & a {
     background-color: transparent;
+  }
+  @media screen and (min-width: $mobile) {
+    width: 60%;
+    transform: translateX(50%);
   }
 
   @media screen and (min-width: $tablet) {

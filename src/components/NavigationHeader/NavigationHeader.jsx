@@ -1,6 +1,7 @@
 "use client";
 
 import { SiteContext } from "@/context/siteContext";
+import { useWindowResize } from "@/hooks/useWindowResize";
 import Link from "next/link";
 import React, { useContext, useState } from "react";
 import { navLinks } from "../../data/navLinks";
@@ -10,9 +11,15 @@ import LangSwitcher from "../LangSwitcher/LangSwitcher";
 import styles from "./NavigationHeader.module.scss";
 
 const NavigationHeader = () => {
+  const { isLaptop, isDesktop } = useWindowResize();
+
   const [activeMenu, setActiveMenu] = useState(null);
 
   const { burgerMenu, setBurgermenu } = useContext(SiteContext);
+
+  if (isDesktop) {
+    setBurgermenu(false);
+  }
 
   const toggleNav = (title) => {
     setActiveMenu(activeMenu === title ? null : title);

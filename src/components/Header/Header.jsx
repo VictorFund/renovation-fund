@@ -12,7 +12,10 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={`container ${styles.container}`}>
-        <HeaderLogo />
+        <div className={styles.logoWrapp}>
+          <HeaderLogo />
+        </div>
+        {/* <HeaderLogo /> */}
         <NavigationHeader />
         <LangSwitcher className={styles.LangSwitcher} />
         <ButtonLink id={styles.supportBtn} href="/donate" title="Підтримати" />
