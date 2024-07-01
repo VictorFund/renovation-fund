@@ -1,10 +1,15 @@
 "usr client"
+import { usePathname } from 'next/navigation'
 import { CldImage } from 'next-cloudinary'
+import DashboardEditAndDelete from '../DashboardEditAndDelete/DashboardEditAndDelete'
 import { changeStringTypeToArray } from '@/utils/changeStringTypeToArray';
 import styles from '../DashboardComponents.module.scss'
 
 
-const DashboardProjectItem = ({ data, isLoading }) => {
+const DashboardProjectItem = ({ data, isLoading, mutate }) => {
+    const pathname = usePathname();
+    const isList = pathname.endsWith("projects");
+
     let changedData = {};
 
     if (!isLoading) {
@@ -49,6 +54,8 @@ const DashboardProjectItem = ({ data, isLoading }) => {
                 {changedData.descriptionEn.map((item, index) => <p key={index}>{item}</p>)}
             </div>
             {changedData.link && <p className={styles.link}><span className='accentText'>Посилання на ресурс:</span> {changedData.link}</p>}
+
+            {isList && (<DashboardEditAndDelete data={data} pathname={pathname} mutate={mutate} />)}
         </div>
     )
 }

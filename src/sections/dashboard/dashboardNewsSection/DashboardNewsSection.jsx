@@ -22,7 +22,7 @@ const DashboardNewsSection = () => {
                 ? <Loader />
                 : <div className={styles.container}>
                     <div className={styles.cardsList}>
-                        {sortedByUpdateData.map(item => <DashboardNewsItem key={item.slug} data={item} isLoading={isLoading} />)}</div>
+                        {sortedByUpdateData.map(item => <DashboardNewsItem key={item.slug} data={item} isLoading={isLoading} mutate={mutate} />)}</div>
                     <DashboardNewsFormCreate mutate={mutate} />
                 </div>
             }

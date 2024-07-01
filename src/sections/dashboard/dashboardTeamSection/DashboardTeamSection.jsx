@@ -21,7 +21,7 @@ const DashboardTeamSection = () => {
             {isLoading
                 ? <Loader />
                 : <div className={styles.container}>
-                    <div className={styles.cardsList}>{sortedByUpdateData.map(item => <DashboardCoworker key={item.slug} data={item} />)}</div>
+                    <div className={styles.cardsList}>{sortedByUpdateData.map(item => <DashboardCoworker key={item.slug} data={item} mutate={mutate} />)}</div>
                     <DashboardCoworkerFormCreate mutate={mutate} />
                 </div>
             }
