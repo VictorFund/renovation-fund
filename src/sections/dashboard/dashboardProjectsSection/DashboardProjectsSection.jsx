@@ -15,14 +15,14 @@ const DashboardProjectsSection = () => {
         sortedByUpdateData = sortArrayByUpdate(data)
     }
 
-    
+
     return (
         <section>
             {isLoading
                 ? <Loader />
                 : <div className={styles.container}>
                     <div className={styles.cardsList}>
-                        {sortedByUpdateData.map(item => <DashboardProjectItem key={item.slug} data={item} isLoading={isLoading} />)}
+                        {sortedByUpdateData.map(item => <DashboardProjectItem key={item.slug} data={item} isLoading={isLoading} mutate={mutate} />)}
                     </div>
                     <DashboardProjectFormCreate mutate={mutate} />
                 </div>

@@ -1,9 +1,13 @@
 "usr client"
+import { usePathname } from 'next/navigation'
 import { CldImage } from 'next-cloudinary'
+import DashboardEditAndDelete from '../DashboardEditAndDelete/DashboardEditAndDelete'
 import styles from '../DashboardComponents.module.scss'
 
 
-const DashboardCoworker = ({ data }) => {
+const DashboardCoworker = ({ data, mutate }) => {
+    const pathname = usePathname();
+    const isList = pathname.endsWith("team");
 
 
     return (
@@ -23,6 +27,8 @@ const DashboardCoworker = ({ data }) => {
                     alt={`Photo of ${data.nameEn}`}
                 />
             </div>
+
+            {isList && (<DashboardEditAndDelete data={data} pathname={pathname} mutate={mutate} />)}
         </div>
     )
 }

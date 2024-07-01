@@ -1,0 +1,37 @@
+@import "../../../app/variables";
+
+.btnsWrapper {
+    position: absolute;
+    top: 16px;
+    right: 40px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.editLink {
+    display: flex;
+}
+
+.editIcon {
+    width: 32px;
+    height: 32px;
+    stroke: $textColor;
+    fill: transparent;
+}
+
+.editIcon:hover {
+    fill: #ffff59;
+}
+
+.deleteIcon {
+    width: 32px;
+    height: 32px;
+    stroke: $textColor;
+    fill: transparent;
+}
+
+.deleteIcon:hover {
+    cursor: pointer;
+    fill: #ff2828;
+}

@@ -127,6 +127,11 @@
     font-size: 16px;
     line-height: 1.2;
     cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: $BorderColor;
+    }
 }
 
 .radioInputGroup {
@@ -198,11 +203,17 @@
     font-size: 16px;
     line-height: 1.2;
     cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background-color: $hoverBtnColor;
+    }
 }
 
 // ITEMS
 
 .itemCard {
+    position: relative;
     flex: 1;
     padding: 40px 20px;
     display: flex;

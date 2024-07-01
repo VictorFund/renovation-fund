@@ -49,7 +49,7 @@ const HeroSection = () => {
           <div className={styles.imgContainer}>
             <Image
               src={
-                !isSmallScreenImg ? '/hero-fund.webp' : '/hero-fund-small.webp'
+                !isSmallScreenImg ? '/images/hero-fund.webp' : '/images/hero-fund-small.webp'
               }
               alt="hero"
               fill="true"
