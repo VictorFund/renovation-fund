@@ -1,0 +1,230 @@
+@import '../../app/variables';
+
+.title {
+  margin-bottom: 24px;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.date {
+  font-family: var(--regularSerif);
+  font-weight: 400;
+  font-size: 14px;
+  color: $textColor;
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $accentColor;
+  text-align: center;
+  @media screen and (min-width: $tablet) {
+    text-align: start;
+    width: max-content;
+    font-size: 24px;
+    margin-bottom: 40px;
+    padding-bottom: 18px;
+  }
+}
+
+.contentContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  @media screen and (min-width: $tablet) {
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+.imgContainer {
+  position: relative;
+  border-radius: 24px;
+  width: 100%;
+  height: 70vw;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  margin-bottom: 24px;
+  & img {
+    object-fit: cover;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 40vw;
+    height: 40vw;
+    margin-bottom: 0;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 516px;
+    height: 531px;
+  }
+}
+
+.contentList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  row-gap: 24px;
+  @media screen and (min-width: $tablet) {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.icon {
+  width: 21px;
+  height: 21px;
+  stroke: #f26515;
+  margin-left: 24px;
+  @media screen and (min-width: $tablet) {
+    width: 30px;
+    height: 30px;
+    margin-right: 35px;
+    margin-left: 0px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 64px;
+    height: 64px;
+    margin-right: 32px;
+  }
+}
+
+.purposeCollection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: var(--montserrat);
+  font-weight: 600;
+  font-size: 24px;
+  color: $textColor;
+  @media screen and (min-width: $tablet) {
+    flex-direction: row-reverse;
+    font-weight: 700;
+    font-size: 36px;
+  }
+  @media screen and (min-width: $laptop) {
+    font-size: 42px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-weight: 600;
+    font-size: 48px;
+  }
+}
+
+.price {
+  font-family: var(--montserrat);
+  font-weight: 700;
+  font-size: 32px;
+  color: $textColor;
+  @media screen and (min-width: $tablet) {
+    font-weight: 800;
+    font-size: 40px;
+  }
+  @media screen and (min-width: $laptop) {
+    font-size: 52px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    font-weight: 700;
+    font-size: 64px;
+  }
+}
+
+.btn {
+  width: 100%;
+  padding: 10px 40px;
+  @media screen and (min-width: $tablet) {
+    padding: 16px 40px;
+    width: 40vw;
+    height: 56px;
+    font-size: 20px;
+  }
+  @media screen and (min-width: $laptop) {
+    height: 78px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 629px;
+    height: 103px;
+    padding: 32px 40px;
+    font-size: 32px;
+  }
+}
+
+.blockIndentation {
+  margin-bottom: 24px;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.aboutList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  row-gap: 16px;
+  font-family: var(--montserrat);
+  font-weight: 500;
+  font-size: 16px;
+  color: $textColor;
+  @media screen and (min-width: $tablet) {
+    font-size: 20px;
+  }
+  @media screen and (min-width: $desktop) {
+    font-size: 24px;
+    row-gap: 24px;
+  }
+}
+
+.projectsList {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 24px;
+  @media screen and (min-width: $tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 26px;
+    row-gap: 32px;
+  }
+  @media screen and (min-width: $laptop) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media screen and (min-width: $desktop) {
+    column-gap: 20px;
+    row-gap: 40px;
+    margin-bottom: 40px;
+  }
+}

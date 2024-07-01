@@ -1,0 +1,24 @@
+@import "../../../app/variables";
+
+
+.logoutBtn {
+    @media screen and (min-width: $tablet) {
+        display: block;
+        background-color: transparent;
+        border: transparent;
+        cursor: pointer;
+    }
+}
+
+.exitIcon {
+    width: 28px;
+    height: 28px;
+    stroke: #0807f3;
+    fill: #5680eb;
+    transition-duration: 250ms;
+}
+
+.exitIcon:hover {
+    fill: #ff2828;
+    stroke: #9f2a2a;
+}

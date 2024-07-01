@@ -37,22 +37,26 @@
 
 
 "use client"
-import React from 'react'
+import Link from 'next/link'
 import { CldImage } from 'next-cloudinary'
+import Loader from '@/components/Loader/Loader'
 import HorizontalLine from '@/components/HorizontalLine/HorizontalLine'
 import { GetDataWithPathname } from '@/fetch/clientFetch'
-import styles from './NewsIdSection.module.scss'
-import Loader from '@/components/Loader/Loader'
-import Link from 'next/link'
 import { formatDate } from '@/utils/formatDate'
-
+import { changeStringTypeToArray } from '@/utils/changeStringTypeToArray'
+import styles from './NewsIdSection.module.scss'
 
 
 const NewsIdSection = () => {
     const { data, isLoading } = GetDataWithPathname();
-    console.log('data', data)
 
     const formattedDate = formatDate(data?.createdAt);
+
+    let changedData = {}
+    if (!isLoading) {
+        changedData = changeStringTypeToArray(data);
+    }
+
 
     return (
         <section className="pageSection">
@@ -60,20 +64,25 @@ const NewsIdSection = () => {
                 {isLoading
                     ? <Loader />
                     : <>
-                        <h1 className={`sectionTitle ${styles.title}`}>{data.title}</h1>
+                        <h1 className={`sectionTitle ${styles.title}`}>{changedData.title}</h1>
                         <p className={styles.date}>{formattedDate}</p>
                         <HorizontalLine className={styles.line} />
+
                         <div className={styles.imgWrapper}>
                             <CldImage
                                 className={styles.img}
                                 fill
-                                src={data.image}
+                                src={changedData.image}
                                 sizes='100vw'
                                 alt='Monument of Independence in Kyiv'
                             />
                         </div>
-                        <p className={`regularText ${styles.text}`}>{data.description}</p>
-                        {data.link && <Link className={styles.link} href={data.link}>Детальніше...</Link>}
+
+                        <div className={styles.textWrapper}>
+                            {changedData.description.map((item, index) => (<p key={index} className={`regularText ${styles.text}`}>{item}</p>))}
+                        </div>
+
+                        {changedData.link && <Link className={`regularText ${styles.link}`} href={changedData.link}>Детальніше...</Link>}
                         <HorizontalLine className='' />
                     </>}
             </div>

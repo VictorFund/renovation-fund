@@ -1,24 +1,30 @@
 "use client"
-import React from 'react'
-import { GetDataWithPathname } from '@/fetch/clientFetch';
 import DashboardNewsItem from '@/components/dashboard/DashboardNewsItem/DashboardNewsItem';
 import DashboardNewsFormCreate from '@/components/dashboard/DashboardNewsFormCreate/DashboardNewsFormCreate';
 import Loader from '@/components/Loader/Loader';
+import { GetDataWithPathname } from '@/fetch/clientFetch';
+import { sortArrayByUpdate } from '@/utils/sortArrayByUpdate';
+import styles from '../DashboardSections.module.scss'
 
 
 const DashboardNewsSection = () => {
-    const { data, isLoading } = GetDataWithPathname();
-    console.log('data', data)
+    const { data, isLoading, mutate } = GetDataWithPathname();
+
+    let sortedByUpdateData = [];
+    if (!isLoading) {
+        sortedByUpdateData = sortArrayByUpdate(data)
+    }
+
 
     return (
         <section>
             {isLoading
                 ? <Loader />
-                : <>
-                    <h1>DashboardNewsSection</h1>
-                    {data.map(item => <DashboardNewsItem key={item.slug} />)}
-                    <DashboardNewsFormCreate />
-                </>
+                : <div className={styles.container}>
+                    <div className={styles.cardsList}>
+                        {sortedByUpdateData.map(item => <DashboardNewsItem key={item.slug} data={item} isLoading={isLoading} />)}</div>
+                    <DashboardNewsFormCreate mutate={mutate} />
+                </div>
             }
         </section>
     )

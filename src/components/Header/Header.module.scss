@@ -35,8 +35,18 @@
     display: flex;
     height: 60px;
     font-size: 18px;
+    & svg {
+      width: 16px;
+      height: 16px;
+    }
   }
   @media screen and (min-width: $desktop) {
     width: 276px;
+    font-size: 24px;
+
+    & svg {
+      width: 28px;
+      height: 28px;
+    }
   }
 }

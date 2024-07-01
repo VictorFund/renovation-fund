@@ -30,9 +30,9 @@ const projectSchema = new mongoose.Schema(
         },
         state: {
             type: String,
-            enum: ['Announced', 'Current', 'Realized'],
+            enum: ['Анонсований', 'Поточний', 'Реалізований'],
             required: true,
-            default: 'Announced',
+            default: 'Анонсований',
         },
         startDate: {
             type: String,

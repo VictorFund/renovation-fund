@@ -1,5 +1,6 @@
 @import "../../app/variables";
 
+//AUTH FORMS
 
 .authForm {
     display: flex;
@@ -42,80 +43,245 @@
     color: #d50000;
 }
 
-// LogoutBtn
+// DATA FORMS
 
-.logoutBtn {
-    @media screen and (min-width: $tablet) {
-        display: block;
-        background-color: transparent;
-        border: transparent;
-        cursor: pointer;
+.dataFormContainer {
+    flex: 1;
+}
+
+.dataForm {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    border-radius: 32px;
+    background-color: $bodyColor;
+    box-shadow: 1px 1px 10px 0px $shadow;
+}
+
+.formTitle {
+    text-align: center;
+    font-family: var(--montserrat);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2;
+    color: $accentColor;
+}
+
+.inputGroup {
+    position: relative;
+    width: 100%;
+}
+
+.formInput {
+    width: 100%;
+    padding: 20px 30px;
+    outline: none;
+    border-radius: 16px;
+    border-color: transparent;
+    background-color: inherit;
+    box-shadow: 2px 2px 4px 0px $shadow;
+    font-family: var(--montserrat);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+
+    &:focus+.formLabel,
+    &:not(:placeholder-shown)+.formLabel {
+        transform: translateY(-190%) scale(0.9);
+        transition-duration: 250ms;
     }
 }
 
-.exitIcon {
-    width: 28px;
-    height: 28px;
-    stroke: #0807f3;
-    fill: #5680eb;
+.inputGroup textarea {
+    height: 120px;
+    resize: none;
+}
+
+.formLabel {
+    position: absolute;
+    top: 20px;
+    left: 32px;
+    pointer-events: none;
     transition-duration: 250ms;
 }
 
-.exitIcon:hover {
-    fill: #ff2828;
-    stroke: #9f2a2a;
+.error {
+    position: absolute;
+    top: -17px;
+    right: 10px;
+    color: red;
+    font-size: 14px;
 }
 
-// DashboardNavigation
-
-.navigationContainer {
-    display: none;
-
-    @media screen and (min-width: $tablet) {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        height: 50px;
-    }
-}
-
-.navigationContainer .pageLink {
-    // font-family: var(--font-noto-sans);
+.uploadBtn {
+    width: 100%;
+    padding: 20px 30px;
+    outline: none;
+    border-radius: 16px;
+    border-color: transparent;
+    background-color: $bodyColor;
+    box-shadow: 1px 1px 10px 0px $shadow;
+    font-family: var(--montserrat);
     font-weight: 400;
-    font-size: 20px;
-    line-height: 1.6;
-    color: ffffff;
+    font-size: 16px;
+    line-height: 1.2;
+    cursor: pointer;
+}
 
+.radioInputGroup {
+    width: 100%;
+    padding: 20px 30px;
+    outline: none;
+    border-radius: 16px;
+    border-color: transparent;
+    box-shadow: 2px 2px 4px 0px $shadow;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    font-family: var(--montserrat);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.radioItemWrapper {
+    display: flex;
+    column-gap: 10px;
+    margin-left: 10%;
+}
+
+.radioLabel {
+    cursor: pointer;
+}
+
+.radio {
+    cursor: pointer;
+}
+
+.checkboxInputGroup {
+    width: 100%;
+    padding: 20px 30px;
+    outline: none;
+    border-radius: 16px;
+    border-color: transparent;
+    box-shadow: 2px 2px 4px 0px $shadow;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--montserrat);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.checkboxLabel {
+    cursor: pointer;
+}
+
+.checkbox {
+    width: 24px;
+    cursor: pointer;
+}
+
+.submitBtn {
+    padding: 20px 24px;
+    width: 305px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 54px;
+    border: transparent;
+    box-shadow: 2px 2px 4px 0 $borderColorLangSwitch;
+    background-color: $accentColor;
+    color: $white ;
+    font-family: var(--montserrat);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.2;
+    cursor: pointer;
+}
+
+// ITEMS
+
+.itemCard {
+    flex: 1;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    border-radius: 32px;
+    background-color: $bodyColor;
+    box-shadow: 1px 1px 10px 0px $shadow;
+    font-family: var(--montserrat);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.link {
+    width: 30vw;
+    overflow: hidden;
+    white-space: wrap;
+}
+
+// COWORKER
+
+.coworkerImgWrapper {
+    width: 414px;
+    height: 387px;
     position: relative;
-    display: inline-block;
-    width: fit-content;
-
-    &::after {
-        content: "";
-        position: absolute;
-        width: 0%;
-        height: 2px;
-        // background-image: $gradient;
-        bottom: 0;
-        left: 0;
-    }
-
-    &:hover,
-    &:focus {
-        &::after {
-            animation: animate 0.5s linear forwards;
-        }
-    }
+    overflow: hidden;
 }
 
-@keyframes animate {
-    to {
-        width: 100%;
-    }
+.coworkerImg {
+    object-fit: cover;
+    object-position: top;
 }
 
-.navigationContainer .active {
-    &::after {
-        width: 100%;
-    }
+// NEWS
+
+.newsImgWrapper {
+    width: 414px;
+    height: 387px;
+    position: relative;
+    overflow: hidden;
 }
+
+.newsImg {
+    object-fit: cover;
+}
+
+.newsDescriptionWrapper p:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+// PARTNERSHIP
+
+.partnershipImgWrapper {
+    width: 414px;
+    height: 387px;
+    position: relative;
+    overflow: hidden;
+}
+
+.partnershipImg {
+    object-fit: cover;
+}
+
+// PROJECT
+
+.projectImgWrapper {
+    width: 414px;
+    height: 387px;
+    position: relative;
+    overflow: hidden;
+}
+
+.projectImg {
+    object-fit: cover;
+}
+
+.projectDescriptionWrapper p:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+// USER

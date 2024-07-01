@@ -1,25 +1,31 @@
 "use client"
-import React from 'react'
-import { GetDataWithPathname } from '@/fetch/clientFetch';
 import DashboardPartnershipItem from '@/components/dashboard/DashboardPartnershipItem/DashboardPartnershipItem';
 import DashboardPartnershipFormCreate from '@/components/dashboard/DashboardPartnershipFormCreate/DashboardPartnershipFormCreate';
 import Loader from '@/components/Loader/Loader';
+import { GetDataWithPathname } from '@/fetch/clientFetch';
+import { sortArrayByUpdate } from '@/utils/sortArrayByUpdate';
+import styles from '../DashboardSections.module.scss'
 
 
 const DashboardPartnershipSection = () => {
-    const { data, isLoading } = GetDataWithPathname();
-    console.log('data', data)
+    const { data, isLoading, mutate } = GetDataWithPathname();
+
+    let sortedByUpdateData = [];
+    if (!isLoading) {
+        sortedByUpdateData = sortArrayByUpdate(data)
+    }
 
 
     return (
         <section>
             {isLoading
                 ? <Loader />
-                : <>
-                    <h1>DashboardPartnershipSection</h1>
-                    {data.map(item => <DashboardPartnershipItem key={item.slug} />)}
-                    <DashboardPartnershipFormCreate />
-                </>
+                : <div className={styles.container}>
+                    <div className={styles.cardsList}>
+                        {sortedByUpdateData.map(item => <DashboardPartnershipItem key={item.slug} data={item} />)}
+                    </div>
+                    <DashboardPartnershipFormCreate mutate={mutate} />
+                </div>
             }
         </section>
     )

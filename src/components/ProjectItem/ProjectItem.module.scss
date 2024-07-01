@@ -1,0 +1,102 @@
+@import '../../app/variables';
+
+.projectsItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 20px 20px;
+  border-radius: 50px;
+  box-shadow: 2px 2px 4px 0 rgba(75, 75, 78, 0.5);
+  text-align: center;
+  @media screen and (min-width: $tablet) {
+    padding: 37px 24px;
+  }
+  @media screen and (min-width: $laptop) {
+    padding: 20px 46px;
+  }
+}
+
+.imgContainer {
+  position: relative;
+  overflow: hidden;
+  width: 248px;
+  height: 231px;
+  border-radius: 32px;
+  margin-bottom: 16px;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.7);
+
+  & img {
+    border-radius: 24px;
+    object-fit: cover;
+  }
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 24px;
+    border-radius: 24px;
+    width: 239px;
+    height: 162px;
+  }
+}
+
+.contentProject {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  row-gap: 16px;
+}
+
+.projectTitle {
+  font-family: var(--montserrat);
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  color: $textColor;
+}
+
+.projectDesc {
+  font-family: var(--montserrat);
+  font-weight: 500;
+  font-size: 16px;
+  color: $textColor;
+}
+
+.btn {
+  width: 184px;
+  height: 52px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 54px;
+  font-family: var(--montserrat);
+  font-weight: 400;
+  font-size: 16px;
+  border: none;
+  color: $white;
+  background-color: $accentColor;
+  outline: none;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    background-color: #ff5c00;
+  }
+}

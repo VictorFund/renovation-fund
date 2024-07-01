@@ -20,10 +20,7 @@ export default function RootLayout({ children }) {
       >
         <SiteProvider>
           <Header />
-          <main>
-            {children}
-            {/* <FormSection /> */}
-          </main>
+          <main>{children}</main>
           <Footer />
         </SiteProvider>
       </body>

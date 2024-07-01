@@ -1,4 +1,4 @@
-@import './_variables';
+@import "./_variables";
 
 *,
 *::before,
@@ -67,6 +67,7 @@ section {
 a {
   text-decoration: none;
   color: inherit;
+  display: inline-block;
 }
 
 ul,
@@ -167,23 +168,11 @@ ol {
     font-size: 20px;
   }
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $desktop) {
     font-size: 24px;
   }
 }
 
 .accentText {
   color: $accentColor;
-}
-
-.footer {
-  padding: 24px $sidePaddingMobile 32px;
-
-  @media screen and (min-width: $tablet) {
-    padding: 32px $sidePaddingTablet;
-  }
-
-  @media screen and (min-width: $desktop) {
-    padding: 50px $sidePaddingDesktop 52px;
-  }
 }

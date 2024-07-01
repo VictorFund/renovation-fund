@@ -1,7 +1,179 @@
 @import "../../app/variables";
 
 .footer {
-    max-width: 1440px;
+  background-color: $textColor;
+  color: $white;
+  padding: 24px $sidePaddingMobile;
+
+  font-family: var(--montserrat);
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+
+  & a,
+  & p,
+  & h3 {
+    font-style: normal;
+  }
+
+  & a:hover {
+    color: $hoverBtnColor;
+    text-shadow: 0px 0px 2px rgba(255, 94, 0, 0.5);
+  }
+
+  & h3 {
+    font-style: normal;
+    font-size: 32px;
+    font-family: var(--mediumSerif);
+    line-height: 1.2;
+    letter-spacing: 1.2px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  @media screen and (min-width: $tablet) {
+    padding: 32px $sidePaddingTablet;
+    & h3 {
+      font-family: inherit;
+      font-size: 24px;
+      margin-bottom: 32px;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 50px $sidePaddingDesktop;
+    font-size: 24px;
+
+    & h3 {
+      font-size: 32px;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.blockWrapp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width: $tablet) {
+    flex: 1;
+    align-items: flex-start;
+
+    &:last-child {
+      flex: 1.2;
+    }
+  }
+}
+
+.addr {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  @media screen and (min-width: $tablet) {
+    align-items: flex-start;
+  }
+}
+
+#logo {
+  filter: grayscale(3) brightness(3);
+  width: 188px;
+  height: 60px;
+  margin-bottom: 12px;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 12px;
+    margin-top: -12px;
+  }
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 28px;
+    width: 236px;
+    height: 80px;
+  }
+}
+
+.street {
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 40px;
+    font-size: 20px;
+  }
+}
+
+#socLinks {
+  gap: 40px;
+
+  & svg {
     background-color: $textColor;
-    color: $white;
+    border: none;
+    width: 24px;
+    height: 24px;
+    &:focus,
+    &:hover {
+      background-color: $bodyColor;
+      fill: $textColor;
+      border: 1px solid $hoverBtnColor;
+      scale: 1.2;
+    }
+  }
+  @media screen and (min-width: $tablet) {
+    gap: 16px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 100%;
+    max-width: 176px;
+    & svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+.navWrapp {
+  @media screen and (min-width: $tablet) {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 24px;
+    column-gap: 16px;
+  }
+}
+
+.tabletNavLink {
+  display: none;
+
+  @media screen and (min-width: $tablet) {
+    display: inline-block;
+  }
+}
+
+.allRights {
+  text-align: center;
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+
+  & a {
+    color: $accentColor;
+  }
+
+  @media screen and (min-width: $tablet) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-top: 54px;
+  }
 }

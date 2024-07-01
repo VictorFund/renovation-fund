@@ -12,7 +12,12 @@
 }
 
 .teamList {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 
   row-gap: 24px;
@@ -27,16 +32,25 @@
 }
 
 .teamCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 24px 30px;
   box-shadow: 1px 1px 10px 0 rgba(75, 75, 78, 0.5);
   border-radius: 50px;
   @media screen and (min-width: $tablet) {
+    justify-content: start;
     flex-direction: row;
     padding: 44px 54px;
-    column-gap: 51px;
+    column-gap: 15%;
+    // column-gap: 51px;
   }
 
   @media screen and (min-width: $desktop) {
@@ -57,25 +71,31 @@
   }
 
   @media screen and (min-width: $tablet) {
-    min-width: 224px;
+    width: 224px;
     height: 231px;
     margin: auto 0px;
   }
   @media screen and (min-width: $laptop) {
-    height: 40vw;
+    width: 30vw;
+    height: 30vw;
   }
 
   @media screen and (min-width: $desktop) {
-    min-width: 432px;
+    width: 432px;
     height: 447px;
   }
 }
 
 .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   @media screen and (min-width: $tablet) {
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
 }
 

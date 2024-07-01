@@ -1,24 +1,29 @@
 "use client"
-import React from 'react'
-import { GetDataWithPathname } from '@/fetch/clientFetch';
 import DashboardCoworker from '@/components/dashboard/DashboardCoworker/DashboardCoworker';
 import DashboardCoworkerFormCreate from '@/components/dashboard/DashboardCoworkerFormCreate/DashboardCoworkerFormCreate';
 import Loader from '@/components/Loader/Loader';
+import { GetDataWithPathname } from '@/fetch/clientFetch';
+import { sortArrayByUpdate } from '@/utils/sortArrayByUpdate';
+import styles from '../DashboardSections.module.scss'
 
 
 const DashboardTeamSection = () => {
-    const { data, isLoading } = GetDataWithPathname();
-    console.log('data', data)
+    const { data, isLoading, mutate } = GetDataWithPathname();
+
+    let sortedByUpdateData = [];
+    if (!isLoading) {
+        sortedByUpdateData = sortArrayByUpdate(data)
+    }
+
 
     return (
         <section>
             {isLoading
                 ? <Loader />
-                : <>
-                    <h1>DashboardTeamSection</h1>
-                    {data.map(item => <DashboardCoworker key={item.slug} />)}
-                    <DashboardCoworkerFormCreate />
-                </>
+                : <div className={styles.container}>
+                    <div className={styles.cardsList}>{sortedByUpdateData.map(item => <DashboardCoworker key={item.slug} data={item} />)}</div>
+                    <DashboardCoworkerFormCreate mutate={mutate} />
+                </div>
             }
         </section>
     )
