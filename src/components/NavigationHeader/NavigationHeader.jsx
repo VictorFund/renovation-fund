@@ -79,9 +79,9 @@ const NavigationHeader = () => {
             </li>
           );
         } else {
-          console.log("href", el.href);
           return (
             <li
+              key={el.title}
               className={
                 activeMenu === el.title
                   ? `${styles.navItem} ${styles.navItemActive}`
