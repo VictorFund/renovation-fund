@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { useWindowResize } from "@/hooks/useWindowResize";
 import ButtonLink from "../Buttons/ButtonLink/ButtonLink";
 
@@ -9,6 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "./homeSwiper.css";
 import { CldImage } from "next-cloudinary";
+
 
 const HomeSwiper = ({ items, dataName, btnClassName }) => {
   const { isMobile } = useWindowResize();

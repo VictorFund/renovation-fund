@@ -1,6 +1,6 @@
 import Link from "next/link";
-import React from "react";
 import styles from "./TitleLink.module.scss";
+
 
 const TitleLink = ({ title, href, id }) => {
   return (
@@ -13,5 +13,6 @@ const TitleLink = ({ title, href, id }) => {
     </Link>
   );
 };
+
 
 export default TitleLink;

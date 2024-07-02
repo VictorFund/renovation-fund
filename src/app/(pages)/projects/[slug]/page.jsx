@@ -1,5 +1,5 @@
 import ProjectIdSection from '@/sections/projectIdSection/ProjectIdSection'
-import React from 'react'
+
 
 const ProjectIdPage = () => {
     return (
@@ -8,5 +8,6 @@ const ProjectIdPage = () => {
         </>
     )
 }
+
 
 export default ProjectIdPage

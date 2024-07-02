@@ -1,4 +1,3 @@
-import React from 'react'
 import DashboardRegisterForm from '@/components/dashboard/DashboardRegisterForm/DashboardRegisterForm'
 import styles from './DashboardRegisterSection.module.scss'
 

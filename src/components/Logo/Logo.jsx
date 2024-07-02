@@ -3,7 +3,7 @@
 import { SiteContext } from "@/context/siteContext";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import styles from "./Logo.module.scss";
 
 const Logo = ({ className, id }) => {

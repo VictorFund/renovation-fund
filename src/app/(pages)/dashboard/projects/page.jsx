@@ -1,4 +1,3 @@
-import React from 'react'
 import DashboardProjectsSection from '@/sections/dashboard/dashboardProjectsSection/DashboardProjectsSection'
 
 

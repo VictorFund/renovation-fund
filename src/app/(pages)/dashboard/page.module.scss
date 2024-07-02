@@ -3,7 +3,7 @@
 .layoutContainer {
     display: none;
 
-    @media screen and (min-width:$tablet) {
+    @media screen and (min-width:$laptop) {
         display: block;
         width: 100%;
         max-width: 1440px;

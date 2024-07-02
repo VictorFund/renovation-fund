@@ -1,5 +1,4 @@
 import { socialLinks } from '@/data/socialLinks.data';
-import React from 'react';
 import styles from './SocialLinks.module.scss';
 
 const SocialLinks = ({ id, costumStyles, costumSvg }) => {

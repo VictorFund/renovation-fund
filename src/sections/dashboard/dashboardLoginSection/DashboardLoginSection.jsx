@@ -1,4 +1,3 @@
-import React from 'react'
 import DashboardLoginForm from '@/components/dashboard/DashboardLoginForm/DashboardLoginForm'
 import styles from './DashboardLoginSection.module.scss'
 

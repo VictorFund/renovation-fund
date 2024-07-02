@@ -6,7 +6,7 @@ import ProjectItem from '@/components/ProjectItem/ProjectItem';
 import { GetDataWithPathname } from '@/fetch/clientFetch';
 import { formatDate } from '@/utils/formatDate';
 import { CldImage } from 'next-cloudinary';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import useSWR from 'swr';
 import styles from './ProjectIdSection.module.scss';
 

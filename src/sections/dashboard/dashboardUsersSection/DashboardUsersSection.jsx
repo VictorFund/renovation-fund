@@ -14,13 +14,14 @@ const DashboardUsersSection = () => {
         sortedByUpdateData = sortArrayByUpdate(data)
     }
 
+    const dataWithoutOwner = sortedByUpdateData.filter(item => item.email !== process.env.NEXT_PUBLIC_OWNER)
 
     return (
         <section>
             {isLoading ? <Loader />
                 :
                 <div className={styles.userCardsList}>
-                    {sortedByUpdateData.map(item => <DashboardUser key={item.email} data={item} mutate={mutate} />)}
+                    {dataWithoutOwner.map(item => <DashboardUser key={item.email} data={item} mutate={mutate} />)}
                 </div>
 
             }</section>

@@ -1,7 +1,7 @@
 import { CldImage } from 'next-cloudinary';
 import Link from 'next/link';
-import React from 'react';
 import styles from './ProjectItem.module.scss';
+
 
 const ProjectItem = ({ slug, title, image, shortDescription }) => {
   return (

@@ -1,5 +1,5 @@
 import FeedbackForm from "@/components/Forms/FeedbackForm";
-import React from "react";
+
 
 const FormSection = (ci) => {
     return (
@@ -10,5 +10,6 @@ const FormSection = (ci) => {
         </section>
     );
 };
+
 
 export default FormSection;

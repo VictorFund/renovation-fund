@@ -4,7 +4,7 @@ import ButtonLink from '@/components/Buttons/ButtonLink/ButtonLink';
 import SocialLinks from '@/components/SocialLinks/SocialLinks';
 import { socialLinks } from '@/data/socialLinks.data';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './heroSection.module.scss';
 
 const HeroSection = () => {

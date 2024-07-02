@@ -2,7 +2,7 @@
 
 import { SiteContext } from "@/context/siteContext";
 import Link from "next/link";
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { navLinks } from "../../data/navLinks";
 import BurgerBtn from "../Buttons/BurgerBtn/BurgerBtn";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
@@ -50,17 +50,15 @@ const NavigationHeader = () => {
               >
                 {el.title}
                 <svg
-                  className={`${styles.arrow} ${
-                    activeMenu === el.title ? styles.arrActive : ""
-                  }`}
+                  className={`${styles.arrow} ${activeMenu === el.title ? styles.arrActive : ""
+                    }`}
                 >
                   <use href="sprite.svg#icon-vector"></use>
                 </svg>
               </p>
               <nav
-                className={`${styles.linksWrapp} ${
-                  activeMenu === el.title ? styles.active : ""
-                }`}
+                className={`${styles.linksWrapp} ${activeMenu === el.title ? styles.active : ""
+                  }`}
               >
                 {el.subMenu?.map((item) => {
                   return (

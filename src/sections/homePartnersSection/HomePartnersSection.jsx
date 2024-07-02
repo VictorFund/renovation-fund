@@ -1,5 +1,4 @@
 // "use client"
-import React from "react";
 // import { GetDataForHomeByCollection } from "@/fetch/clientFetch";
 
 const HomePartnersSection = () => {
