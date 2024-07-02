@@ -1,9 +1,9 @@
 "use client"
-import { useFormState } from "react-dom";
-import { register } from "@/auth/actions";
-import { useRouter } from "next/navigation";
-import Link from 'next/link';
 import { useEffect } from "react";
+import { useFormState } from "react-dom";
+import Link from 'next/link';
+import { useRouter } from "next/navigation";
+import { register } from "@/auth/actions";
 import styles from '../DashboardComponents.module.scss'
 
 
@@ -18,12 +18,12 @@ const DashboardRegisterForm = () => {
 
 
     return (
-        <form action={formAction} className={styles.authForm}>
-            <input type="email" placeholder="email" name="email" />
-            <input type="password" placeholder="password" name="password" />
-            <button>Register</button>
+        <form action={formAction} className={`${styles.dataForm} ${styles.authForm}`}>
+            <input type="email" placeholder="email" name="email" className={styles.formInput} />
+            <input type="password" placeholder="password" name="password" className={styles.formInput} />
+            <button className={`${styles.submitBtn} ${styles.authSubmitBtn}`} >Зареєструватися</button>
             {state?.error && <p className={styles.errMessage} >{state.error}</p>}
-            <p className={styles.text}>Do you have an account? <Link className={styles.link} href='/dashboard/login'>Login</Link> </p>
+            <p>У Вас вже є акаунт? <Link className={styles.link} href='/dashboard/login'>Log in</Link> </p>
         </form>
     )
 }

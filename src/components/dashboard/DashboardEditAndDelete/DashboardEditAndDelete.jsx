@@ -5,11 +5,12 @@ import { createImagesArrayForDeletingFromCloudinary } from '@/utils/createImages
 import styles from './DashboardEditAndDelete.module.scss';
 
 
-const DashboardEditAndDelete = ({ data, pathname, mutate }) => {
+const DashboardEditAndDelete = ({ data, pathname, mutate, isOwner }) => {
     // cut /dashboard/ from pathname
     const slicedPathname = pathname.slice(11);
     const url = `/api/${slicedPathname}/${data.slug}`;
     const ownerPage = pathname.endsWith("users");
+
 
     return (
         <div className={styles.btnsWrapper}>
@@ -22,7 +23,7 @@ const DashboardEditAndDelete = ({ data, pathname, mutate }) => {
                 </svg>
             </Link>}
 
-            <svg
+            {isOwner && <svg
                 className={styles.deleteIcon}
                 onClick={() => {
                     const arrForDeleting = createImagesArrayForDeletingFromCloudinary(data);
@@ -32,7 +33,7 @@ const DashboardEditAndDelete = ({ data, pathname, mutate }) => {
                 }}
             >
                 <use href="/sprite.svg#icon-delete" />
-            </svg>
+            </svg>}
         </div>
     )
 }
