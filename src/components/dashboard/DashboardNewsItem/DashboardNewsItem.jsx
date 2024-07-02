@@ -6,7 +6,7 @@ import { changeStringTypeToArray } from '@/utils/changeStringTypeToArray';
 import styles from '../DashboardComponents.module.scss'
 
 
-const DashboardNewsItem = ({ data, isLoading, mutate }) => {
+const DashboardNewsItem = ({ data, isLoading, mutate, isOwner }) => {
     const pathname = usePathname();
     const isList = pathname.endsWith("news");
 
@@ -41,7 +41,7 @@ const DashboardNewsItem = ({ data, isLoading, mutate }) => {
                 {changedData.descriptionEn.map((item, index) => <p key={index}>{item}</p>)}
             </div>
             {changedData.link && <p><span className='accentText'>Посилання на ресурс:</span> {changedData.link}</p>}
-            {isList && (<DashboardEditAndDelete data={data} pathname={pathname} mutate={mutate} />)}
+            {isList && (<DashboardEditAndDelete data={data} pathname={pathname} mutate={mutate} isOwner={isOwner} />)}
         </div>
     )
 }

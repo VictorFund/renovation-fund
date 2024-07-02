@@ -10,7 +10,6 @@ const DashboardNavigation = ({ handleLogout, session }) => {
     const pathName = usePathname();
     const pages = [...dashboardPages];
     const adminPages = pages.filter(item => item.access === "admin")
-    // const ownerPages = dashboardPages.filter(item => item.access === "owner")
     const ownerPages = dashboardPages;
 
 

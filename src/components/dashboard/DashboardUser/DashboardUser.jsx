@@ -5,7 +5,7 @@ import DashboardEditAndDelete from "../DashboardEditAndDelete/DashboardEditAndDe
 import styles from "../DashboardComponents.module.scss"
 
 
-const DashboardUser = ({ data, mutate }) => {
+const DashboardUser = ({ data, mutate, isOwner }) => {
     const pathname = usePathname();
     const [isAdminRules, setIsAdminRules] = useState(data.isAdmin)
 
@@ -52,7 +52,7 @@ const DashboardUser = ({ data, mutate }) => {
                 <button type="submit" className={styles.submitBtn}>Зберегти зміни</button>
             </form >
 
-            <DashboardEditAndDelete data={data} pathname={pathname} mutate={mutate} />
+            <DashboardEditAndDelete data={data} pathname={pathname} mutate={mutate} isOwner={isOwner} />
         </div>
     )
 }
