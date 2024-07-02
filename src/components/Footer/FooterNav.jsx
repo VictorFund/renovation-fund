@@ -4,11 +4,11 @@ import React from "react";
 import { useWindowResize } from "@/hooks/useWindowResize";
 import Link from "next/link";
 
-const FooterNav = ({ className, tabletNavLink, navWrapp }) => {
+const FooterNav = ({ className, tabletNavLink, navWrapp, titleClassName }) => {
   const { isMobile } = useWindowResize();
   return (
     <div className={className}>
-      {!isMobile && <h3>Меню</h3>}
+      {!isMobile && <h3 className={titleClassName}>Меню</h3>}
 
       <nav className={navWrapp}>
         {!isMobile && (
@@ -41,7 +41,13 @@ const FooterNav = ({ className, tabletNavLink, navWrapp }) => {
             </Link>
           </>
         )}
-        <Link href='/documentation/privacy-policy.pdf' target="_blank" rel="noopener noreferrer">Конфіденційність</Link>
+        <Link
+          href="/documentation/privacy-policy.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Конфіденційність
+        </Link>
       </nav>
     </div>
   );

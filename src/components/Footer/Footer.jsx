@@ -1,7 +1,7 @@
 import React from "react";
-import Logo from "../Logo/Logo";
 import SocialLinks from "../SocialLinks/SocialLinks";
 import styles from "./Footer.module.scss";
+import FooterLogo from "./FooterLogo";
 import FooterNav from "./FooterNav";
 
 const Footer = () => {
@@ -9,7 +9,9 @@ const Footer = () => {
     <footer className={`footer ${styles.footer}`}>
       <div className={`container ${styles.container}`}>
         <div className={styles.blockWrapp}>
-          <Logo id={styles.logo} />
+          <div className={styles.logoWrapp}>
+            <FooterLogo />
+          </div>
           <address className={styles.addr}>
             <a
               href="https://maps.app.goo.gl/Rh6PxCxxDbAd3p7q6"
@@ -42,6 +44,7 @@ const Footer = () => {
         </div>
         <FooterNav
           className={styles.blockWrapp}
+          titleClassName={styles.navTitle}
           tabletNavLink={styles.tabletNavLink}
           navWrapp={styles.navWrapp}
         />
