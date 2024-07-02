@@ -1,12 +1,11 @@
-import React from "react";
 import BurgerBtn from "../Buttons/BurgerBtn/BurgerBtn";
 import ButtonLink from "../Buttons/ButtonLink/ButtonLink";
-
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
 
 import NavigationHeader from "../NavigationHeader/NavigationHeader";
 import styles from "./Header.module.scss";
 import HeaderLogo from "./HeaderLogo";
+
 
 const Header = () => {
   return (

@@ -1,5 +1,4 @@
 import DashboardPartnershipSection from '@/sections/dashboard/dashboardPartnershipSection/DashboardPartnershipSection'
-import React from 'react'
 
 
 const DashboardPartnershipPage = () => {
@@ -9,5 +8,6 @@ const DashboardPartnershipPage = () => {
         </>
     )
 }
+
 
 export default DashboardPartnershipPage

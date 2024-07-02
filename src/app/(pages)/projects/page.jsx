@@ -1,5 +1,5 @@
 import { ProjectsSection } from '@/sections/projectsSection/ProjectsSection'
-import React from 'react'
+
 
 const ProjectsPage = () => {
     return (
@@ -8,5 +8,6 @@ const ProjectsPage = () => {
         </>
     )
 }
+
 
 export default ProjectsPage

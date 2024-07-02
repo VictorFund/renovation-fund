@@ -1,14 +1,14 @@
 "use client";
-
 import { SiteContext } from "@/context/siteContext";
 import { useWindowResize } from "@/hooks/useWindowResize";
 import Link from "next/link";
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { navLinks } from "../../data/navLinks";
 import BurgerBtn from "../Buttons/BurgerBtn/BurgerBtn";
 import HorizontalLine from "../HorizontalLine/HorizontalLine";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
 import styles from "./NavigationHeader.module.scss";
+
 
 const NavigationHeader = () => {
   const { isLaptop, isDesktop } = useWindowResize();
@@ -59,9 +59,8 @@ const NavigationHeader = () => {
               >
                 {el.title}
                 <svg
-                  className={`${styles.arrow} ${
-                    activeMenu === el.title ? styles.arrActive : ""
-                  }`}
+                  className={`${styles.arrow} ${activeMenu === el.title ? styles.arrActive : ""
+                    }`}
                 >
                   <use href="sprite.svg#icon-vector"></use>
                 </svg>
@@ -89,7 +88,7 @@ const NavigationHeader = () => {
                   })}
                 </nav>
               </div>
-            </li>
+            </li >
           );
         } else {
           return (
@@ -109,8 +108,9 @@ const NavigationHeader = () => {
           );
         }
       })}
-    </ul>
+    </ul >
   );
 };
+
 
 export default NavigationHeader;

@@ -2,10 +2,10 @@
 import TitleLink from "@/components/Buttons/TitleLink/TitleLink";
 import HomeSwiper from "@/components/HomeSwiper/HomeSwiper";
 import { getData } from "@/fetch/serverFetch";
-import React from "react";
 import styles from "./HomeProjectsSection.module.scss";
 
 const data = await getData("projects");
+
 
 const HomeProjectsSection = () => {
   if (typeof window !== "undefined") {

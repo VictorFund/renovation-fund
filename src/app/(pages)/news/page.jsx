@@ -1,5 +1,5 @@
 import NewsSection from '@/sections/newsSection/NewsSection'
-import React from 'react'
+
 
 const NewsPage = () => {
     return (
@@ -8,5 +8,6 @@ const NewsPage = () => {
         </>
     )
 }
+
 
 export default NewsPage

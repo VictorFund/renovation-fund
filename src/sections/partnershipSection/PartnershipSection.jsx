@@ -1,5 +1,4 @@
 'use client';
-import React from 'react';
 import styles from './PartnershipSection.module.scss';
 import { GetDataWithPathname } from '@/fetch/clientFetch';
 import { CldImage } from 'next-cloudinary';

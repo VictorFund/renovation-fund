@@ -1,5 +1,4 @@
 import DonateSection from '@/sections/donateSection/DonateSection'
-import React from 'react'
 
 const DonatePage = () => {
     return (
@@ -8,5 +7,6 @@ const DonatePage = () => {
         </>
     )
 }
+
 
 export default DonatePage

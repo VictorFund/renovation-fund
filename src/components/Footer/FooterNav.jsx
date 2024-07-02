@@ -1,8 +1,7 @@
 "use client";
-
-import React from "react";
 import { useWindowResize } from "@/hooks/useWindowResize";
 import Link from "next/link";
+
 
 const FooterNav = ({ className, tabletNavLink, navWrapp, titleClassName }) => {
   const { isMobile } = useWindowResize();
@@ -52,5 +51,6 @@ const FooterNav = ({ className, tabletNavLink, navWrapp, titleClassName }) => {
     </div>
   );
 };
+
 
 export default FooterNav;

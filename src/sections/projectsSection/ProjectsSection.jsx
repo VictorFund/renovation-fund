@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import styles from './ProjectsSection.module.scss';
 import { GetDataWithPathname } from '@/fetch/clientFetch';
 import ProjectItem from '@/components/ProjectItem/ProjectItem';

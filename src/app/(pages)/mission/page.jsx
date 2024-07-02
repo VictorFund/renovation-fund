@@ -1,5 +1,5 @@
 import MissionSection from '@/sections/missionSection/MissionSection'
-import React from 'react'
+
 
 const MissionPage = () => {
     return (
@@ -8,5 +8,6 @@ const MissionPage = () => {
         </>
     )
 }
+
 
 export default MissionPage

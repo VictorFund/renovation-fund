@@ -1,5 +1,5 @@
 import NewsIdSection from '@/sections/newsIdSection/NewsIdSection'
-import React from 'react'
+
 
 const NewsIdPage = () => {
     return (
@@ -8,5 +8,6 @@ const NewsIdPage = () => {
         </>
     )
 }
+
 
 export default NewsIdPage

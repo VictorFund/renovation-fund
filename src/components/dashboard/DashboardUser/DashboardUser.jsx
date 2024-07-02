@@ -1,9 +1,12 @@
 "use client";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
+import DashboardEditAndDelete from "../DashboardEditAndDelete/DashboardEditAndDelete";
 import styles from "../DashboardComponents.module.scss"
 
 
 const DashboardUser = ({ data, mutate }) => {
+    const pathname = usePathname();
     const [isAdminRules, setIsAdminRules] = useState(data.isAdmin)
 
     const onSubmit = async () => {
@@ -25,26 +28,31 @@ const DashboardUser = ({ data, mutate }) => {
         }
     };
 
+
     return (
-        <div className={styles.itemCard}>
-            <p>{data.name}</p>
-            <p className={`${styles.slug} ${styles.ukrainian}`}>{data.email}</p>
-            <form className={styles.accessForm} onSubmit={onSubmit}>
-                <label>Is Admin:
-                    <input className={styles.accessInput}
-                        type="checkbox"
-                        checked={isAdminRules}
-                        onChange={() => {
-                            if (isAdminRules === true) {
-                                setIsAdminRules(false);
-                            } else {
-                                setIsAdminRules(true);
-                            }
-                        }} />
-                </label>
-                <button type="submit" className={styles.saveBtn}>Save to DB</button>
-            </form>
-            <p>Admin: {isAdminRules ? "true" : "false"}</p>
+        <div className={`${styles.itemCard} ${styles.userItemCard}`}>
+            <p><span className="accentText">User:</span> {data.email}</p>
+            <p><span className="accentText">Адміністратор:</span> {data.isAdmin ? "ТАК" : "НІ"}</p>
+            <form className={`${styles.dataForm} ${styles.userDataForm}`} onSubmit={onSubmit} >
+                <div className={styles.checkboxInputGroup} >
+                    <label className={styles.userCheckboxLabel}>
+                        Адмін:
+                        <input className={styles.userCheckbox}
+                            type="checkbox"
+                            checked={isAdminRules}
+                            onChange={() => {
+                                if (isAdminRules === true) {
+                                    setIsAdminRules(false);
+                                } else {
+                                    setIsAdminRules(true);
+                                }
+                            }} />
+                    </label>
+                </div>
+                <button type="submit" className={styles.submitBtn}>Зберегти зміни</button>
+            </form >
+
+            <DashboardEditAndDelete data={data} pathname={pathname} mutate={mutate} />
         </div>
     )
 }

@@ -1,4 +1,3 @@
-import React from 'react'
 import DashboardNewsSection from '@/sections/dashboard/dashboardNewsSection/DashboardNewsSection'
 
 
@@ -9,5 +8,6 @@ const DashboardNewsPage = () => {
         </>
     )
 }
+
 
 export default DashboardNewsPage

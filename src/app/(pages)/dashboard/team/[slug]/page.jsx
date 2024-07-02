@@ -1,5 +1,5 @@
 import DashboardTeamIdSection from '@/sections/dashboard/dashboardTeamIdSection/DashboardTeamIdSection'
-import React from 'react'
+
 
 const DashboardTeamIdPage = () => {
     return (
@@ -8,5 +8,6 @@ const DashboardTeamIdPage = () => {
         </div>
     )
 }
+
 
 export default DashboardTeamIdPage

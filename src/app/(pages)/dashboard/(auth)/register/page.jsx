@@ -1,4 +1,3 @@
-import React from 'react'
 import DashboardRegisterSection from '@/sections/dashboard/dashboardRegisterSection/DashboardRegisterSection'
 
 

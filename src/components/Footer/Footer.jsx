@@ -1,8 +1,8 @@
-import React from "react";
 import SocialLinks from "../SocialLinks/SocialLinks";
-import styles from "./Footer.module.scss";
 import FooterLogo from "./FooterLogo";
 import FooterNav from "./FooterNav";
+import styles from "./Footer.module.scss";
+
 
 const Footer = () => {
   return (
@@ -60,5 +60,6 @@ const Footer = () => {
     </footer>
   );
 };
+
 
 export default Footer;
