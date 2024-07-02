@@ -1,10 +1,10 @@
 "use client";
 import TitleLink from "@/components/Buttons/TitleLink/TitleLink";
 import HomeSwiper from "@/components/HomeSwiper/HomeSwiper";
-import Loader from "@/components/Loader/Loader";
 import { ProjectAccordio } from "@/components/ProjectAccordio/ProjectAccordio";
 import { GetDataForHomeByCollection } from "@/fetch/clientFetch";
 import { useFilterDate } from "@/hooks/useFilterDate";
+import { useWindowResize } from "@/hooks/useWindowResize";
 
 import { useState } from "react";
 
@@ -13,6 +13,7 @@ import styles from "./HomeProjectsSection.module.scss";
 const HomeProjectsSection = () => {
   const { data, isLoading } = GetDataForHomeByCollection("projects");
   const [activeTab, setActiveTab] = useState("");
+  const { isMobile } = useWindowResize();
 
   const aprovedData = data?.map((el) => {
     if (el.isApproved) {
@@ -27,13 +28,22 @@ const HomeProjectsSection = () => {
   return (
     <section>
       <div className={`container ${styles.container}`}>
-        <TitleLink href="/projects" title="Проєкти" />
-        <ProjectAccordio activeTab={activeTab} setActiveTab={setActiveTab} />
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <HomeSwiper items={filteredData} dataName="projects" />
+        <TitleLink href="/projects" title="Проєкти" id={styles.title} />
+
+        {isMobile && (
+          <ProjectAccordio
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+            id={styles.accordion}
+          />
         )}
+
+        <HomeSwiper
+          items={filteredData}
+          dataName="projects"
+          isLoading={isLoading}
+        />
+        {/* )} */}
       </div>
     </section>
   );
