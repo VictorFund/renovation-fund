@@ -76,7 +76,7 @@ ol {
 }
 
 .topSection {
-  padding-top: 88px;
+  padding-top: 96px;
 
   @media screen and (min-width: $tablet) {
     padding-top: 104px;
@@ -175,4 +175,31 @@ ol {
 
 .accentText {
   color: $accentColor;
+}
+
+.headerBtnsSmall {
+  background-color: transparent;
+  // border: 1px solid $borderColorLangSwitch;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 48px;
+  border-radius: 30px;
+  box-shadow: 1px 1px 10px 0px $shadow;
+
+  &:focus,
+  &:hover {
+    // border-color: $hoverBtnColor;
+    // color: $hoverBtnColor;
+    border: 2px solid rgba(59, 111, 125, 0.3);
+    box-shadow: inset 0px 0px 12px 0px rgba(59, 111, 125, 0.3);
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 72px;
+    height: 60px;
+  }
 }

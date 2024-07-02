@@ -1,8 +1,5 @@
-import styles from "./LangSwitcher.module.scss";
-
-
 const LangSwitcher = ({ className }) => {
-  return <button className={`${styles.langSwitch} ${className}`}>UA</button>;
+  return <button className={`headerBtnsSmall ${className}`}>UA</button>;
 };
 
 
