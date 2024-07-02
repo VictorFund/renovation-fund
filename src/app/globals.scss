@@ -192,8 +192,6 @@ ol {
 
   &:focus,
   &:hover {
-    // border-color: $hoverBtnColor;
-    // color: $hoverBtnColor;
     border: 2px solid rgba(59, 111, 125, 0.3);
     box-shadow: inset 0px 0px 12px 0px rgba(59, 111, 125, 0.3);
   }
@@ -201,5 +199,34 @@ ol {
   @media screen and (min-width: $tablet) {
     width: 72px;
     height: 60px;
+  }
+}
+
+#sideBtn {
+  display: none;
+  position: fixed;
+  transform: rotate(-90deg) translate(25%, 350%);
+  top: 50vh;
+  right: 0;
+  height: 24px;
+  width: 224px;
+  border-radius: 32px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 16px;
+  & svg {
+    display: none;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 258px;
+    height: 36px;
+    transform: rotate(-90deg) translate(25%, 300%);
   }
 }
