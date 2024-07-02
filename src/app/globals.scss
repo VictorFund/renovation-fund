@@ -192,8 +192,6 @@ ol {
 
   &:focus,
   &:hover {
-    // border-color: $hoverBtnColor;
-    // color: $hoverBtnColor;
     border: 2px solid rgba(59, 111, 125, 0.3);
     box-shadow: inset 0px 0px 12px 0px rgba(59, 111, 125, 0.3);
   }
