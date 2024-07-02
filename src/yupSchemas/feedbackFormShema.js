@@ -8,19 +8,19 @@ const titleArray = socialLinks.map(i => i.title)
 export const feedbackFormSchema = yup.object({
     name: yup
         .string()
-        .required("Name is required")
-        .min(3, "Too short"),
+        .required("Заповніть це поле")
+        .min(3, "Ім’я має бути довшим"),
     tel: yup
         .string()
-        .required("Phone is required")
+        .required("Заповніть це поле")
         .matches(regexPhone, "+380123456789"),
     email: yup
         .string()
-        .required("Email is required")
-        .email(),
+        .required("Заповніть це поле")
+        .email("Не валідний email"),
     theme: yup
         .string()
-        .required("Theme is required"),
+        .required("Заповніть це поле"),
     comment: yup
         .string(),
     calback: yup
@@ -34,13 +34,13 @@ export const feedbackFormSchema = yup.object({
 
                 if (value.length === 0) {
                     return ctx.createError({
-                        message: "Array Empty",
+                        message: "Виберіть зворотній зв'язок",
                     });
                 }
 
                 if (!isChecked) {
                     return ctx.createError({
-                        message: "There is no values!",
+                        message: "Виберіть месенджер",
                     });
                 }
 
