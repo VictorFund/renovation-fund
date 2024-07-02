@@ -51,100 +51,103 @@ const FeedbackForm = () => {
         console.log("feedbackFormData:", data);
     };
     return (
-        <div>
-            <form
-                onSubmit={handleSubmit(onSubmit)}
-                className={styles.form}
-                noValidate
-            >
-                <div className={styles.inputWrap}>
-                    <svg className={styles.iconMark}>
-                        <use href='/sprite.svg#snowflake'></use>
-                    </svg>
-                    <p className={styles.error}>{errors.name?.message}</p>
+        <form
+            onSubmit={handleSubmit(onSubmit)}
+            className={styles.form}
+            noValidate
+        >
+            <div className={styles.wrapper}>
+                <div className={styles.innerBox}>
+                    <div className={styles.inputWrap}>
+                        <svg className={styles.iconMark}>
+                            <use href='/sprite.svg#snowflake'></use>
+                        </svg>
+                        <p className={styles.error}>{errors.name?.message}</p>
 
-                    <input
-                        type='text'
-                        {...register("name")}
-                        placeholder='Ім’я'
-                        maxLength='30'
-                        autoComplete='off'
-                        className={
-                            errors.name
-                                ? `${styles.input} ${styles.errorInput}`
-                                : styles.input
-                        }
-                    />
-                </div>
-                <div className={styles.inputWrap}>
-                    <svg className={styles.iconMark}>
-                        <use href='/sprite.svg#snowflake'></use>
-                    </svg>
-                    <p className={styles.error}>{errors.tel?.message}</p>
+                        <input
+                            type='text'
+                            {...register("name")}
+                            placeholder='Ім’я'
+                            maxLength='30'
+                            autoComplete='off'
+                            className={
+                                errors.name
+                                    ? `${styles.input} ${styles.errorInput}`
+                                    : styles.input
+                            }
+                        />
+                    </div>
+                    <div className={styles.inputWrap}>
+                        <svg className={styles.iconMark}>
+                            <use href='/sprite.svg#snowflake'></use>
+                        </svg>
+                        <p className={styles.error}>{errors.tel?.message}</p>
 
-                    <input
-                        type='text'
-                        {...register("tel")}
-                        placeholder='Номер телефона'
-                        maxLength='13'
-                        autoComplete='off'
-                        className={
-                            errors.tel
-                                ? `${styles.input} ${styles.errorInput}`
-                                : styles.input
-                        }
-                    />
+                        <input
+                            type='text'
+                            {...register("tel")}
+                            placeholder='Номер телефона'
+                            maxLength='13'
+                            autoComplete='off'
+                            className={
+                                errors.tel
+                                    ? `${styles.input} ${styles.errorInput}`
+                                    : styles.input
+                            }
+                        />
+                    </div>
                 </div>
-                <div className={styles.inputWrap}>
-                    <svg className={styles.iconMark}>
-                        <use href='/sprite.svg#snowflake'></use>
-                    </svg>
-                    <p className={styles.error}>{errors.email?.message}</p>
+                <div className={styles.innerBox}>
+                    <div className={styles.inputWrap}>
+                        <svg className={styles.iconMark}>
+                            <use href='/sprite.svg#snowflake'></use>
+                        </svg>
+                        <p className={styles.error}>{errors.email?.message}</p>
 
-                    <input
-                        type='text'
-                        {...register("email")}
-                        placeholder='Адреса електронної пошти'
-                        autoComplete='off'
-                        className={
-                            errors.email
-                                ? `${styles.input} ${styles.errorInput}`
-                                : styles.input
-                        }
-                    />
-                </div>
-                <div className={styles.inputWrap}>
-                    <svg className={styles.iconMark}>
-                        <use href='/sprite.svg#snowflake'></use>
-                    </svg>
-                    <p className={styles.error}>{errors.theme?.message}</p>
+                        <input
+                            type='text'
+                            {...register("email")}
+                            placeholder='Адреса електронної пошти'
+                            autoComplete='off'
+                            className={
+                                errors.email
+                                    ? `${styles.input} ${styles.errorInput}`
+                                    : styles.input
+                            }
+                        />
+                    </div>
+                    <div className={styles.inputWrap}>
+                        <svg className={styles.iconMark}>
+                            <use href='/sprite.svg#snowflake'></use>
+                        </svg>
+                        <p className={styles.error}>{errors.theme?.message}</p>
 
-                    <input
-                        type='text'
-                        {...register("theme")}
-                        placeholder='Тема'
-                        autoComplete='off'
-                        className={
-                            errors.theme
-                                ? `${styles.input} ${styles.errorInput}`
-                                : styles.input
-                        }
-                    />
+                        <input
+                            type='text'
+                            {...register("theme")}
+                            placeholder='Тема'
+                            autoComplete='off'
+                            className={
+                                errors.theme
+                                    ? `${styles.input} ${styles.errorInput}`
+                                    : styles.input
+                            }
+                        />
+                    </div>
                 </div>
-                <div className={`${styles.inputWrap} ${styles.textareaWrap}`}>
-                    <p className={styles.error}>{errors.comment?.message}</p>
-                    <textarea
-                        className={`${styles.input} ${styles.textarea}`}
-                        cols='30'
-                        rows='2'
-                        placeholder='Коротко опишіть ваше побажання'
-                        {...register("comment")}
-                    />
-                </div>
-
-                <div
-                    className={`${styles.inputWrap} ${styles.inputCheckboxWrap}`}
-                >
+            </div>
+            <div className={`${styles.inputWrap} ${styles.textareaWrap}`}>
+                <p className={styles.error}>{errors.comment?.message}</p>
+                <textarea
+                    className={`${styles.input} ${styles.textarea}`}
+                    cols='30'
+                    rows='2'
+                    placeholder='Коротко опишіть ваше побажання'
+                    {...register("comment")}
+                />
+            </div>
+            <div className={styles.wrapper}>
+                <div className={styles.inputCheckboxWrap}>
                     <p className={`${styles.error} ${styles.errorCheckbox}`}>
                         {errors.calback?.message}
                     </p>
@@ -170,8 +173,8 @@ const FeedbackForm = () => {
                 >
                     Надіслати заявку
                 </button>
-            </form>
-        </div>
+            </div>
+        </form>
     );
 };
 
