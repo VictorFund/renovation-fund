@@ -9,7 +9,6 @@ import "swiper/css/navigation";
 import "./homeSwiper.css";
 import { CldImage } from "next-cloudinary";
 
-
 const HomeSwiper = ({ items, dataName, btnClassName }) => {
   const { isMobile } = useWindowResize();
   return (
@@ -22,10 +21,10 @@ const HomeSwiper = ({ items, dataName, btnClassName }) => {
         onlyInViewport: true,
       }}
       speed={3000}
-      autoplay={{
-        delay: 2500,
-        pauseOnMouseEnter: true,
-      }}
+      // autoplay={{
+      //   delay: 2500,
+      //   pauseOnMouseEnter: true,
+      // }}
       modules={[Navigation, Keyboard, Autoplay]}
       className="homeSwiper"
     >

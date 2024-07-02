@@ -1,37 +1,39 @@
-// "use client";
+"use client";
 import TitleLink from "@/components/Buttons/TitleLink/TitleLink";
 import HomeSwiper from "@/components/HomeSwiper/HomeSwiper";
-import { getData } from "@/fetch/serverFetch";
+import Loader from "@/components/Loader/Loader";
+import { ProjectAccordio } from "@/components/ProjectAccordio/ProjectAccordio";
+import { GetDataForHomeByCollection } from "@/fetch/clientFetch";
+import { useFilterDate } from "@/hooks/useFilterDate";
+
+import { useState } from "react";
+
 import styles from "./HomeProjectsSection.module.scss";
 
-const data = await getData("projects");
-
-
 const HomeProjectsSection = () => {
-  if (typeof window !== "undefined") {
-    console.dir(document?.getElementById("projectsSelect"));
-  }
+  const { data, isLoading } = GetDataForHomeByCollection("projects");
+  const [activeTab, setActiveTab] = useState("");
+
+  const aprovedData = data?.map((el) => {
+    if (el.isApproved) {
+      return el;
+    } else {
+      return;
+    }
+  });
+
+  const filteredData = useFilterDate(aprovedData, activeTab);
 
   return (
     <section>
       <div className={`container ${styles.container}`}>
         <TitleLink href="/projects" title="Проєкти" />
-        {/* <div className={styles.selectWrapp}>
-          <select className={styles.select} name="pets" id="projectsSelect">
-            <option value="announced" selected>
-              Анонсовані проєкти
-            </option>
-            <option value="cat">Cat</option>
-            <option value="hamster">Hamster</option>
-            <option value="parrot">Parrot</option>
-            <option value="spider">Spider</option>
-            <option value="goldfish">Goldfish</option>
-          </select>
-          <svg className={`${styles.arrow}`}>
-            <use href="sprite.svg#icon-vector"></use>
-          </svg>
-        </div> */}
-        <HomeSwiper items={data} dataName="projects" />
+        <ProjectAccordio activeTab={activeTab} setActiveTab={setActiveTab} />
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <HomeSwiper items={filteredData} dataName="projects" />
+        )}
       </div>
     </section>
   );

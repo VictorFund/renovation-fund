@@ -201,3 +201,32 @@ ol {
     height: 60px;
   }
 }
+
+#sideBtn {
+  display: none;
+  position: fixed;
+  transform: rotate(-90deg) translate(25%, 350%);
+  top: 50vh;
+  right: 0;
+  height: 24px;
+  width: 224px;
+  border-radius: 32px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 16px;
+  & svg {
+    display: none;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 258px;
+    height: 36px;
+    transform: rotate(-90deg) translate(25%, 300%);
+  }
+}
