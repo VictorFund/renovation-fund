@@ -126,6 +126,7 @@
 .navItemSubmenu {
   flex-direction: column;
   overflow: visible;
+  position: relative;
 }
 
 .navItemTitle {
@@ -153,17 +154,16 @@
 .subMenuWrapp {
   height: 0;
   overflow: hidden;
+  top: 100%;
+
   @media screen and (min-width: $desktop) {
-    width: 40px;
+    position: absolute;
     margin-top: 8px;
   }
 }
 
 .subMenuWrappActive {
-  height: fit-content;
-  @media screen and (min-width: $desktop) {
-    overflow: visible;
-  }
+  height: 300px;
 }
 
 .linksWrapp {
@@ -171,6 +171,7 @@
   flex-direction: column;
   gap: 24px;
   padding-top: 32px;
+  transform: translateY(-100%);
 
   @media screen and (min-width: $desktop) {
     width: max-content;
@@ -178,6 +179,10 @@
     gap: 0;
     padding: 0;
   }
+}
+
+.linksWrappActive {
+  transform: translateY(0%);
 }
 
 .navLink {
