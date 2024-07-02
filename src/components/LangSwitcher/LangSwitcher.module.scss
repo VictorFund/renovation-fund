@@ -1,0 +1,55 @@
+@import "../../app/variables";
+
+.langSwitchWrapp {
+  position: relative;
+  z-index: 200;
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    box-shadow: none;
+
+    & .currentLang {
+      box-shadow: inset 0px 0px 12px 0px rgba(59, 111, 125, 0.3);
+    }
+  }
+}
+
+.currentLang {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: $bodyColor;
+  z-index: 150;
+  border-radius: inherit;
+}
+
+.lang {
+  position: absolute;
+  width: 112%;
+  height: 100%;
+  border-radius: 28px;
+  z-index: 120;
+  top: -2px;
+  color: $bodyColor;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 20px;
+
+  @media screen and (min-width: $tablet) {
+    width: 110%;
+    border-radius: 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 107%;
+  }
+}
+
+.isClicked {
+  height: 120px;
+  background-color: $textColor;
+}
