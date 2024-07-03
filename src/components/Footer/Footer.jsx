@@ -3,7 +3,6 @@ import FooterLogo from "./FooterLogo";
 import FooterNav from "./FooterNav";
 import styles from "./Footer.module.scss";
 
-
 const Footer = () => {
   return (
     <footer className={`footer ${styles.footer}`}>
@@ -33,9 +32,11 @@ const Footer = () => {
             <a href="https://t.me/pvfond_contact" target="_blank">
               @pvfond_contact
             </a>
-            <a href="mailto:peremogividnovlenna@gmail.com">
-              peremogividnovlenna <br />
-              @gmail.com
+            <a
+              href="mailto:peremogividnovlenna@gmail.com"
+              className={styles.email}
+            >
+              peremogividnovlenna@gmail.com
             </a>
 
             <p>9.00 - 19.00 Пн-Пт</p>
@@ -60,6 +61,5 @@ const Footer = () => {
     </footer>
   );
 };
-
 
 export default Footer;
