@@ -5,6 +5,7 @@ import "./globals.scss";
 import { fonts } from "@/fonts/getFonts";
 import { SiteProvider } from "@/context/siteContext";
 import ButtonLink from "@/components/Buttons/ButtonLink/ButtonLink";
+import ToTopBtn from "@/components/Buttons/ToTopBtn/ToTopBtn";
 
 export const metadata = {
   title: "Charity fund",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
             href="https://t.me/pvfond_contact"
             target="_blank"
           />
+          <ToTopBtn />
         </SiteProvider>
       </body>
     </html>
