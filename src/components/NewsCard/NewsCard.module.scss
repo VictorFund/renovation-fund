@@ -1,0 +1,120 @@
+@import '../../app/variables';
+
+.card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 16px;
+    border-radius: 32px;
+    box-shadow: 2px 2px 4px 0 $shadow;
+
+    @media screen and (min-width: $tablet) {
+        padding: 32px;
+    }
+
+    @media screen and (min-width: $laptop) {
+        padding: 20px 46px;
+    }
+}
+
+.forMobile {
+    width: 100%;
+
+    @media screen and (min-width: $tablet) {
+        display: none;
+    }
+}
+
+.link {
+    width: 100%;
+}
+
+.title {
+    font-family: var(--montserrat);
+    font-weight: 400;
+    font-size: 20px;
+    color: $textColor;
+    margin-bottom: 8px;
+
+    @media screen and (min-width: $tablet) {
+        margin-bottom: 24px;
+    }
+}
+
+.date {
+    text-align: left;
+    font-family: var(--montserrat);
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.fromTablet {
+    display: none;
+
+    @media screen and (min-width: $tablet) {
+        display: flex;
+    }
+}
+
+.imgWrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 72.19vw;
+    border-radius: 32px;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.7);
+    margin: 0 auto;
+
+    @media screen and (min-width: $tablet) {
+        border-radius: 24px;
+        width: 239px;
+        height: 162px;
+        margin: 0;
+        margin-bottom: 24px;
+    }
+}
+
+.img {
+    object-fit: cover;
+}
+
+.btn {
+    display: none;
+
+    @media screen and (min-width: $tablet) {
+        width: 184px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        padding: 16px 43px;
+        border-radius: 54px;
+        font-family: var(--montserrat);
+        font-weight: 400;
+        font-size: 16px;
+        border: transparent;
+        background-color: $bodyColor;
+        box-shadow: 2px 2px 4px 0 $shadow;
+        margin-top: auto;
+        cursor: pointer;
+
+        // &:hover,
+        // &:focus {
+        //     border: 1px solid $accentColor;
+        // }
+    }
+}
