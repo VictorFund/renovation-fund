@@ -205,6 +205,26 @@
   }
 }
 
+.textWrapper {
+  margin-bottom: 24px;
+
+  @media screen and (min-width: $tablet) {
+    margin-bottom: 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 40px;
+  }
+}
+
+.text {
+  text-indent: 3%;
+}
+
+.text:not(:last-child) {
+  margin-bottom: 10px;
+}
+
 .projectsList {
   display: -ms-grid;
   display: grid;

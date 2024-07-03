@@ -50,7 +50,6 @@
     flex-direction: row;
     padding: 44px 54px;
     column-gap: 15%;
-    // column-gap: 51px;
   }
 
   @media screen and (min-width: $desktop) {
@@ -68,6 +67,7 @@
   & img {
     border-radius: 24px;
     object-fit: cover;
+    object-position: top;
   }
 
   @media screen and (min-width: $tablet) {

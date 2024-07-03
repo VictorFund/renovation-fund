@@ -9,6 +9,7 @@ export const ProjectAccordio = ({ activeTab, setActiveTab, className, id }) => {
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
+    setActiveAccordion(false);
   };
 
   const currentTab = projectsCategories.find(
@@ -35,8 +36,9 @@ export const ProjectAccordio = ({ activeTab, setActiveTab, className, id }) => {
       <div
         className={` 
                 ${styles.accordionBtnContainer} 
-                ${activeAccordion ? styles.accordionOpen : styles.accordionClose
-          }`}
+                ${
+                  activeAccordion ? styles.accordionOpen : styles.accordionClose
+                }`}
       >
         {projectsCategories.map(({ id, title, stateTitle }) => (
           <button

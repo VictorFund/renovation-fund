@@ -3,10 +3,8 @@ import styles from './TeamSection.module.scss';
 import { GetDataForHomeByCollection } from '@/fetch/clientFetch';
 import { CldImage } from 'next-cloudinary';
 
-
 const TeamSection = () => {
   const { data } = GetDataForHomeByCollection('team');
-
 
   return (
     <section className="topSection">
@@ -18,7 +16,12 @@ const TeamSection = () => {
               return (
                 <li key={slug} className={styles.teamCard}>
                   <figure className={styles.imgContainer}>
-                    <CldImage src={photo} alt={name} fill={true} />
+                    <CldImage
+                      src={photo}
+                      alt={name}
+                      fill={true}
+                      sizes="(max-width: 768px) 224px, (max-width: 1440px) 432px"
+                    />
                   </figure>
                   <div className={styles.content}>
                     <h4 className={styles.contetnTitle}>{name}</h4>
