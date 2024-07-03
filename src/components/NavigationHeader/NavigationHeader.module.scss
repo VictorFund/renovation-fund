@@ -56,6 +56,7 @@
   overflow-x: hidden;
   overflow-y: hidden;
   padding-bottom: 32px;
+  z-index: 250;
 
   &::after {
     transform: translate(-50%, 20%) rotate(8deg);
@@ -86,8 +87,9 @@
   bottom: 0;
 }
 
-.langSwitcher {
+#langSwitcher {
   margin: 0;
+  font-size: 16px;
   @media screen and (min-width: $desktop) {
     display: none;
   }

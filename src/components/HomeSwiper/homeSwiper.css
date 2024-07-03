@@ -169,10 +169,10 @@
 
 #loader {
   width: 100%;
-  aspect-ratio: 280 /337;
-  max-height: 432px;
-
+  aspect-ratio: 280 /450;
+  max-height: 520px;
   @media screen and (min-width: 768px) {
-    aspect-ratio: 1280 / 537;
+    aspect-ratio: 1320/680;
+    max-height: none;
   }
 }
