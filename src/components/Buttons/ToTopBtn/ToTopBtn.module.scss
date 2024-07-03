@@ -1,0 +1,46 @@
+@import "../../../app/variables";
+
+.toTopBtn {
+  position: fixed;
+  right: 8px;
+  bottom: 20px;
+
+  width: 32px;
+  height: 32px;
+
+  z-index: 2;
+  overflow: hidden;
+
+  border-radius: 50%;
+
+  & svg {
+    fill: $accentColor;
+    transform: rotate(-46deg);
+    width: 12px;
+    height: 12px;
+  }
+
+  &:focus,
+  &:hover {
+    & svg {
+      fill: $hoverBtnColor;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    bottom: 20px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 64px;
+    height: 64px;
+    & svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.toTopBtnHidden {
+  bottom: -100px;
+}

@@ -9,7 +9,7 @@ const PartnershipSection = () => {
 
   return (
     <section className="topSection">
-      <div className={`container ${styles.partnership}`}>
+      <div className={`container`}>
         <h1 className={`sectionTitle ${styles.title}`}>Партнерство</h1>
 
         <ul className={styles.partnershipList}>
@@ -26,9 +26,20 @@ const PartnershipSection = () => {
                         className={styles.partnershipItem}
                       >
                         <figure className={styles.imgContainer}>
-                          <CldImage src={logo} alt={title} fill={true} />
+                          <CldImage
+                            src={logo}
+                            alt={title}
+                            fill={true}
+                            sizes="(max-width: 768px) 128px, (max-width: 1440px) 100px"
+                          />
                         </figure>
                         <h3 className={styles.partnershipTitle}>{title}</h3>
+                        <p className={styles.btn}>
+                          <span>Детальніше</span>
+                          <svg className={styles.arrow}>
+                            <use href="/sprite.svg#icon-arrow" />
+                          </svg>
+                        </p>
                       </a>
                     </li>
                   );
@@ -51,7 +62,12 @@ const PartnershipSection = () => {
                         className={styles.partnershipSmallItem}
                       >
                         <figure className={styles.imgSmallContainer}>
-                          <CldImage src={logo} alt={title} fill={true} />
+                          <CldImage
+                            src={logo}
+                            alt={title}
+                            fill={true}
+                            sizes="(max-width: 768px) 75px"
+                          />
                         </figure>
                         <h3 className={styles.partnershipSmallTitle}>
                           {title}

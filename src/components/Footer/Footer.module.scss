@@ -88,6 +88,16 @@
   }
 }
 
+.email {
+  overflow-wrap: break-word;
+  @media screen and (min-width: $tablet) {
+    width: 200px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 300px;
+  }
+}
+
 .logoWrapp {
   height: 48px;
   margin-bottom: 12px;

@@ -41,7 +41,7 @@ const NavigationHeader = () => {
   return (
     <ul className={ulClassName()}>
       <li className={styles.mobMenuHeader}>
-        <LangSwitcher className={styles.langSwitcher} />
+        <LangSwitcher id={styles.langSwitcher} />
         <BurgerBtn className={styles.burgerBtn} />
         <HorizontalLine className={styles.line} />
       </li>
@@ -58,8 +58,9 @@ const NavigationHeader = () => {
               >
                 {el.title}
                 <svg
-                  className={`${styles.arrow} ${activeMenu === el.title ? styles.arrActive : ""
-                    }`}
+                  className={`${styles.arrow} ${
+                    activeMenu === el.title ? styles.arrActive : ""
+                  }`}
                 >
                   <use href="/sprite.svg#icon-vector"></use>
                 </svg>

@@ -4,7 +4,9 @@ import Header from "@/components/Header/Header";
 import "./globals.scss";
 import { fonts } from "@/fonts/getFonts";
 import { SiteProvider } from "@/context/siteContext";
-import ButtonLink from "@/components/Buttons/ButtonLink/ButtonLink";
+
+import SideBtn from "@/components/Buttons/SideBtn/SideBtn";
+import ToTopBtn from "@/components/Buttons/ToTopBtn/ToTopBtn";
 
 export const metadata = {
   title: "Charity fund",
@@ -22,12 +24,13 @@ export default function RootLayout({ children }) {
           <Header />
           <main>{children}</main>
           <Footer />
-          <ButtonLink
+          <SideBtn
             title="Зв’яжись з нами"
             id="sideBtn"
             href="https://t.me/pvfond_contact"
             target="_blank"
           />
+          <ToTopBtn />
         </SiteProvider>
       </body>
     </html>
