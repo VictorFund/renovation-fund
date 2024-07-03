@@ -22,13 +22,13 @@ const HomeAboutFundSection = () => {
             <button className={styles.btn}>
               <span>Стати партнером</span>
               <svg className={styles.arrow}>
-                <use href="sprite.svg#icon-arrow" />
+                <use href="/sprite.svg#icon-arrow" />
               </svg>
             </button>
             <button className={styles.btn}>
               <span>Стати волонтером</span>
               <svg className={styles.arrow}>
-                <use href="sprite.svg#icon-arrow" />
+                <use href="/sprite.svg#icon-arrow" />
               </svg>
             </button>
           </div>

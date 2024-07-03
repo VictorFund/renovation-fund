@@ -58,11 +58,10 @@ const NavigationHeader = () => {
               >
                 {el.title}
                 <svg
-                  className={`${styles.arrow} ${
-                    activeMenu === el.title ? styles.arrActive : ""
-                  }`}
+                  className={`${styles.arrow} ${activeMenu === el.title ? styles.arrActive : ""
+                    }`}
                 >
-                  <use href="sprite.svg#icon-vector"></use>
+                  <use href="/sprite.svg#icon-vector"></use>
                 </svg>
               </p>
               <div

@@ -10,7 +10,7 @@ import { getDashboardSession } from "@/utils/getDashboardSession";
 import styles from "../DashboardComponents.module.scss";
 
 
-const DashboardPartnershipFormUpdate = ({ data, mutate }) => {
+const DashboardPartnershipFormUpdate = ({ data, mutate, isOwner }) => {
     const { slug, title, titleEn, isMainPartner, logo, siteLink, isApproved } = data;
 
     const initialValues = {
@@ -184,7 +184,7 @@ const DashboardPartnershipFormUpdate = ({ data, mutate }) => {
                     </p>
                 </div>
 
-                <div className={styles.checkboxInputGroup}>
+                {isOwner && <div className={styles.checkboxInputGroup}>
                     <label htmlFor='newIsApproved' className={styles.checkboxLabel}>
                         Розміщення на сайті
                     </label>
@@ -196,7 +196,7 @@ const DashboardPartnershipFormUpdate = ({ data, mutate }) => {
                         {...register("newIsApproved")}
                     />
                     <p className={styles.error}>{errors.newIsApproved?.message}</p>
-                </div>
+                </div>}
 
                 <button
                     type='submit'

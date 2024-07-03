@@ -1,10 +1,14 @@
 import DashboardPartnershipIdSection from '@/sections/dashboard/dashboardPartnershipIdSection/DashboardPartnershipIdSection'
+import { checkIsOwner } from '@/utils/checkIsOwner';
 
 
-const DashboardPartnershipIdPage = () => {
+const DashboardPartnershipIdPage = async () => {
+    const isOwner = await checkIsOwner();
+
+
     return (
         <div>
-            <DashboardPartnershipIdSection />
+            <DashboardPartnershipIdSection isOwner={isOwner} />
         </div>
     )
 }
