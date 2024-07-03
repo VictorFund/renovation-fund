@@ -86,29 +86,25 @@
   padding: 16px 24px;
   width: 100%;
   height: 52px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  font-family: var(--montserrat);
-  font-weight: 400;
-  font-size: 16px;
   border-radius: 54px;
   border: none;
   box-shadow: 2px 2px 4px 0 rgba(75, 75, 78, 0.5);
   background-color: $bodyColor;
   color: $textColor;
-  cursor: pointer;
-  outline: none;
-  &:hover .arrow,
-  &:focus .arrow {
-    transform: rotate(90deg);
+  & svg {
+    width: 16px;
+    height: 16px;
+    fill: $textColor;
+    @media screen and (min-width: $tablet) {
+      width: 24px;
+      height: 24px;
+    }
   }
+  &:hover,
+  &:focus {
+    background-color: $bodyColor;
+  }
+
   @media screen and (min-width: $tablet) {
     padding: 24px 32px;
     width: 364px;
@@ -122,15 +118,5 @@
 
   @media screen and (min-width: $desktop) {
     width: 466px;
-  }
-}
-
-.arrow {
-  width: 16px;
-  height: 16px;
-  fill: $textColor;
-  @media screen and (min-width: $tablet) {
-    width: 24px;
-    height: 24px;
   }
 }
