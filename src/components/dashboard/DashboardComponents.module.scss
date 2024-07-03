@@ -1,48 +1,5 @@
 @import "../../app/variables";
 
-//AUTH FORMS
-
-.authForm {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
-}
-
-.authForm input {
-    padding: 20px;
-    background-color: #0d0c22;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-}
-
-.authForm button {
-    padding: 20px;
-    cursor: pointer;
-    background-color: #3673fd;
-    color: #ffffff;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-}
-
-.authForm .text {
-    color: #ffffff;
-}
-
-.authForm .link {
-    text-decoration: underline;
-    color: blue;
-    font-style: italic;
-}
-
-.authForm .errMessage {
-    font-weight: 700;
-    font-size: 20px;
-    color: #d50000;
-}
-
 // DATA FORMS
 
 .dataFormContainer {
@@ -208,6 +165,32 @@
     &:focus {
         background-color: $hoverBtnColor;
     }
+}
+
+//AUTH FORMS
+.authForm {
+    width: 782px;
+    margin: 0 auto;
+    padding: 120px 148px;
+    align-items: center;
+    gap: 24px;
+}
+
+.authSubmitBtn {
+    margin-top: 80px;
+}
+
+.authForm .link {
+    display: inline;
+    text-decoration: underline;
+    color: blue;
+    font-style: italic;
+}
+
+.authForm .errMessage {
+    font-weight: 700;
+    font-size: 20px;
+    color: #d50000;
 }
 
 // ITEMS

@@ -10,12 +10,12 @@ const DashboardLoginForm = () => {
 
 
     return (
-        <form action={formAction} className={styles.authForm}>
-            <input type="email" placeholder="email" name="email" />
-            <input type="password" placeholder="password" name="password" />
-            <button>Login</button>
+        <form action={formAction} className={`${styles.dataForm} ${styles.authForm}`}>
+            <input type="email" placeholder="email" name="email" className={styles.formInput} />
+            <input type="password" placeholder="password" name="password" className={styles.formInput} />
+            <button className={`${styles.submitBtn} ${styles.authSubmitBtn}`}>Залогінитися</button>
             {state?.error && <p className={styles.errMessage} >{state.error}</p>}
-            <p className={styles.text}>You still do not have an account? <Link className={styles.link} href='/dashboard/register'>Register</Link> </p>
+            <p>У Вас ще немає акаунта? <Link className={styles.link} href='/dashboard/register'>Register</Link> </p>
         </form>
     )
 }

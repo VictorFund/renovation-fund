@@ -28,16 +28,15 @@ export const ProjectAccordio = ({ activeTab, setActiveTab, className, id }) => {
         <svg
           className={`${styles.arrow} ${activeAccordion && styles.activeArrow}`}
         >
-          <use href="sprite.svg#icon-vector"></use>
+          <use href="/sprite.svg#icon-vector"></use>
         </svg>
       </button>
 
       <div
         className={` 
                 ${styles.accordionBtnContainer} 
-                ${
-                  activeAccordion ? styles.accordionOpen : styles.accordionClose
-                }`}
+                ${activeAccordion ? styles.accordionOpen : styles.accordionClose
+          }`}
       >
         {projectsCategories.map(({ id, title, stateTitle }) => (
           <button
@@ -52,7 +51,7 @@ export const ProjectAccordio = ({ activeTab, setActiveTab, className, id }) => {
             <span>{title}</span>
             {activeTab === stateTitle && (
               <svg className={styles.checkin}>
-                <use href="sprite.svg#icon-checkMark"></use>
+                <use href="/sprite.svg#icon-checkMark"></use>
               </svg>
             )}
           </button>

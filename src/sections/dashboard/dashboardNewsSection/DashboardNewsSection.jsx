@@ -7,7 +7,7 @@ import { sortArrayByUpdate } from '@/utils/sortArrayByUpdate';
 import styles from '../DashboardSections.module.scss'
 
 
-const DashboardNewsSection = () => {
+const DashboardNewsSection = ({ isOwner }) => {
     const { data, isLoading, mutate } = GetDataWithPathname();
 
     let sortedByUpdateData = [];
@@ -15,15 +15,14 @@ const DashboardNewsSection = () => {
         sortedByUpdateData = sortArrayByUpdate(data)
     }
 
-
     return (
         <section>
             {isLoading
                 ? <Loader />
                 : <div className={styles.container}>
                     <div className={styles.cardsList}>
-                        {sortedByUpdateData.map(item => <DashboardNewsItem key={item.slug} data={item} isLoading={isLoading} mutate={mutate} />)}</div>
-                    <DashboardNewsFormCreate mutate={mutate} />
+                        {sortedByUpdateData.map(item => <DashboardNewsItem key={item.slug} data={item} isLoading={isLoading} mutate={mutate} isOwner={isOwner} />)}</div>
+                    <DashboardNewsFormCreate mutate={mutate} isOwner={isOwner} />
                 </div>
             }
         </section>

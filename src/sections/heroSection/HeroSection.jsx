@@ -37,7 +37,7 @@ const HeroSection = () => {
             <div className={styles.currentProjects}>
               <p className={styles.projectsNumber}>2</p>
               <svg className={styles.svgPluse}>
-                <use href="sprite.svg#icon-plus" />
+                <use href="/sprite.svg#icon-plus" />
               </svg>
               <p className={styles.projectsGroup}>
                 <span>поточних</span>{' '}

@@ -5,7 +5,7 @@ import DashboardEditAndDelete from '../DashboardEditAndDelete/DashboardEditAndDe
 import styles from '../DashboardComponents.module.scss'
 
 
-const DashboardPartnershipItem = ({ data, mutate }) => {
+const DashboardPartnershipItem = ({ data, mutate, isOwner }) => {
     const pathname = usePathname();
     const isList = pathname.endsWith("partnership");
 
@@ -28,7 +28,7 @@ const DashboardPartnershipItem = ({ data, mutate }) => {
             </div>
             {data.siteLink && <p><span className='accentText'>Посилання на ресурс:</span> {data.siteLink}</p>}
 
-            {isList && (<DashboardEditAndDelete data={data} pathname={pathname} mutate={mutate} />)}
+            {isList && (<DashboardEditAndDelete data={data} pathname={pathname} mutate={mutate} isOwner={isOwner} />)}
         </div>
     )
 }

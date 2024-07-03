@@ -6,7 +6,7 @@ import { sortArrayByUpdate } from '@/utils/sortArrayByUpdate';
 import styles from '../DashboardSections.module.scss';
 
 
-const DashboardUsersSection = () => {
+const DashboardUsersSection = ({ isOwner }) => {
     const { data, isLoading, mutate } = GetDataWithPathname();
 
     let sortedByUpdateData = [];
@@ -21,7 +21,7 @@ const DashboardUsersSection = () => {
             {isLoading ? <Loader />
                 :
                 <div className={styles.userCardsList}>
-                    {dataWithoutOwner.map(item => <DashboardUser key={item.email} data={item} mutate={mutate} />)}
+                    {dataWithoutOwner.map(item => <DashboardUser key={item.email} data={item} mutate={mutate} isOwner={isOwner} />)}
                 </div>
 
             }</section>

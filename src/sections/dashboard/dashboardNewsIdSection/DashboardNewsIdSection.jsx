@@ -6,7 +6,7 @@ import { GetDataWithPathname } from '@/fetch/clientFetch';
 import styles from '../DashboardSections.module.scss'
 
 
-const DashboardNewsIdSection = () => {
+const DashboardNewsIdSection = ({ isOwner }) => {
     const { data, isLoading, mutate } = GetDataWithPathname();
 
 
@@ -15,8 +15,8 @@ const DashboardNewsIdSection = () => {
             {isLoading
                 ? <Loader />
                 : <div className={styles.container}>
-                    <DashboardNewsItem data={data} isLoading={isLoading} />
-                    <DashboardNewsFormUpdate data={data} mutate={mutate} />
+                    <DashboardNewsItem data={data} isLoading={isLoading} isOwner={isOwner} />
+                    <DashboardNewsFormUpdate data={data} mutate={mutate} isOwner={isOwner} />
                 </div>
             }
         </section>

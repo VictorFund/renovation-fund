@@ -7,7 +7,7 @@ import { sortArrayByUpdate } from '@/utils/sortArrayByUpdate';
 import styles from '../DashboardSections.module.scss'
 
 
-const DashboardPartnershipSection = () => {
+const DashboardPartnershipSection = ({ isOwner }) => {
     const { data, isLoading, mutate } = GetDataWithPathname();
 
     let sortedByUpdateData = [];
@@ -22,9 +22,9 @@ const DashboardPartnershipSection = () => {
                 ? <Loader />
                 : <div className={styles.container}>
                     <div className={styles.cardsList}>
-                        {sortedByUpdateData.map(item => <DashboardPartnershipItem key={item.slug} data={item} mutate={mutate} />)}
+                        {sortedByUpdateData.map(item => <DashboardPartnershipItem key={item.slug} data={item} mutate={mutate} isOwner={isOwner} />)}
                     </div>
-                    <DashboardPartnershipFormCreate mutate={mutate} />
+                    <DashboardPartnershipFormCreate mutate={mutate} isOwner={isOwner} />
                 </div>
             }
         </section>

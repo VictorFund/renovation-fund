@@ -9,7 +9,6 @@ import HorizontalLine from "../HorizontalLine/HorizontalLine";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
 import styles from "./NavigationHeader.module.scss";
 
-
 const NavigationHeader = () => {
   const { isLaptop, isDesktop } = useWindowResize();
 
@@ -62,7 +61,7 @@ const NavigationHeader = () => {
                   className={`${styles.arrow} ${activeMenu === el.title ? styles.arrActive : ""
                     }`}
                 >
-                  <use href="sprite.svg#icon-vector"></use>
+                  <use href="/sprite.svg#icon-vector"></use>
                 </svg>
               </p>
               <div
@@ -72,7 +71,13 @@ const NavigationHeader = () => {
                     : `${styles.subMenuWrapp}`
                 }
               >
-                <nav className={styles.linksWrapp}>
+                <nav
+                  className={
+                    activeMenu === el.title
+                      ? `${styles.linksWrapp} ${styles.linksWrappActive}`
+                      : `${styles.linksWrapp}`
+                  }
+                >
                   {el.subMenu?.map((item) => {
                     return (
                       <Link
@@ -88,7 +93,7 @@ const NavigationHeader = () => {
                   })}
                 </nav>
               </div>
-            </li >
+            </li>
           );
         } else {
           return (
@@ -108,9 +113,8 @@ const NavigationHeader = () => {
           );
         }
       })}
-    </ul >
+    </ul>
   );
 };
-
 
 export default NavigationHeader;
