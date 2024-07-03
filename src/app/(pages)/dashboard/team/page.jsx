@@ -1,10 +1,14 @@
 import DashboardTeamSection from '@/sections/dashboard/dashboardTeamSection/DashboardTeamSection'
+import { checkIsOwner } from '@/utils/checkIsOwner';
 
 
-const DashboardTeamPage = () => {
+const DashboardTeamPage = async () => {
+    const isOwner = await checkIsOwner();
+
+
     return (
         <>
-            <DashboardTeamSection />
+            <DashboardTeamSection isOwner={isOwner} />
         </>
     )
 }

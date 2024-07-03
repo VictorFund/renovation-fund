@@ -8,7 +8,7 @@ const SocialLinks = ({ id, costumStyles, costumSvg }) => {
         <li key={id}>
           <a href={href} target="_blank" aria-label={title}>
             <svg className={`${styles.svgSocialLink} ${costumSvg}`}>
-              <use href={`sprite.svg#${src}`} />
+              <use href={`/sprite.svg#${src}`} />
             </svg>
           </a>
         </li>

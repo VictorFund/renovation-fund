@@ -11,7 +11,7 @@ import Loader from '@/components/Loader/Loader';
 export const ProjectsSection = () => {
   const [activeTab, setActiveTab] = useState('');
   const { data, isLoading } = GetDataWithPathname();
-  console.log(data);
+  // console.log(data);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);

@@ -9,7 +9,7 @@ import { getDashboardSession } from "@/utils/getDashboardSession";
 import styles from '../DashboardComponents.module.scss'
 
 
-const DashboardProjectFormCreate = ({ mutate }) => {
+const DashboardProjectFormCreate = ({ mutate, isOwner }) => {
     const initialValues = {
         defaultValues: {
             slug: "",
@@ -397,7 +397,7 @@ const DashboardProjectFormCreate = ({ mutate }) => {
                     <p className={styles.error}>{errors.link?.message}</p>
                 </div>
 
-                <div className={styles.checkboxInputGroup}>
+                {isOwner && <div className={styles.checkboxInputGroup}>
                     <label htmlFor='isApproved' className={styles.checkboxLabel}>
                         Розміщення на сайті
                     </label>
@@ -409,7 +409,7 @@ const DashboardProjectFormCreate = ({ mutate }) => {
                         {...register("isApproved")}
                     />
                     <p className={styles.error}>{errors.isApproved?.message}</p>
-                </div>
+                </div>}
 
                 <button
                     type='submit'
