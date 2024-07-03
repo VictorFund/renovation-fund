@@ -179,7 +179,6 @@ ol {
 
 .headerBtnsSmall {
   background-color: transparent;
-  // border: 1px solid $borderColorLangSwitch;
   outline: none;
   border: none;
   display: flex;
@@ -205,6 +204,7 @@ ol {
 #sideBtn {
   display: none;
   position: fixed;
+  justify-content: center;
   transform: rotate(-90deg) translate(25%, 350%);
   top: 50vh;
   right: 0;
@@ -213,7 +213,6 @@ ol {
   border-radius: 32px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  justify-content: center;
   font-weight: 400;
   font-size: 16px;
   & svg {
