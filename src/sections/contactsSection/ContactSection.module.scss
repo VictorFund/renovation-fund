@@ -1,4 +1,81 @@
+@import "@/app/variables";
+
 .contactWrap {
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.contactTitle {
+    margin-bottom: 23px;
+    @media screen and (min-width: $tablet) {
+        margin-bottom: 32px;
+    }
+}
+
+.formBox {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (min-width: $desktop) {
+        flex-direction: row;
+    }
+}
+
+.imgWrapper {
+    margin-top: 40px;
+
+    @media screen and (min-width: $desktop) {
+        margin-top: 0;
+        margin-left: 78px;
+    }
+}
+
+.contactList {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    margin-bottom: 24px;
+    @media screen and (min-width: $tablet) {
+        width: 571px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+}
+
+// .contactItem :not(:last-child) {
+//     margin-bottom: 40px;
+// }
+
+.contactText {
+    width: 240px;
+    margin-left: 16px;
+    font-family: var(--montserrat);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    overflow-wrap: break-word;
+
+    @media screen and (min-width: $tablet) {
+        width: 500px;
+        margin-left: 32px;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 1.2;
+    }
+}
+
+.contactSvg {
+    width: 24px;
+    height: 24px;
+    @media screen and (min-width: $tablet) {
+        width: 32px;
+        height: 32px;
+    }
 }
