@@ -1,28 +1,24 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import styles from './ProjectsSection.module.scss';
 import { GetDataWithPathname } from '@/fetch/clientFetch';
 import ProjectItem from '@/components/ProjectItem/ProjectItem';
 import { projectsCategories } from '@/data/projectsCategories.data';
 import { ProjectAccordio } from '@/components/ProjectAccordio/ProjectAccordio';
 import Loader from '@/components/Loader/Loader';
+import { useFilterData } from '@/hooks/useFilterData';
 
 export const ProjectsSection = () => {
-  const [activeTab, setActiveTab] = useState('');
+  const [activeTab, setActiveTab] = useState('Поточний');
+  // const [activeTab, setActiveTab] = useState('');
   const { data, isLoading } = GetDataWithPathname();
-  // console.log(data);
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
 
-  const filteredData = useMemo(() => {
-    if (!data) return [];
-    return data
-      .filter(({ state }) => !activeTab || state === activeTab)
-      .sort((a, b) => new Date(a.date) - new Date(b.date));
-  }, [data, activeTab]);
+  const filteredData = useFilterData(data, activeTab);
 
   return (
     <section className="topSection">
