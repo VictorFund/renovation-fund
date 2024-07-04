@@ -1,0 +1,65 @@
+@import "@/app/variables";
+
+.section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.linksList {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 4.5vw, 54px);
+}
+
+.linkWrapp {
+  padding: 24px 20px;
+  padding: clamp(24px, 8vw, 54px) clamp(20px, 6vw, 72px);
+
+  border-radius: 32px;
+  box-shadow: 1px 1px 10px $borderColorLangSwitch;
+
+  &:focus,
+  &:hover {
+    & .title {
+      animation: titleBg 1.2s linear forwards;
+      -webkit-animation: titleBg 1.2s linear forwards;
+    }
+  }
+}
+
+.title {
+  font-family: var(--mediumSerif);
+  font-size: clamp(24px, 8vw, 48px);
+  margin-bottom: clamp(40px, 8vw, 48px);
+  width: fit-content;
+
+  color: transparent;
+
+  background-image: linear-gradient(
+    45deg,
+    $textColor 40%,
+    $bodyColor 50%,
+    $textColor 60%
+  );
+  background-clip: text;
+  background-size: 1000%;
+  background-position-x: right;
+}
+
+@keyframes titleBg {
+  to {
+    background-position-x: left;
+  }
+}
+
+@-webkit-keyframes titleBg {
+  to {
+    background-position-x: left;
+  }
+}
+
+#link {
+  width: 100%;
+}

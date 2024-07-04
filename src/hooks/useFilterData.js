@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-export const useFilterDate = (data, activeTab) => {
+export const useFilterData = (data, activeTab) => {
   return useMemo(() => {
     if (!data) return [];
     return data

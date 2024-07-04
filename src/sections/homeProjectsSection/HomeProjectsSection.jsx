@@ -3,7 +3,7 @@ import TitleLink from "@/components/Buttons/TitleLink/TitleLink";
 import HomeSwiper from "@/components/HomeSwiper/HomeSwiper";
 import { ProjectAccordio } from "@/components/ProjectAccordio/ProjectAccordio";
 import { GetDataForHomeByCollection } from "@/fetch/clientFetch";
-import { useFilterDate } from "@/hooks/useFilterDate";
+import { useFilterData } from "@/hooks/useFilterData";
 import { useWindowResize } from "@/hooks/useWindowResize";
 
 import { useState } from "react";
@@ -23,7 +23,7 @@ const HomeProjectsSection = () => {
     }
   });
 
-  const filteredData = useFilterDate(aprovedData, activeTab);
+  const filteredData = useFilterData(aprovedData, activeTab);
 
   return (
     <section>
