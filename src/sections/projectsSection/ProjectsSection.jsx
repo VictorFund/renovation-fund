@@ -50,7 +50,14 @@ export const ProjectsSection = () => {
         ) : (
           <ul className={styles.projectsList}>
             {filteredData.map(
-              ({ slug, isApproved, title, image, shortDescription }) => {
+              ({
+                slug,
+                isApproved,
+                title,
+                image,
+                shortDescription,
+                createdAt,
+              }) => {
                 if (isApproved) {
                   return (
                     <ProjectItem
@@ -59,6 +66,7 @@ export const ProjectsSection = () => {
                       title={title}
                       image={image}
                       shortDescription={shortDescription}
+                      createdAt={createdAt}
                     />
                   );
                 }

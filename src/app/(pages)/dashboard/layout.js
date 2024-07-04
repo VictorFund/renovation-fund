@@ -6,7 +6,7 @@ import styles from './page.module.scss';
 
 export default async function DashboardLayout({ children }) {
     const session = await auth();
-    console.log('session', session)
+    // console.log('session', session)
 
     return <div className={styles.layoutContainer}>
         <DashboardNavigation handleLogout={handleLogout} session={session} />

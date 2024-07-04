@@ -4,7 +4,7 @@ import { SiteContext } from "@/context/siteContext";
 import { useContext, useState } from "react";
 import styles from "./LangSwitcher.module.scss";
 
-const LangSwitcher = () => {
+const LangSwitcher = ({ id }) => {
   const { currentLang, setCurrentLang } = useContext(SiteContext);
 
   const [lang, setLang] = useState("EN");
@@ -16,6 +16,7 @@ const LangSwitcher = () => {
       onClick={() => {
         setIsClicked(!isClicked);
       }}
+      id={id}
     >
       <p className={`${styles.currentLang}`}>{currentLang}</p>
 

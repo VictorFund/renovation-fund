@@ -1,5 +1,34 @@
 @import '../../app/variables';
 
-.item {
-    display: block;
+.title {
+    margin-bottom: 24px;
+
+    @media screen and (min-width: $tablet) {
+        margin-bottom: 32px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 40px;
+    }
+}
+
+.list {
+    display: grid;
+    justify-content: center;
+    row-gap: 24px;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+
+    @media screen and (min-width: $tablet) {
+        row-gap: 32px;
+        column-gap: 24px;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: stretch;
+    }
+
+    @media screen and (min-width: $desktop) {
+        row-gap: 40px;
+        column-gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
