@@ -183,19 +183,39 @@
     color: $textColor;
 }
 
+.titleForm {
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1.2;
+    margin-top: 24px;
+    margin-bottom: 32px;
+
+    @media screen and (min-width: $tablet) {
+        margin-top: 32px;
+        font-size: 48px;
+    }
+    @media screen and (min-width: $desktop) {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        font-size: 64px;
+    }
+}
+
 .formBox {
-    margin-right: auto;
-    margin-left: auto;
-    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 32px;
     @media screen and (min-width: $desktop) {
+        flex-direction: row;
         margin-top: 40px;
     }
 }
 
-.title {
-    margin-bottom: 32px;
+.imgWrapper {
+    margin-top: 32px;
     @media screen and (min-width: $desktop) {
-        margin-bottom: 40px;
+        margin-left: 78px;
+        margin-top: 0;
     }
 }

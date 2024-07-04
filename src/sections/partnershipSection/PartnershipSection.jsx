@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { CldImage } from "next-cloudinary";
 import { GetDataWithPathname } from "@/fetch/clientFetch";
+import { useWindowResize } from "@/hooks/useWindowResize";
 import PartnerForm from "@/components/Forms/PartnerForm";
 
 import styles from "./PartnershipSection.module.scss";
@@ -9,6 +11,7 @@ import styles from "./PartnershipSection.module.scss";
 const PartnershipSection = () => {
     const { data } = GetDataWithPathname("partnership");
     // console.log('data', data);
+    const { isMobile } = useWindowResize();
 
     return (
         <section className='topSection'>
@@ -121,11 +124,21 @@ const PartnershipSection = () => {
                         }
                     )}
                 </ul>
+                <h2 className={`sectionTitle ${styles.titleForm}`}>
+                    Стати партнером
+                </h2>
                 <div className={styles.formBox}>
-                    <h2 className={`sectionTitle ${styles.title}`}>
-                        Стати партнером
-                    </h2>
                     <PartnerForm />
+                    {!isMobile && (
+                        <div className={styles.imgWrapper}>
+                            <Image
+                                width={497}
+                                height={473}
+                                src='/images/formImage.webp'
+                                alt='Two happy people at work'
+                            />
+                        </div>
+                    )}
                 </div>
             </div>
         </section>
