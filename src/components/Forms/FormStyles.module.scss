@@ -18,10 +18,6 @@
         row-gap: 0;
     }
 
-    //   @media screen and (min-width: $laptop) {
-    //     width: 568px;
-    //   }
-
     @media screen and (min-width: $desktop) {
         width: 723px;
     }
@@ -67,10 +63,13 @@
     height: 60px;
     width: 100%;
     border-radius: 16px;
-    padding-left: 24px;
+    padding-left: 16px;
     border: none;
     outline: none;
     box-shadow: 2px 2px 4px 0px rgba(75, 75, 78, 0.5);
+    @media screen and (min-width: $tablet) {
+        padding-left: 24px;
+    }
 }
 
 .errorInput {
