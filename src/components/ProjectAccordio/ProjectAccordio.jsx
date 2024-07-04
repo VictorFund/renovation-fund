@@ -24,7 +24,8 @@ export const ProjectAccordio = ({ activeTab, setActiveTab, className, id }) => {
         onClick={() => setActiveAccordion((prevState) => !prevState)}
       >
         <p className={styles.titleAccordion}>
-          {currentTab ? currentTab.title : 'Виберіть проєкт'}
+          {currentTab.title}
+          {/* {currentTab ? currentTab.title : 'Виберіть проєкт'} */}
         </p>
         <svg
           className={`${styles.arrow} ${activeAccordion && styles.activeArrow}`}
