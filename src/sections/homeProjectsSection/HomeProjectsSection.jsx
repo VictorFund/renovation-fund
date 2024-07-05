@@ -12,7 +12,7 @@ import styles from "./HomeProjectsSection.module.scss";
 
 const HomeProjectsSection = () => {
   const { data, isLoading } = GetDataForHomeByCollection("projects");
-  const [activeTab, setActiveTab] = useState("");
+  const [activeTab, setActiveTab] = useState("Поточний");
   const { isMobile } = useWindowResize();
 
   const aprovedData = data?.map((el) => {
@@ -23,7 +23,9 @@ const HomeProjectsSection = () => {
     }
   });
 
-  const filteredData = useFilterData(aprovedData, activeTab);
+  const filteredData = useFilterData(data, activeTab);
+  // const filteredData = useFilterData(aprovedData, activeTab);
+
   return (
     <section>
       <div className={`container ${styles.container}`}>
