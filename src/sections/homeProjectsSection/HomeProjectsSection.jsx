@@ -12,16 +12,10 @@ import styles from "./HomeProjectsSection.module.scss";
 
 const HomeProjectsSection = () => {
   const { data, isLoading } = GetDataForHomeByCollection("projects");
-  const [activeTab, setActiveTab] = useState("");
+  const [activeTab, setActiveTab] = useState("Поточний");
   const { isMobile } = useWindowResize();
 
-  const aprovedData = data?.map((el) => {
-    if (el.isApproved) {
-      return el;
-    } else {
-      return;
-    }
-  });
+  const aprovedData = data?.filter((el) => el.isApproved);
 
   const filteredData = useFilterData(aprovedData, activeTab);
 
@@ -43,7 +37,6 @@ const HomeProjectsSection = () => {
           dataName="projects"
           isLoading={isLoading}
         />
-        {/* )} */}
       </div>
     </section>
   );

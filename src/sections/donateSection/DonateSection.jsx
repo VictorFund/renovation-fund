@@ -1,6 +1,5 @@
 import ButtonLink from "@/components/Buttons/ButtonLink/ButtonLink";
 import { bankAccDetails } from "@/data";
-import Link from "next/link";
 import styles from "./DonateSection.module.scss";
 
 const DonateSection = () => {

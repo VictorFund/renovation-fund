@@ -1,13 +1,12 @@
 "use client";
 
-import { SiteContext } from "@/context/siteContext";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import styles from "./LangSwitcher.module.scss";
 
 const LangSwitcher = ({ id }) => {
-  const { currentLang, setCurrentLang } = useContext(SiteContext);
+  const [currentLang, setCurrentLang] = useState("ua");
+  const [lang, setLang] = useState("en");
 
-  const [lang, setLang] = useState("EN");
   const [isClicked, setIsClicked] = useState(false);
 
   return (
@@ -25,8 +24,8 @@ const LangSwitcher = ({ id }) => {
           isClicked ? `${styles.lang} ${styles.isClicked}` : `${styles.lang}`
         }
         onClick={() => {
-          setCurrentLang((prev) => (prev === "UA" ? "EN" : "UA"));
-          setLang((prev) => (prev === "UA" ? "EN" : "UA"));
+          setLang((prev) => (prev === "ua" ? "en" : "ua"));
+          setCurrentLang((prev) => (prev === "en" ? "ua" : "en"));
         }}
       >
         {lang}

@@ -12,6 +12,7 @@ import Loader from "../Loader/Loader";
 
 const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
   const { isMobile } = useWindowResize();
+
   return (
     <>
       {isLoading ? (
@@ -33,7 +34,10 @@ const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
           modules={[Navigation, Keyboard, Autoplay]}
           className="homeSwiper"
         >
-          {items.map((el) => {
+          {items?.map((el) => {
+            if (!el) {
+              return;
+            }
             return (
               <SwiperSlide key={el.slug}>
                 <div className="wrapp">
@@ -48,7 +52,7 @@ const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
                           <ButtonLink
                             title="Детальніше"
                             href={`${dataName}/${el.slug}`}
-                            costumBtn={
+                            customBtn={
                               btnClassName === true ? `leftMarging` : ""
                             }
                           />
