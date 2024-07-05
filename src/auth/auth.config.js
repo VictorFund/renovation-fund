@@ -20,7 +20,7 @@ export const authConfig = {
             return session;
         },
 
-        //когда результатом authorized будет return false - выполняется redirect - на signIn: "/dashboard" в pages (прописано выше)
+        //когда результатом authorized будет return false - выполняется redirect - на signIn: "/dashboard/login" в pages (прописано выше)
         authorized({ auth, request }) {
             const isPrincipal = auth?.user?.email === process.env.NEXT_PUBLIC_OWNER
             const isAdmin = auth?.user?.isAdmin || auth?.user?.email === process.env.NEXT_PUBLIC_DEVELOPER
@@ -28,6 +28,8 @@ export const authConfig = {
 
             const isOnPrincipalPages = request.nextUrl?.pathname.startsWith('/dashboard/users');
             const isOnAdminPages = request.nextUrl?.pathname.startsWith('/dashboard/news') || request.nextUrl?.pathname.startsWith('/dashboard/partnership') || request.nextUrl?.pathname.startsWith('/dashboard/projects') || request.nextUrl?.pathname.startsWith('/dashboard/team') || request.nextUrl?.pathname.startsWith('/dashboard/users')
+            // проверить нужен ли сверху "/dashboard/users" ?
+            // const isOnAdminPages = request.nextUrl?.pathname.startsWith('/dashboard/news') || request.nextUrl?.pathname.startsWith('/dashboard/partnership') || request.nextUrl?.pathname.startsWith('/dashboard/projects') || request.nextUrl?.pathname.startsWith('/dashboard/team')
             const isOnAuthPages = request.nextUrl?.pathname.endsWith('login') || request.nextUrl?.pathname.endsWith('register');
             const isOnMainDashboard = request.nextUrl?.pathname.endsWith('dashboard');
 

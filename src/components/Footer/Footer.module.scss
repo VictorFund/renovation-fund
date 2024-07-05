@@ -33,6 +33,7 @@
 
   @media screen and (min-width: $tablet) {
     padding: 32px $sidePaddingTablet;
+
     & h3 {
       font-family: inherit;
       font-size: 24px;
@@ -83,16 +84,19 @@
   flex-direction: column;
   gap: 24px;
   align-items: center;
+
   @media screen and (min-width: $tablet) {
     align-items: flex-start;
   }
 }
 
 .email {
-  overflow-wrap: break-word;
+
+  // overflow-wrap: break-word;
   @media screen and (min-width: $tablet) {
     width: 200px;
   }
+
   @media screen and (min-width: $desktop) {
     width: 300px;
   }
@@ -101,11 +105,13 @@
 .logoWrapp {
   height: 48px;
   margin-bottom: 12px;
+
   @media screen and (min-width: $tablet) {
     height: 60px;
     margin-bottom: 12px;
     margin-top: -12px;
   }
+
   @media screen and (min-width: $desktop) {
     height: 80px;
     margin-bottom: 28px;
@@ -121,14 +127,17 @@
   @media screen and (min-width: $tablet) {
     display: none;
   }
+
   @media screen and (min-width: $desktop) {
     display: inline-block;
     width: 236px;
     height: 80px;
   }
 }
+
 #smallLogo {
   display: none;
+
   @media screen and (min-width: $tablet) {
     display: inline-block;
   }
@@ -149,6 +158,7 @@
     border: none;
     width: 24px;
     height: 24px;
+
     &:focus,
     &:hover {
       background-color: $bodyColor;
@@ -157,12 +167,15 @@
       scale: 1.2;
     }
   }
+
   @media screen and (min-width: $tablet) {
     gap: 16px;
   }
+
   @media screen and (min-width: $desktop) {
     width: 100%;
     max-width: 176px;
+
     & svg {
       width: 32px;
       height: 32px;
@@ -172,12 +185,19 @@
 
 .navTitle {
   display: none;
+
   @media screen and (min-width: $tablet) {
     display: block;
   }
 }
 
 .navWrapp {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  row-gap: 24px;
+  column-gap: 16px;
+
   @media screen and (min-width: $tablet) {
     width: 100%;
     display: grid;

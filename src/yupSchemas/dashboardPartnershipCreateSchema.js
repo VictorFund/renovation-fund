@@ -16,8 +16,7 @@ export const dashboardPartnershipCreateSchema = yup.object({
     logo: yup
         .string(),
     siteLink: yup
-        .string()
-        .required("Сайт - обов’язкове поле"),
+        .string(),
     isApproved: yup
         .boolean()
 });

@@ -9,13 +9,13 @@ export const contactsData = [
         id: 2,
         src: "phone-outline",
         href: "#",
-        text: "+380 (96) 605 - 86 - 05",
+        text: "+380 (97) 177 - 56 - 82",
     },
     {
         id: 3,
         src: "mail-outline",
         href: "#",
-        text: "webevery@gmail.com",
+        text: "pvfond@gmail.com",
     },
     {
         id: 4,

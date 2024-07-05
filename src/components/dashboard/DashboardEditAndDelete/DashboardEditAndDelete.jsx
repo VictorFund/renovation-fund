@@ -29,7 +29,7 @@ const DashboardEditAndDelete = ({ data, pathname, mutate, isOwner }) => {
                     const arrForDeleting = createImagesArrayForDeletingFromCloudinary(data);
                     arrForDeleting.map(item => handleDeleteImgFromCloudinary(item));
                     handleDeleteCardFromDB(url, mutate);
-                    console.log(`Delete card of ${data.nameEn}`)
+                    console.log(`Delete card of ${data.slug}`)
                 }}
             >
                 <use href="/sprite.svg#icon-delete" />

@@ -19,6 +19,7 @@ const DashboardRegisterForm = () => {
 
     return (
         <form action={formAction} className={`${styles.dataForm} ${styles.authForm}`}>
+            <input type="text" placeholder="name" name="name" className={styles.formInput} />
             <input type="email" placeholder="email" name="email" className={styles.formInput} />
             <input type="password" placeholder="password" name="password" className={styles.formInput} />
             <button className={`${styles.submitBtn} ${styles.authSubmitBtn}`} >Зареєструватися</button>

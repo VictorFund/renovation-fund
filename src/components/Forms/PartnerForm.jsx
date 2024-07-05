@@ -3,23 +3,26 @@
 import { useState, useEffect } from "react";
 import { useForm, useController } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { feedbackFormSchema } from "@/yupSchemas/feedbackFormShema";
+import { partnerFormSchema } from "@/yupSchemas/partnerFormShema";
 import Checkboxes from "./Checkboxes";
 import { socialLinks } from "@/data";
 
 import styles from "./FormStyles.module.scss";
 
-const FeedbackForm = () => {
+const PartnerForm = () => {
     const initialValues = {
         defaultValues: {
             name: "",
-            tel: "",
             email: "",
+            address: "",
             theme: "",
+            telPersonal: "",
+            telOrganization: "",
+            role: "",
             comment: "",
             calback: [],
         },
-        resolver: yupResolver(feedbackFormSchema),
+        resolver: yupResolver(partnerFormSchema),
         mode: "onChange",
     };
 
@@ -34,6 +37,11 @@ const FeedbackForm = () => {
 
     const [value, setValue] = useState(field.value || []);
 
+    // const calbackVar = register("calback");
+    // console.log("calback:", getValues("calback"));
+    // console.log("isViber::", getValues("calback").includes("Viber"));
+    // console.log("isValid:", isValid);
+
     useEffect(() => {
         if (isSubmitSuccessful) {
             reset();
@@ -42,7 +50,7 @@ const FeedbackForm = () => {
     }, [isSubmitSuccessful, reset]);
 
     const onSubmit = (data) => {
-        console.log("feedbackFormData:", data);
+        console.log("partnerFormData:", data);
     };
     return (
         <form
@@ -75,27 +83,6 @@ const FeedbackForm = () => {
                         <svg className={styles.iconMark}>
                             <use href='/sprite.svg#snowflake'></use>
                         </svg>
-                        <p className={styles.error}>{errors.tel?.message}</p>
-
-                        <input
-                            type='text'
-                            {...register("tel")}
-                            placeholder='Номер телефона'
-                            maxLength='13'
-                            autoComplete='off'
-                            className={
-                                errors.tel
-                                    ? `${styles.input} ${styles.errorInput}`
-                                    : styles.input
-                            }
-                        />
-                    </div>
-                </div>
-                <div className={styles.innerBox}>
-                    <div className={styles.inputWrap}>
-                        <svg className={styles.iconMark}>
-                            <use href='/sprite.svg#snowflake'></use>
-                        </svg>
                         <p className={styles.error}>{errors.email?.message}</p>
 
                         <input
@@ -114,6 +101,26 @@ const FeedbackForm = () => {
                         <svg className={styles.iconMark}>
                             <use href='/sprite.svg#snowflake'></use>
                         </svg>
+                        <p className={styles.error}>
+                            {errors.address?.message}
+                        </p>
+
+                        <input
+                            type='text'
+                            {...register("address")}
+                            placeholder='Адреса організації'
+                            autoComplete='off'
+                            className={
+                                errors.address
+                                    ? `${styles.input} ${styles.errorInput}`
+                                    : styles.input
+                            }
+                        />
+                    </div>
+                    <div className={styles.inputWrap}>
+                        <svg className={styles.iconMark}>
+                            <use href='/sprite.svg#snowflake'></use>
+                        </svg>
                         <p className={styles.error}>{errors.theme?.message}</p>
 
                         <input
@@ -123,6 +130,69 @@ const FeedbackForm = () => {
                             autoComplete='off'
                             className={
                                 errors.theme
+                                    ? `${styles.input} ${styles.errorInput}`
+                                    : styles.input
+                            }
+                        />
+                    </div>
+                </div>
+                <div className={styles.innerBox}>
+                    <div className={styles.inputWrap}>
+                        <svg className={styles.iconMark}>
+                            <use href='/sprite.svg#snowflake'></use>
+                        </svg>
+                        <p className={styles.error}>
+                            {errors.telPersonal?.message}
+                        </p>
+
+                        <input
+                            type='text'
+                            {...register("telPersonal")}
+                            placeholder='Номер телефона'
+                            maxLength='13'
+                            autoComplete='off'
+                            className={
+                                errors.telPersonal
+                                    ? `${styles.input} ${styles.errorInput}`
+                                    : styles.input
+                            }
+                        />
+                    </div>
+                    <div className={styles.inputWrap}>
+                        <svg className={styles.iconMark}>
+                            <use href='/sprite.svg#snowflake'></use>
+                        </svg>
+                        <p className={styles.error}>
+                            {errors.telOrganization?.message}
+                        </p>
+
+                        <input
+                            type='text'
+                            {...register("telOrganization")}
+                            placeholder='Номер телефона організації'
+                            maxLength='13'
+                            autoComplete='off'
+                            className={
+                                errors.telOrganization
+                                    ? `${styles.input} ${styles.errorInput}`
+                                    : styles.input
+                            }
+                        />
+                    </div>
+                    <div className={styles.inputWrap}>
+                        <svg className={styles.iconMark}>
+                            <use href='/sprite.svg#snowflake'></use>
+                        </svg>
+                        <p className={styles.error}>{errors.role?.message}</p>
+
+                        <input
+                            type='text'
+                            {...register("role")}
+                            placeholder='Ваша роль в організації'
+                            maxLength='40'
+                            autoComplete='off'
+                            className={
+                                errors.role
                                     ? `${styles.input} ${styles.errorInput}`
                                     : styles.input
                             }
@@ -172,4 +242,4 @@ const FeedbackForm = () => {
     );
 };
 
-export default FeedbackForm;
+export default PartnerForm;

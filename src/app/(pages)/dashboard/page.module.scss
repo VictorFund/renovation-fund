@@ -15,6 +15,17 @@
     }
 }
 
+.wrapper {
+    height: calc(100vh - 410px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width:$desktop) {
+        height: calc(100vh - 531px);
+    }
+}
+
 .successWelcome {
     text-align: center;
     color: #5680eb;

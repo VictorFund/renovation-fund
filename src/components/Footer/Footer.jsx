@@ -33,10 +33,10 @@ const Footer = () => {
               @pvfond_contact
             </a>
             <a
-              href="mailto:peremogividnovlenna@gmail.com"
+              href="mailto:pvfond@gmail.com"
               className={styles.email}
             >
-              peremogividnovlenna@gmail.com
+              pvfond@gmail.com
             </a>
 
             <p>9.00 - 19.00 Пн-Пт</p>
