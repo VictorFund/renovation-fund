@@ -15,16 +15,9 @@ const HomeProjectsSection = () => {
   const [activeTab, setActiveTab] = useState("Поточний");
   const { isMobile } = useWindowResize();
 
-  const aprovedData = data?.map((el) => {
-    if (el.isApproved) {
-      return el;
-    } else {
-      return;
-    }
-  });
+  const aprovedData = data?.filter((el) => el.isApproved);
 
-  const filteredData = useFilterData(data, activeTab);
-  // const filteredData = useFilterData(aprovedData, activeTab);
+  const filteredData = useFilterData(aprovedData, activeTab);
 
   return (
     <section>
