@@ -14,14 +14,40 @@ const NavigationHeader = () => {
   const { isDesktop } = useWindowResize();
 
   const [activeMenu, setActiveMenu] = useState(null);
+  const { burgerMenu, setBurgermenu } = useContext(SiteContext);
   const [subPath, setSubPath] = useState(false);
 
-  const { burgerMenu, setBurgermenu } = useContext(SiteContext);
   const pathname = usePathname();
 
-  if (isDesktop) {
-    setBurgermenu(false);
-  }
+  const onWindowClick = () => {
+    setActiveMenu(null);
+  };
+  useEffect(() => {
+    if (isDesktop) {
+      setBurgermenu(false);
+    }
+    if (activeMenu !== null) {
+      setTimeout(() => {
+        window.addEventListener("click", onWindowClick);
+      }, 100);
+    }
+
+    for (const el of navLinks) {
+      if (el.subMenu) {
+        for (const item of el.subMenu) {
+          if (pathname.startsWith(item.href)) {
+            setSubPath(true);
+            break;
+          }
+        }
+      } else if (pathname.startsWith(el.href)) {
+        setSubPath(false);
+        break;
+      }
+    }
+
+    return () => window.removeEventListener("click", onWindowClick);
+  }, [isDesktop, activeMenu, setBurgermenu, pathname]);
 
   const toggleNav = (title) => {
     setActiveMenu(activeMenu === title ? null : title);
@@ -56,7 +82,11 @@ const NavigationHeader = () => {
               className={`${styles.navItem}  ${styles.navItemSubmenu}`}
             >
               <p
-                className={`${styles.navItemTitle}`}
+                className={
+                  subPath
+                    ? `${styles.navItemTitle} ${styles.activeTitle}`
+                    : `${styles.navItemTitle}`
+                }
                 onClick={() => toggleNav(el.title)}
               >
                 {el.title}
@@ -83,17 +113,6 @@ const NavigationHeader = () => {
                   }
                 >
                   {el.subMenu?.map((item) => {
-                    // console.log(item);
-                    // console.log(pathname.startsWith(item.href));
-                    // console.log("subPath", subPath);
-                    // useEffect(() => {
-                    //   if (pathname.startsWith(item.href)) {
-                    //     setSubPath(true);
-                    //   } else {
-                    //     setSubPath(false);
-                    //   }
-                    // }, [item.href]);
-
                     return (
                       <Link
                         key={item.title}

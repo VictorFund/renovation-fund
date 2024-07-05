@@ -26,6 +26,7 @@ export const ProjectAccordio = ({ activeTab, setActiveTab, className, id }) => {
         <p className={styles.titleAccordion}>
           {currentTab ? currentTab.title : "Поточні проєкти"}
         </p>
+
         <svg
           className={`${styles.arrow} ${activeAccordion && styles.activeArrow}`}
         >
