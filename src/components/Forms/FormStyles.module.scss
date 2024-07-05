@@ -103,28 +103,6 @@
     top: 15px;
     right: 15px;
     fill: $accentColor;
-    // stroke: $accentColor;
-}
-
-.socSvg {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-}
-
-.boxChecked,
-.boxNoChecked {
-    display: none;
-}
-
-.span:has(.boxChecked) .socSvg {
-    fill: $accentColor;
-    // stroke: $accentColor;
-}
-
-.span:has(.boxNoChecked) .socSvg {
-    fill: $BorderColor;
-    // stroke: $BorderColor;
 }
 
 .checkboxWrap {
@@ -152,6 +130,8 @@
     }
 }
 
+// styles for checkboxes --------------------------
+
 .checkboxTitle {
     width: 176px;
     text-align: center;
@@ -166,6 +146,27 @@
         text-align: left;
     }
 }
+
+.socSvg {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.boxChecked,
+.boxNoChecked {
+    display: none;
+}
+
+.span:has(.boxChecked) .socSvg {
+    fill: $accentColor;
+}
+
+.span:has(.boxNoChecked) .socSvg {
+    fill: $BorderColor;
+}
+
+// styles for submit button --------------------------
 
 .submitButton {
     width: 100%;
@@ -192,6 +193,8 @@
     color: #fff;
 }
 
+// styles for errors --------------------------
+
 .error {
     position: absolute;
     bottom: 2px;
@@ -201,11 +204,6 @@
     font-family: var(--montserrat);
     font-size: 12px;
     font-weight: 300;
-
-    //   @media screen and (min-width: $laptop) {
-    //     top: 60px;
-    //     font-size: 14px;
-    //   }
 }
 
 .errorCheckbox {
