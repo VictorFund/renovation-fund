@@ -40,7 +40,7 @@ const DashboardNewsItem = ({ data, isLoading, mutate, isOwner }) => {
                 <span className='accentText'>Опис англійською:</span>
                 {changedData.descriptionEn.map((item, index) => <p key={index}>{item}</p>)}
             </div>
-            {changedData.link && <p><span className='accentText'>Посилання на ресурс:</span> {changedData.link}</p>}
+            {changedData.link && <p className={styles.link}><span className='accentText'>Посилання на ресурс:</span> {changedData.link}</p>}
             {isList && (<DashboardEditAndDelete data={data} pathname={pathname} mutate={mutate} isOwner={isOwner} />)}
         </div>
     )

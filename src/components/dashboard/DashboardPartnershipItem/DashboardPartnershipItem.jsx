@@ -26,7 +26,7 @@ const DashboardPartnershipItem = ({ data, mutate, isOwner }) => {
                     alt={`Logo of ${data.titleEn}`}
                 />
             </div>
-            {data.siteLink && <p><span className='accentText'>Посилання на ресурс:</span> {data.siteLink}</p>}
+            {data.siteLink && <p className={styles.link}><span className='accentText'>Посилання на ресурс:</span> {data.siteLink}</p>}
 
             {isList && (<DashboardEditAndDelete data={data} pathname={pathname} mutate={mutate} isOwner={isOwner} />)}
         </div>

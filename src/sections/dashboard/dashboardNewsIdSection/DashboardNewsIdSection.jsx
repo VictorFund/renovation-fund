@@ -14,7 +14,7 @@ const DashboardNewsIdSection = ({ isOwner }) => {
         <section>
             {isLoading
                 ? <Loader />
-                : <div className={styles.container}>
+                : <div className={`container ${styles.container} ${styles.editPage}`}>
                     <DashboardNewsItem data={data} isLoading={isLoading} isOwner={isOwner} />
                     <DashboardNewsFormUpdate data={data} mutate={mutate} isOwner={isOwner} />
                 </div>
