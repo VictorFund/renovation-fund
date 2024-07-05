@@ -34,7 +34,7 @@ const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
           modules={[Navigation, Keyboard, Autoplay]}
           className="homeSwiper"
         >
-          {items.map((el) => {
+          {items?.map((el) => {
             if (!el) {
               return;
             }
@@ -52,7 +52,7 @@ const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
                           <ButtonLink
                             title="Детальніше"
                             href={`${dataName}/${el.slug}`}
-                            costumBtn={
+                            customBtn={
                               btnClassName === true ? `leftMarging` : ""
                             }
                           />
