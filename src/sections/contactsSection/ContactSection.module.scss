@@ -79,3 +79,50 @@
         height: 32px;
     }
 }
+
+.contactBox {
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: $desktop) {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.iframe {
+    width: 280px;
+    height: 213px;
+    border: 0;
+    margin-bottom: 24px;
+    @media screen and (min-width: $tablet) {
+        width: 704px;
+        height: 528px;
+        margin-bottom: 54px;
+    }
+    @media screen and (min-width: $desktop) {
+        width: 649px;
+        height: 487px;
+        margin-bottom: 0;
+        margin-right: 56px;
+    }
+}
+
+.descriptionBox {
+    margin-top: 48px;
+    margin-bottom: 40px;
+}
+
+.description {
+    font-family: var(--montserrat);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.description:not(:last-child) {
+    margin-bottom: 14px;
+}
+
+.descriptionLink {
+    color: $accentColor;
+}

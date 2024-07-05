@@ -115,6 +115,7 @@
 .projectDesc {
   display: none;
   @media screen and (min-width: $tablet) {
+    display: block;
     font-family: var(--montserrat);
     font-weight: 500;
     font-size: 16px;
