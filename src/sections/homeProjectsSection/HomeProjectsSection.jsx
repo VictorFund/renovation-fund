@@ -17,9 +17,7 @@ const HomeProjectsSection = () => {
 
   const aprovedData = data?.filter((el) => el.isApproved);
 
-
   const filteredData = useFilterData(aprovedData, activeTab);
-
 
   return (
     <section>
