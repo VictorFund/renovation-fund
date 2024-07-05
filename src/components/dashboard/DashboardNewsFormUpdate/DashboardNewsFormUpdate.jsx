@@ -84,144 +84,142 @@ const DashboardNewsFormUpdate = ({ data, mutate, isOwner }) => {
     }, [isSubmitSuccessful, reset]);
 
     return (
-        <div className={styles.dataFormContainer}>
-            <form
-                onSubmit={handleSubmit(onSubmit)}
-                className={styles.dataForm}
-                noValidate
-            >
-                <h3 className={styles.formTitle}>Редагування картки новини</h3>
+        <form
+            onSubmit={handleSubmit(onSubmit)}
+            className={styles.dataForm}
+            noValidate
+        >
+            <h3 className={styles.formTitle}>Редагування картки новини</h3>
 
-                <div className={styles.inputGroup}>
-                    <input
-                        type='text'
-                        className={styles.formInput}
-                        id='newSlug'
-                        placeholder=' '
-                        {...register("newSlug")}
-                    />
-                    <label htmlFor='newSlug' className={styles.formLabel}>
-                        New Slug
-                    </label>
-                    <p className={styles.error}>{errors.newSlug?.message}</p>
-                </div>
+            <div className={styles.inputGroup}>
+                <input
+                    type='text'
+                    className={styles.formInput}
+                    id='newSlug'
+                    placeholder=' '
+                    {...register("newSlug")}
+                />
+                <label htmlFor='newSlug' className={styles.formLabel}>
+                    New Slug
+                </label>
+                <p className={styles.error}>{errors.newSlug?.message}</p>
+            </div>
 
-                <div className={styles.inputGroup}>
-                    <input
-                        type='text'
-                        className={styles.formInput}
-                        id='newTitle'
-                        placeholder=' '
-                        {...register("newTitle")}
-                    />
-                    <label htmlFor='newTitle' className={styles.formLabel}>
-                        Новий заголовок
-                    </label>
-                    <p className={styles.error}>{errors.newTitle?.message}</p>
-                </div>
+            <div className={styles.inputGroup}>
+                <input
+                    type='text'
+                    className={styles.formInput}
+                    id='newTitle'
+                    placeholder=' '
+                    {...register("newTitle")}
+                />
+                <label htmlFor='newTitle' className={styles.formLabel}>
+                    Новий заголовок
+                </label>
+                <p className={styles.error}>{errors.newTitle?.message}</p>
+            </div>
 
-                <div className={styles.inputGroup}>
-                    <input
-                        type='text'
-                        className={styles.formInput}
-                        id='newTitleEn'
-                        placeholder=' '
-                        {...register("newTitleEn")}
-                    />
-                    <label htmlFor='newTitleEn' className={styles.formLabel}>
-                        Новий заголовок англійською
-                    </label>
-                    <p className={styles.error}>{errors.newTitleEn?.message}</p>
-                </div>
+            <div className={styles.inputGroup}>
+                <input
+                    type='text'
+                    className={styles.formInput}
+                    id='newTitleEn'
+                    placeholder=' '
+                    {...register("newTitleEn")}
+                />
+                <label htmlFor='newTitleEn' className={styles.formLabel}>
+                    Новий заголовок англійською
+                </label>
+                <p className={styles.error}>{errors.newTitleEn?.message}</p>
+            </div>
 
-                <div className={styles.inputGroup}>
-                    <CldUploadButton
-                        name='newImage'
-                        className={styles.uploadBtn}
-                        onUpload={(result, widget) => {
-                            if (getValues("newImage") !== "") {
-                                const publicId = getValues("newImage");
-                                handleDeleteImgFromCloudinary(publicId);
-                            }
-                            setValue("newImage", result.info.public_id, {
-                                shouldValidate: true,
-                            });
-                            widget.close();
-                        }}
-                        options={{ multiple: false }}
-                        uploadPreset='unsigned_preset'
-                    >
-                        Оновити фото (WEBP)
-                    </CldUploadButton>
+            <div className={styles.inputGroup}>
+                <CldUploadButton
+                    name='newImage'
+                    className={styles.uploadBtn}
+                    onUpload={(result, widget) => {
+                        if (getValues("newImage") !== "") {
+                            const publicId = getValues("newImage");
+                            handleDeleteImgFromCloudinary(publicId);
+                        }
+                        setValue("newImage", result.info.public_id, {
+                            shouldValidate: true,
+                        });
+                        widget.close();
+                    }}
+                    options={{ multiple: false }}
+                    uploadPreset='unsigned_preset'
+                >
+                    Оновити фото (WEBP)
+                </CldUploadButton>
 
-                    <p className={styles.error}>{errors.newImage?.message}</p>
-                </div>
+                <p className={styles.error}>{errors.newImage?.message}</p>
+            </div>
 
-                <div className={styles.inputGroup}>
-                    <textarea
-                        type='text'
-                        className={styles.formInput}
-                        id='newDescription'
-                        placeholder=' '
-                        {...register("newDescription")}
-                    />
-                    <label htmlFor='newDescription' className={styles.formLabel}>
-                        Новий опис                    </label>
-                    <p className={styles.error}>
-                        {errors.newDescription?.message}
-                    </p>
-                </div>
+            <div className={styles.inputGroup}>
+                <textarea
+                    type='text'
+                    className={styles.formInput}
+                    id='newDescription'
+                    placeholder=' '
+                    {...register("newDescription")}
+                />
+                <label htmlFor='newDescription' className={styles.formLabel}>
+                    Новий опис                    </label>
+                <p className={styles.error}>
+                    {errors.newDescription?.message}
+                </p>
+            </div>
 
-                <div className={styles.inputGroup}>
-                    <textarea
-                        type='text'
-                        className={styles.formInput}
-                        id='newDescriptionEn'
-                        placeholder=' '
-                        {...register("newDescriptionEn")}
-                    />
-                    <label htmlFor='newDescriptionEn' className={styles.formLabel}>
-                        Новий опис англійською                    </label>
-                    <p className={styles.error}>
-                        {errors.newDescriptionEn?.message}
-                    </p>
-                </div>
+            <div className={styles.inputGroup}>
+                <textarea
+                    type='text'
+                    className={styles.formInput}
+                    id='newDescriptionEn'
+                    placeholder=' '
+                    {...register("newDescriptionEn")}
+                />
+                <label htmlFor='newDescriptionEn' className={styles.formLabel}>
+                    Новий опис англійською                    </label>
+                <p className={styles.error}>
+                    {errors.newDescriptionEn?.message}
+                </p>
+            </div>
 
-                <div className={styles.inputGroup}>
-                    <input
-                        type='text'
-                        className={styles.formInput}
-                        id='newLink'
-                        placeholder=' '
-                        {...register("newLink")}
-                    />
-                    <label htmlFor='newLink' className={styles.formLabel}>
-                        Нове посилання на ресурс
-                    </label>
-                    <p className={styles.error}>{errors.newLink?.message}</p>
-                </div>
+            <div className={styles.inputGroup}>
+                <input
+                    type='text'
+                    className={styles.formInput}
+                    id='newLink'
+                    placeholder=' '
+                    {...register("newLink")}
+                />
+                <label htmlFor='newLink' className={styles.formLabel}>
+                    Нове посилання на ресурс
+                </label>
+                <p className={styles.error}>{errors.newLink?.message}</p>
+            </div>
 
-                {isOwner && <div className={styles.checkboxInputGroup}>
-                    <label htmlFor='newIsApproved' className={styles.checkboxLabel}>
-                        Розміщення на сайті
-                    </label>
-                    <input
-                        type='checkbox'
-                        className={styles.checkbox}
-                        id='newIsApproved'
-                        placeholder=' '
-                        {...register("newIsApproved")}
-                    />
-                    <p className={styles.error}>{errors.newIsApproved?.message}</p>
-                </div>}
+            {isOwner && <div className={styles.checkboxInputGroup}>
+                <label htmlFor='newIsApproved' className={styles.checkboxLabel}>
+                    Розміщення на сайті
+                </label>
+                <input
+                    type='checkbox'
+                    className={styles.checkbox}
+                    id='newIsApproved'
+                    placeholder=' '
+                    {...register("newIsApproved")}
+                />
+                <p className={styles.error}>{errors.newIsApproved?.message}</p>
+            </div>}
 
-                <button
-                    type='submit'
-                    className={styles.submitBtn}
-                    disabled={isErrors || isSubmitting}
-                >Оновити інформацію</button>
-            </form>
-        </div>
+            <button
+                type='submit'
+                className={styles.submitBtn}
+                disabled={isErrors || isSubmitting}
+            >Оновити інформацію</button>
+        </form>
     );
 }
 

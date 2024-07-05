@@ -2,10 +2,6 @@
 
 // DATA FORMS
 
-.dataFormContainer {
-    flex: 1;
-}
-
 .dataForm {
     padding: 44px 20px;
     display: flex;
@@ -51,8 +47,8 @@
 }
 
 .inputGroup textarea {
-    height: 120px;
-    resize: none;
+    min-height: 120px;
+    resize: vertical;
 }
 
 .formLabel {
@@ -197,7 +193,6 @@
 
 .itemCard {
     position: relative;
-    flex: 1;
     padding: 44px 20px;
     display: flex;
     flex-direction: column;
@@ -212,9 +207,7 @@
 }
 
 .link {
-    width: 30vw;
-    overflow: hidden;
-    white-space: wrap;
+    overflow-wrap: break-word;
 }
 
 // COWORKER

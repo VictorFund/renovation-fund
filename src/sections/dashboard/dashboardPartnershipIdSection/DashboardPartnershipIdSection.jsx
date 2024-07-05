@@ -14,7 +14,7 @@ const DashboardPartnershipIdSection = ({ isOwner }) => {
         <section>
             {isLoading
                 ? <Loader />
-                : <div className={styles.container}>
+                : <div className={`container ${styles.container} ${styles.editPage}`}>
                     <DashboardPartnershipItem data={data} isOwner={isOwner} />
                     <DashboardPartnershipFormUpdate data={data} mutate={mutate} isOwner={isOwner} />
                 </div>
