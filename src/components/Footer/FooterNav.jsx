@@ -2,7 +2,6 @@
 import { useWindowResize } from "@/hooks/useWindowResize";
 import Link from "next/link";
 
-
 const FooterNav = ({ className, tabletNavLink, navWrapp, titleClassName }) => {
   const { isMobile } = useWindowResize();
   return (
@@ -12,9 +11,6 @@ const FooterNav = ({ className, tabletNavLink, navWrapp, titleClassName }) => {
       <nav className={navWrapp}>
         {!isMobile && (
           <>
-            {/* <Link href={"/"} className={tabletNavLink}>
-              Головна
-            </Link> */}
             <Link href={"/mission"} className={tabletNavLink}>
               Про Фонд
             </Link>{" "}
@@ -58,6 +54,5 @@ const FooterNav = ({ className, tabletNavLink, navWrapp, titleClassName }) => {
     </div>
   );
 };
-
 
 export default FooterNav;
