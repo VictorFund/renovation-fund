@@ -24,7 +24,6 @@ const HomeProjectsSection = () => {
   });
 
   const filteredData = useFilterData(aprovedData, activeTab);
-
   return (
     <section>
       <div className={`container ${styles.container}`}>
@@ -43,7 +42,6 @@ const HomeProjectsSection = () => {
           dataName="projects"
           isLoading={isLoading}
         />
-        {/* )} */}
       </div>
     </section>
   );

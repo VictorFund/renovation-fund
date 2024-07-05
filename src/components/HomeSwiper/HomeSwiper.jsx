@@ -12,6 +12,7 @@ import Loader from "../Loader/Loader";
 
 const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
   const { isMobile } = useWindowResize();
+
   return (
     <>
       {isLoading ? (
@@ -34,6 +35,9 @@ const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
           className="homeSwiper"
         >
           {items.map((el) => {
+            if (!el) {
+              return;
+            }
             return (
               <SwiperSlide key={el.slug}>
                 <div className="wrapp">

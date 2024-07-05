@@ -2,7 +2,8 @@
 import { SiteContext } from "@/context/siteContext";
 import { useWindowResize } from "@/hooks/useWindowResize";
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useContext, useEffect, useState } from "react";
 import { navLinks } from "../../data/navLinks";
 import BurgerBtn from "../Buttons/BurgerBtn/BurgerBtn";
 import HorizontalLine from "../HorizontalLine/HorizontalLine";
@@ -10,11 +11,13 @@ import LangSwitcher from "../LangSwitcher/LangSwitcher";
 import styles from "./NavigationHeader.module.scss";
 
 const NavigationHeader = () => {
-  const { isLaptop, isDesktop } = useWindowResize();
+  const { isDesktop } = useWindowResize();
 
   const [activeMenu, setActiveMenu] = useState(null);
+  const [subPath, setSubPath] = useState(false);
 
   const { burgerMenu, setBurgermenu } = useContext(SiteContext);
+  const pathname = usePathname();
 
   if (isDesktop) {
     setBurgermenu(false);
@@ -53,7 +56,7 @@ const NavigationHeader = () => {
               className={`${styles.navItem}  ${styles.navItemSubmenu}`}
             >
               <p
-                className={styles.navItemTitle}
+                className={`${styles.navItemTitle}`}
                 onClick={() => toggleNav(el.title)}
               >
                 {el.title}
@@ -80,11 +83,26 @@ const NavigationHeader = () => {
                   }
                 >
                   {el.subMenu?.map((item) => {
+                    // console.log(item);
+                    // console.log(pathname.startsWith(item.href));
+                    // console.log("subPath", subPath);
+                    // useEffect(() => {
+                    //   if (pathname.startsWith(item.href)) {
+                    //     setSubPath(true);
+                    //   } else {
+                    //     setSubPath(false);
+                    //   }
+                    // }, [item.href]);
+
                     return (
                       <Link
                         key={item.title}
                         href={item.href}
-                        className={styles.navLink}
+                        className={
+                          pathname.startsWith(item.href)
+                            ? `${styles.navLink} ${styles.activeTitle}`
+                            : `${styles.navLink}`
+                        }
                         onClick={closeMenu}
                         target={item.target ? item.target : "_self"}
                       >
@@ -106,7 +124,11 @@ const NavigationHeader = () => {
               <Link
                 href={el.href}
                 target={el.target ? el.target : null}
-                className={styles.navItemTitle}
+                className={
+                  pathname.startsWith(el.href)
+                    ? `${styles.navItemTitle} ${styles.activeTitle}`
+                    : `${styles.navItemTitle}`
+                }
               >
                 {el.title}
               </Link>
