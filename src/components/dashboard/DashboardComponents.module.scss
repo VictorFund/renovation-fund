@@ -10,7 +10,7 @@
     padding: 44px 20px;
     display: flex;
     flex-direction: column;
-    row-gap: 16px;
+    row-gap: 20px;
     border-radius: 32px;
     background-color: $bodyColor;
     box-shadow: 1px 1px 10px 0px $shadow;
@@ -45,7 +45,7 @@
 
     &:focus+.formLabel,
     &:not(:placeholder-shown)+.formLabel {
-        transform: translateY(-190%) scale(0.9);
+        transform: translateY(-210%) scale(0.9);
         transition-duration: 250ms;
     }
 }
@@ -65,7 +65,7 @@
 
 .error {
     position: absolute;
-    top: -17px;
+    top: -19px;
     right: 10px;
     color: red;
     font-size: 14px;

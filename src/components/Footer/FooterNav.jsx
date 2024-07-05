@@ -12,24 +12,24 @@ const FooterNav = ({ className, tabletNavLink, navWrapp, titleClassName }) => {
       <nav className={navWrapp}>
         {!isMobile && (
           <>
-            <Link href={"/"} className={tabletNavLink}>
+            {/* <Link href={"/"} className={tabletNavLink}>
               Головна
-            </Link>
-            <Link href={"/projects"} className={tabletNavLink}>
-              Проєкти
-            </Link>
+            </Link> */}
             <Link href={"/mission"} className={tabletNavLink}>
               Про Фонд
             </Link>{" "}
+            <Link href={"/projects"} className={tabletNavLink}>
+              Проєкти
+            </Link>
+            <Link href={"/partnership"} className={tabletNavLink}>
+              Партнерство
+            </Link>
             <Link href={"/news"} className={tabletNavLink}>
               Новини
             </Link>{" "}
             <Link href={"/donate"} className={tabletNavLink}>
               Реквізити
             </Link>{" "}
-            <Link href={"/partnership"} className={tabletNavLink}>
-              Партнерство
-            </Link>
             <Link
               href="https://drive.google.com/drive/folders/1nSssAqs06TKHyJj2PwsSnqj3smaMMeXu?usp=drive_link"
               className={tabletNavLink}
@@ -46,6 +46,13 @@ const FooterNav = ({ className, tabletNavLink, navWrapp, titleClassName }) => {
           rel="noopener noreferrer"
         >
           Конфіденційність
+        </Link>
+        <Link
+          href="/documentation/public-offer.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Оферта
         </Link>
       </nav>
     </div>

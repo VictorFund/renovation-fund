@@ -26,7 +26,6 @@ const partnerSchema = new mongoose.Schema(
         },
         siteLink: {
             type: String,
-            required: true,
         },
         // чи головні партнери        
         isApproved: {

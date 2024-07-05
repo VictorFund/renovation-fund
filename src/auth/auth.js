@@ -15,7 +15,7 @@ const login = async (credentials) => {
             throw new Error("Wrong credentials")
         }
 
-        const passwordIsCorrect = bcrypt.compare(credentials.password, user.password);
+        const passwordIsCorrect = await bcrypt.compare(credentials.password, user.password);
         if (!passwordIsCorrect) {
             throw new Error("Wrong credentials")
         }
@@ -29,7 +29,7 @@ const login = async (credentials) => {
 
 
 export const {
-    handlers,
+    handlers: { GET, POST },
     auth,
     signIn,
     signOut } = NextAuth({
