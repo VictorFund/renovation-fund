@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { projectsCategories } from '@/data/projectsCategories.data';
-import { useState } from 'react';
-import styles from './ProjectAccordio.module.scss';
+import { projectsCategories } from "@/data/projectsCategories.data";
+import { useState } from "react";
+import styles from "./ProjectAccordio.module.scss";
 
 export const ProjectAccordio = ({ activeTab, setActiveTab, className, id }) => {
   const [activeAccordion, setActiveAccordion] = useState(false);
@@ -24,8 +24,7 @@ export const ProjectAccordio = ({ activeTab, setActiveTab, className, id }) => {
         onClick={() => setActiveAccordion((prevState) => !prevState)}
       >
         <p className={styles.titleAccordion}>
-          {currentTab.title}
-          {/* {currentTab ? currentTab.title : 'Виберіть проєкт'} */}
+          {currentTab ? currentTab.title : "Поточні проєкти"}
         </p>
         <svg
           className={`${styles.arrow} ${activeAccordion && styles.activeArrow}`}
