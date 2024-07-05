@@ -7,6 +7,7 @@ import { SiteProvider } from "@/context/siteContext";
 
 import SideBtn from "@/components/Buttons/SideBtn/SideBtn";
 import ToTopBtn from "@/components/Buttons/ToTopBtn/ToTopBtn";
+import AuthProvider from "@/components/dashboard/AuthProvider/AuthProvider";
 
 export const metadata = {
   title: "Charity fund",
@@ -20,18 +21,20 @@ export default function RootLayout({ children }) {
         className={fonts}
         style={{ overflowX: "hidden", overflowY: "auto" }}
       >
-        <SiteProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <SideBtn
-            title="Зв’яжись з нами"
-            id="sideBtn"
-            href="https://t.me/pvfond_contact"
-            target="_blank"
-          />
-          <ToTopBtn />
-        </SiteProvider>
+        <AuthProvider>
+          <SiteProvider>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+            <SideBtn
+              title="Зв’яжись з нами"
+              id="sideBtn"
+              href="https://t.me/pvfond_contact"
+              target="_blank"
+            />
+            <ToTopBtn />
+          </SiteProvider>
+        </AuthProvider>
       </body>
     </html>
   );

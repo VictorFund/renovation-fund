@@ -1,7 +1,7 @@
 import * as yup from "yup";
 
 
-export const dashboardUserSchema = yup.object({
+export const dashboardUserLoginSchema = yup.object({
     email: yup
         .string()
         .required('Email це обовʼязкове поле')

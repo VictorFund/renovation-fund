@@ -4,11 +4,11 @@
 .navigationContainer {
     display: none;
 
-    @media screen and (min-width: $tablet) {
+    @media screen and (min-width: $laptop) {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        height: 50px;
+        height: 60px;
         font-family: var(--montserrat);
         font-weight: 400;
         font-size: 24px;

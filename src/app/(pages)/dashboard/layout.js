@@ -1,11 +1,11 @@
 import DashboardNavigation from '@/components/dashboard/DashboardNavigation/DashboardNavigation';
-import { auth } from '@/auth/auth';
 import { handleLogout } from '@/auth/actions';
+import { getDashboardSession } from '@/utils/getDashboardSession';
 import styles from './page.module.scss';
 
 
 export default async function DashboardLayout({ children }) {
-    const session = await auth();
+    const session = await getDashboardSession();
     // console.log('session', session)
 
     return <div className={styles.layoutContainer}>
