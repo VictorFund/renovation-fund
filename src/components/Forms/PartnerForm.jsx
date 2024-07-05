@@ -37,11 +37,6 @@ const PartnerForm = () => {
 
     const [value, setValue] = useState(field.value || []);
 
-    // const calbackVar = register("calback");
-    // console.log("calback:", getValues("calback"));
-    // console.log("isViber::", getValues("calback").includes("Viber"));
-    // console.log("isValid:", isValid);
-
     useEffect(() => {
         if (isSubmitSuccessful) {
             reset();
