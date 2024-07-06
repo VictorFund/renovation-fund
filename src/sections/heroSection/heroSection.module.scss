@@ -264,3 +264,12 @@
     right: 0px;
   }
 }
+
+.socialLinks {
+  &:hover,
+  &:focus {
+    border: 1px solid transparent;
+    background-color: $accentColor;
+    scale: 1.1;
+  }
+}

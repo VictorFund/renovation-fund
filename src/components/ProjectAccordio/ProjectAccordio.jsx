@@ -1,11 +1,15 @@
-"use client";
+'use client';
 
-import { projectsCategories } from "@/data/projectsCategories.data";
-import { useState } from "react";
-import styles from "./ProjectAccordio.module.scss";
+import { currentLanguages } from '@/data';
+import { projectsCategories } from '@/data/projectsCategories.data';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import styles from './ProjectAccordio.module.scss';
 
 export const ProjectAccordio = ({ activeTab, setActiveTab, className, id }) => {
   const [activeAccordion, setActiveAccordion] = useState(false);
+
+  const { i18n, t } = useTranslation();
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -24,7 +28,14 @@ export const ProjectAccordio = ({ activeTab, setActiveTab, className, id }) => {
         onClick={() => setActiveAccordion((prevState) => !prevState)}
       >
         <p className={styles.titleAccordion}>
-          {currentTab ? currentTab.title : "Поточні проєкти"}
+          {currentTab
+            ? i18n.language === currentLanguages.EN
+              ? currentTab.titleEn
+              : currentTab.title
+            : i18n.language === currentLanguages.EN
+            ? 'Current projects'
+            : 'Поточні проєкти'}
+          {/* {currentTab ? currentTab.title : 'Поточні проєкти'} */}
         </p>
 
         <svg
@@ -41,7 +52,7 @@ export const ProjectAccordio = ({ activeTab, setActiveTab, className, id }) => {
                   activeAccordion ? styles.accordionOpen : styles.accordionClose
                 }`}
       >
-        {projectsCategories.map(({ id, title, stateTitle }) => (
+        {projectsCategories.map(({ id, title, titleEn, stateTitle }) => (
           <button
             key={id}
             type="button"
@@ -51,7 +62,9 @@ export const ProjectAccordio = ({ activeTab, setActiveTab, className, id }) => {
               setActiveAccordion(false);
             }}
           >
-            <span>{title}</span>
+            <span>
+              {i18n.language === currentLanguages.EN ? titleEn : title}
+            </span>
             {activeTab === stateTitle && (
               <svg className={styles.checkin}>
                 <use href="/sprite.svg#icon-checkMark"></use>
