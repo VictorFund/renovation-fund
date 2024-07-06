@@ -3,17 +3,25 @@
 import ButtonLink from '@/components/Buttons/ButtonLink/ButtonLink';
 import Loader from '@/components/Loader/Loader';
 import ProjectItem from '@/components/ProjectItem/ProjectItem';
-import { GetDataWithPathname } from '@/fetch/clientFetch';
+import { currentLanguages } from '@/data';
+import {
+  GetDataForHomeByCollection,
+  GetDataWithPathname,
+} from '@/fetch/clientFetch';
 import { changeStringTypeToArray } from '@/utils/changeStringTypeToArray';
 import { formatDate } from '@/utils/formatDate';
 import { CldImage } from 'next-cloudinary';
 import { useEffect, useState } from 'react';
-import useSWR from 'swr';
+import { useTranslation } from 'react-i18next';
 import styles from './ProjectIdSection.module.scss';
 
 const ProjectIdSection = () => {
   const [projectData, setProjectData] = useState([]);
   const { data, isLoading } = GetDataWithPathname();
+
+  const projectlist = GetDataForHomeByCollection('projects');
+
+  const { i18n, t } = useTranslation();
 
   let changedData = {};
   if (!isLoading) {
@@ -21,12 +29,6 @@ const ProjectIdSection = () => {
   }
 
   const formattedDate = formatDate(changedData?.createdAt);
-
-  const GetData = () => {
-    const fetcher = (...args) => fetch(...args).then((res) => res.json());
-    return useSWR(`/api/projects`, fetcher);
-  };
-  const projectlist = GetData();
 
   useEffect(() => {
     if (!projectlist?.isLoading && !projectlist?.error) {
@@ -44,6 +46,11 @@ const ProjectIdSection = () => {
     projectlist?.error,
   ]);
 
+  const desc =
+    i18n.language === currentLanguages.EN
+      ? changedData?.descriptionEn
+      : changedData?.description;
+
   return (
     <section className="topSection">
       <div className={`container`}>
@@ -52,7 +59,9 @@ const ProjectIdSection = () => {
         ) : (
           <>
             <h1 className={`sectionTitle ${styles.title}`}>
-              {changedData?.title}
+              {i18n.language === currentLanguages.EN
+                ? changedData?.titleEn
+                : changedData?.title}
             </h1>
             <p className={styles.date}>Початок проекту: {formattedDate}</p>
             <div
@@ -73,7 +82,7 @@ const ProjectIdSection = () => {
                     <use href="/sprite.svg#icon-target" />
                   </svg>
                 </p>
-                <p className={styles.price}>{changedData?.sum}</p>
+                <p className={styles.price}>{changedData?.sum} грн</p>
                 <ButtonLink
                   href="/donate"
                   title="Задонатити"
@@ -86,21 +95,30 @@ const ProjectIdSection = () => {
               <ul className={styles.aboutList}>
                 <li>
                   <span className="accentText">МІСІЯ:</span>{' '}
-                  {changedData?.mission}
+                  {i18n.language === currentLanguages.EN
+                    ? changedData?.missionEn
+                    : changedData?.mission}
                 </li>
                 <li>
-                  <span className="accentText">МЕТА:</span> {changedData?.goal}
+                  <span className="accentText">МЕТА:</span>{' '}
+                  {i18n.language === currentLanguages.EN
+                    ? changedData?.goalEn
+                    : changedData?.goal}
                 </li>
                 <li>
                   <span className="accentText">ЦІЛЬОВА АУДИТОРІЯ:</span>{' '}
-                  {changedData?.audience}
+                  {i18n.language === currentLanguages.EN
+                    ? changedData?.audienceEn
+                    : changedData?.audience}
                 </li>
                 <li>
                   <span className="accentText">КОНЦЕПТ:</span>{' '}
-                  {changedData?.concept}
+                  {i18n.language === currentLanguages.EN
+                    ? changedData?.conceptEn
+                    : changedData?.concept}
                 </li>
                 <li className={styles.textWrapper}>
-                  {changedData.description.map((item, index) => (
+                  {desc?.map((item, index) => (
                     <p key={index} className={styles.text}>
                       {item}
                     </p>
@@ -112,13 +130,23 @@ const ProjectIdSection = () => {
               <h3 className={`sectionTitle ${styles.title}`}>Інші проєкти</h3>
               <ul className={styles.projectsList}>
                 {projectData.map(
-                  ({ slug, title, image, shortDescription, createdAt }) => (
+                  ({
+                    slug,
+                    title,
+                    titleEn,
+                    image,
+                    shortDescription,
+                    shortDescriptionEn,
+                    createdAt,
+                  }) => (
                     <ProjectItem
                       key={slug}
                       slug={slug}
                       title={title}
+                      titleEn={titleEn}
                       image={image}
                       shortDescription={shortDescription}
+                      shortDescriptionEn={shortDescriptionEn}
                       createdAt={createdAt}
                     />
                   )
