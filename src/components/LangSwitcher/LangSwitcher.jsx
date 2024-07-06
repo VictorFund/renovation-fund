@@ -3,9 +3,8 @@
 import { useState } from "react";
 import styles from "./LangSwitcher.module.scss";
 
-const LangSwitcher = ({ id }) => {
-  const [currentLang, setCurrentLang] = useState("ua");
-  const [lang, setLang] = useState("en");
+const LangSwitcher = ({ id, changeLanguage,
+  currentLanguage, }) => {
 
   const [isClicked, setIsClicked] = useState(false);
 
@@ -17,18 +16,15 @@ const LangSwitcher = ({ id }) => {
       }}
       id={id}
     >
-      <p className={`${styles.currentLang}`}>{currentLang}</p>
+      <p className={`${styles.currentLang}`}>{currentLanguage}</p>
 
       <p
         className={
           isClicked ? `${styles.lang} ${styles.isClicked}` : `${styles.lang}`
         }
-        onClick={() => {
-          setLang((prev) => (prev === "ua" ? "en" : "ua"));
-          setCurrentLang((prev) => (prev === "en" ? "ua" : "en"));
-        }}
+        onClick={()=> changeLanguage(currentLanguage==="ua" ?"en" : "ua")}
       >
-        {lang}
+        {currentLanguage==="en"? "ua" : "en"}
       </p>
     </div>
   );

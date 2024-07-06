@@ -1,6 +1,6 @@
 import BurgerBtn from "../Buttons/BurgerBtn/BurgerBtn";
 import ButtonLink from "../Buttons/ButtonLink/ButtonLink";
-import LangSwitcher from "../LangSwitcher/LangSwitcher";
+import TranslatorBtnBlock from "@/components/LangSwitcher/TranslatorBtnBlock";
 
 import NavigationHeader from "../NavigationHeader/NavigationHeader";
 import styles from "./Header.module.scss";
@@ -14,7 +14,7 @@ const Header = () => {
           <HeaderLogo />
         </div>
         <NavigationHeader />
-        <LangSwitcher className={styles.LangSwitcher} />
+        <TranslatorBtnBlock className={styles.LangSwitcher} />
         <ButtonLink id={styles.supportBtn} href="/donate" title="Підтримати" />
         <BurgerBtn />
       </div>
