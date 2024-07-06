@@ -13,6 +13,7 @@ const DashboardCoworkerFormCreate = ({ mutate, isOwner }) => {
     const initialValues = {
         defaultValues: {
             slug: "",
+            priority: "",
             name: "",
             nameEn: "",
             photo: "",
@@ -74,6 +75,20 @@ const DashboardCoworkerFormCreate = ({ mutate, isOwner }) => {
                     Slug
                 </label>
                 <p className={styles.error}>{errors.slug?.message}</p>
+            </div>
+
+            <div className={styles.inputGroup}>
+                <input
+                    type='text'
+                    className={styles.formInput}
+                    id='priority'
+                    placeholder=' '
+                    {...register("priority")}
+                />
+                <label htmlFor='priority' className={styles.formLabel}>
+                    Пріоритет
+                </label>
+                <p className={styles.error}>{errors.priority?.message}</p>
             </div>
 
             <div className={styles.inputGroup}>

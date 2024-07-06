@@ -11,11 +11,12 @@ import styles from "../DashboardComponents.module.scss";
 
 
 const DashboardCoworkerFormUpdate = ({ data, mutate, isOwner }) => {
-    const { slug, name, nameEn, photo, description, descriptionEn, isApproved } = data;
+    const { slug, priority, name, nameEn, photo, description, descriptionEn, isApproved } = data;
 
     const initialValues = {
         defaultValues: {
             newSlug: slug,
+            newPriority: priority,
             newName: name,
             newNameEn: nameEn,
             newPhoto: photo,
@@ -37,6 +38,7 @@ const DashboardCoworkerFormUpdate = ({ data, mutate, isOwner }) => {
     const onSubmit = async (data) => {
         const {
             newSlug,
+            newPriority,
             newName,
             newNameEn,
             newPhoto,
@@ -47,6 +49,7 @@ const DashboardCoworkerFormUpdate = ({ data, mutate, isOwner }) => {
 
         const updatedData = {
             slug: newSlug,
+            priority: newPriority,
             name: newName,
             nameEn: newNameEn,
             photo: newPhoto,
@@ -100,6 +103,20 @@ const DashboardCoworkerFormUpdate = ({ data, mutate, isOwner }) => {
                     New Slug
                 </label>
                 <p className={styles.error}>{errors.newSlug?.message}</p>
+            </div>
+
+            <div className={styles.inputGroup}>
+                <input
+                    type='text'
+                    className={styles.formInput}
+                    id='newPriority'
+                    placeholder=' '
+                    {...register("newPriority")}
+                />
+                <label htmlFor='newPriority' className={styles.formLabel}>
+                    Новий пріоритет
+                </label>
+                <p className={styles.error}>{errors.newPriority?.message}</p>
             </div>
 
             <div className={styles.inputGroup}>

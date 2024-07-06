@@ -5,6 +5,10 @@ export const dashboardCoworkerUpdateSchema = yup.object({
     newSlug: yup
         .string()
         .required("Slug - обов’язкове поле"),
+    newPriority: yup.number()
+        .required("Пріоритет це обовʼязкове поле")
+        .moreThan(-1, "Тільки додатні числа")
+        .typeError("Тільки числа"),
     newName: yup
         .string()
         .required("Ім’я - обов’язкове поле"),
