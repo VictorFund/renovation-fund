@@ -4,6 +4,7 @@ import Header from "@/components/Header/Header";
 import "./globals.scss";
 import { fonts } from "@/fonts/getFonts";
 import { SiteProvider } from "@/context/siteContext";
+import TranslatorProvider from "@/translator/i18Provider";
 
 import SideBtn from "@/components/Buttons/SideBtn/SideBtn";
 import ToTopBtn from "@/components/Buttons/ToTopBtn/ToTopBtn";
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
       >
         <AuthProvider>
           <SiteProvider>
+            <TranslatorProvider>
             <Header />
             <main>{children}</main>
             <Footer />
@@ -33,6 +35,7 @@ export default function RootLayout({ children }) {
               target="_blank"
             />
             <ToTopBtn />
+            </TranslatorProvider>
           </SiteProvider>
         </AuthProvider>
       </body>
