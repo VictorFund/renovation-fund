@@ -9,9 +9,11 @@ import "swiper/css/navigation";
 import "./homeSwiper.css";
 import { CldImage } from "next-cloudinary";
 import Loader from "../Loader/Loader";
+import { formatDate } from "@/utils/formatDate";
 
 const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
   const { isMobile } = useWindowResize();
+
 
   return (
     <>
@@ -38,12 +40,15 @@ const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
             if (!el) {
               return;
             }
+            const formattedDate = formatDate(el.createdAt);
+            console.log('formattedDate', formattedDate)
+
             return (
               <SwiperSlide key={el.slug}>
                 <div className="wrapp">
                   <div className="txtWrapp">
                     <h4 className="title">{el.title}</h4>
-                    {isMobile && <p className="createdAt">{el.createdAt}</p>}
+                    {isMobile && <p className="createdAt">{formattedDate}</p>}
                     {!isMobile && (
                       <>
                         <p className="descr">{el.shortDescription}</p>

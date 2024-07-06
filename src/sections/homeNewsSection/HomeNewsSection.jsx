@@ -1,7 +1,6 @@
 import TitleLink from "@/components/Buttons/TitleLink/TitleLink";
 import HomeSwiper from "@/components/HomeSwiper/HomeSwiper";
 import { getData } from "@/fetch/serverFetch";
-import styles from "./HomeNewsSection.module.scss";
 
 const data = await getData("news");
 // console.log("data", data);

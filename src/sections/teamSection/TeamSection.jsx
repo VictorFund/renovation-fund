@@ -1,17 +1,19 @@
 'use client';
 import styles from './TeamSection.module.scss';
-import { GetDataForHomeByCollection } from '@/fetch/clientFetch';
+import { GetDataWithPathname } from '@/fetch/clientFetch';
 import { CldImage } from 'next-cloudinary';
 
 const TeamSection = () => {
-  const { data } = GetDataForHomeByCollection('team');
+  const { data } = GetDataWithPathname();
+  const filteredAndSortedData = data?.filter(item => item.isApproved).sort((a, b) => { return a.priority - b.priority })
+
 
   return (
     <section className="topSection">
       <div className={`container ${styles.team}`}>
         <h1 className={`sectionTitle ${styles.title}`}>Команда</h1>
         <ul className={styles.teamList}>
-          {data?.map(({ slug, name, photo, description, isApproved }) => {
+          {filteredAndSortedData?.map(({ slug, name, photo, description, isApproved }) => {
             if (isApproved) {
               return (
                 <li key={slug} className={styles.teamCard}>
