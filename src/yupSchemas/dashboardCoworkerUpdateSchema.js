@@ -6,7 +6,7 @@ export const dashboardCoworkerUpdateSchema = yup.object({
         .string()
         .required("Slug - обов’язкове поле"),
     newPriority: yup.number()
-        .required("Пріоритет це обовʼязкове поле")
+        .required("Пріоритет - обовʼязкове поле")
         .moreThan(-1, "Тільки додатні числа")
         .typeError("Тільки числа"),
     newName: yup

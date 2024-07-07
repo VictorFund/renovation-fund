@@ -9,17 +9,22 @@ import styles from '../DashboardSections.module.scss'
 
 const DashboardTeamSection = ({ isOwner }) => {
     const { data, isLoading, mutate } = GetDataWithPathname();
+
+    const priorities = data?.map((item) => item.priority).sort((a, b) => { return a - b }).join(", ");
+
     const neededData = getDataByRules(data, isLoading, isOwner);
-    const sortedPriorities = data?.map((item) => item.priority).sort((a, b) => { return a - b }).join(", ");
+
+    const sortedByPriority = neededData?.sort((a, b) => { return a.priority - b.priority });
+
 
     return (
         <section>
             {isLoading
                 ? <Loader />
                 : <div className={`container ${styles.container}`}>
-                    <div className={styles.cardsList}>{neededData.map(item => <DashboardCoworker key={item.slug} data={item} mutate={mutate} isOwner={isOwner} />)}</div>
+                    <div className={styles.cardsList}>{sortedByPriority.map(item => <DashboardCoworker key={item.slug} data={item} mutate={mutate} isOwner={isOwner} />)}</div>
                     <DashboardCoworkerFormCreate mutate={mutate} isOwner={isOwner} />
-                    <p><span className='accentText'>Існуючі пріоритети:</span> {sortedPriorities}</p>
+                    <p><span className='accentText'>Існуючі пріоритети:</span> {priorities}</p>
                 </div>
             }
         </section>

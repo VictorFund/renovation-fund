@@ -21,13 +21,11 @@ const partnerSchema = new mongoose.Schema(
             default: false,
         },
         logo: {
-            type: String, // if logo isn't exist - show default logo (in frontend)
-            // required: true,
+            type: String,
         },
         siteLink: {
             type: String,
         },
-        // чи головні партнери        
         isApproved: {
             type: Boolean,
             default: false,
