@@ -2,7 +2,6 @@
 
 import ButtonLink from '@/components/Buttons/ButtonLink/ButtonLink';
 import SocialLinks from '@/components/SocialLinks/SocialLinks';
-import { socialLinks } from '@/data/socialLinks.data';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import styles from './heroSection.module.scss';
@@ -44,12 +43,14 @@ const HeroSection = () => {
                 <span className={styles.projectsGroupItem}>проектів</span>
               </p>
             </div>
-            <SocialLinks />
+            <SocialLinks costumSvg={styles.socialLinks} />
           </div>
           <div className={styles.imgContainer}>
             <Image
               src={
-                !isSmallScreenImg ? '/images/hero-fund.webp' : '/images/hero-fund-small.webp'
+                !isSmallScreenImg
+                  ? '/images/hero-fund.webp'
+                  : '/images/hero-fund-small.webp'
               }
               alt="hero"
               fill="true"
