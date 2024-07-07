@@ -17,6 +17,7 @@
 
 .wrapper {
     height: calc(100vh - 410px);
+    min-height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;

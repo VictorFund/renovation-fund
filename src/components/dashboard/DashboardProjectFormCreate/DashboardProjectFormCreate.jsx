@@ -115,7 +115,7 @@ const DashboardProjectFormCreate = ({ mutate, isOwner }) => {
                 <label htmlFor='titleEn' className={styles.formLabel}>
                     Заголовок англійською
                 </label>
-                <p className={styles.error}>{errors.namtitleEneEn?.message}</p>
+                <p className={styles.error}>{errors.titleEn?.message}</p>
             </div>
 
             <div className={styles.inputGroup}>

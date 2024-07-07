@@ -31,7 +31,8 @@ const DashboardUser = ({ data, mutate, isOwner }) => {
 
     return (
         <div className={`${styles.itemCard} ${styles.userItemCard}`}>
-            <p><span className="accentText">User:</span> {data.email}</p>
+            <p><span className="accentText">Ім’я:</span> {data.name}</p>
+            <p><span className="accentText">Логін:</span> {data.email}</p>
             <p><span className="accentText">Адміністратор:</span> {data.isAdmin ? "ТАК" : "НІ"}</p>
             <form className={`${styles.dataForm} ${styles.userDataForm}`} onSubmit={onSubmit} >
                 <div className={styles.checkboxInputGroup} >
