@@ -65,7 +65,7 @@ const ContactsSection = () => {
                             <Image
                                 width={497}
                                 height={473}
-                                src='/images/formImage.webp'
+                                src='/images/FormImage.webp'
                                 alt='Two happy people at work'
                             />
                         </div>
