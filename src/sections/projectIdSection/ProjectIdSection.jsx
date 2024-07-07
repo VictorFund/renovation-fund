@@ -76,17 +76,25 @@ const ProjectIdSection = () => {
                 />
               </figure>
               <div className={styles.contentList}>
-                <p className={styles.purposeCollection}>
-                  Ціль збору
-                  <svg className={styles.icon}>
-                    <use href="/sprite.svg#icon-target" />
-                  </svg>
-                </p>
-                <p className={styles.price}>{changedData?.sum} грн</p>
+                {changedData?.sum && (
+                  <>
+                    <p className={styles.purposeCollection}>
+                      Ціль збору
+                      <svg className={styles.icon}>
+                        <use href="/sprite.svg#icon-target" />
+                      </svg>
+                    </p>
+                    <p className={styles.price}>{changedData?.sum} грн</p>
+                  </>
+                )}
                 <ButtonLink
                   href="/donate"
                   title="Задонатити"
-                  customBtn={styles.btn}
+                  customBtn={
+                    changedData?.sum
+                      ? styles.btn
+                      : styles.btn + ' ' + styles.btn_sum
+                  }
                 />
               </div>
             </div>

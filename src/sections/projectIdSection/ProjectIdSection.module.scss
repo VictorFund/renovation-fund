@@ -151,6 +151,13 @@
   }
 }
 
+.btn_sum {
+  @media screen and (min-width: $tablet) {
+    // margin-top: auto;
+    margin: auto 0;
+  }
+}
+
 .btn {
   width: 100%;
   padding: 10px 40px;
