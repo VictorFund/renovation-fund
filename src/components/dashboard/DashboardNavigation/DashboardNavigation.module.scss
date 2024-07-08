@@ -1,18 +1,34 @@
 @import "../../../app/variables";
 
-
-.navigationContainer {
+.wrapper {
     display: none;
 
-    @media screen and (min-width: $laptop) {
+    @media screen and (min-width: $tablet) {
+        padding: 0px 32px;
+        display: block;
+    }
+
+    @media screen and (min-width: $desktop) {
+        padding: 0px 80px;
+    }
+
+}
+
+.navigationContainer {
+
+    @media screen and (min-width: $tablet) {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
         height: 60px;
         font-family: var(--montserrat);
         font-weight: 400;
-        font-size: 24px;
+        font-size: 20px;
         line-height: 1.2;
+    }
+
+    @media screen and (min-width: $laptop) {
+        font-size: 24px;
     }
 }
 

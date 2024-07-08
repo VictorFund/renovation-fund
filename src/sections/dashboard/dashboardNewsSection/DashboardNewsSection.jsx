@@ -3,25 +3,23 @@ import DashboardNewsItem from '@/components/dashboard/DashboardNewsItem/Dashboar
 import DashboardNewsFormCreate from '@/components/dashboard/DashboardNewsFormCreate/DashboardNewsFormCreate';
 import Loader from '@/components/Loader/Loader';
 import { GetDataWithPathname } from '@/fetch/clientFetch';
-import { sortArrayByUpdate } from '@/utils/sortArrayByUpdate';
+import { getDataByRules } from '@/utils/getDataByRules';
 import styles from '../DashboardSections.module.scss'
 
 
 const DashboardNewsSection = ({ isOwner }) => {
     const { data, isLoading, mutate } = GetDataWithPathname();
+    const neededData = getDataByRules(data, isLoading, isOwner);
 
-    let sortedByUpdateData = [];
-    if (!isLoading) {
-        sortedByUpdateData = sortArrayByUpdate(data)
-    }
 
     return (
         <section>
             {isLoading
                 ? <Loader />
-                : <div className={styles.container}>
+                : <div className={`container ${styles.container}`}>
                     <div className={styles.cardsList}>
-                        {sortedByUpdateData.map(item => <DashboardNewsItem key={item.slug} data={item} isLoading={isLoading} mutate={mutate} isOwner={isOwner} />)}</div>
+                        {neededData.map(item => <DashboardNewsItem key={item.slug} data={item} isLoading={isLoading} mutate={mutate} isOwner={isOwner} />)}
+                    </div>
                     <DashboardNewsFormCreate mutate={mutate} isOwner={isOwner} />
                 </div>
             }

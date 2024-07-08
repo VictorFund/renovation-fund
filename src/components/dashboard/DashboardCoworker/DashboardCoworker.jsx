@@ -14,6 +14,7 @@ const DashboardCoworker = ({ data, mutate, isOwner }) => {
         <div className={styles.itemCard}>
             <p>Показувати на сайті?  <span className='accentText'>{data.isApproved ? "ТАК" : "НІ"}</span></p>
             <p><span className='accentText'>Slug:</span> {data.slug}</p>
+            <p><span className='accentText'>Пріоритет:</span> {data.priority}</p>
             <p><span className='accentText'>Ім’я:</span> {data.name}</p>
             <p><span className='accentText'>Ім’я англійською :</span> {data.nameEn}</p>
             <p><span className='accentText'>Опис:</span> {data.description}</p>

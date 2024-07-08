@@ -3,7 +3,7 @@
 .layoutContainer {
     display: none;
 
-    @media screen and (min-width:$laptop) {
+    @media screen and (min-width:$tablet) {
         display: block;
         width: 100%;
         max-width: 1440px;
@@ -17,6 +17,7 @@
 
 .wrapper {
     height: calc(100vh - 410px);
+    min-height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;

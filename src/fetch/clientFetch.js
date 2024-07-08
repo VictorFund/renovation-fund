@@ -2,9 +2,8 @@
 import { usePathname } from "next/navigation";
 import useSWR from "swr";
 
-// universal for data and dataId with usePathname
+// for data fetching on HomePage
 export const GetDataForHomeByCollection = (collection) => {
-  // console.log('collection', collection)
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
   return useSWR(`/api/${collection}`, fetcher);
 };
@@ -17,9 +16,6 @@ export const GetDataWithPathname = () => {
   if (pathname.startsWith("/dashboard/")) {
     changedPathname = pathname.slice(10);
   }
-
-  // console.log("pathname", pathname);
-  // console.log("changedPathname", changedPathname);
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 

@@ -3,26 +3,22 @@ import DashboardProjectItem from '@/components/dashboard/DashboardProjectItem/Da
 import DashboardProjectFormCreate from '@/components/dashboard/DashboardProjectFormCreate/DashboardProjectFormCreate';
 import Loader from '@/components/Loader/Loader';
 import { GetDataWithPathname } from '@/fetch/clientFetch';
-import { sortArrayByUpdate } from '@/utils/sortArrayByUpdate';
+import { getDataByRules } from '@/utils/getDataByRules';
 import styles from '../DashboardSections.module.scss'
 
 
 const DashboardProjectsSection = ({ isOwner }) => {
     const { data, isLoading, mutate } = GetDataWithPathname();
-
-    let sortedByUpdateData = [];
-    if (!isLoading) {
-        sortedByUpdateData = sortArrayByUpdate(data)
-    }
+    const neededData = getDataByRules(data, isLoading, isOwner);
 
 
     return (
         <section>
             {isLoading
                 ? <Loader />
-                : <div className={styles.container}>
+                : <div className={`container ${styles.container}`}>
                     <div className={styles.cardsList}>
-                        {sortedByUpdateData.map(item => <DashboardProjectItem key={item.slug} data={item} isLoading={isLoading} mutate={mutate} isOwner={isOwner} />)}
+                        {neededData.map(item => <DashboardProjectItem key={item.slug} data={item} isLoading={isLoading} mutate={mutate} isOwner={isOwner} />)}
                     </div>
                     <DashboardProjectFormCreate mutate={mutate} isOwner={isOwner} />
                 </div>

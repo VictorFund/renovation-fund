@@ -7,123 +7,151 @@ import { useWindowResize } from "@/hooks/useWindowResize";
 import PartnerForm from "@/components/Forms/PartnerForm";
 
 import styles from "./PartnershipSection.module.scss";
+import { useTranslation } from "react-i18next";
+import { currentLanguages } from "@/data";
+import Loader from "@/components/Loader/Loader";
 
 const PartnershipSection = () => {
-    const { data } = GetDataWithPathname("partnership");
-    // console.log('data', data);
+    const { data, isLoading } = GetDataWithPathname("partnership");
+
     const { isMobile } = useWindowResize();
+
+    const { i18n, t } = useTranslation();
 
     return (
         <section className='topSection'>
             <div className={`container`}>
                 <h1 className={`sectionTitle ${styles.title}`}>Партнерство</h1>
 
-                <ul className={styles.partnershipList}>
-                    {data?.map(
-                        ({
-                            slug,
-                            title,
-                            siteLink,
-                            logo,
-                            isApproved,
-                            isMainPartner,
-                        }) => {
-                            if (isApproved) {
-                                if (isMainPartner) {
-                                    return (
-                                        <li key={slug}>
-                                            <a
-                                                href={siteLink}
-                                                target='_blank'
-                                                aria-label={title}
-                                                className={
-                                                    styles.partnershipItem
-                                                }
-                                            >
-                                                <figure
-                                                    className={
-                                                        styles.imgContainer
-                                                    }
-                                                >
-                                                    <CldImage
-                                                        src={logo}
-                                                        alt={title}
-                                                        fill={true}
-                                                        sizes='(max-width: 768px) 128px, (max-width: 1440px) 100px'
-                                                    />
-                                                </figure>
-                                                <h3
-                                                    className={
-                                                        styles.partnershipTitle
-                                                    }
-                                                >
-                                                    {title}
-                                                </h3>
-                                                <p className={styles.btn}>
-                                                    <span>Детальніше</span>
-                                                    <svg
-                                                        className={styles.arrow}
+                {isLoading ? (
+                    <Loader />
+                ) : (
+                    <>
+                        <ul className={styles.partnershipList}>
+                            {data?.map(
+                                ({
+                                    slug,
+                                    title,
+                                    titleEn,
+                                    siteLink,
+                                    logo,
+                                    isApproved,
+                                    isMainPartner,
+                                }) => {
+                                    if (isApproved) {
+                                        if (isMainPartner) {
+                                            return (
+                                                <li key={slug}>
+                                                    <a
+                                                        href={siteLink}
+                                                        target='_blank'
+                                                        aria-label={title}
+                                                        className={
+                                                            styles.partnershipItem
+                                                        }
                                                     >
-                                                        <use href='/sprite.svg#icon-arrow' />
-                                                    </svg>
-                                                </p>
-                                            </a>
-                                        </li>
-                                    );
+                                                        <figure
+                                                            className={
+                                                                styles.imgContainer
+                                                            }
+                                                        >
+                                                            <CldImage
+                                                                src={logo}
+                                                                alt={title}
+                                                                fill={true}
+                                                                sizes='(max-width: 768px) 128px, (max-width: 1440px) 100px'
+                                                            />
+                                                        </figure>
+                                                        <h3
+                                                            className={
+                                                                styles.partnershipTitle
+                                                            }
+                                                        >
+                                                            {i18n.language ===
+                                                            currentLanguages.EN
+                                                                ? titleEn
+                                                                : title}
+                                                        </h3>
+                                                        <p
+                                                            className={
+                                                                styles.btn
+                                                            }
+                                                        >
+                                                            <span>
+                                                                Детальніше
+                                                            </span>
+                                                            <svg
+                                                                className={
+                                                                    styles.arrow
+                                                                }
+                                                            >
+                                                                <use href='/sprite.svg#icon-arrow' />
+                                                            </svg>
+                                                        </p>
+                                                    </a>
+                                                </li>
+                                            );
+                                        }
+                                    }
                                 }
-                            }
-                        }
-                    )}
-                </ul>
-                <ul className={styles.partnershipSmallList}>
-                    {data?.map(
-                        ({
-                            slug,
-                            title,
-                            siteLink,
-                            logo,
-                            isApproved,
-                            isMainPartner,
-                        }) => {
-                            if (isApproved) {
-                                if (!isMainPartner) {
-                                    return (
-                                        <li key={slug}>
-                                            <a
-                                                href={siteLink}
-                                                target='_blank'
-                                                aria-label={title}
-                                                className={
-                                                    styles.partnershipSmallItem
-                                                }
-                                            >
-                                                <figure
-                                                    className={
-                                                        styles.imgSmallContainer
-                                                    }
-                                                >
-                                                    <CldImage
-                                                        src={logo}
-                                                        alt={title}
-                                                        fill={true}
-                                                        sizes='(max-width: 768px) 75px'
-                                                    />
-                                                </figure>
-                                                <h3
-                                                    className={
-                                                        styles.partnershipSmallTitle
-                                                    }
-                                                >
-                                                    {title}
-                                                </h3>
-                                            </a>
-                                        </li>
-                                    );
+                            )}
+                        </ul>
+                        <ul className={styles.partnershipSmallList}>
+                            {data?.map(
+                                ({
+                                    slug,
+                                    title,
+                                    titleEn,
+                                    siteLink,
+                                    logo,
+                                    isApproved,
+                                    isMainPartner,
+                                }) => {
+                                    if (isApproved) {
+                                        if (!isMainPartner) {
+                                            return (
+                                                <li key={slug}>
+                                                    <a
+                                                        href={siteLink}
+                                                        target='_blank'
+                                                        aria-label={title}
+                                                        className={
+                                                            styles.partnershipSmallItem
+                                                        }
+                                                    >
+                                                        <figure
+                                                            className={
+                                                                styles.imgSmallContainer
+                                                            }
+                                                        >
+                                                            <CldImage
+                                                                src={logo}
+                                                                alt={title}
+                                                                fill={true}
+                                                                sizes='(max-width: 768px) 75px'
+                                                            />
+                                                        </figure>
+                                                        <h3
+                                                            className={
+                                                                styles.partnershipSmallTitle
+                                                            }
+                                                        >
+                                                            {i18n.language ===
+                                                            currentLanguages.EN
+                                                                ? titleEn
+                                                                : title}
+                                                        </h3>
+                                                    </a>
+                                                </li>
+                                            );
+                                        }
+                                    }
                                 }
-                            }
-                        }
-                    )}
-                </ul>
+                            )}
+                        </ul>
+                    </>
+                )}
+
                 <h2 className={`sectionTitle ${styles.titleForm}`}>
                     Стати партнером
                 </h2>
@@ -134,7 +162,7 @@ const PartnershipSection = () => {
                             <Image
                                 width={497}
                                 height={473}
-                                src='/images/formImage.webp'
+                                src='/images/FormImage.webp'
                                 alt='Two happy people at work'
                             />
                         </div>

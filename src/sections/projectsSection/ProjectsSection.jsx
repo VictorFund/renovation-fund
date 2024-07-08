@@ -8,11 +8,15 @@ import { projectsCategories } from '@/data/projectsCategories.data';
 import { ProjectAccordio } from '@/components/ProjectAccordio/ProjectAccordio';
 import Loader from '@/components/Loader/Loader';
 import { useFilterData } from '@/hooks/useFilterData';
+import { useTranslation } from 'react-i18next';
+import { currentLanguages } from '@/data';
 
 export const ProjectsSection = () => {
   const [activeTab, setActiveTab] = useState('Поточний');
   // const [activeTab, setActiveTab] = useState('');
   const { data, isLoading } = GetDataWithPathname();
+
+  const { i18n, t } = useTranslation();
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
@@ -24,51 +28,61 @@ export const ProjectsSection = () => {
     <section className="topSection">
       <div className={`container ${styles.projects}`}>
         <h1 className={`sectionTitle ${styles.title}`}>Проєкти</h1>
-        <ProjectAccordio activeTab={activeTab} setActiveTab={setActiveTab} />
-        <div className={styles.btnContainer}>
-          {projectsCategories.map(({ id, title, stateTitle }) => (
-            <button
-              key={id}
-              type="button"
-              className={
-                activeTab === stateTitle
-                  ? styles.btn + ' ' + styles.active
-                  : styles.btn
-              }
-              onClick={() => handleTabClick(stateTitle)}
-            >
-              {title}
-            </button>
-          ))}
-        </div>
         {isLoading ? (
           <Loader />
         ) : (
-          <ul className={styles.projectsList}>
-            {filteredData.map(
-              ({
-                slug,
-                isApproved,
-                title,
-                image,
-                shortDescription,
-                createdAt,
-              }) => {
-                if (isApproved) {
-                  return (
-                    <ProjectItem
-                      key={slug}
-                      slug={slug}
-                      title={title}
-                      image={image}
-                      shortDescription={shortDescription}
-                      createdAt={createdAt}
-                    />
-                  );
+          <>
+            <ProjectAccordio
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+            />
+            <div className={styles.btnContainer}>
+              {projectsCategories?.map(({ id, title, titleEn, stateTitle }) => (
+                <button
+                  key={id}
+                  type="button"
+                  className={
+                    activeTab === stateTitle
+                      ? styles.btn + ' ' + styles.active
+                      : styles.btn
+                  }
+                  onClick={() => handleTabClick(stateTitle)}
+                >
+                  {i18n.language === currentLanguages.EN ? titleEn : title}
+                </button>
+              ))}
+            </div>
+
+            <ul className={styles.projectsList}>
+              {filteredData.map(
+                ({
+                  slug,
+                  isApproved,
+                  title,
+                  titleEn,
+                  image,
+                  shortDescription,
+                  shortDescriptionEn,
+                  createdAt,
+                }) => {
+                  if (isApproved) {
+                    return (
+                      <ProjectItem
+                        key={slug}
+                        slug={slug}
+                        title={title}
+                        titleEn={titleEn}
+                        image={image}
+                        shortDescription={shortDescription}
+                        shortDescriptionEn={shortDescriptionEn}
+                        createdAt={createdAt}
+                      />
+                    );
+                  }
                 }
-              }
-            )}
-          </ul>
+              )}
+            </ul>
+          </>
         )}
       </div>
     </section>
