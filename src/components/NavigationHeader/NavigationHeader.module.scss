@@ -154,6 +154,9 @@
     &::after {
       width: 100%;
     }
+    & svg {
+      fill: $hoverBtnColor;
+    }
   }
   font-weight: 600;
   @media screen and (min-width: $desktop) {
@@ -165,6 +168,9 @@
   color: $hoverBtnColor;
   &::after {
     width: 100%;
+  }
+  & svg {
+    fill: $hoverBtnColor;
   }
 }
 
@@ -222,5 +228,8 @@
     padding: 16px 24px;
     border-bottom: 1px solid $textColor;
     font-size: 20px;
+    &:last-child {
+      border-bottom: none;
+    }
   }
 }
