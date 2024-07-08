@@ -13,14 +13,20 @@ export const socialLinks = [
   },
   {
     id: 3,
-    src: "icon-messager",
+    src: "icon-facebook",
     href: "https://www.facebook.com/profile.php?id=61559750702813",
-    title: "messager",
+    title: "facebook",
   },
   {
     id: 4,
-    src: "icon-viber",
-    href: "#",
-    title: "viber",
+    src: "icon-instagram",
+    href: "https://www.instagram.com/pvfond/",
+    title: "instagram",
   },
+  // {
+  //   id: 5,
+  //   src: "icon-viber",
+  //   href: "#",
+  //   title: "viber",
+  // },
 ];
