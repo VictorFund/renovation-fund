@@ -1,3 +1,6 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import BurgerBtn from "../Buttons/BurgerBtn/BurgerBtn";
 import ButtonLink from "../Buttons/ButtonLink/ButtonLink";
 import TranslatorBtnBlock from "@/components/LangSwitcher/TranslatorBtnBlock";
@@ -7,6 +10,11 @@ import styles from "./Header.module.scss";
 import HeaderLogo from "./HeaderLogo";
 
 const Header = () => {
+  const pathname = usePathname();
+  if (pathname.startsWith("/dashboard")) {
+    return;
+  }
+
   return (
     <header className={styles.header}>
       <div className={`container ${styles.container}`}>

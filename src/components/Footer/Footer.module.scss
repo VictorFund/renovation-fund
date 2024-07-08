@@ -91,7 +91,6 @@
 }
 
 .email {
-
   // overflow-wrap: break-word;
   @media screen and (min-width: $tablet) {
     width: 200px;
@@ -199,11 +198,14 @@
   column-gap: 16px;
 
   @media screen and (min-width: $tablet) {
-    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 24px;
-    column-gap: 16px;
+    column-gap: 40px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    column-gap: 80px;
   }
 }
 
