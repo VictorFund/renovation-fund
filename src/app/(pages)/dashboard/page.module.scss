@@ -7,11 +7,15 @@
         display: block;
         width: 100%;
         max-width: 1440px;
-        padding-top: 100px;
+        padding: 100px 32px 20px;
+    }
+
+    @media screen and (min-width:$laptop) {
+        padding: 100px 32px 40px;
     }
 
     @media screen and (min-width:$desktop) {
-        padding-top: 108px;
+        padding: 108px 80px 40px;
     }
 }
 

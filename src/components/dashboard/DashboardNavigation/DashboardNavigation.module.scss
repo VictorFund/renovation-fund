@@ -1,19 +1,5 @@
 @import "../../../app/variables";
 
-.wrapper {
-    display: none;
-
-    @media screen and (min-width: $tablet) {
-        padding: 0px 32px;
-        display: block;
-    }
-
-    @media screen and (min-width: $desktop) {
-        padding: 0px 80px;
-    }
-
-}
-
 .navigationContainer {
 
     @media screen and (min-width: $tablet) {

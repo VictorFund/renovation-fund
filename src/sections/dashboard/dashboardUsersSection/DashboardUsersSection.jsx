@@ -17,7 +17,7 @@ const DashboardUsersSection = ({ isOwner }) => {
     const dataWithoutOwner = sortedByUpdateData.filter(item => item.email !== process.env.NEXT_PUBLIC_OWNER)
 
     return (
-        <section>
+        <section className={styles.dashboardSection}>
             {isLoading ? <Loader />
                 :
                 <div className={styles.userCardsList}>
