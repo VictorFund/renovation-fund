@@ -87,6 +87,9 @@ const projectSchema = new mongoose.Schema(
             type: Boolean,
             default: false,
         },
+        editor: {
+            type: String,
+        },
     },
     { timestamps: true }
 );

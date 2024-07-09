@@ -7,15 +7,15 @@
         display: block;
         width: 100%;
         max-width: 1440px;
-        padding: 100px 32px 20px;
+        padding: 0px 32px 20px;
     }
 
     @media screen and (min-width:$laptop) {
-        padding: 100px 32px 40px;
+        padding: 0px 32px 40px;
     }
 
     @media screen and (min-width:$desktop) {
-        padding: 108px 80px 40px;
+        padding: 0px 80px 40px;
     }
 }
 
@@ -26,8 +26,12 @@
     justify-content: center;
     align-items: center;
 
+    @media screen and (min-width:$laptop) {
+        height: calc(100vh - 425px);
+    }
+
     @media screen and (min-width:$desktop) {
-        height: calc(100vh - 531px);
+        height: calc(100vh - 535px);
     }
 }
 

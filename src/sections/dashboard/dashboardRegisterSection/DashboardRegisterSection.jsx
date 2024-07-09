@@ -4,7 +4,7 @@ import styles from '../DashboardSections.module.scss'
 
 const DashboardRegisterSection = () => {
     return (
-        <section className={styles.dashboardSection}>
+        <section className={styles.authSection}>
             <DashboardRegisterForm />
         </section>
     )
