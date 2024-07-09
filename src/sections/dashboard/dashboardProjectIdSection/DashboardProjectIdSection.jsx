@@ -11,7 +11,7 @@ const DashboardProjectIdSection = ({ isOwner }) => {
 
 
     return (
-        <section>
+        <section className={styles.dashboardSection}>
             {isLoading
                 ? <Loader />
                 : <div className={`container ${styles.container} ${styles.editPage}`}>

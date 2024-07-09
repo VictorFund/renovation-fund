@@ -20,6 +20,7 @@ const DashboardProjectItem = ({ data, isLoading, mutate, isOwner }) => {
     return (
         <div className={styles.itemCard}>
             <p>Показувати на сайті? <span className='accentText'>{changedData.isApproved ? "Так" : "Ні"}</span></p>
+            {isOwner && <p><span className='accentText'>Редактор:</span> {changedData.editor}</p>}
             <p><span className='accentText'>Slug:</span> {changedData.slug}</p>
             <p><span className='accentText'>Заголовок:</span> {changedData.title}</p>
             <p><span className='accentText'>Заголовок англійською:</span> {changedData.titleEn}</p>

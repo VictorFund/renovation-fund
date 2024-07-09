@@ -9,7 +9,9 @@ export default async function DashboardLayout({ children }) {
     // console.log('session', session)
 
     return <div className={styles.layoutContainer}>
-        <DashboardNavigation handleLogout={handleLogout} session={session} />
-        {children}
+        <div className="container">
+            <DashboardNavigation handleLogout={handleLogout} session={session} />
+            {children}
+        </div>
     </div>
 }

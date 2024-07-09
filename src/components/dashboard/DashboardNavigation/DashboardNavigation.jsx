@@ -15,21 +15,19 @@ const DashboardNavigation = ({ handleLogout, session }) => {
 
 
     return (
-        <div className={styles.wrapper}>
-            <div className={`container ${styles.navigationContainer}`}>
-                {session?.user && <SmallLogo />}
+        <div className={styles.navigationContainer}>
+            {session?.user && <SmallLogo />}
 
-                {session?.user.email === process.env.NEXT_PUBLIC_OWNER && ((ownerPages.map((item) => {
-                    return (<Link key={item.title} className={pathName === item.path ? `${styles.pageLink} ${styles.active}` : `${styles.pageLink}`} href={item.path}>{item.title}</Link>)
-                })))}
+            {session?.user.email === process.env.NEXT_PUBLIC_OWNER && ((ownerPages.map((item) => {
+                return (<Link key={item.title} className={pathName === item.path ? `${styles.pageLink} ${styles.active}` : `${styles.pageLink}`} href={item.path}>{item.title}</Link>)
+            })))}
 
-                {session?.user.isAdmin && session?.user.email !== process.env.NEXT_PUBLIC_OWNER && (adminPages.map((item) => {
-                    return (<Link key={item.title} className={pathName === item.path ? `${styles.pageLink} ${styles.active}` : `${styles.pageLink}`} href={item.path}>{item.title}</Link>)
-                }))}
+            {session?.user.isAdmin && session?.user.email !== process.env.NEXT_PUBLIC_OWNER && (adminPages.map((item) => {
+                return (<Link key={item.title} className={pathName === item.path ? `${styles.pageLink} ${styles.active}` : `${styles.pageLink}`} href={item.path}>{item.title}</Link>)
+            }))}
 
-                {session?.user && <LogoutBtn handleLogout={handleLogout} />}
-            </div >
-        </div>
+            {session?.user && <LogoutBtn handleLogout={handleLogout} />}
+        </div >
     )
 }
 

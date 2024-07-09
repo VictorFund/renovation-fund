@@ -1,17 +1,14 @@
 import DashboardRegisterForm from '@/components/dashboard/DashboardRegisterForm/DashboardRegisterForm'
-// import styles from './DashboardRegisterSection.module.scss'
+import styles from '../DashboardSections.module.scss'
 
 
 const DashboardRegisterSection = () => {
     return (
-        <section>
-            {/* <div className={styles.container} > */}
-            {/* <div className={styles.wrapper}> */}
+        <section className={styles.authSection}>
             <DashboardRegisterForm />
-            {/* </div> */}
-            {/* </div> */}
         </section>
     )
 }
+
 
 export default DashboardRegisterSection

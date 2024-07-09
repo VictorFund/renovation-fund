@@ -44,8 +44,9 @@ const DashboardProjectFormCreate = ({ mutate, isOwner }) => {
 
     const onSubmit = async (data) => {
         const session = await getDashboardSession();
-        const editor = session.user?.email;
-        console.log('editor', editor)
+        const editor = session.user?.name;
+        data.editor = editor;
+
         try {
             await fetch("/api/projects", {
                 method: "POST",

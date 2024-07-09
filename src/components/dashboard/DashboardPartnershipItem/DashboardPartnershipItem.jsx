@@ -13,6 +13,7 @@ const DashboardPartnershipItem = ({ data, mutate, isOwner }) => {
     return (
         <div className={styles.itemCard}>
             <p>Показувати на сайті? <span className='accentText'>{data.isApproved ? "Так" : "Ні"}</span></p>
+            {isOwner && <p><span className='accentText'>Редактор:</span> {data.editor}</p>}
             <p><span className='accentText'>Slug:</span> {data.slug}</p>
             <p><span className='accentText'>Заголовок:</span> {data.title}</p>
             <p><span className='accentText'>Заголовок англійською:</span> {data.titleEn}</p>

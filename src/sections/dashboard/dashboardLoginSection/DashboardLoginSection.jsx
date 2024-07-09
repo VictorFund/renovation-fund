@@ -1,13 +1,11 @@
-import DashboardLoginForm from '@/components/dashboard/DashboardLoginForm/DashboardLoginForm'
-// import styles from './DashboardLoginSection.module.scss'
+import DashboardLoginForm from '@/components/dashboard/DashboardLoginForm/DashboardLoginForm';
+import styles from '../DashboardSections.module.scss'
 
 
 const DashboardLoginSection = () => {
     return (
-        <section>
-            {/* <div className={styles.wrapper}> */}
+        <section className={styles.authSection}>
             <DashboardLoginForm />
-            {/* </div> */}
 
         </section>
     )

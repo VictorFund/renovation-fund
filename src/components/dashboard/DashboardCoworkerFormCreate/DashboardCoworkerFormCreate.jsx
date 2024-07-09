@@ -25,14 +25,14 @@ const DashboardCoworkerFormCreate = ({ mutate, isOwner }) => {
     };
 
     const form = useForm(initialValues);
-    const { register, handleSubmit, formState, reset, getValues, setValue } =
-        form;
+    const { register, handleSubmit, formState, reset, getValues, setValue } = form;
     const { errors, isSubmitSuccessful, isErrors, isSubmitting } = formState;
 
     const onSubmit = async (data) => {
         const session = await getDashboardSession();
-        const editor = session.user?.email;
-        console.log('editor', editor)
+        const editor = session.user?.name;
+        data.editor = editor;
+
         try {
             await fetch("/api/team", {
                 method: "POST",
@@ -46,6 +46,7 @@ const DashboardCoworkerFormCreate = ({ mutate, isOwner }) => {
             console.log(err);
         }
     };
+
 
     useEffect(() => {
         if (isSubmitSuccessful) {
