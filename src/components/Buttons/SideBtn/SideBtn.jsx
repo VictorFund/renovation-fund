@@ -14,8 +14,8 @@ const SideBtn = () => {
       <ButtonLink
         title="Зв’яжись з нами"
         id={styles.sideBtn}
-        href="https://t.me/pvfond_contact"
-        target="_blank"
+        href="/contacts"
+        target="_self"
       />
     );
   }

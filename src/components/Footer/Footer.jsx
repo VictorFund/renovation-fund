@@ -2,6 +2,7 @@ import SocialLinks from "../SocialLinks/SocialLinks";
 import FooterLogo from "./FooterLogo";
 import FooterNav from "./FooterNav";
 import styles from "./Footer.module.scss";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -22,8 +23,16 @@ const Footer = () => {
               <br /> вул. Княжий Затон, 21
             </a>
 
-            <SocialLinks id={styles.socLinks} />
+            <SocialLinks id={styles.socLinks} costumSvg={styles.costumSvg} />
           </address>
+          <div className={styles.paymentLogoWrapp}>
+            <figure className={styles.paymentLogo}>
+              <Image src="/images/mastercard.webp" alt="mastercard" fill />
+            </figure>
+            <figure className={styles.paymentLogo}>
+              <Image src="/images/visa.webp" alt="mastercard" fill />
+            </figure>
+          </div>
         </div>
 
         <div className={styles.blockWrapp}>
@@ -32,10 +41,7 @@ const Footer = () => {
             <a href="https://t.me/pvfond_contact" target="_blank">
               @pvfond_contact
             </a>
-            <a
-              href="mailto:pvfond@gmail.com"
-              className={styles.email}
-            >
+            <a href="mailto:pvfond@gmail.com" className={styles.email}>
               pvfond@gmail.com
             </a>
 

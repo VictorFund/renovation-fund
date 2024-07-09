@@ -4,6 +4,7 @@ import Link from "next/link";
 
 const FooterNav = ({ className, tabletNavLink, navWrapp, titleClassName }) => {
   const { isMobile } = useWindowResize();
+
   return (
     <div className={className}>
       {!isMobile && <h3 className={titleClassName}>Меню</h3>}
