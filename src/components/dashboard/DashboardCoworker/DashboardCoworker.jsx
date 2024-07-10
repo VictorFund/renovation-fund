@@ -9,7 +9,6 @@ const DashboardCoworker = ({ data, mutate, isOwner }) => {
     const pathname = usePathname();
     const isList = pathname.endsWith("team");
 
-
     return (
         <div className={styles.itemCard}>
             <p>Показувати на сайті?  <span className='accentText'>{data.isApproved ? "ТАК" : "НІ"}</span></p>

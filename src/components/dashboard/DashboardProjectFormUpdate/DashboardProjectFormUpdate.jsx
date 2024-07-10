@@ -99,7 +99,7 @@ const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
 
         const session = await getDashboardSession();
         const editor = session.user?.name;
-        data.editor = editor;
+        updatedData.editor = editor;
 
         try {
             await fetch(`/api/projects/${slug}`, {
