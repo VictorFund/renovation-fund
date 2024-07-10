@@ -10,10 +10,16 @@ import "./homeSwiper.css";
 import { CldImage } from "next-cloudinary";
 import Loader from "../Loader/Loader";
 import { formatDate } from "@/utils/formatDate";
+import { useTranslation } from "react-i18next";
+import { currentLanguages } from "@/data";
+import { SiteContext } from "@/context/siteContext";
+import { useContext } from "react";
 
 const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
+  const { isLoad } = useContext(SiteContext);
   const { isMobile } = useWindowResize();
-
+  const { i18n, t } = useTranslation();
+  const isLangEn = !isLoading && i18n.language === currentLanguages.EN;
 
   return (
     <>
@@ -46,22 +52,31 @@ const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
               <SwiperSlide key={el.slug}>
                 <div className="wrapp">
                   <div className="txtWrapp">
-                    <h4 className="title">{el.title}</h4>
+                    <h4 className="title">
+                      {isLangEn ? el.titleEn : el.title}
+                    </h4>
                     {isMobile && <p className="createdAt">{formattedDate}</p>}
                     {!isMobile && (
                       <>
-                        <p className="descr">{el.shortDescription}</p>
+                        <p className="descr">
+                          {isLangEn
+                            ? el.shortDescriptionEn
+                            : el.shortDescription}
+                        </p>
 
                         <div className="btnsBlock">
                           <ButtonLink
-                            title="Детальніше"
+                            title={t("Buttons.Details")}
                             href={`${dataName}/${el.slug}`}
                             customBtn={
                               btnClassName === true ? `leftMarging` : ""
                             }
                           />
                           {dataName === "projects" && (
-                            <ButtonLink title="Підтримати" href="/donate" />
+                            <ButtonLink
+                              title={!isLoad && t("Buttons.Donate")}
+                              href="/donate"
+                            />
                           )}
                         </div>
                       </>
@@ -71,7 +86,7 @@ const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
                     <CldImage
                       className="img"
                       src={el.image}
-                      alt={el.title}
+                      alt={isLangEn ? el.titleEn : el.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />

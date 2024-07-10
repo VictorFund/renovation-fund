@@ -1,13 +1,15 @@
 "use client";
 import { SiteContext } from "@/context/siteContext";
+import { currentLanguages } from "@/data";
 import { useWindowResize } from "@/hooks/useWindowResize";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { navLinks } from "../../data/navLinks";
 import BurgerBtn from "../Buttons/BurgerBtn/BurgerBtn";
 import HorizontalLine from "../HorizontalLine/HorizontalLine";
-import LangSwitcher from "../LangSwitcher/LangSwitcher";
+import TranslatorBtnBlock from "../LangSwitcher/TranslatorBtnBlock";
 import styles from "./NavigationHeader.module.scss";
 
 const NavigationHeader = () => {
@@ -16,13 +18,18 @@ const NavigationHeader = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const { burgerMenu, setBurgermenu } = useContext(SiteContext);
   const [subPath, setSubPath] = useState(false);
+  const [isLoad, setIsLoad] = useState(true);
 
   const pathname = usePathname();
+  const { i18n } = useTranslation();
+
+  const isLangEn = !isLoad && i18n.language === currentLanguages.EN;
 
   const onWindowClick = () => {
     setActiveMenu(null);
   };
   useEffect(() => {
+    setIsLoad(false);
     if (isDesktop) {
       setBurgermenu(false);
     }
@@ -70,7 +77,7 @@ const NavigationHeader = () => {
   return (
     <ul className={ulClassName()}>
       <li className={styles.mobMenuHeader}>
-        <LangSwitcher id={styles.langSwitcher} />
+        <TranslatorBtnBlock id={styles.langSwitcher} />
         <BurgerBtn className={styles.burgerBtn} />
         <HorizontalLine className={styles.line} />
       </li>
@@ -89,7 +96,8 @@ const NavigationHeader = () => {
                 }
                 onClick={() => toggleNav(el.title)}
               >
-                {el.title}
+                {isLangEn ? el.titleEn : el.title}
+
                 <svg
                   className={`${styles.arrow} ${
                     activeMenu === el.title ? styles.arrActive : ""
@@ -125,7 +133,7 @@ const NavigationHeader = () => {
                         onClick={closeMenu}
                         target={item.target ? item.target : "_self"}
                       >
-                        {item.title}
+                        {isLangEn ? item.titleEn : item.title}
                       </Link>
                     );
                   })}
@@ -149,7 +157,7 @@ const NavigationHeader = () => {
                     : `${styles.navItemTitle}`
                 }
               >
-                {el.title}
+                {isLangEn ? el.titleEn : el.title}
               </Link>
             </li>
           );

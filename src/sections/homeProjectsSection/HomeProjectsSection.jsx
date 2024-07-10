@@ -13,6 +13,7 @@ import styles from "./HomeProjectsSection.module.scss";
 const HomeProjectsSection = () => {
   const { data, isLoading } = GetDataForHomeByCollection("projects");
   const [activeTab, setActiveTab] = useState("Поточний");
+
   const { isMobile } = useWindowResize();
 
   const aprovedData = data?.filter((el) => el.isApproved);
