@@ -27,10 +27,20 @@ const Footer = () => {
           </address>
           <div className={styles.paymentLogoWrapp}>
             <figure className={styles.paymentLogo}>
-              <Image src="/images/mastercard.webp" alt="mastercard" fill />
+              <Image
+                src="/images/mastercard.webp"
+                alt="mastercard"
+                fill
+                sizes="10vw"
+              />
             </figure>
             <figure className={styles.paymentLogo}>
-              <Image src="/images/visa.webp" alt="mastercard" fill />
+              <Image
+                src="/images/visa.webp"
+                alt="mastercard"
+                fill
+                sizes="10vw"
+              />
             </figure>
           </div>
         </div>

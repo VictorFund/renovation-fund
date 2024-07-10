@@ -53,7 +53,7 @@
     "NoArticles": "No articles found!!"
   },
   "BlogIdPage": {
-    "SubTitle":"You will also be interested in:",
+    "SubTitle": "You will also be interested in:",
     "NotFound": "Blog not found",
     "NotFoundTitleBtn": "To all blogs",
     "NavBtn": "To page with all articles"
@@ -63,8 +63,10 @@
     "NotFoundTitleBtn": "Home"
   },
   "Buttons": {
-    "CalltBtn": "Call",
-    "OrderBtn": "Order",
+    "Donate": "Donate",
+    "Details": "Details",
+    "ContactUs": "Contact us",
+
     "HomeTeamBtn": "About Team",
     "HomeProjectsBtn": "To portfolio",
     "ServicesDetailsBtn": "Read more",

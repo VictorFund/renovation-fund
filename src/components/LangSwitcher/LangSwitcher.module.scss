@@ -58,6 +58,9 @@
 }
 
 .isClicked {
-  height: 120px;
+  height: 96px;
   background-color: $textColor;
+  @media screen and (min-width: $tablet) {
+    height: 120px;
+  }
 }
