@@ -8,7 +8,7 @@ import styles from '../DashboardSections.module.scss';
 
 const DashboardUsersSection = ({ isOwner }) => {
     const { data, isLoading, mutate } = GetDataWithPathname();
-    console.log('data', data)
+
     let sortedByUpdateData = [];
     if (!isLoading) {
         sortedByUpdateData = sortArrayByUpdate(data)

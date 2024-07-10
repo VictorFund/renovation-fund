@@ -1,11 +1,15 @@
 "use client";
-
+import { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { SiteContext } from "@/context/siteContext";
 import styles from "./Logo.module.scss";
 
+
 const SmallLogo = ({ className, id }) => {
+  const { setBurgermenu } = useContext(SiteContext);
+
+
   return (
     <Link
       href="/"
@@ -24,5 +28,6 @@ const SmallLogo = ({ className, id }) => {
     </Link>
   );
 };
+
 
 export default SmallLogo;

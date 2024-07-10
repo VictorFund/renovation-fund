@@ -41,7 +41,6 @@ const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
               return;
             }
             const formattedDate = formatDate(el.createdAt);
-            console.log('formattedDate', formattedDate)
 
             return (
               <SwiperSlide key={el.slug}>
