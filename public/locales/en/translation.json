@@ -5,7 +5,10 @@
     "WorkingProcessTitle": "Working process",
     "WorkingProcessSubTitleMob": "other details of the development are discussed individually",
     "WorkingProcessSubTitleLaptop": "additional development details are tailored to your specific needs and discussed on an individual basis",
-    "OurProjectsTitle": "Our",
+
+    "ProjectsSectionTitle": "Projects",
+    "NewsSectionTitle": "News",
+
     "OurProjectsSubTitle": "projects",
     "OurServicesTitle": "Services",
     "OurServicesSubTitle": "from landing to large site",

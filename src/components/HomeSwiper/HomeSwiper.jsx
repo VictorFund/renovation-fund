@@ -1,7 +1,7 @@
 "use client";
+
 import { useWindowResize } from "@/hooks/useWindowResize";
 import ButtonLink from "../Buttons/ButtonLink/ButtonLink";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Keyboard, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -12,14 +12,18 @@ import Loader from "../Loader/Loader";
 import { formatDate } from "@/utils/formatDate";
 import { useTranslation } from "react-i18next";
 import { currentLanguages } from "@/data";
-import { SiteContext } from "@/context/siteContext";
-import { useContext } from "react";
+import { useEffect, useState } from "react";
 
 const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
-  const { isLoad } = useContext(SiteContext);
+  const [isLoad, setIsLoad] = useState(true);
+
   const { isMobile } = useWindowResize();
   const { i18n, t } = useTranslation();
   const isLangEn = !isLoading && i18n.language === currentLanguages.EN;
+
+  useEffect(() => {
+    setIsLoad(false);
+  }, []);
 
   return (
     <>
@@ -34,7 +38,7 @@ const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
             enabled: true,
             onlyInViewport: true,
           }}
-          speed={3000}
+          // speed={3000}
           // autoplay={{
           //   delay: 2500,
           //   pauseOnMouseEnter: true,
@@ -66,7 +70,7 @@ const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
 
                         <div className="btnsBlock">
                           <ButtonLink
-                            title={t("Buttons.Details")}
+                            title={!isLoad && t("Buttons.Details")}
                             href={`${dataName}/${el.slug}`}
                             customBtn={
                               btnClassName === true ? `leftMarging` : ""

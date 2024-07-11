@@ -25,16 +25,11 @@ export default function RootLayout({ children }) {
         <AuthProvider>
           <SiteProvider>
             <TranslatorProvider>
-            <Header />
-            <main>{children}</main>
-            <Footer />
-            <SideBtn
-              title="Зв’яжись з нами"
-              id="sideBtn"
-              href="https://t.me/pvfond_contact"
-              target="_blank"
-            />
-            <ToTopBtn />
+              <Header />
+              <main>{children}</main>
+              <Footer />
+              <SideBtn />
+              <ToTopBtn />
             </TranslatorProvider>
           </SiteProvider>
         </AuthProvider>

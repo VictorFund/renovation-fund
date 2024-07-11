@@ -6,15 +6,22 @@ import { GetDataForHomeByCollection } from "@/fetch/clientFetch";
 import { useFilterData } from "@/hooks/useFilterData";
 import { useWindowResize } from "@/hooks/useWindowResize";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import styles from "./HomeProjectsSection.module.scss";
 
 const HomeProjectsSection = () => {
   const { data, isLoading } = GetDataForHomeByCollection("projects");
   const [activeTab, setActiveTab] = useState("Поточний");
+  const [isLoad, setIsLoad] = useState(true);
 
   const { isMobile } = useWindowResize();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    setIsLoad(false);
+  }, []);
 
   const aprovedData = data?.filter((el) => el.isApproved);
 
@@ -23,7 +30,11 @@ const HomeProjectsSection = () => {
   return (
     <section>
       <div className={`container ${styles.container}`}>
-        <TitleLink href="/projects" title="Проєкти" id={styles.title} />
+        <TitleLink
+          href="/projects"
+          title={!isLoad && t("MainPage.ProjectsSectionTitle")}
+          id={styles.title}
+        />
 
         {isMobile && (
           <ProjectAccordio
