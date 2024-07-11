@@ -10,7 +10,7 @@ import { getDashboardSession } from "@/utils/getDashboardSession";
 import styles from "../DashboardComponents.module.scss";
 
 
-const DashboardCoworkerFormUpdate = ({ data, mutate, isOwner }) => {
+const DashboardCoworkerFormUpdate = ({ data, mutate, isOwner, prioritiesArr }) => {
     const { slug, priority, name, nameEn, photo, description, descriptionEn, isApproved } = data;
 
     const initialValues = {
@@ -25,6 +25,7 @@ const DashboardCoworkerFormUpdate = ({ data, mutate, isOwner }) => {
             newIsApproved: isApproved,
         },
         resolver: yupResolver(dashboardCoworkerUpdateSchema),
+        context: prioritiesArr,
     };
 
     const form = useForm(initialValues);

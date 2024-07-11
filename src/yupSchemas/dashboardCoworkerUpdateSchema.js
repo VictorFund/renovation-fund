@@ -8,7 +8,19 @@ export const dashboardCoworkerUpdateSchema = yup.object({
     newPriority: yup.number()
         .required("Пріоритет - обовʼязкове поле")
         .moreThan(-1, "Тільки додатні числа")
-        .typeError("Тільки числа"),
+        .typeError("Тільки числа")
+        .test({
+            name: "newPriority",
+            test(value, ctx) {
+                const isExist = this.options.context.includes(value);
+                if (isExist) {
+                    return ctx.createError({
+                        message: "Такий пріоритет вже існує"
+                    })
+                }
+                return true;
+            },
+        }),
     newName: yup
         .string()
         .required("Ім’я - обов’язкове поле"),
