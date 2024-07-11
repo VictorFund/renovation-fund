@@ -1,115 +1,110 @@
 {
-    "Header": {
-        "headerSale": "Погодинно 1-3 год 400 грн, кожна наступна година + 100 грн",
-        "linkApartments": "Апартаменти",
-        "linkDocuments": "Документи",
-        "linkRules": "Правила",
-        "linkContacts": "Контакти"
-    },
-    "MainPage": {
-        "TeamTitle": "Наша команда",
-        "TeamSubTitle": "втілить ваші ідеї в життя",
-        "WorkingProcessTitle": "Робочий процес",
-        "WorkingProcessSubTitleMob": "Додаткові деталі розробки обговорюються індивідуально",
-        "WorkingProcessSubTitleLaptop": "Додаткові деталі розробки обговорюються в індивідуальному порядку",
-        "OurProjectsTitle": "Наші",
-        "OurProjectsSubTitle": "Роботи",
-        "OurServicesTitle": "Послуги",
-        "OurServicesSubTitle": "Від малого до великого сайту",
-        "FaqSubTitle": "Ви можете знайти своє питання тут",
-        "OrderSectionTitleMob": "Поговоримо про",
-        "OrderSectionTitleTab": "Поговоримо про",
-        "OrderSectionSubTitle": "Ваш новий сайт!"
-    },
-    "TeamPage": {
-        "Title": "Команда",
-        "SubTitle": "давайте познайомимося з тими, хто працює для Вас"
-    },
-    "OurProjectsPage": {
-        "Title": "Наші роботи",
-        "NavLinkText": "На сторінку з усіма проєктами",
-        "TitleProblem": "Проблема",
-        "TitleSolutions": "Рішення",
-        "TitleHelpBussines": "Як це допомагає бізнесу",
-        "TitleDesc": "Адаптація",
-        "NoProjects": "Проєкт не знайдено",
-        "NoProjectsBtn": "До усіх проєктів"
-    },
-    "ContactsPage": {
-        "Title": "Контакти",
-        "Phone": "НОМЕР ТЕЛЕФОНУ",
-        "Email": "ПОШТА",
-        "Social": "СОЦІАЛЬНІ МЕРЕЖІ"
-    },
-    "ServicesPage": {
-        "Title": "Послуги",
-        "SubTitle1": "обирайте",
-        "SubTitle2": "найкращу",
-        "SubTitle3": "пропозицію для Вашого бізнесу"
-    },
-    "ServiceIdPage": {
-        "SubTitle1": "Обирайте",
-        "SubTitle2": "найкращу",
-        "SubTitle3": "пропозицію для Вашого бізнесу:",
-        "BackToServicesBtn": "До усіх послуг"
-    },
-    "BlogPage": {
-        "GenSubTitle": "Блог",
-        "SubTitle": "тут Ви можете прочитати корисні статті",
-        "NoArticles": "Статей не знайдено!"
-    },
-    "BlogIdPage": {
-        "SubTitle":"Також вам буде цікаво:",
-        "NotFound": "Блог не знайдено",
-        "NotFoundTitleBtn": "До усіх блогів",
-        "NavBtn": "На сторінку з усіма статтями"
-    },
-    "NotFoundPage": {
-        "NotFoundTitle": "Сторінка не знайдена",
-        "NotFoundTitleBtn": "На головну"
-    },
-    "Buttons": {
-        "CalltBtn": "Подзвонити",
-        "OrderBtn": "Замовити",
-        "HomeTeamBtn": "Про Команду",
-        "HomeProjectsBtn": "До портфоліо",
-        "ServicesDetailsBtn": "Детальніше",
-        "HomeFaqBtn": "Детальніше",
-        "ServiceCardOrderBtn": "Замовити",
-        "FormOrderBtn": "Замовити дзвінок",
-        "ProjectDetailsBtn": "Детальніше",
-        "ProjectOpenSiteBtn": "Відкрити сайт",
-        "CardDetailsBtn": "Детальніше",
-        "CloseBtn": "Закрити",
-        "FilterBtn": "Шукати",
-        "FilterClear": "Очистити",
-        "OpenFilterBtn": "Фільтр",
-        "CloseFilterBtn": "Сховати",
-        "Submit": "Пiдтвердити"
-    },
-    "Form": {
-        "Title": "Заповніть форму і ми зателефонуємо Вам",
-        "TitleMob": "Ми зателефонуємо Вам",
-        "Name": "Ім’я",
-        "Phone": "Номер телефону",
-        "TextArea": "Коротко опишіть Ваше побажання",
-        "FormSubmitedMsg": "Вітаємо! Ваше повідомлення відправлено менеджеру.",
-        "fieldRequiredMsg": "Заповніть це поле",
-        "errorShortName": "Ім’я має бути довшим",
-        "errorLongName": "Ім’я має бути коротшим",
-        "errorNumberOfObject": "Такого номеру немає",
-        "errorNumberOfObject2": "Тільки додатні числа",
-        "errorNumberOfObject3": "Тільки цифри",
-        "errorTooManySpases": "Забагато пробілів"
-    },
-    "formErrors": {
-        "name": "Невірно введене ім’я",
-        "phone": "Номер телефону",
-        "dateOfEntry": "Оберіть дату",
-        "departureDate": "Оберіть дату",
-        "numberObject": "Вкажіть номер об’єкту"
-    },
-    "LoadStatus": {
-        "Load": "Завантаження..."
-    }
+  "MainPage": {
+    "TeamTitle": "Наша команда",
+    "TeamSubTitle": "втілить ваші ідеї в життя",
+    "WorkingProcessTitle": "Робочий процес",
+    "WorkingProcessSubTitleMob": "Додаткові деталі розробки обговорюються індивідуально",
+    "WorkingProcessSubTitleLaptop": "Додаткові деталі розробки обговорюються в індивідуальному порядку",
+    "OurProjectsTitle": "Наші",
+    "OurProjectsSubTitle": "Роботи",
+    "OurServicesTitle": "Послуги",
+    "OurServicesSubTitle": "Від малого до великого сайту",
+    "FaqSubTitle": "Ви можете знайти своє питання тут",
+    "OrderSectionTitleMob": "Поговоримо про",
+    "OrderSectionTitleTab": "Поговоримо про",
+    "OrderSectionSubTitle": "Ваш новий сайт!"
+  },
+  "TeamPage": {
+    "Title": "Команда",
+    "SubTitle": "давайте познайомимося з тими, хто працює для Вас"
+  },
+  "OurProjectsPage": {
+    "Title": "Наші роботи",
+    "NavLinkText": "На сторінку з усіма проєктами",
+    "TitleProblem": "Проблема",
+    "TitleSolutions": "Рішення",
+    "TitleHelpBussines": "Як це допомагає бізнесу",
+    "TitleDesc": "Адаптація",
+    "NoProjects": "Проєкт не знайдено",
+    "NoProjectsBtn": "До усіх проєктів"
+  },
+  "ContactsPage": {
+    "Title": "Контакти",
+    "Phone": "НОМЕР ТЕЛЕФОНУ",
+    "Email": "ПОШТА",
+    "Social": "СОЦІАЛЬНІ МЕРЕЖІ"
+  },
+  "ServicesPage": {
+    "Title": "Послуги",
+    "SubTitle1": "обирайте",
+    "SubTitle2": "найкращу",
+    "SubTitle3": "пропозицію для Вашого бізнесу"
+  },
+  "ServiceIdPage": {
+    "SubTitle1": "Обирайте",
+    "SubTitle2": "найкращу",
+    "SubTitle3": "пропозицію для Вашого бізнесу:",
+    "BackToServicesBtn": "До усіх послуг"
+  },
+  "BlogPage": {
+    "GenSubTitle": "Блог",
+    "SubTitle": "тут Ви можете прочитати корисні статті",
+    "NoArticles": "Статей не знайдено!"
+  },
+  "BlogIdPage": {
+    "SubTitle": "Також вам буде цікаво:",
+    "NotFound": "Блог не знайдено",
+    "NotFoundTitleBtn": "До усіх блогів",
+    "NavBtn": "На сторінку з усіма статтями"
+  },
+  "NotFoundPage": {
+    "NotFoundTitle": "Сторінка не знайдена",
+    "NotFoundTitleBtn": "На головну"
+  },
+  "Buttons": {
+    "Donate": "Підтримати",
+    "Details": "Детальніше",
+    "ContactUs": "Зв’яжись з нами",
+
+    "HomeTeamBtn": "Про Команду",
+    "HomeProjectsBtn": "До портфоліо",
+    "ServicesDetailsBtn": "Детальніше",
+    "HomeFaqBtn": "Детальніше",
+    "ServiceCardOrderBtn": "Замовити",
+    "FormOrderBtn": "Замовити дзвінок",
+    "ProjectDetailsBtn": "Детальніше",
+    "ProjectOpenSiteBtn": "Відкрити сайт",
+    "CardDetailsBtn": "Детальніше",
+    "CloseBtn": "Закрити",
+    "FilterBtn": "Шукати",
+    "FilterClear": "Очистити",
+    "OpenFilterBtn": "Фільтр",
+    "CloseFilterBtn": "Сховати",
+    "Submit": "Пiдтвердити"
+  },
+  "Form": {
+    "Title": "Заповніть форму і ми зателефонуємо Вам",
+    "TitleMob": "Ми зателефонуємо Вам",
+    "Name": "Ім’я",
+    "Phone": "Номер телефону",
+    "TextArea": "Коротко опишіть Ваше побажання",
+    "FormSubmitedMsg": "Вітаємо! Ваше повідомлення відправлено менеджеру.",
+    "fieldRequiredMsg": "Заповніть це поле",
+    "errorShortName": "Ім’я має бути довшим",
+    "errorLongName": "Ім’я має бути коротшим",
+    "errorNumberOfObject": "Такого номеру немає",
+    "errorNumberOfObject2": "Тільки додатні числа",
+    "errorNumberOfObject3": "Тільки цифри",
+    "errorTooManySpases": "Забагато пробілів"
+  },
+  "formErrors": {
+    "name": "Невірно введене ім’я",
+    "phone": "Номер телефону",
+    "dateOfEntry": "Оберіть дату",
+    "departureDate": "Оберіть дату",
+    "numberObject": "Вкажіть номер об’єкту"
+  },
+  "LoadStatus": {
+    "Load": "Завантаження..."
+  }
 }
