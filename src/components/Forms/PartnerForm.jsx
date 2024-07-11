@@ -5,7 +5,7 @@ import { useForm, useController } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { partnerFormSchema } from "@/yupSchemas/partnerFormShema";
 import Checkboxes from "./Checkboxes";
-import { socialLinks } from "@/data";
+import { callbackData } from "@/data";
 
 import styles from "./FormStyles.module.scss";
 
@@ -215,7 +215,7 @@ const PartnerForm = () => {
                     </p>
                     <Checkboxes
                         field={field}
-                        options={socialLinks}
+                        options={callbackData}
                         value={value}
                         setValue={setValue}
                     />

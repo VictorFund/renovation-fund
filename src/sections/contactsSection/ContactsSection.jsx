@@ -23,13 +23,21 @@ const ContactsSection = () => {
                     ></iframe>
                     <ul className={styles.contactList}>
                         {contactsData.map((data) => (
-                            <li key={data.id} className={styles.contactItem}>
-                                <svg className={styles.contactSvg}>
-                                    <use href={`/sprite.svg#${data.src}`}></use>
-                                </svg>
-                                <p className={styles.contactText}>
-                                    {data.text}
-                                </p>
+                            <li key={data.id}>
+                                <a
+                                    href={data.href}
+                                    className={styles.contactLink}
+                                    target='_blank'
+                                >
+                                    <svg className={styles.contactSvg}>
+                                        <use
+                                            href={`/sprite.svg#${data.src}`}
+                                        ></use>
+                                    </svg>
+                                    <p className={styles.contactText}>
+                                        {data.text}
+                                    </p>
+                                </a>
                             </li>
                         ))}
                     </ul>
