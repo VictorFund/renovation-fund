@@ -33,6 +33,7 @@ export const register = async (previousState, formData) => {
         })
         console.log('newUser', newUser)
         await newUser.save();
+        // for visualization success or errors in state of useFormState
         return { success: true };
     } catch (error) {
         console.log("error in actions REGister", error);
@@ -41,7 +42,7 @@ export const register = async (previousState, formData) => {
 }
 
 
-// используется в loginForm. вызывается signIn из auth.js (передавая credentials). там выполняется алгоритм в части CredentialsProvider
+// используется в loginForm. здесь внутри вызывается signIn из auth.js (передавая credentials). там выполняется алгоритм в части CredentialsProvider
 export const login = async (previousState, formData) => {
     console.log('formData', formData)
     const { email, password } = Object.fromEntries(formData);
