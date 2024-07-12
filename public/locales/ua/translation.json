@@ -5,7 +5,10 @@
     "WorkingProcessTitle": "Робочий процес",
     "WorkingProcessSubTitleMob": "Додаткові деталі розробки обговорюються індивідуально",
     "WorkingProcessSubTitleLaptop": "Додаткові деталі розробки обговорюються в індивідуальному порядку",
-    "OurProjectsTitle": "Наші",
+
+    "ProjectsSectionTitle": "Проєкти",
+    "NewsSectionTitle": "Новини",
+
     "OurProjectsSubTitle": "Роботи",
     "OurServicesTitle": "Послуги",
     "OurServicesSubTitle": "Від малого до великого сайту",

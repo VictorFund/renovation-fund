@@ -9,15 +9,18 @@ import NavigationHeader from "../NavigationHeader/NavigationHeader";
 import styles from "./Header.module.scss";
 import HeaderLogo from "./HeaderLogo";
 import { useTranslation } from "react-i18next";
-import { useContext } from "react";
-import { SiteContext } from "@/context/siteContext";
+import { useEffect, useState } from "react";
 
 const Header = () => {
+  const [isLoad, setIsLoad] = useState(true);
   const { t } = useTranslation();
 
-  const { isLoad } = useContext(SiteContext);
-
   const pathname = usePathname();
+
+  useEffect(() => {
+    setIsLoad(false);
+  }, []);
+
   if (pathname.startsWith("/dashboard")) {
     return;
   }

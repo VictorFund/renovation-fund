@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { useForm, useController } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { feedbackFormSchema } from "@/yupSchemas/feedbackFormShema";
+import { callbackData } from "@/data";
 import Checkboxes from "./Checkboxes";
-import { socialLinks } from "@/data";
 
 import styles from "./FormStyles.module.scss";
 
@@ -150,7 +150,7 @@ const FeedbackForm = () => {
                     </p>
                     <Checkboxes
                         field={field}
-                        options={socialLinks}
+                        options={callbackData}
                         value={value}
                         setValue={setValue}
                     />

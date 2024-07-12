@@ -6,14 +6,9 @@ export const SiteContext = createContext();
 
 export const SiteProvider = ({ children }) => {
   const [burgerMenu, setBurgermenu] = useState(false);
-  const [isLoad, setIsLoad] = useState(true);
-
-  useEffect(() => {
-    setIsLoad(false);
-  }, []);
 
   return (
-    <SiteContext.Provider value={{ burgerMenu, setBurgermenu, isLoad }}>
+    <SiteContext.Provider value={{ burgerMenu, setBurgermenu }}>
       {children}
     </SiteContext.Provider>
   );
