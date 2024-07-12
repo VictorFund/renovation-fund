@@ -42,7 +42,7 @@ export const register = async (previousState, formData) => {
 }
 
 
-// используется в loginForm. вызывается signIn из auth.js (передавая credentials). там выполняется алгоритм в части CredentialsProvider
+// используется в loginForm. здесь внутри вызывается signIn из auth.js (передавая credentials). там выполняется алгоритм в части CredentialsProvider
 export const login = async (previousState, formData) => {
     console.log('formData', formData)
     const { email, password } = Object.fromEntries(formData);

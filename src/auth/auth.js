@@ -11,12 +11,14 @@ const login = async (credentials) => {
     try {
         await connectToDB();
         const user = await User.findOne({ email: credentials.email });
+
         if (!user) {
             throw new Error("Wrong credentials")
         }
 
-        const passwordIsCorrect = await bcrypt.compare(credentials.password, user.password);
-        if (!passwordIsCorrect) {
+        const isPasswordCorrect = await bcrypt.compare(credentials.password, user.password);
+
+        if (!isPasswordCorrect) {
             throw new Error("Wrong credentials")
         }
 
@@ -32,23 +34,24 @@ export const {
     handlers: { GET, POST },
     auth,
     signIn,
-    signOut } = NextAuth({
-        ...authConfig,
-        providers: [
-            CredentialsProvider({
-                async authorize(credentials) {
-                    try {
-                        // login из этого файла(т.е. из auth.js)
-                        const user = await login(credentials);
+    signOut,
+} = NextAuth({
+    ...authConfig,
+    providers: [
+        CredentialsProvider({
+            async authorize(credentials) {
+                try {
+                    // login из этого файла(т.е. из auth.js)
+                    const user = await login(credentials);
 
-                        return user;
-                    } catch (error) {
-                        console.log("error", error)
-                        return null;
-                    }
+                    return user;
+                } catch (error) {
+                    console.log("error", error)
+                    return null;
                 }
-            })],
-        callbacks: {
-            ...authConfig.callbacks,
-        },
-    })
+            }
+        })],
+    callbacks: {
+        ...authConfig.callbacks,
+    },
+})
