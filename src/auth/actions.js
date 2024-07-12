@@ -33,6 +33,7 @@ export const register = async (previousState, formData) => {
         })
         console.log('newUser', newUser)
         await newUser.save();
+        // for visualization success or errors in state of useFormState
         return { success: true };
     } catch (error) {
         console.log("error in actions REGister", error);

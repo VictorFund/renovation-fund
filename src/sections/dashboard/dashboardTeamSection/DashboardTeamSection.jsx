@@ -14,7 +14,7 @@ const DashboardTeamSection = ({ isOwner }) => {
     const coworkersPriorities = data?.map((item) => item.priority).sort((a, b) => { return a - b }).join(", ");
     const neededData = getDataByRules(data, isLoading, isOwner);
 
-    const sortedByPriority = neededData?.sort((a, b) => { return a.priority - b.priority });
+    const sortedByUpdate = neededData?.sort((a, b) => { return a.updatedAt - b.updatedAt });
 
 
     return (
@@ -22,7 +22,7 @@ const DashboardTeamSection = ({ isOwner }) => {
             {isLoading
                 ? <Loader />
                 : <div className={`container ${styles.container}`}>
-                    <div className={styles.cardsList}>{sortedByPriority.map(item => <DashboardCoworker key={item.slug} data={item} mutate={mutate} isOwner={isOwner} />)}</div>
+                    <div className={styles.cardsList}>{sortedByUpdate.map(item => <DashboardCoworker key={item.slug} data={item} mutate={mutate} isOwner={isOwner} />)}</div>
                     <DashboardCoworkerFormCreate mutate={mutate} isOwner={isOwner} prioritiesArr={prioritiesArr} />
                     <p><span className='accentText'>Існуючі пріоритети:</span> {coworkersPriorities}</p>
                 </div>
