@@ -25,6 +25,7 @@ const login = async (credentials) => {
         return user;
     } catch (error) {
         console.log('error', error);
+
         throw new Error("Failed to login")
     }
 }
@@ -43,7 +44,6 @@ export const {
                 try {
                     // login из этого файла(т.е. из auth.js)
                     const user = await login(credentials);
-
                     return user;
                 } catch (error) {
                     console.log("error", error)
