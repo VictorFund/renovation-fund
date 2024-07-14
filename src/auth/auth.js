@@ -13,20 +13,20 @@ const login = async (credentials) => {
         const user = await User.findOne({ email: credentials.email });
 
         if (!user) {
-            throw new Error("Wrong credentials")
+            throw new Error("Неправильні облікові дані")
         }
 
         const isPasswordCorrect = await bcrypt.compare(credentials.password, user.password);
 
         if (!isPasswordCorrect) {
-            throw new Error("Wrong credentials")
+            throw new Error("Неправильні облікові дані")
         }
 
         return user;
     } catch (error) {
         console.log('error', error);
 
-        throw new Error("Failed to login")
+        throw new Error("Не вдалося увійти")
     }
 }
 
