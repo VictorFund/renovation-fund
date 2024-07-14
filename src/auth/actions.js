@@ -13,11 +13,11 @@ export const register = async (previousState, formData) => {
 
         const user = await User.findOne({ email });
         if (user) {
-            return { error: "User already exists" }
+            return { error: "Такий користувач вже існує" }
         }
 
         if (password === "") {
-            return { error: "Something went wrong" }
+            return { error: "Щось трапилось..." }
         }
 
         const salt = await bcrypt.genSalt(10);
@@ -34,7 +34,7 @@ export const register = async (previousState, formData) => {
         return { success: true };
     } catch (error) {
         console.log("error", error);
-        return { error: "Something went wrong" }
+        return { error: "Щось трапилось..." }
     }
 }
 
@@ -52,7 +52,7 @@ export const login = async (previousState, formData) => {
 
         // test-variant instead of (error.message.includes("CredentialsSignin")
         if (error.type === "CallbackRouteError") {
-            return { error: "Invalid username or password" };
+            return { error: "Невірний логін або пароль" };
         }
         // return { error: "Something went wrong" } был заменён на написанное ниже, чтобы исключить ошибку NEXT_REDIRECT при правильно введённых логине и пароле
         throw error;

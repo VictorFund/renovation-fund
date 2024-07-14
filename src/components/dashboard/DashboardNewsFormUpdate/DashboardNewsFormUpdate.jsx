@@ -1,5 +1,4 @@
 "use client";
-import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { CldUploadButton } from "next-cloudinary";
@@ -77,11 +76,6 @@ const DashboardNewsFormUpdate = ({ data, mutate, isOwner }) => {
         }
     };
 
-    useEffect(() => {
-        if (isSubmitSuccessful) {
-            reset();
-        }
-    }, [isSubmitSuccessful, reset]);
 
     return (
         <form

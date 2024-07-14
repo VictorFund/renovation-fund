@@ -52,23 +52,3 @@ export const PUT = async (request, { params }) => {
         return new NextResponse(error, { status: 500 });
     }
 };
-
-
-export const PATCH = async (request, { params }) => {
-    const { slug } = params;
-    const incomingData = await request.json();
-
-    try {
-        await connectToDB();
-
-        const updatedPartner = await Partner.findOneAndUpdate({ slug }, incomingData);
-
-        if (!updatedPartner) {
-            return new NextResponse("Partner not found", { status: 404 });
-        }
-        return new NextResponse("Partner has been updated", { status: 200 });
-
-    } catch (error) {
-        return new NextResponse(error, { status: 500 });
-    }
-};
