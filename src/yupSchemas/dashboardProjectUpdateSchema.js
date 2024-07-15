@@ -25,7 +25,10 @@ export const dashboardProjectUpdateSchema = yup.object({
         .required("Стан - обов’язкове поле"),
     newStartDate: yup
         .string(),
-    newSum: yup.number()
+    newSum: yup
+        .number()
+        .transform((value, original) => (original === "" ? null : value))
+        .nullable()
         .moreThan(-1, "Тільки додатні числа")
         .typeError("Тільки числа"),
     newMission: yup
