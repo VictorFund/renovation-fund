@@ -66,7 +66,7 @@ const Footer = () => {
               pvfond@gmail.com
             </a>
 
-            {!isLoad &&<p>9.00 - 19.00 {t('Footer.WorkDays')}</p>}
+            {!isLoad && <p>9.00 - 19.00 {t('Footer.WorkDays')}</p>}
             <a href="tel:+380971775682">+380971775682</a>
           </address>
         </div>
