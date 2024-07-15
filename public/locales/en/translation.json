@@ -73,6 +73,14 @@
     "NotFoundTitle": "Page not found",
     "NotFoundTitleBtn": "Home"
   },
+
+  "Footer":{
+    "Contacts":"Contacts",
+    "AdressCity":"Kyiv",
+    "AdressStreet":"Knyazhyi Zaton street",
+    "WorkDays":"Mon-Fri"
+  },
+
   "Buttons": {
     "Donate": "Donate",
     "Details": "Details",

@@ -75,6 +75,14 @@
     "NotFoundTitle": "Сторінка не знайдена",
     "NotFoundTitleBtn": "На головну"
   },
+
+  "Footer":{
+    "Contacts":"Контакти",
+    "AdressCity":"м.Київ",
+    "AdressStreet":"вул. Княжий Затон",
+    "WorkDays":"Пн-Пт"
+  },
+
   "Buttons": {
     "Donate": "Підтримати",
     "Details": "Детальніше",
