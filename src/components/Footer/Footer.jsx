@@ -1,10 +1,21 @@
+"use client"
 import SocialLinks from "../SocialLinks/SocialLinks";
 import FooterLogo from "./FooterLogo";
 import FooterNav from "./FooterNav";
 import styles from "./Footer.module.scss";
 import Image from "next/image";
+import { useState,useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const[isLoad, setIsLoad]=useState(true);
+  
+  const {t}=useTranslation();
+
+  useEffect(()=>{
+    setIsLoad(false)
+  },[])
+
   return (
     <footer className={`footer ${styles.footer}`}>
       <div className={`container ${styles.container}`}>
@@ -13,15 +24,15 @@ const Footer = () => {
             <FooterLogo />
           </div>
           <address className={styles.addr}>
-            <a
+            {!isLoad && <a
               href="https://maps.app.goo.gl/Rh6PxCxxDbAd3p7q6"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.street}
             >
-              м.Київ,
-              <br /> вул. Княжий Затон, 21
-            </a>
+              {t('Footer.AdressCity')},
+              <br /> {t('Footer.AdressStreet')}, 21
+            </a>}
 
             <SocialLinks id={styles.socLinks} costumSvg={styles.costumSvg} />
           </address>
@@ -46,7 +57,7 @@ const Footer = () => {
         </div>
 
         <div className={styles.blockWrapp}>
-          <h3>Контакти</h3>
+          {!isLoad && <h3>{t('Footer.Contacts')}</h3>}
           <address className={styles.addr}>
             <a href="https://t.me/pvfond_contact" target="_blank">
               @pvfond_contact
@@ -55,7 +66,7 @@ const Footer = () => {
               pvfond@gmail.com
             </a>
 
-            <p>9.00 - 19.00 Пн-Пт</p>
+            {!isLoad && <p>9.00 - 19.00 {t('Footer.WorkDays')}</p>}
             <a href="tel:+380971775682">+380971775682</a>
           </address>
         </div>

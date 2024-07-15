@@ -1,11 +1,19 @@
 {
   "MainPage": {
-    "TeamTitle": "Our team",
-    "TeamSubTitle": "will bring your ideas to life",
-    "WorkingProcessTitle": "Working process",
-    "WorkingProcessSubTitleMob": "other details of the development are discussed individually",
-    "WorkingProcessSubTitleLaptop": "additional development details are tailored to your specific needs and discussed on an individual basis",
+    "HeroTitle": "Together we",
+    "HeroTitle1": "will rebuild the country",
+    "HeroSubTitle":"Charitable Foundation «Victory and Recovery»",
+    "HeroProjectsText":"current",
+    "HeroProjectsText1":"projects",
+    
+    "AboutSectionTitle": "About the Fund*",
+    "AboutSectionTitleText":"Charitable Foundation",
+    "AboutSectionTitleText1":"«Victory and Recovery»",
+    "AboutSectionText": "- is a non-profit organization whose goal and mission is to restore Ukraine and strengthen its statehood. To contribute to the victory of the Ukrainian people and to provide effective, high-quality and, most importantly, comfortable conditions for every person.",
+    "AboutSectionText1":"The main activity",
+    "AboutSectionText2":"of the charitable organization is, first of all, psychosocial support and cultural and educational activities for everyone who feels the need and is interested in it.",
 
+    
     "ProjectsSectionTitle": "Projects",
     "NewsSectionTitle": "News",
 
@@ -65,10 +73,19 @@
     "NotFoundTitle": "Page not found",
     "NotFoundTitleBtn": "Home"
   },
+
+  "Footer":{
+    "Contacts":"Contacts",
+    "AdressCity":"Kyiv",
+    "AdressStreet":"Knyazhyi Zaton street",
+    "WorkDays":"Mon-Fri"
+  },
+
   "Buttons": {
     "Donate": "Donate",
     "Details": "Details",
     "ContactUs": "Contact us",
+    "ToPartners":"Become a partner",
 
     "HomeTeamBtn": "About Team",
     "HomeProjectsBtn": "To portfolio",

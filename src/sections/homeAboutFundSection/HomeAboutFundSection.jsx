@@ -1,39 +1,46 @@
+"use client"
 import ButtonLink from '@/components/Buttons/ButtonLink/ButtonLink';
 import styles from './HomeAboutFundSection.module.scss';
+import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const HomeAboutFundSection = () => {
+  
+  const {t}=useTranslation();
+
+  const [isLoad,setIsLoad]=useState(true)
+
+  useEffect(()=>{
+    setIsLoad(false)
+  },[])
+
   return (
     <section>
       <div className="container">
-        <h2 className="homeSectionTitle">Про Фонд*</h2>
+      {!isLoad &&<h2 className="homeSectionTitle">{t('MainPage.AboutSectionTitle')}</h2>}
         <div className={styles.aboutContainer}>
           <ul className={styles.contentList}>
-            <li className={styles.text}>
-              Благодійний Фонд{' '}
+            {!isLoad && <><li className={styles.text}>
+            {t('MainPage.AboutSectionTitleText')}{' '}
               <span className={styles.textAccent}>
-                «Перемоги та Відновлення»
+              {t('MainPage.AboutSectionTitleText1')}
               </span>{' '}
-              – це неприбуткова організація, мета та ціль котрої полягає у
-              відновленні України та міці її державності. У сприянні перемозі
-              українського народу та ефективному, якісному й надважливому
-              забезпеченні комфортних умов для всіх та кожного зокрема.
+              {t('MainPage.AboutSectionText')}
             </li>
             <li className={styles.text}>
-              <span className={styles.textAccent}>Основний напрямок</span>{' '}
-              діяльності благодійної організації - це, перш за все,
-              психосоціальна підтримка та культурно-просвітницька діяльність для
-              всіх, хто відчуває в цьому потребу й зацікавленість.
-            </li>
+              <span className={styles.textAccent}>{t('MainPage.AboutSectionText1')}</span>{' '}
+              {t('MainPage.AboutSectionText2')}
+            </li></>}
           </ul>
           <div className={styles.btnContainer}>
             <ButtonLink
               href="/partnership"
-              title="Стати партнером"
+              title={!isLoad && t('Buttons.ToPartners')}
               customBtn={styles.btn}
             />
             <ButtonLink
               href="/contacts"
-              title="Стати волонтером"
+              title={!isLoad && t('Buttons.ToPartners')}
               customBtn={styles.btn}
             />
           </div>
