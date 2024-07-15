@@ -1,7 +1,10 @@
 {
   "MainPage": {
-    "TeamTitle": "Наша команда",
-    "TeamSubTitle": "втілить ваші ідеї в життя",
+    "HeroTitle": "Спільними зусиллями",
+    "HeroTitle1": "відбудуємо країну",
+    "HeroSubTitle":"Благодійний фонд «Перемоги та Відновлення»",
+    "HeroProjectsText":"поточних",
+    "HeroProjectsText1":"проектів",
     "WorkingProcessTitle": "Робочий процес",
     "WorkingProcessSubTitleMob": "Додаткові деталі розробки обговорюються індивідуально",
     "WorkingProcessSubTitleLaptop": "Додаткові деталі розробки обговорюються в індивідуальному порядку",

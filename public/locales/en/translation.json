@@ -1,7 +1,10 @@
 {
   "MainPage": {
-    "TeamTitle": "Our team",
-    "TeamSubTitle": "will bring your ideas to life",
+    "HeroTitle": "Together we",
+    "HeroTitle1": "will rebuild the country",
+    "HeroSubTitle":"Charitable Foundation «Victory and Recovery»",
+    "HeroProjectsText":"current",
+    "HeroProjectsText1":"projects",
     "WorkingProcessTitle": "Working process",
     "WorkingProcessSubTitleMob": "other details of the development are discussed individually",
     "WorkingProcessSubTitleLaptop": "additional development details are tailored to your specific needs and discussed on an individual basis",
