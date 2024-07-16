@@ -63,7 +63,10 @@ const ProjectIdSection = () => {
                 ? changedData?.titleEn
                 : changedData?.title}
             </h1>
-            <p className={styles.date}>{t('ProjectsIdPage.DateOfStart')}{formattedDate}</p>
+            <p className={styles.date}>
+              {t('ProjectsIdPage.DateOfStart')}
+              {formattedDate}
+            </p>
             <div
               className={`${styles.contentContainer} ${styles.blockIndentation}`}
             >
@@ -78,13 +81,26 @@ const ProjectIdSection = () => {
               <div className={styles.contentList}>
                 {changedData?.sum && (
                   <>
-                    <p className={styles.purposeCollection}>
+                    <p
+                      className={
+                        i18n.language === currentLanguages.EN
+                          ? styles.purposeCollectionEn +
+                            ' ' +
+                            styles.purposeCollection
+                          : styles.purposeCollectionUa +
+                            ' ' +
+                            styles.purposeCollection
+                      }
+                    >
                       {t('ProjectsIdPage.Target')}
                       <svg className={styles.icon}>
                         <use href="/sprite.svg#icon-target" />
                       </svg>
                     </p>
-                    <p className={styles.price}>{changedData?.sum}{t('ProjectsIdPage.Currency')}</p>
+                    <p className={styles.price}>
+                      {changedData?.sum}
+                      {t('ProjectsIdPage.Currency')}
+                    </p>
                   </>
                 )}
                 <ButtonLink
@@ -99,28 +115,38 @@ const ProjectIdSection = () => {
               </div>
             </div>
             <div className={styles.blockIndentation}>
-              <h3 className={`sectionTitle ${styles.title}`}>{t('ProjectsIdPage.AboutProject')}</h3>
+              <h3 className={`sectionTitle ${styles.title}`}>
+                {t('ProjectsIdPage.AboutProject')}
+              </h3>
               <ul className={styles.aboutList}>
                 <li>
-                  <span className="accentText">{t('ProjectsIdPage.Mission')}</span>{' '}
+                  <span className="accentText">
+                    {t('ProjectsIdPage.Mission')}
+                  </span>{' '}
                   {i18n.language === currentLanguages.EN
                     ? changedData?.missionEn
                     : changedData?.mission}
                 </li>
                 <li>
-                  <span className="accentText">{t('ProjectsIdPage.TargetOfProject')}</span>{' '}
+                  <span className="accentText">
+                    {t('ProjectsIdPage.TargetOfProject')}
+                  </span>{' '}
                   {i18n.language === currentLanguages.EN
                     ? changedData?.goalEn
                     : changedData?.goal}
                 </li>
                 <li>
-                  <span className="accentText">{t('ProjectsIdPage.TargetAudience')}</span>{' '}
+                  <span className="accentText">
+                    {t('ProjectsIdPage.TargetAudience')}
+                  </span>{' '}
                   {i18n.language === currentLanguages.EN
                     ? changedData?.audienceEn
                     : changedData?.audience}
                 </li>
                 <li>
-                  <span className="accentText">{t('ProjectsIdPage.Concept')}</span>{' '}
+                  <span className="accentText">
+                    {t('ProjectsIdPage.Concept')}
+                  </span>{' '}
                   {i18n.language === currentLanguages.EN
                     ? changedData?.conceptEn
                     : changedData?.concept}
@@ -135,7 +161,9 @@ const ProjectIdSection = () => {
               </ul>
             </div>
             <div>
-              <h3 className={`sectionTitle ${styles.title}`}>{t('ProjectsIdPage.OtherProjects')}</h3>
+              <h3 className={`sectionTitle ${styles.title}`}>
+                {t('ProjectsIdPage.OtherProjects')}
+              </h3>
               <ul className={styles.projectsList}>
                 {projectData.map(
                   ({
