@@ -1,7 +1,8 @@
 "use client"
 import SocialLinks from "../SocialLinks/SocialLinks";
 import FooterLogo from "./FooterLogo";
-import FooterNav from "./FooterNav";
+// import FooterNav from "./FooterNav";
+import FooterNavBlock from "./FooterNavBlock";
 import styles from "./Footer.module.scss";
 import Image from "next/image";
 import { useState,useEffect } from "react";
@@ -70,12 +71,18 @@ const Footer = () => {
             <a href="tel:+380971775682">+380971775682</a>
           </address>
         </div>
-        <FooterNav
+        {/* <FooterNav
           className={styles.blockWrapp}
           titleClassName={styles.navTitle}
           tabletNavLink={styles.tabletNavLink}
           navWrapp={styles.navWrapp}
-        />
+        /> */}
+        {!isLoad && <FooterNavBlock
+          className={styles.blockWrapp}
+          titleClassName={styles.navTitle}
+          tabletNavLink={styles.tabletNavLink}
+          navWrapp={styles.navWrapp}
+        />}
       </div>
 
       <div className={styles.allRights}>

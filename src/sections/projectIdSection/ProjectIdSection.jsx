@@ -63,7 +63,7 @@ const ProjectIdSection = () => {
                 ? changedData?.titleEn
                 : changedData?.title}
             </h1>
-            <p className={styles.date}>Початок проекту: {formattedDate}</p>
+            <p className={styles.date}>{t('ProjectsIdPage.DateOfStart')}{formattedDate}</p>
             <div
               className={`${styles.contentContainer} ${styles.blockIndentation}`}
             >
@@ -79,17 +79,17 @@ const ProjectIdSection = () => {
                 {changedData?.sum && (
                   <>
                     <p className={styles.purposeCollection}>
-                      Ціль збору
+                      {t('ProjectsIdPage.Target')}
                       <svg className={styles.icon}>
                         <use href="/sprite.svg#icon-target" />
                       </svg>
                     </p>
-                    <p className={styles.price}>{changedData?.sum} грн</p>
+                    <p className={styles.price}>{changedData?.sum}{t('ProjectsIdPage.Currency')}</p>
                   </>
                 )}
                 <ButtonLink
                   href="/donate"
-                  title="Задонатити"
+                  title={t('Buttons.Donate')}
                   customBtn={
                     changedData?.sum
                       ? styles.btn
@@ -99,28 +99,28 @@ const ProjectIdSection = () => {
               </div>
             </div>
             <div className={styles.blockIndentation}>
-              <h3 className={`sectionTitle ${styles.title}`}>Про проєкт</h3>
+              <h3 className={`sectionTitle ${styles.title}`}>{t('ProjectsIdPage.AboutProject')}</h3>
               <ul className={styles.aboutList}>
                 <li>
-                  <span className="accentText">МІСІЯ:</span>{' '}
+                  <span className="accentText">{t('ProjectsIdPage.Mission')}</span>{' '}
                   {i18n.language === currentLanguages.EN
                     ? changedData?.missionEn
                     : changedData?.mission}
                 </li>
                 <li>
-                  <span className="accentText">МЕТА:</span>{' '}
+                  <span className="accentText">{t('ProjectsIdPage.TargetOfProject')}</span>{' '}
                   {i18n.language === currentLanguages.EN
                     ? changedData?.goalEn
                     : changedData?.goal}
                 </li>
                 <li>
-                  <span className="accentText">ЦІЛЬОВА АУДИТОРІЯ:</span>{' '}
+                  <span className="accentText">{t('ProjectsIdPage.TargetAudience')}</span>{' '}
                   {i18n.language === currentLanguages.EN
                     ? changedData?.audienceEn
                     : changedData?.audience}
                 </li>
                 <li>
-                  <span className="accentText">КОНЦЕПТ:</span>{' '}
+                  <span className="accentText">{t('ProjectsIdPage.Concept')}</span>{' '}
                   {i18n.language === currentLanguages.EN
                     ? changedData?.conceptEn
                     : changedData?.concept}
@@ -135,7 +135,7 @@ const ProjectIdSection = () => {
               </ul>
             </div>
             <div>
-              <h3 className={`sectionTitle ${styles.title}`}>Інші проєкти</h3>
+              <h3 className={`sectionTitle ${styles.title}`}>{t('ProjectsIdPage.OtherProjects')}</h3>
               <ul className={styles.projectsList}>
                 {projectData.map(
                   ({
