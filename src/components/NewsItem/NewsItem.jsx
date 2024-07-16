@@ -44,7 +44,7 @@ const NewsItem = ({ data, isLoading }) => {
                 {descByLanguage.map((item, index) => (<p key={index} className={`regularText ${styles.text}`}>{item}</p>))}
             </div>
 
-            {changedData.link && <Link className={`regularText ${styles.link}`} href={changedData.link}>Детальніше...</Link>}
+            {changedData.link && <Link className={`regularText ${styles.link}`} href={changedData.link}>{t('Buttons.Details')}...</Link>}
             <HorizontalLine className='' />
         </div>
     )

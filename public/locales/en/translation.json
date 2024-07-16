@@ -56,12 +56,15 @@
     "OtherProjects":"Other projects"
 },
   "ContactsPage": {
-    "Title": "Contact",
-    "SubTitle": "us",
-    "Phone": "PHONE NUMBER",
-    "Email": "EMAIL",
-    "Social": "SOCIAL MEDIA"
+    "Title": "Contacts",
+    "PrivacyPolicy":"Please read the privacy policy before calling or sending emails! Our public offer agreement and privacy policy are available here:",
+    "Text": "` To contact us, please call us by phone or send us an email and we will get back to you as soon as possible!`"
   },
+
+  "NewsPage":{
+    "Title":"News"
+  },
+
   "ServicesPage": {
     "Title": "Services",
     "SubTitle1": "choose",
