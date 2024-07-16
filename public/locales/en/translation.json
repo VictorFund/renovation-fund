@@ -41,15 +41,20 @@
 
 
   "ProjectsPage": {
-    "Title": "Projects",
-    "NavLinkText": "To the page with all projects",
-    "TitleProblem": "Problem",
-    "TitleSolutions": "Solutions",
-    "TitleHelpBussines": "How does it help business",
-    "TitleDesc": "Mobile adapted",
-    "NoProjects": "Project not found",
-    "NoProjectsBtn": "To all projects"
+    "Title": "Projects"
   },
+
+  "ProjectsIdPage": {
+    "DateOfStart": "Start of the project: ",
+    "Target":"The purpose of collection",
+    "Currency":" UAH",
+    "AboutProject":"About the project",
+    "Mission":"MISSION:",
+    "TargetOfProject":"OBJECTIVE:",
+    "TargetAudience":"TARGET AUDIENCE:",
+    "Concept":"CONCEPT:",
+    "OtherProjects":"Other projects"
+},
   "ContactsPage": {
     "Title": "Contact",
     "SubTitle": "us",

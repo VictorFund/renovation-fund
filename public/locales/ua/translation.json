@@ -43,15 +43,22 @@
   },
 
   "ProjectsPage": {
-    "Title": "Проєкти",
-    "NavLinkText": "На сторінку з усіма проєктами",
-    "TitleProblem": "Проблема",
-    "TitleSolutions": "Рішення",
-    "TitleHelpBussines": "Як це допомагає бізнесу",
-    "TitleDesc": "Адаптація",
-    "NoProjects": "Проєкт не знайдено",
-    "NoProjectsBtn": "До усіх проєктів"
+    "Title": "Проєкти"
   },
+
+  
+  "ProjectsIdPage": {
+    "DateOfStart": "Початок проекту: ",
+    "Target":"Ціль збору",
+    "Currency":" грн",
+    "AboutProject":"Про проєкт",
+    "Mission":"МІСІЯ:",
+    "TargetOfProject":"МЕТА:",
+    "TargetAudience":"ЦІЛЬОВА АУДИТОРІЯ:",
+    "Concept":"КОНЦЕПТ:",
+    "OtherProjects":"Інші проєкти"
+  },
+
   "ContactsPage": {
     "Title": "Контакти",
     "Phone": "НОМЕР ТЕЛЕФОНУ",
