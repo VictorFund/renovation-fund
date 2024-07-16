@@ -34,7 +34,7 @@ const ProjectItem = ({
           {/* <Link href={`/projects/${slug}`} className={styles.btn}>
             Підтримати
           </Link> */}
-          <p className={styles.btn}>Детальніше</p>
+          <p className={styles.btn}>{t('Buttons.Details')}</p>
         </div>
         <figure className={styles.imgContainer}>
           <CldImage

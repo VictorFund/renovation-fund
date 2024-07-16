@@ -27,7 +27,7 @@ export const ProjectsSection = () => {
   return (
     <section className="topSection">
       <div className={`container ${styles.projects}`}>
-        <h1 className={`sectionTitle ${styles.title}`}>Проєкти</h1>
+        <h1 className={`sectionTitle ${styles.title}`}>{!isLoading && t('ProjectsPage.Title')}</h1>
         {isLoading ? (
           <Loader />
         ) : (

@@ -42,8 +42,8 @@
     "Title": "Команда"
   },
 
-  "OurProjectsPage": {
-    "Title": "Наші роботи",
+  "ProjectsPage": {
+    "Title": "Проєкти",
     "NavLinkText": "На сторінку з усіма проєктами",
     "TitleProblem": "Проблема",
     "TitleSolutions": "Рішення",

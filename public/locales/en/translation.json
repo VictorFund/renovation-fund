@@ -40,8 +40,8 @@
   },
 
 
-  "OurProjectsPage": {
-    "Title": "Our Projects",
+  "ProjectsPage": {
+    "Title": "Projects",
     "NavLinkText": "To the page with all projects",
     "TitleProblem": "Problem",
     "TitleSolutions": "Solutions",
