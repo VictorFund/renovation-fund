@@ -39,7 +39,6 @@
     "Title": "The Team"
   },
 
-
   "ProjectsPage": {
     "Title": "Projects"
   },
@@ -107,6 +106,7 @@
     "ContactUs": "Contact us",
     "ToPartners":"Become a partner",
     "ToStatute":"Read the Statute",
+    "SendRequest":"Send a request",
 
     "HomeTeamBtn": "About Team",
     "HomeProjectsBtn": "To portfolio",
@@ -128,9 +128,14 @@
   "Form": {
     "Title": "Fill out the form and we call you very soon",
     "TitleMob": "We call you very soon",
+    
     "Name": "Name",
     "Phone": "Phone",
+    "Email":"Email address",
+    "Subject":"Subject",
     "TextArea": "Briefly describe your wish",
+    "FeedBackFormText":"Choose a messenger for communication",
+
     "FormSubmitedMsg": "Congratulations! Your message has been sent to the manager.",
     "formSubmitedMsg2": "Our manager will contact you shortly.",
     "fieldRequiredMsg": "Fill in this field",

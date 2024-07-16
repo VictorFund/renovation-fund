@@ -6,6 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { feedbackFormSchema } from "@/yupSchemas/feedbackFormShema";
 import { callbackData } from "@/data";
 import Checkboxes from "./Checkboxes";
+import { useTranslation } from "react-i18next";
 
 import styles from "./FormStyles.module.scss";
 
@@ -22,7 +23,7 @@ const FeedbackForm = () => {
         resolver: yupResolver(feedbackFormSchema),
         mode: "onChange",
     };
-
+    const {t}=useTranslation();
     const form = useForm(initialValues);
     const { register, handleSubmit, formState, reset, control } = form;
     const { errors, isSubmitSuccessful, isValid, isSubmitting } = formState;
@@ -61,7 +62,7 @@ const FeedbackForm = () => {
                         <input
                             type='text'
                             {...register("name")}
-                            placeholder='Ім’я'
+                            placeholder={t('Form.Name')}
                             maxLength='30'
                             autoComplete='off'
                             className={
@@ -80,7 +81,7 @@ const FeedbackForm = () => {
                         <input
                             type='text'
                             {...register("tel")}
-                            placeholder='Номер телефона'
+                            placeholder={t('Form.Phone')}
                             maxLength='13'
                             autoComplete='off'
                             className={
@@ -101,7 +102,7 @@ const FeedbackForm = () => {
                         <input
                             type='text'
                             {...register("email")}
-                            placeholder='Адреса електронної пошти'
+                            placeholder={t('Form.Email')}
                             autoComplete='off'
                             className={
                                 errors.email
@@ -119,7 +120,7 @@ const FeedbackForm = () => {
                         <input
                             type='text'
                             {...register("theme")}
-                            placeholder='Тема'
+                            placeholder={t('Form.Subject')}
                             autoComplete='off'
                             className={
                                 errors.theme
@@ -136,7 +137,7 @@ const FeedbackForm = () => {
                     className={`${styles.input} ${styles.textarea}`}
                     cols='30'
                     rows='2'
-                    placeholder='Коротко опишіть ваше побажання'
+                    placeholder={t('Form.TextArea')}
                     {...register("comment")}
                 />
             </div>
@@ -146,7 +147,7 @@ const FeedbackForm = () => {
                         {errors.calback?.message}
                     </p>
                     <p className={styles.checkboxTitle}>
-                        Оберіть мессенджер для зв’язку
+                    {t('Form.FeedBackFormText')}
                     </p>
                     <Checkboxes
                         field={field}
@@ -165,7 +166,7 @@ const FeedbackForm = () => {
                             : styles.submitButton
                     }
                 >
-                    Надіслати заявку
+                    {t('Buttons.SendRequest')}
                 </button>
             </div>
         </form>

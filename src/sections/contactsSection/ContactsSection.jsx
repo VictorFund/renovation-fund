@@ -71,7 +71,7 @@ const ContactsSection = () => {
                     </div>
                 )}
                 <div className={styles.formBox}>
-                    <FeedbackForm />
+                   {!isLoad && <FeedbackForm />}
                     {!isMobile && (
                         <div className={styles.imgWrapper}>
                             <Image
