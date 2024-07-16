@@ -5,4 +5,4 @@ export { navLinks } from "./navLinks";
 export { socialLinks } from "./socialLinks.data.js";
 export { bankAccDetails } from "./bankAccDetails";
 export { callbackData } from "./callbackData";
-export {navFooterLinks} from "./navigation";
+export {footerNav} from "./footerNav";

@@ -14,12 +14,12 @@ const TranslatorBtnBlock = ({ translatorUk, translatorEn }) => {
 
   useEffect(() => {
     const lang = localStorage.getItem("i18nextLng");
-    
+    // console.log(lang)
     setLanguage(() => (lang ? lang : "ua"));
-
+    // setLanguage(() => ( lang=== "ua" ? "ua" : "en"));
     setIsLoad(false);
   
-  }, []);
+  }, [language]);
 
  
   const changeLanguage = (languageUser) => {

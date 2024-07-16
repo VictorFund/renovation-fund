@@ -1,7 +1,7 @@
 "use client"
 import SocialLinks from "../SocialLinks/SocialLinks";
 import FooterLogo from "./FooterLogo";
-import FooterNav from "./FooterNav";
+// import FooterNav from "./FooterNav";
 import FooterNavBlock from "./FooterNavBlock";
 import styles from "./Footer.module.scss";
 import Image from "next/image";

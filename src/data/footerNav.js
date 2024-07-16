@@ -1,4 +1,4 @@
-export const navFooterLinks = [
+export const footerNav = [
     {
       title: "Про фонд",
       titleEn: "About the fund",
@@ -23,13 +23,13 @@ export const navFooterLinks = [
         title: "Новини",
         titleEn: "News",
         href: "/news",
-        id:3
+        id:4
       },
       {
         title: "Реквізити",
         titleEn: "Payment details",
         href: "/donate",
-        id:4
+        id:5
       },
       {
         title: "Звітність",
@@ -37,7 +37,7 @@ export const navFooterLinks = [
         href:"https://drive.google.com/drive/folders/1nSssAqs06TKHyJj2PwsSnqj3smaMMeXu?usp=drive_link",
         target:"_blank",
         rel:"noopener noreferrer",
-        id:5
+        id:6
       },
     {
       title: "Конфіденційність",
@@ -45,7 +45,7 @@ export const navFooterLinks = [
       href: "/documentation/privacy-policy.pdf",
       target: "_blank",
       rel:"noopener noreferrer",
-      id:6
+      id:7
     },
     {
         title: "Оферта",
@@ -53,6 +53,6 @@ export const navFooterLinks = [
         href: "/documentation/public-offer.pdf",
         target: "_blank",
         rel:"noopener noreferrer",
-        id:7
+        id:8
       },
   ];

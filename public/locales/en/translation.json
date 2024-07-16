@@ -15,20 +15,31 @@
 
     
     "ProjectsSectionTitle": "Projects",
-    "NewsSectionTitle": "News",
+    "NewsSectionTitle": "News"
+  },
 
-    "OurProjectsSubTitle": "projects",
-    "OurServicesTitle": "Services",
-    "OurServicesSubTitle": "from landing to large site",
-    "FaqSubTitle": "Find your question here",
-    "OrderSectionTitleMob": "To talk about",
-    "OrderSectionTitleTab": "Let`s talk about",
-    "OrderSectionSubTitle": "your new site!"
+  "MissionPage": {
+    "Title": "Mission and Statute",
+    "SubTitle": "Fond",
+    "SubTitle1":"«Victory and Recovery»",
+    "SubTitle2":" – is about the future. Happy, comfortable and fair.",
+    "Text1":"Charitable Foundation",
+    "Text2":"«Victory and Recovery»",
+    "Text3":" — is a dynamic non-profit organisation committed to rebuilding Ukraine and strengthening its statehood.",
+    "Text4":"We help the Ukrainian people",
+    "Text5":" to achieve victory and create comfortable conditions for everyone. Our main activities are focused on psychosocial support and cultural and educational work, and are open to everyone who needs it.",
+    "Text6":"We work with people",
+    "Text7":", victims of hostilities and those in need of social adaptation, with a particular focus on students and young people, as we believe that psychological support is crucial for the future of the country.",
+    "Text8":"Our projects ",
+    "Text9":"cover scientific and educational activities",
+    "Text10":", promoting health, self-development and self-realisation through social media and public speaking. The Foundation creates platforms for networking, actively invests in the country's victory by organising fundraisers, donations and volunteering to help the state in all necessary areas."
   },
+
   "TeamPage": {
-    "Title": "Team",
-    "SubTitle": "let's get to know those who work for you"
+    "Title": "The Team"
   },
+
+
   "OurProjectsPage": {
     "Title": "Our Projects",
     "NavLinkText": "To the page with all projects",
@@ -78,7 +89,8 @@
     "Contacts":"Contacts",
     "AdressCity":"Kyiv",
     "AdressStreet":"Knyazhyi Zaton street",
-    "WorkDays":"Mon-Fri"
+    "WorkDays":"Mon-Fri",
+    "MenuNav":"Menu"
   },
 
   "Buttons": {
@@ -86,6 +98,7 @@
     "Details": "Details",
     "ContactUs": "Contact us",
     "ToPartners":"Become a partner",
+    "ToStatute":"Read the Statute",
 
     "HomeTeamBtn": "About Team",
     "HomeProjectsBtn": "To portfolio",
