@@ -6,6 +6,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { partnerFormSchema } from "@/yupSchemas/partnerFormShema";
 import Checkboxes from "./Checkboxes";
 import { callbackData } from "@/data";
+import { useTranslation } from "react-i18next";
 
 import styles from "./FormStyles.module.scss";
 
@@ -25,7 +26,7 @@ const PartnerForm = () => {
         resolver: yupResolver(partnerFormSchema),
         mode: "onChange",
     };
-
+    const {t}=useTranslation();
     const form = useForm(initialValues);
     const { register, handleSubmit, formState, reset, control } = form;
     const { errors, isSubmitSuccessful, isValid, isSubmitting } = formState;
@@ -64,7 +65,7 @@ const PartnerForm = () => {
                         <input
                             type='text'
                             {...register("name")}
-                            placeholder='Ім’я'
+                            placeholder={t('Form.Name')}
                             maxLength='30'
                             autoComplete='off'
                             className={
@@ -83,7 +84,7 @@ const PartnerForm = () => {
                         <input
                             type='text'
                             {...register("email")}
-                            placeholder='Адреса електронної пошти'
+                            placeholder={t('Form.Email')}
                             autoComplete='off'
                             className={
                                 errors.email
@@ -103,7 +104,7 @@ const PartnerForm = () => {
                         <input
                             type='text'
                             {...register("address")}
-                            placeholder='Адреса організації'
+                            placeholder={t('Form.Adress')}
                             autoComplete='off'
                             className={
                                 errors.address
@@ -121,7 +122,7 @@ const PartnerForm = () => {
                         <input
                             type='text'
                             {...register("theme")}
-                            placeholder='Тема'
+                            placeholder={t('Form.Subject')}
                             autoComplete='off'
                             className={
                                 errors.theme
@@ -143,7 +144,7 @@ const PartnerForm = () => {
                         <input
                             type='text'
                             {...register("telPersonal")}
-                            placeholder='Номер телефона'
+                            placeholder={t('Form.Phone')}
                             maxLength='13'
                             autoComplete='off'
                             className={
@@ -164,7 +165,7 @@ const PartnerForm = () => {
                         <input
                             type='text'
                             {...register("telOrganization")}
-                            placeholder='Номер телефона організації'
+                            placeholder={t('Form.PhoneOrganization')}
                             maxLength='13'
                             autoComplete='off'
                             className={
@@ -183,7 +184,7 @@ const PartnerForm = () => {
                         <input
                             type='text'
                             {...register("role")}
-                            placeholder='Ваша роль в організації'
+                            placeholder={t('Form.Role')}
                             maxLength='40'
                             autoComplete='off'
                             className={
@@ -201,7 +202,7 @@ const PartnerForm = () => {
                     className={`${styles.input} ${styles.textarea}`}
                     cols='30'
                     rows='2'
-                    placeholder='Коротко опишіть ваше побажання'
+                    placeholder={t('Form.TextArea')}
                     {...register("comment")}
                 />
             </div>
@@ -211,7 +212,7 @@ const PartnerForm = () => {
                         {errors.calback?.message}
                     </p>
                     <p className={styles.checkboxTitle}>
-                        Оберіть мессенджер для зв’язку
+                    {t('Form.FormText')}
                     </p>
                     <Checkboxes
                         field={field}
@@ -230,7 +231,7 @@ const PartnerForm = () => {
                             : styles.submitButton
                     }
                 >
-                    Надіслати заявку
+                    {t('Buttons.SendRequest')}
                 </button>
             </div>
         </form>

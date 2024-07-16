@@ -6,7 +6,6 @@
     "HeroProjectsText":"поточних",
     "HeroProjectsText1":"проектів",
 
-    
     "WorkingProcessSubTitleMob": "Додаткові деталі розробки обговорюються індивідуально",
     "WorkingProcessSubTitleLaptop": "Додаткові деталі розробки обговорюються в індивідуальному порядку",
     
@@ -46,7 +45,6 @@
     "Title": "Проєкти"
   },
 
-  
   "ProjectsIdPage": {
     "DateOfStart": "Початок проекту: ",
     "Target":"Ціль збору",
@@ -66,28 +64,16 @@
   },
 
   "NewsPage":{
-    "Title":"Новини"
+    "Title":"Новини",
+    "Details":"Детальніше"
   },
 
-  "ServicesPage": {
-    "Title": "Послуги",
-    "SubTitle1": "обирайте",
-    "SubTitle2": "найкращу",
-    "SubTitle3": "пропозицію для Вашого бізнесу"
+  "PartnersPage":{
+    "Title":"Партнерство",
+    "SubTitle":"Стати партнером",
+    "Details":"Детальніше"
   },
-  "ServiceIdPage": {
-    "SubTitle1": "Обирайте",
-    "SubTitle2": "найкращу",
-    "SubTitle3": "пропозицію для Вашого бізнесу:",
-    "BackToServicesBtn": "До усіх послуг"
-  },
-  
-  "BlogIdPage": {
-    "SubTitle": "Також вам буде цікаво:",
-    "NotFound": "Блог не знайдено",
-    "NotFoundTitleBtn": "До усіх блогів",
-    "NavBtn": "На сторінку з усіма статтями"
-  },
+
   "NotFoundPage": {
     "NotFoundTitle": "Сторінка не знайдена",
     "NotFoundTitleBtn": "На головну"
@@ -107,32 +93,19 @@
     "ContactUs": "Зв’яжись з нами",
     "ToPartners":"Стати партнером",
     "ToStatute":"Ознайомитись зі Статутом",
-    "SendRequest":"Надіслати заявку",
-
-    "HomeTeamBtn": "Про Команду",
-    "HomeProjectsBtn": "До портфоліо",
-    "ServicesDetailsBtn": "Детальніше",
-    "HomeFaqBtn": "Детальніше",
-    "ServiceCardOrderBtn": "Замовити",
-    "FormOrderBtn": "Замовити дзвінок",
-    "ProjectDetailsBtn": "Детальніше",
-    "ProjectOpenSiteBtn": "Відкрити сайт",
-    "CardDetailsBtn": "Детальніше",
-    "CloseBtn": "Закрити",
-    "FilterBtn": "Шукати",
-    "FilterClear": "Очистити",
-    "OpenFilterBtn": "Фільтр",
-    "CloseFilterBtn": "Сховати",
-    "Submit": "Пiдтвердити"
+    "SendRequest":"Надіслати заявку"
   },
 
   "Form": {
     "Name": "Ім’я",
     "Phone": "Номер телефону",
+    "PhoneOrganization":"Номер телефона організації",
     "Email":"Адреса електронної пошти",
+    "Adress":"Адреса організації",
+    "Role":"Your role in the organization",
     "Subject":"Тема",
     "TextArea": "Коротко опишіть Ваше побажання",
-    "FeedBackFormText":"Оберіть мессенджер для зв’язку",
+    "FormText":"Оберіть мессенджер для зв’язку",
 
     "FormSubmitedMsg": "Вітаємо! Ваше повідомлення відправлено менеджеру.",
     "fieldRequiredMsg": "Заповніть це поле",
@@ -143,6 +116,7 @@
     "errorNumberOfObject3": "Тільки цифри",
     "errorTooManySpases": "Забагато пробілів"
   },
+
   "formErrors": {
     "name": "Невірно введене ім’я",
     "phone": "Номер телефону",

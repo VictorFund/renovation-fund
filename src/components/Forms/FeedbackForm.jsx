@@ -147,7 +147,7 @@ const FeedbackForm = () => {
                         {errors.calback?.message}
                     </p>
                     <p className={styles.checkboxTitle}>
-                    {t('Form.FeedBackFormText')}
+                    {t('Form.FormText')}
                     </p>
                     <Checkboxes
                         field={field}

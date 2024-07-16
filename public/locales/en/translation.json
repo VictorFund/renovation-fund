@@ -13,7 +13,6 @@
     "AboutSectionText1":"The main activity",
     "AboutSectionText2":"of the charitable organization is, first of all, psychosocial support and cultural and educational activities for everyone who feels the need and is interested in it.",
 
-    
     "ProjectsSectionTitle": "Projects",
     "NewsSectionTitle": "News"
   },
@@ -61,32 +60,16 @@
   },
 
   "NewsPage":{
-    "Title":"News"
+    "Title":"News",
+    "Details":"Details"
   },
 
-  "ServicesPage": {
-    "Title": "Services",
-    "SubTitle1": "choose",
-    "SubTitle2": "the best",
-    "SubTitle3": "deal for your business"
+  "PartnersPage":{
+    "Title":"Partnership",
+    "SubTitle":"Become a partner",
+    "Details":"Details"
   },
-  "ServiceIdPage": {
-    "SubTitle1": "Choose",
-    "SubTitle2": "the best",
-    "SubTitle3": "deal for your business:",
-    "BackToServicesBtn": "To all services"
-  },
-  "BlogPage": {
-    "GenSubTitle": "Blog",
-    "SubTitle": "here is you can read useful articles",
-    "NoArticles": "No articles found!!"
-  },
-  "BlogIdPage": {
-    "SubTitle": "You will also be interested in:",
-    "NotFound": "Blog not found",
-    "NotFoundTitleBtn": "To all blogs",
-    "NavBtn": "To page with all articles"
-  },
+
   "NotFoundPage": {
     "NotFoundTitle": "Page not found",
     "NotFoundTitleBtn": "Home"
@@ -106,35 +89,19 @@
     "ContactUs": "Contact us",
     "ToPartners":"Become a partner",
     "ToStatute":"Read the Statute",
-    "SendRequest":"Send a request",
-
-    "HomeTeamBtn": "About Team",
-    "HomeProjectsBtn": "To portfolio",
-    "ServicesDetailsBtn": "Read more",
-    "HomeFaqBtn": "Read more",
-    "ServiceCardOrderBtn": "Order",
-    "FormOrderBtn": "Order call from manager",
-    "ProjectDetailsBtn": "Read more",
-    "ProjectOpenSiteBtn": "Open site",
-    "CardDetailsBtn": "Read more",
-    "CloseBtn": "Close",
-    "FilterBtn": "Find",
-    "FilterClear": "Clear",
-    "OpenFilterBtn": "Filter",
-    "CloseFilterBtn": "Close",
-    "LogOutBtn": "LogOut",
-    "Submit": "Submit"
+    "SendRequest":"Send a request"
   },
+
   "Form": {
-    "Title": "Fill out the form and we call you very soon",
-    "TitleMob": "We call you very soon",
-    
     "Name": "Name",
     "Phone": "Phone",
+    "PhoneOrganization":"Telephone of the organization",
     "Email":"Email address",
+    "Adress":"Address of the organization",
+    "Role":"Your role in the organization",
     "Subject":"Subject",
     "TextArea": "Briefly describe your wish",
-    "FeedBackFormText":"Choose a messenger for communication",
+    "FormText":"Choose a messenger for communication",
 
     "FormSubmitedMsg": "Congratulations! Your message has been sent to the manager.",
     "formSubmitedMsg2": "Our manager will contact you shortly.",
