@@ -105,7 +105,7 @@
 
     "FormSubmitedMsg": "Congratulations! Your message has been sent to the manager.",
     "formSubmitedMsg2": "Our manager will contact you shortly.",
-    "fieldRequiredMsg": "Fill in this field",
+    "FieldRequiredMsg": "Fill in this field",
     "errorShortName": "The name should be longer",
     "errorLongName": "The name should be shorter",
     "errorNumberOfObject": "There's no such number",
