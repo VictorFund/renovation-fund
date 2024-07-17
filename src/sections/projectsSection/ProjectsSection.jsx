@@ -13,7 +13,6 @@ import { currentLanguages } from '@/data';
 
 export const ProjectsSection = () => {
   const [activeTab, setActiveTab] = useState('Поточний');
-  // const [activeTab, setActiveTab] = useState('');
   const { data, isLoading } = GetDataWithPathname();
 
   const { i18n, t } = useTranslation();
@@ -27,7 +26,9 @@ export const ProjectsSection = () => {
   return (
     <section className="topSection">
       <div className={`container ${styles.projects}`}>
-        <h1 className={`sectionTitle ${styles.title}`}>{!isLoading && t('ProjectsPage.Title')}</h1>
+        <h1 className={`sectionTitle ${styles.title}`}>
+          {!isLoading && t('ProjectsPage.Title')}
+        </h1>
         {isLoading ? (
           <Loader />
         ) : (
@@ -63,7 +64,7 @@ export const ProjectsSection = () => {
                   image,
                   shortDescription,
                   shortDescriptionEn,
-                  createdAt,
+                  startDate,
                 }) => {
                   if (isApproved) {
                     return (
@@ -75,7 +76,7 @@ export const ProjectsSection = () => {
                         image={image}
                         shortDescription={shortDescription}
                         shortDescriptionEn={shortDescriptionEn}
-                        createdAt={createdAt}
+                        startDate={startDate}
                       />
                     );
                   }
