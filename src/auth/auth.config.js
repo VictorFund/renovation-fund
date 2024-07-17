@@ -14,9 +14,11 @@ export const authConfig = {
         },
         //обновляет session, если есть token
         async session({ session, token }) {
+
             if (token) {
                 session.user.isAdmin = token.isAdmin;
             }
+
             return session;
         },
 
@@ -28,8 +30,6 @@ export const authConfig = {
 
             const isOnPrincipalPages = request.nextUrl?.pathname.startsWith('/dashboard/users');
             const isOnAdminPages = request.nextUrl?.pathname.startsWith('/dashboard/news') || request.nextUrl?.pathname.startsWith('/dashboard/partnership') || request.nextUrl?.pathname.startsWith('/dashboard/projects') || request.nextUrl?.pathname.startsWith('/dashboard/team') || request.nextUrl?.pathname.startsWith('/dashboard/users')
-            // проверить нужен ли сверху "/dashboard/users" ?
-            // const isOnAdminPages = request.nextUrl?.pathname.startsWith('/dashboard/news') || request.nextUrl?.pathname.startsWith('/dashboard/partnership') || request.nextUrl?.pathname.startsWith('/dashboard/projects') || request.nextUrl?.pathname.startsWith('/dashboard/team')
             const isOnAuthPages = request.nextUrl?.pathname.endsWith('login') || request.nextUrl?.pathname.endsWith('register');
             const isOnMainDashboard = request.nextUrl?.pathname.endsWith('dashboard');
 

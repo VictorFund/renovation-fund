@@ -21,8 +21,8 @@ const PartnershipSection = () => {
     return (
         <section className='topSection'>
             <div className={`container`}>
-                <h1 className={`sectionTitle ${styles.title}`}>Партнерство</h1>
-
+                <h1 className={`sectionTitle ${styles.title}`}>{!isLoading && t('PartnersPage.Title')}</h1>
+                
                 {isLoading ? (
                     <Loader />
                 ) : (
@@ -78,7 +78,7 @@ const PartnershipSection = () => {
                                                             }
                                                         >
                                                             <span>
-                                                                Детальніше
+                                                                {t('PartnersPage.Details')}
                                                             </span>
                                                             <svg
                                                                 className={
@@ -153,10 +153,10 @@ const PartnershipSection = () => {
                 )}
 
                 <h2 className={`sectionTitle ${styles.titleForm}`}>
-                    Стати партнером
+                {!isLoading && t('PartnersPage.SubTitle')}
                 </h2>
                 <div className={styles.formBox}>
-                    <PartnerForm />
+                    {!isLoading && <PartnerForm />}
                     {!isMobile && (
                         <div className={styles.imgWrapper}>
                             <Image

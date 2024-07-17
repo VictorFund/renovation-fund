@@ -4,11 +4,15 @@ import ButtonLink from '@/components/Buttons/ButtonLink/ButtonLink';
 import SocialLinks from '@/components/SocialLinks/SocialLinks';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import {useTranslation} from 'react-i18next';
 import styles from './heroSection.module.scss';
 
 const HeroSection = () => {
+  const {t}= useTranslation();
+  const [isLoad, setIsLoad]=useState(true)
   const [isSmallScreenImg, setIsSmallScreenImg] = useState(false);
   useEffect(() => {
+  setIsLoad(false)
     const handleResize = () => {
       setIsSmallScreenImg(window.innerWidth < 1024);
     };
@@ -17,30 +21,30 @@ const HeroSection = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+      }, []);
   return (
     <section className="topSection">
       <div className={`container ${styles.hero}`}>
         <h1 className={styles.title}>
-          <span>Спільними зусиллями</span>{' '}
-          <span className={styles.titleItem}>відбудуємо країну</span>
+          {!isLoad && <><span>{t('MainPage.HeroTitle')}</span>{' '}
+          <span className={styles.titleItem}>{t('MainPage.HeroTitle1')}</span></>}
         </h1>
-        <h3 className={styles.heroSubtitle + ' ' + styles.heroSubtitleMini}>
-          Благодійний фонд «Перемоги та Відновлення»
-        </h3>
+        {!isLoad && <h3 className={styles.heroSubtitle + ' ' + styles.heroSubtitleMini}>
+          {t('MainPage.HeroSubTitle')}
+        </h3>}
         <div className={styles.heroContainer}>
           <div className={styles.contentContainer}>
-            <h3 className={styles.heroSubtitle + ' ' + styles.heroSubtitleMaxi}>
-              Благодійний фонд «Перемоги та Відновлення»
-            </h3>
+          {!isLoad && <h3 className={styles.heroSubtitle + ' ' + styles.heroSubtitleMaxi}>
+          {t('MainPage.HeroSubTitle')}
+            </h3>}
             <div className={styles.currentProjects}>
               <p className={styles.projectsNumber}>2</p>
               <svg className={styles.svgPluse}>
                 <use href="/sprite.svg#icon-plus" />
               </svg>
               <p className={styles.projectsGroup}>
-                <span>поточних</span>{' '}
-                <span className={styles.projectsGroupItem}>проектів</span>
+                {!isLoad && <><span>{t('MainPage.HeroProjectsText')}</span>{' '}
+                <span className={styles.projectsGroupItem}>{t('MainPage.HeroProjectsText1')}</span></>}
               </p>
             </div>
             <SocialLinks costumSvg={styles.socialLinks} />
@@ -60,7 +64,7 @@ const HeroSection = () => {
               <ButtonLink
                 customBtn={styles.customBtn}
                 href="/donate"
-                title="Підтримати"
+                title={!isLoad && t("Buttons.Donate")}
               />
             </div>
           </div>

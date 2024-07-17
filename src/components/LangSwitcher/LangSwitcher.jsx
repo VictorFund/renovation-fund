@@ -1,12 +1,14 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import styles from "./LangSwitcher.module.scss";
+import { useState, useEffect } from 'react';
+import styles from './LangSwitcher.module.scss';
 
-const LangSwitcher = ({ id, changeLanguage,
-  currentLanguage, }) => {
-
+const LangSwitcher = ({ changeLanguage, currentLanguage }) => {
   const [isClicked, setIsClicked] = useState(false);
+  //  const[lang,setLang]=useState()
+  // useEffect(()=>{
+  //   setLang(()=>currentLanguage==="en"? "ua" : "en")
+  // },[])
 
   return (
     <div
@@ -14,7 +16,7 @@ const LangSwitcher = ({ id, changeLanguage,
       onClick={() => {
         setIsClicked(!isClicked);
       }}
-      id={id}
+      // id={id}
     >
       <p className={`${styles.currentLang}`}>{currentLanguage}</p>
 
@@ -22,9 +24,10 @@ const LangSwitcher = ({ id, changeLanguage,
         className={
           isClicked ? `${styles.lang} ${styles.isClicked}` : `${styles.lang}`
         }
-        onClick={()=> changeLanguage(currentLanguage==="ua" ?"en" : "ua")}
+        onClick={() => changeLanguage(currentLanguage === 'ua' ? 'en' : 'ua')}
       >
-        {currentLanguage==="en"? "ua" : "en"}
+        {currentLanguage === 'en' ? 'ua' : 'en'}
+        {/* {lang} */}
       </p>
     </div>
   );

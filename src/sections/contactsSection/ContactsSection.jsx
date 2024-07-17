@@ -1,19 +1,29 @@
 "use client";
 
 import Image from "next/image";
-import { contactsData } from "@/data/contactsData";
+import { contactsData, currentLanguages } from "@/data";
 import { useWindowResize } from "@/hooks/useWindowResize";
+import { useState, useEffect } from "react";
 import FeedbackForm from "@/components/Forms/FeedbackForm";
-
+import { useTranslation } from "react-i18next";
 import styles from "./ContactSection.module.scss";
 
 const ContactsSection = () => {
     const { isMobile, isDesktop } = useWindowResize();
+    
+    const [isLoad,setIsLoad]=useState(true);
+
+    const {i18n,t}=useTranslation();
+
+    useEffect(()=>{
+        setIsLoad(false)
+    },[])
+
     return (
         <section className='topSection'>
             <div className={`container ${styles.contactWrap}`}>
                 <h1 className={`sectionTitle ${styles.contactTitle}`}>
-                    Контакти
+                    {!isLoad && t('ContactsPage.Title')}
                 </h1>
                 <div className={styles.contactBox}>
                     <iframe
@@ -34,9 +44,9 @@ const ContactsSection = () => {
                                             href={`/sprite.svg#${data.src}`}
                                         ></use>
                                     </svg>
-                                    <p className={styles.contactText}>
-                                        {data.text}
-                                    </p>
+                                    {!isLoad && <p className={styles.contactText}>
+                                        {i18n.language===currentLanguages.EN && data.textEn ? data.textEn : data.text}
+                                    </p>}
                                 </a>
                             </li>
                         ))}
@@ -45,17 +55,11 @@ const ContactsSection = () => {
                 {isDesktop && (
                     <div className={styles.descriptionBox}>
                         <p className={styles.description}>
-                            {` Для зв'язку з нами зателефонуйте за телефоном, або
-                            напишіть нам на електронну адресу, і ми зв'яжемось з
-                            вами якнайшвидше!`}
+                            {!isLoad && t('ContactsPage.Text')}
                         </p>
 
                         <p className={styles.description}>
-                            Перед здійсненням дзвінка або зверненням на
-                            електронну адресу, будь ласка, ознайомтесь з
-                            політикою конфіденційності! Наш договір публічної
-                            оферти та політика конфіденційності знаходяться за
-                            посиланням:{" "}
+                            {!isLoad && t('ContactsPage.PrivacyPolicy')}{" "}
                             <a
                                 href='http://surl.li/tleax'
                                 className={styles.descriptionLink}
@@ -67,7 +71,7 @@ const ContactsSection = () => {
                     </div>
                 )}
                 <div className={styles.formBox}>
-                    <FeedbackForm />
+                   {!isLoad && <FeedbackForm />}
                     {!isMobile && (
                         <div className={styles.imgWrapper}>
                             <Image

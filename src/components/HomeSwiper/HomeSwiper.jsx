@@ -60,7 +60,12 @@ const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
                     <h4 className="title">
                       {isLangEn ? el.titleEn : el.title}
                     </h4>
-                    {isMobile && <p className="createdAt">{formattedDate}</p>}
+                    {dataName === "news" && isMobile && (
+                      <p className="createdAt">{formattedDate}</p>
+                    )}
+                    {dataName === "projects" && isMobile && el?.startDate && (
+                      <p className="createdAt">{el.startDate}</p>
+                    )}
                     {!isMobile && (
                       <>
                         <p className="descr">

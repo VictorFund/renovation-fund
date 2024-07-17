@@ -52,23 +52,3 @@ export const PUT = async (request, { params }) => {
         return new NextResponse(error, { status: 500 });
     }
 };
-
-
-export const PATCH = async (request, { params }) => {
-    const { slug } = params;
-    const incomingData = await request.json();
-
-    try {
-        await connectToDB();
-
-        const updatedNews = await News.findOneAndUpdate({ slug }, incomingData);
-
-        if (!updatedNews) {
-            return new NextResponse("News not found", { status: 404 });
-        }
-        return new NextResponse("News has been updated", { status: 200 });
-
-    } catch (error) {
-        return new NextResponse(error, { status: 500 });
-    }
-};

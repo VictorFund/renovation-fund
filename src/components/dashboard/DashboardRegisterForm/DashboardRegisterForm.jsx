@@ -8,6 +8,7 @@ import styles from '../DashboardComponents.module.scss'
 
 
 const DashboardRegisterForm = () => {
+    // for visualization of errors
     const [state, formAction] = useFormState(register, undefined);
 
     const router = useRouter();

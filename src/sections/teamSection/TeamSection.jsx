@@ -20,7 +20,7 @@ const TeamSection = () => {
   return (
     <section className="topSection">
       <div className={`container ${styles.team}`}>
-        <h1 className={`sectionTitle ${styles.title}`}>Команда</h1>
+        <h1 className={`sectionTitle ${styles.title}`}>{!isLoading && t('TeamPage.Title')}</h1>
         {isLoading ? (
           <Loader />
         ) : (
