@@ -19,7 +19,7 @@ const TranslatorBtnBlock = ({ translatorUk, translatorEn }) => {
     // setLanguage(() => ( lang=== "ua" ? "ua" : "en"));
     setIsLoad(false);
   
-  }, [language]);
+  }, []);
 
  
   const changeLanguage = (languageUser) => {
@@ -35,8 +35,8 @@ const TranslatorBtnBlock = ({ translatorUk, translatorEn }) => {
         <LangSwitcher
           changeLanguage={changeLanguage}
           currentLanguage={language}
-          translatorUk={translatorUk}
-          translatorEn={translatorEn}
+          // translatorUk={translatorUk}
+          // translatorEn={translatorEn}
         />
       )}
     </>

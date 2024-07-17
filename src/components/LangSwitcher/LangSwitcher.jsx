@@ -3,7 +3,7 @@
 import { useState } from "react";
 import styles from "./LangSwitcher.module.scss";
 
-const LangSwitcher = ({ id, changeLanguage,
+const LangSwitcher = ({ changeLanguage,
   currentLanguage, }) => {
 
   const [isClicked, setIsClicked] = useState(false);
@@ -14,7 +14,7 @@ const LangSwitcher = ({ id, changeLanguage,
       onClick={() => {
         setIsClicked(!isClicked);
       }}
-      id={id}
+      // id={id}
     >
       <p className={`${styles.currentLang}`}>{currentLanguage}</p>
 
