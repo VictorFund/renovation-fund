@@ -9,7 +9,6 @@ import {
   GetDataWithPathname,
 } from '@/fetch/clientFetch';
 import { changeStringTypeToArray } from '@/utils/changeStringTypeToArray';
-import { formatDate } from '@/utils/formatDate';
 import { CldImage } from 'next-cloudinary';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -27,8 +26,6 @@ const ProjectIdSection = () => {
   if (!isLoading) {
     changedData = changeStringTypeToArray(data);
   }
-
-  const formattedDate = formatDate(changedData?.createdAt);
 
   useEffect(() => {
     if (!projectlist?.isLoading && !projectlist?.error) {
@@ -63,10 +60,12 @@ const ProjectIdSection = () => {
                 ? changedData?.titleEn
                 : changedData?.title}
             </h1>
-            <p className={styles.date}>
-              {t('ProjectsIdPage.DateOfStart')}
-              {formattedDate}
-            </p>
+            {data?.startDate && (
+              <p className={styles.date}>
+                {t('ProjectsIdPage.DateOfStart')}
+                {data?.startDate}
+              </p>
+            )}
             <div
               className={`${styles.contentContainer} ${styles.blockIndentation}`}
             >

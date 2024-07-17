@@ -1,5 +1,4 @@
 import { currentLanguages } from '@/data';
-import { formatDate } from '@/utils/formatDate';
 import { CldImage } from 'next-cloudinary';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
@@ -12,10 +11,8 @@ const ProjectItem = ({
   image,
   shortDescription,
   shortDescriptionEn,
-  createdAt,
+  startDate,
 }) => {
-  const formattedDate = formatDate(createdAt);
-
   const { i18n, t } = useTranslation();
 
   return (
@@ -25,15 +22,12 @@ const ProjectItem = ({
           <h4 className={styles.projectTitle}>
             {i18n.language === currentLanguages.EN ? titleEn : title}
           </h4>
-          <p className={styles.date}>{formattedDate}</p>
+          {startDate && <p className={styles.date}>{startDate}</p>}
           <p className={styles.projectDesc}>
             {i18n.language === currentLanguages.EN
               ? shortDescriptionEn
               : shortDescription}
           </p>
-          {/* <Link href={`/projects/${slug}`} className={styles.btn}>
-            Підтримати
-          </Link> */}
           <p className={styles.btn}>{t('Buttons.Details')}</p>
         </div>
         <figure className={styles.imgContainer}>
