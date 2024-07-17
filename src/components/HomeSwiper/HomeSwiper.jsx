@@ -13,6 +13,7 @@ import { formatDate } from "@/utils/formatDate";
 import { useTranslation } from "react-i18next";
 import { currentLanguages } from "@/data";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
   const [isLoad, setIsLoad] = useState(true);
@@ -54,7 +55,7 @@ const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
 
             return (
               <SwiperSlide key={el.slug}>
-                <div className="wrapp">
+                <Link href={`/${dataName}/${el.slug}`} className="wrapp">
                   <div className="txtWrapp">
                     <h4 className="title">
                       {isLangEn ? el.titleEn : el.title}
@@ -95,7 +96,7 @@ const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
-                </div>
+                </Link>
               </SwiperSlide>
             );
           })}
