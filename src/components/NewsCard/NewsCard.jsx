@@ -43,7 +43,7 @@ const NewsCard = ({ data }) => {
                 <h4 className={`regularText ${styles.title}`}>{i18n.language === currentLanguages.EN ? titleEn : title}</h4>
 
                 <Link href={`/news/${slug}`} className={styles.btn}>
-                    Детальніше
+                    {t('Buttons.Details')}
                 </Link>
             </li>
         </>

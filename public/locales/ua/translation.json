@@ -6,7 +6,6 @@
     "HeroProjectsText":"поточних",
     "HeroProjectsText1":"проектів",
 
-    
     "WorkingProcessSubTitleMob": "Додаткові деталі розробки обговорюються індивідуально",
     "WorkingProcessSubTitleLaptop": "Додаткові деталі розробки обговорюються в індивідуальному порядку",
     
@@ -46,7 +45,6 @@
     "Title": "Проєкти"
   },
 
-  
   "ProjectsIdPage": {
     "DateOfStart": "Початок проекту: ",
     "Target":"Ціль збору",
@@ -61,29 +59,21 @@
 
   "ContactsPage": {
     "Title": "Контакти",
-    "Phone": "НОМЕР ТЕЛЕФОНУ",
-    "Email": "ПОШТА",
-    "Social": "СОЦІАЛЬНІ МЕРЕЖІ"
+    "PrivacyPolicy":"Перед здійсненням дзвінка або зверненням на електронну адресу, будь ласка, ознайомтесь з політикою конфіденційності! Наш договір публічної оферти та політика конфіденційності знаходяться за посиланням:",
+    "Text": "` Для зв'язку з нами зателефонуйте за телефоном, або напишіть нам на електронну адресу, і ми зв'яжемось з вами якнайшвидше!`"
   },
-  "ServicesPage": {
-    "Title": "Послуги",
-    "SubTitle1": "обирайте",
-    "SubTitle2": "найкращу",
-    "SubTitle3": "пропозицію для Вашого бізнесу"
+
+  "NewsPage":{
+    "Title":"Новини",
+    "Details":"Детальніше"
   },
-  "ServiceIdPage": {
-    "SubTitle1": "Обирайте",
-    "SubTitle2": "найкращу",
-    "SubTitle3": "пропозицію для Вашого бізнесу:",
-    "BackToServicesBtn": "До усіх послуг"
+
+  "PartnersPage":{
+    "Title":"Партнерство",
+    "SubTitle":"Стати партнером",
+    "Details":"Детальніше"
   },
-  
-  "BlogIdPage": {
-    "SubTitle": "Також вам буде цікаво:",
-    "NotFound": "Блог не знайдено",
-    "NotFoundTitleBtn": "До усіх блогів",
-    "NavBtn": "На сторінку з усіма статтями"
-  },
+
   "NotFoundPage": {
     "NotFoundTitle": "Сторінка не знайдена",
     "NotFoundTitleBtn": "На головну"
@@ -103,31 +93,22 @@
     "ContactUs": "Зв’яжись з нами",
     "ToPartners":"Стати партнером",
     "ToStatute":"Ознайомитись зі Статутом",
-
-    "HomeTeamBtn": "Про Команду",
-    "HomeProjectsBtn": "До портфоліо",
-    "ServicesDetailsBtn": "Детальніше",
-    "HomeFaqBtn": "Детальніше",
-    "ServiceCardOrderBtn": "Замовити",
-    "FormOrderBtn": "Замовити дзвінок",
-    "ProjectDetailsBtn": "Детальніше",
-    "ProjectOpenSiteBtn": "Відкрити сайт",
-    "CardDetailsBtn": "Детальніше",
-    "CloseBtn": "Закрити",
-    "FilterBtn": "Шукати",
-    "FilterClear": "Очистити",
-    "OpenFilterBtn": "Фільтр",
-    "CloseFilterBtn": "Сховати",
-    "Submit": "Пiдтвердити"
+    "SendRequest":"Надіслати заявку"
   },
+
   "Form": {
-    "Title": "Заповніть форму і ми зателефонуємо Вам",
-    "TitleMob": "Ми зателефонуємо Вам",
     "Name": "Ім’я",
     "Phone": "Номер телефону",
+    "PhoneOrganization":"Номер телефона організації",
+    "Email":"Адреса електронної пошти",
+    "Adress":"Адреса організації",
+    "Role":"Ваша роль в організації",
+    "Subject":"Тема",
     "TextArea": "Коротко опишіть Ваше побажання",
+    "FormText":"Оберіть мессенджер для зв’язку",
+
     "FormSubmitedMsg": "Вітаємо! Ваше повідомлення відправлено менеджеру.",
-    "fieldRequiredMsg": "Заповніть це поле",
+    "FieldRequiredMsg": "Заповніть це поле",
     "errorShortName": "Ім’я має бути довшим",
     "errorLongName": "Ім’я має бути коротшим",
     "errorNumberOfObject": "Такого номеру немає",
@@ -135,6 +116,7 @@
     "errorNumberOfObject3": "Тільки цифри",
     "errorTooManySpases": "Забагато пробілів"
   },
+
   "formErrors": {
     "name": "Невірно введене ім’я",
     "phone": "Номер телефону",

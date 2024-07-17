@@ -4,6 +4,7 @@ export const contactsData = [
         src: "map-pin-outline",
         href: "https://maps.app.goo.gl/XpKyGJXVGBzfz7668",
         text: "просп. Науки, 60, Голосіївський район, м. Київ, Україна",
+        textEn:"60 Nauky Avenue, Holosiivskyi district, Kyiv, Ukraine"
     },
     {
         id: 2,
