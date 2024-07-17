@@ -151,6 +151,7 @@
   &:hover,
   &:focus {
     color: $hoverBtnColor;
+    -webkit-text-stroke: 0.5px $hoverBtnColor;
     &::after {
       width: 100%;
     }
@@ -187,7 +188,9 @@
 .subMenuWrapp {
   height: 0;
   overflow: hidden;
+
   top: 100%;
+  left: -24px;
 
   @media screen and (min-width: $desktop) {
     position: absolute;
@@ -222,7 +225,7 @@
   &:hover,
   &:focus {
     color: $hoverBtnColor;
-    font-weight: 500;
+    -webkit-text-stroke: 0.5px $hoverBtnColor;
   }
   @media screen and (min-width: $desktop) {
     padding: 16px 24px;
