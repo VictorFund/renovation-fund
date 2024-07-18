@@ -8,7 +8,7 @@ export const socialLinks = [
   {
     id: 2,
     src: "icon-WhatsApp",
-    href: "#",
+    href: "https://wa.me/380503738465",
     title: "WhatsApp",
   },
   {
@@ -23,10 +23,4 @@ export const socialLinks = [
     href: "https://www.instagram.com/pvfond/",
     title: "instagram",
   },
-  // {
-  //   id: 5,
-  //   src: "icon-viber",
-  //   href: "#",
-  //   title: "viber",
-  // },
 ];
