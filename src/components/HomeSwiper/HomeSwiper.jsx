@@ -55,7 +55,7 @@ const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
 
             return (
               <SwiperSlide key={el.slug}>
-                <Link href={`/${dataName}/${el.slug}`} className="wrapp">
+                <div href={`/${dataName}/${el.slug}`} className="wrapp">
                   <div className="txtWrapp">
                     <h4 className="title">
                       {isLangEn ? el.titleEn : el.title}
@@ -101,7 +101,7 @@ const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
-                </Link>
+                </div>
               </SwiperSlide>
             );
           })}

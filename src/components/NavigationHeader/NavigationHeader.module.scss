@@ -15,7 +15,8 @@
   gap: 64px;
   transform: translateX(100%);
   padding: 16px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
 
   &::after {
     content: url("../../../public/images/pattern.webp");
@@ -63,12 +64,12 @@
   }
 
   @media screen and (orientation: landscape) and (max-height: $laptop) {
-    overflow: scroll;
+    overflow-y: scroll;
   }
 }
 
 .headerNavBurgerActiveMenu {
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .mobMenuHeader {
@@ -104,18 +105,13 @@
 .navItem {
   display: flex;
   gap: 0;
-  transform: translateX(25%);
+  margin-left: 10vw;
 
   & a {
     background-color: transparent;
   }
-  @media screen and (min-width: $mobile) {
+  @media screen and (min-width: 440px) {
     width: 60%;
-    transform: translateX(50%);
-  }
-
-  @media screen and (min-width: $tablet) {
-    transform: translateX(0%);
     margin-left: auto;
   }
 
