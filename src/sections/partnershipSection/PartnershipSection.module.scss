@@ -88,14 +88,18 @@
   font-size: 16px;
   text-align: center;
   color: $textColor;
+
+  line-height: 1.2;
+  overflow: hidden;
+
   @media screen and (min-width: $tablet) {
     font-weight: 400;
     font-size: 32px;
   }
 
-  @media screen and (min-width: $desktop) {
-    font-size: 40px;
-  }
+  // @media screen and (min-width: $desktop) {
+  //   font-size: 40px;
+  // }
 }
 
 .btn {
