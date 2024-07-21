@@ -2,107 +2,95 @@
   "MainPage": {
     "HeroTitle": "Together we",
     "HeroTitle1": "will rebuild the country",
-    "HeroSubTitle":"Charitable Foundation «Victory and Recovery»",
-    "HeroProjectsText":"current",
-    "HeroProjectsText1":"projects",
-    
+    "HeroSubTitle": "Charitable Foundation «Victory and Recovery»",
+    "HeroProjectsText": "current",
+    "HeroProjectsText1": "projects",
     "AboutSectionTitle": "About the Fund*",
-    "AboutSectionTitleText":"Charitable Foundation",
-    "AboutSectionTitleText1":"«Victory and Recovery»",
+    "AboutSectionTitleText": "Charitable Foundation",
+    "AboutSectionTitleText1": "«Victory and Recovery»",
     "AboutSectionText": "- is a non-profit organization whose goal and mission is to restore Ukraine and strengthen its statehood. To contribute to the victory of the Ukrainian people and to provide effective, high-quality and, most importantly, comfortable conditions for every person.",
-    "AboutSectionText1":"The main activity",
-    "AboutSectionText2":"of the charitable organization is, first of all, psychosocial support and cultural and educational activities for everyone who feels the need and is interested in it.",
-
+    "AboutSectionText1": "The main activity",
+    "AboutSectionText2": "of the charitable organization is, first of all, psychosocial support and cultural and educational activities for everyone who feels the need and is interested in it.",
     "ProjectsSectionTitle": "Projects",
     "NewsSectionTitle": "News"
   },
-
   "MissionPage": {
     "Title": "Mission and Statute",
     "SubTitle": "Fond",
-    "SubTitle1":"«Victory and Recovery»",
-    "SubTitle2":" – is about the future. Happy, comfortable and fair.",
-    "Text1":"Charitable Foundation",
-    "Text2":"«Victory and Recovery»",
-    "Text3":" — is a dynamic non-profit organisation committed to rebuilding Ukraine and strengthening its statehood.",
-    "Text4":"We help the Ukrainian people",
-    "Text5":" to achieve victory and create comfortable conditions for everyone. Our main activities are focused on psychosocial support and cultural and educational work, and are open to everyone who needs it.",
-    "Text6":"We work with people",
-    "Text7":", victims of hostilities and those in need of social adaptation, with a particular focus on students and young people, as we believe that psychological support is crucial for the future of the country.",
-    "Text8":"Our projects ",
-    "Text9":"cover scientific and educational activities",
-    "Text10":", promoting health, self-development and self-realisation through social media and public speaking. The Foundation creates platforms for networking, actively invests in the country's victory by organising fundraisers, donations and volunteering to help the state in all necessary areas."
+    "SubTitle1": "«Victory and Recovery»",
+    "SubTitle2": " – is about the future. Happy, comfortable and fair.",
+    "Text1": "Charitable Foundation",
+    "Text2": "«Victory and Recovery»",
+    "Text3": " — is a dynamic non-profit organisation committed to rebuilding Ukraine and strengthening its statehood.",
+    "Text4": "We help the Ukrainian people",
+    "Text5": " to achieve victory and create comfortable conditions for everyone. Our main activities are focused on psychosocial support and cultural and educational work, and are open to everyone who needs it.",
+    "Text6": "We work with people",
+    "Text7": ", victims of hostilities and those in need of social adaptation, with a particular focus on students and young people, as we believe that psychological support is crucial for the future of the country.",
+    "Text8": "Our projects ",
+    "Text9": "cover scientific and educational activities",
+    "Text10": ", promoting health, self-development and self-realisation through social media and public speaking. The Foundation creates platforms for networking, actively invests in the country's victory by organising fundraisers, donations and volunteering to help the state in all necessary areas."
   },
-
   "TeamPage": {
     "Title": "The Team"
   },
-
   "ProjectsPage": {
     "Title": "Projects"
   },
-
   "ProjectsIdPage": {
     "DateOfStart": "Start of the project: ",
-    "Target":"The purpose of collection",
-    "Currency":" UAH",
-    "AboutProject":"About the project",
-    "Mission":"MISSION:",
-    "TargetOfProject":"OBJECTIVE:",
-    "TargetAudience":"TARGET AUDIENCE:",
-    "Concept":"CONCEPT:",
-    "OtherProjects":"Other projects"
-},
+    "Target": "The purpose of collection",
+    "Currency": " UAH",
+    "AboutProject": "About the project",
+    "Mission": "MISSION:",
+    "TargetOfProject": "OBJECTIVE:",
+    "TargetAudience": "TARGET AUDIENCE:",
+    "Concept": "CONCEPT:",
+    "OtherProjects": "Other projects"
+  },
   "ContactsPage": {
     "Title": "Contacts",
-    "PrivacyPolicy":"Please read the privacy policy before calling or sending emails! Our public offer agreement and privacy policy are available here:",
+    "PrivacyPolicy": "Please read the privacy policy before calling or sending emails! Our public offer agreement and privacy policy are available here:",
     "Text": "` To contact us, please call us by phone or send us an email and we will get back to you as soon as possible!`"
   },
-
-  "NewsPage":{
-    "Title":"News",
-    "Details":"Details"
+  "NewsPage": {
+    "Title": "News",
+    "Details": "Details"
   },
-
-  "PartnersPage":{
-    "Title":"Partnership",
-    "SubTitle":"Become a partner",
-    "Details":"Details"
+  "PartnersPage": {
+    "Title": "Partnership",
+    "SubTitle": "Become a partner",
+    "Details": "Details"
   },
-
   "NotFoundPage": {
     "NotFoundTitle": "Page not found",
     "NotFoundTitleBtn": "Home"
   },
-
-  "Footer":{
-    "Contacts":"Contacts",
-    "AdressCity":"Kyiv",
-    "AdressStreet":"Knyazhyi Zaton street",
-    "WorkDays":"Mon-Fri",
-    "MenuNav":"Menu"
+  "Footer": {
+    "Contacts": "Contacts",
+    "AdressCity": "Kyiv",
+    "AdressStreet": "Knyazhyi Zaton street",
+    "WorkDays": "Mon-Fri",
+    "MenuNav": "Menu"
   },
-
   "Buttons": {
     "Donate": "Donate",
     "Details": "Details",
     "ContactUs": "Contact us",
-    "ToPartners":"Become a partner",
-    "ToStatute":"Read the Statute",
-    "SendRequest":"Send a request"
+    "ToPartners": "Become a partner",
+    "ToContacts": "Become a volunteer",
+    "ToStatute": "Read the Statute",
+    "SendRequest": "Send a request"
   },
-
   "Form": {
     "Name": "Name",
     "Phone": "Phone",
-    "PhoneOrganization":"Telephone of the organization",
-    "Email":"Email address",
-    "Adress":"Address of the organization",
-    "Role":"Your role in the organization",
-    "Subject":"Subject",
+    "PhoneOrganization": "Telephone of the organization",
+    "Email": "Email address",
+    "Adress": "Address of the organization",
+    "Role": "Your role in the organization",
+    "Subject": "Subject",
     "TextArea": "Briefly describe your wish",
-    "FormText":"Choose a messenger for communication",
-
+    "FormText": "Choose a messenger for communication",
     "FormSubmitedMsg": "Congratulations! Your message has been sent to the manager.",
     "formSubmitedMsg2": "Our manager will contact you shortly.",
     "FieldRequiredMsg": "Fill in this field",

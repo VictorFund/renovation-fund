@@ -5,32 +5,32 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const HomeAboutFundSection = () => {
-  
-  const {t}=useTranslation();
 
-  const [isLoad,setIsLoad]=useState(true)
+  const { t } = useTranslation();
 
-  useEffect(()=>{
+  const [isLoad, setIsLoad] = useState(true)
+
+  useEffect(() => {
     setIsLoad(false)
-  },[])
+  }, [])
 
   return (
     <section>
       <div className="container">
-      {!isLoad &&<h2 className="homeSectionTitle">{t('MainPage.AboutSectionTitle')}</h2>}
+        {!isLoad && <h2 className="homeSectionTitle">{t('MainPage.AboutSectionTitle')}</h2>}
         <div className={styles.aboutContainer}>
           <ul className={styles.contentList}>
             {!isLoad && <><li className={styles.text}>
-            {t('MainPage.AboutSectionTitleText')}{' '}
+              {t('MainPage.AboutSectionTitleText')}{' '}
               <span className={styles.textAccent}>
-              {t('MainPage.AboutSectionTitleText1')}
+                {t('MainPage.AboutSectionTitleText1')}
               </span>{' '}
               {t('MainPage.AboutSectionText')}
             </li>
-            <li className={styles.text}>
-              <span className={styles.textAccent}>{t('MainPage.AboutSectionText1')}</span>{' '}
-              {t('MainPage.AboutSectionText2')}
-            </li></>}
+              <li className={styles.text}>
+                <span className={styles.textAccent}>{t('MainPage.AboutSectionText1')}</span>{' '}
+                {t('MainPage.AboutSectionText2')}
+              </li></>}
           </ul>
           <div className={styles.btnContainer}>
             <ButtonLink
@@ -40,7 +40,7 @@ const HomeAboutFundSection = () => {
             />
             <ButtonLink
               href="/contacts"
-              title={!isLoad && t('Buttons.ToPartners')}
+              title={!isLoad && t('Buttons.ToContacts')}
               customBtn={styles.btn}
             />
           </div>
