@@ -12,6 +12,7 @@ export const dashboardCoworkerUpdateSchema = yup.object({
         .test({
             name: "newPriority",
             test(value, ctx) {
+                // this.options.context - from DashboardCoworkerFormUpdate context: prioritiesArr
                 const isExist = this.options.context.includes(value);
                 if (isExist) {
                     return ctx.createError({

@@ -1,9 +1,9 @@
 import * as yup from "yup";
-import { socialLinks } from "@/data";
+import { callbackData } from "@/data";
 
 const regexPhone = /^\+\d{12}$/;
 
-const titleArray = socialLinks.map(i => i.title)
+const titleArray = callbackData.map(i => i.title)
 
 export const feedbackFormSchema = yup.object({
     name: yup
@@ -23,20 +23,13 @@ export const feedbackFormSchema = yup.object({
         .required("Заповніть це поле"),
     comment: yup
         .string(),
-    calback: yup
+    callback: yup
         .array()
         .test({
-            name: "calback",
+            name: "callback",
             test(value, ctx) {
 
                 const isChecked = titleArray.some(Set.prototype.has, new Set(value));
-
-
-                if (value.length === 0) {
-                    return ctx.createError({
-                        message: "Виберіть зворотній зв'язок",
-                    });
-                }
 
                 if (!isChecked) {
                     return ctx.createError({

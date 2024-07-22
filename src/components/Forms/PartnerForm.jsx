@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useForm, useController } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { partnerFormSchema } from "@/yupSchemas/partnerFormShema";
+import { partnerFormSchema } from "@/yupSchemas/partnerFormSchema";
 import Checkboxes from "./Checkboxes";
 import { callbackData } from "@/data";
 import { useTranslation } from "react-i18next";
@@ -21,19 +21,19 @@ const PartnerForm = () => {
             telOrganization: "",
             role: "",
             comment: "",
-            calback: [],
+            callback: [],
         },
         resolver: yupResolver(partnerFormSchema),
         mode: "onChange",
     };
-    const {t}=useTranslation();
+    const { t } = useTranslation();
     const form = useForm(initialValues);
     const { register, handleSubmit, formState, reset, control } = form;
     const { errors, isSubmitSuccessful, isValid, isSubmitting } = formState;
 
     const { field } = useController({
         control,
-        name: "calback",
+        name: "callback",
     });
 
     const [value, setValue] = useState(field.value || []);
@@ -104,7 +104,7 @@ const PartnerForm = () => {
                         <input
                             type='text'
                             {...register("address")}
-                            placeholder={t('Form.Adress')}
+                            placeholder={t('Form.Address')}
                             autoComplete='off'
                             className={
                                 errors.address
@@ -209,10 +209,10 @@ const PartnerForm = () => {
             <div className={styles.wrapper}>
                 <div className={styles.inputCheckboxWrap}>
                     <p className={`${styles.error} ${styles.errorCheckbox}`}>
-                        {errors.calback?.message}
+                        {errors.callback?.message}
                     </p>
                     <p className={styles.checkboxTitle}>
-                    {t('Form.FormText')}
+                        {t('Form.FormText')}
                     </p>
                     <Checkboxes
                         field={field}
