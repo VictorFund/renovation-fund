@@ -6,18 +6,19 @@ import { useWindowResize } from "@/hooks/useWindowResize";
 import { useState, useEffect } from "react";
 import FeedbackForm from "@/components/Forms/FeedbackForm";
 import { useTranslation } from "react-i18next";
-import styles from "./ContactSection.module.scss";
+import styles from "./ContactsSection.module.scss";
+
 
 const ContactsSection = () => {
     const { isMobile, isDesktop } = useWindowResize();
-    
-    const [isLoad,setIsLoad]=useState(true);
 
-    const {i18n,t}=useTranslation();
+    const [isLoad, setIsLoad] = useState(true);
 
-    useEffect(()=>{
+    const { i18n, t } = useTranslation();
+
+    useEffect(() => {
         setIsLoad(false)
-    },[])
+    }, [])
 
     return (
         <section className='topSection'>
@@ -27,25 +28,26 @@ const ContactsSection = () => {
                 </h1>
                 <div className={styles.contactBox}>
                     <iframe
-                        src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2544.2636003354446!2d30.53102365791931!3d50.38028445006989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c61d7b54a8e5%3A0xfc1760b115e139f4!2z0L_RgNC-0YHQv9C10LrRgiDQndCw0YPQutC4LCA2MCwg0JrQuNGX0LIsIDAyMDAw!5e0!3m2!1suk!2sua!4v1720014348108!5m2!1suk!2sua'
                         className={styles.iframe}
-                        loading='lazy'
-                    ></iframe>
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2543.1673983318615!2d30.6166267!3d50.400717799999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c5b080279a4f%3A0xea679ffefde73dc0!2z0YPQuy4g0JrQvdGP0LbQuNC5INCX0LDRgtC-0L0sIDIxLCDQmtC40LXQsiwgMDIwMDA!5e0!3m2!1sru!2sua!4v1721656106447!5m2!1sru!2sua"
+                    >
+                    </iframe>
+
                     <ul className={styles.contactList}>
-                        {contactsData.map((data) => (
-                            <li key={data.id}>
+                        {contactsData.map((item) => (
+                            <li key={item.id}>
                                 <a
-                                    href={data.href}
+                                    href={item.href}
                                     className={styles.contactLink}
                                     target='_blank'
                                 >
                                     <svg className={styles.contactSvg}>
                                         <use
-                                            href={`/sprite.svg#${data.src}`}
+                                            href={`/sprite.svg#${item.src}`}
                                         ></use>
                                     </svg>
                                     {!isLoad && <p className={styles.contactText}>
-                                        {i18n.language===currentLanguages.EN && data.textEn ? data.textEn : data.text}
+                                        {i18n.language === currentLanguages.EN && item.textEn ? item.textEn : item.text}
                                     </p>}
                                 </a>
                             </li>
@@ -71,7 +73,7 @@ const ContactsSection = () => {
                     </div>
                 )}
                 <div className={styles.formBox}>
-                   {!isLoad && <FeedbackForm />}
+                    {!isLoad && <FeedbackForm />}
                     {!isMobile && (
                         <div className={styles.imgWrapper}>
                             <Image

@@ -8,7 +8,7 @@
     "AboutSectionTitle": "About the Fund*",
     "AboutSectionTitleText": "Charitable Foundation",
     "AboutSectionTitleText1": "«Victory and Recovery»",
-    "AboutSectionText": "- is a non-profit organization whose goal and mission is to restore Ukraine and strengthen its statehood. To contribute to the victory of the Ukrainian people and to provide effective, high-quality and, most importantly, comfortable conditions for every person.",
+    "AboutSectionText": "- is a non-profit organization whose goal and mission is to restore Ukraine and strengthen its statehood, to contribute to the victory of the Ukrainian people and to provide effective, high-quality and, most importantly, comfortable conditions for every person.",
     "AboutSectionText1": "The main activity",
     "AboutSectionText2": "of the charitable organization is, first of all, psychosocial support and cultural and educational activities for everyone who feels the need and is interested in it.",
     "ProjectsSectionTitle": "Projects",
@@ -50,7 +50,7 @@
   "ContactsPage": {
     "Title": "Contacts",
     "PrivacyPolicy": "Please read the privacy policy before calling or sending emails! Our public offer agreement and privacy policy are available here:",
-    "Text": "` To contact us, please call us by phone or send us an email and we will get back to you as soon as possible!`"
+    "Text": "To contact us, please call us by phone or send us an email and we will get back to you as soon as possible!"
   },
   "NewsPage": {
     "Title": "News",
@@ -84,29 +84,20 @@
   "Form": {
     "Name": "Name",
     "Phone": "Phone",
-    "PhoneOrganization": "Telephone of the organization",
     "Email": "Email address",
-    "Adress": "Address of the organization",
+    "PhoneOrganization": "Telephone of the organization",
+    "Address": "Address of the organization",
     "Role": "Your role in the organization",
     "Subject": "Subject",
     "TextArea": "Briefly describe your wish",
     "FormText": "Choose a messenger for communication",
-    "FormSubmitedMsg": "Congratulations! Your message has been sent to the manager.",
-    "formSubmitedMsg2": "Our manager will contact you shortly.",
-    "FieldRequiredMsg": "Fill in this field",
-    "errorShortName": "The name should be longer",
-    "errorLongName": "The name should be shorter",
-    "errorNumberOfObject": "There's no such number",
-    "errorNumberOfObject2": "Only positive numbers",
-    "errorNumberOfObject3": "Only numbers",
-    "errorTooManySpases": "Too many spases"
+    "FormSubmitedMsg": "Congratulations! Your message has been sent to the manager."
   },
   "formErrors": {
-    "name": "Incorrect name entered",
-    "phone": "Phone number",
-    "dateOfEntry": "Choose a date",
-    "departureDate": "Choose a date",
-    "numberObject": "Enter the object number"
+    "requiredField": "Fill in this field",
+    "shortName": "The name must be longer",
+    "notValidEmail": "Invalid email",
+    "chooseCallbackMessenger": "Select a messenger"
   },
   "LoadStatus": {
     "Load": "Loading..."

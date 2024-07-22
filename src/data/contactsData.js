@@ -2,9 +2,9 @@ export const contactsData = [
     {
         id: 1,
         src: "map-pin-outline",
-        href: "https://maps.app.goo.gl/XpKyGJXVGBzfz7668",
-        text: "просп. Науки, 60, Голосіївський район, м. Київ, Україна",
-        textEn:"60 Nauky Avenue, Holosiivskyi district, Kyiv, Ukraine"
+        href: "https://maps.app.goo.gl/Rh6PxCxxDbAd3p7q6",
+        text: "вул. Княжий Затон, 21, м. Київ, Україна",
+        textEn: "21, Knyazhyi Zaton street, Kyiv, Ukraine"
     },
     {
         id: 2,
@@ -15,8 +15,8 @@ export const contactsData = [
     {
         id: 3,
         src: "mail-outline",
-        href: "mailto:pvfond@gmail.com",
-        text: "pvfond@gmail.com",
+        href: "mailto:ads.pvfond@gmail.com",
+        text: "ads.pvfond@gmail.com",
     },
     {
         id: 4,

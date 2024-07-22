@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useForm, useController } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { feedbackFormSchema } from "@/yupSchemas/feedbackFormShema";
+import { feedbackFormSchema } from "@/yupSchemas/feedbackFormSchema";
 import { callbackData } from "@/data";
 import Checkboxes from "./Checkboxes";
 import { useTranslation } from "react-i18next";
@@ -18,19 +18,19 @@ const FeedbackForm = () => {
             email: "",
             theme: "",
             comment: "",
-            calback: [],
+            callback: [],
         },
         resolver: yupResolver(feedbackFormSchema),
         mode: "onChange",
     };
-    const {t}=useTranslation();
+    const { t } = useTranslation();
     const form = useForm(initialValues);
     const { register, handleSubmit, formState, reset, control } = form;
     const { errors, isSubmitSuccessful, isValid, isSubmitting } = formState;
 
     const { field } = useController({
         control,
-        name: "calback",
+        name: "callback",
     });
 
     const [value, setValue] = useState(field.value || []);
@@ -144,10 +144,10 @@ const FeedbackForm = () => {
             <div className={styles.wrapper}>
                 <div className={styles.inputCheckboxWrap}>
                     <p className={`${styles.error} ${styles.errorCheckbox}`}>
-                        {errors.calback?.message}
+                        {errors.callback?.message}
                     </p>
                     <p className={styles.checkboxTitle}>
-                    {t('Form.FormText')}
+                        {t('Form.FormText')}
                     </p>
                     <Checkboxes
                         field={field}
