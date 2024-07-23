@@ -1,7 +1,7 @@
 export const bankAccDetails = [
   {
     title: "Monobank",
-    href: "https://send.monobank.ua/jar/2AfuuyePgyq",
+    href: "https://send.monobank.ua/jar/2AfuuyePgy",
   },
   {
     title: "Privat bank",
