@@ -93,10 +93,10 @@
     "FormText": "Choose a messenger for communication",
     "FormSubmitedMsg": "Congratulations! Your message has been sent to the manager."
   },
-  "formErrors": {
+  "FormErrors": {
     "requiredField": "Fill in this field",
     "shortName": "The name must be longer",
-    "notValidEmail": "Invalid email",
+    "invalidEmail": "Invalid email",
     "chooseCallbackMessenger": "Select a messenger"
   },
   "LoadStatus": {

@@ -5,40 +5,44 @@ const regexPhone = /^\+\d{12}$/;
 
 const titleArray = callbackData.map(i => i.title)
 
-export const feedbackFormSchema = yup.object({
-    name: yup
-        .string()
-        .required("Заповніть це поле")
-        .min(3, "Ім’я має бути довшим"),
-    tel: yup
-        .string()
-        .required("Заповніть це поле")
-        .matches(regexPhone, "+380123456789"),
-    email: yup
-        .string()
-        .required("Заповніть це поле")
-        .email("Не валідний email"),
-    theme: yup
-        .string()
-        .required("Заповніть це поле"),
-    comment: yup
-        .string(),
-    callback: yup
-        .array()
-        .test({
-            name: "callback",
-            test(value, ctx) {
+import i18n from 'i18next';
 
-                const isChecked = titleArray.some(Set.prototype.has, new Set(value));
+export const feedbackFormSchema = () => {
+    return yup.object({
+        name: yup
+            .string()
+            .required(i18n.t("FormErrors.requiredField"))
+            .min(3, i18n.t("FormErrors.shortName")),
+        tel: yup
+            .string()
+            .required(i18n.t("FormErrors.requiredField"))
+            .matches(regexPhone, "+380123456789"),
+        email: yup
+            .string()
+            .required(i18n.t("FormErrors.requiredField"))
+            .email(i18n.t("FormErrors.invalidEmail")),
+        theme: yup
+            .string()
+            .required(i18n.t("FormErrors.requiredField")),
+        comment: yup
+            .string(),
+        callback: yup
+            .array()
+            .test({
+                name: "callback",
+                test(value, ctx) {
 
-                if (!isChecked) {
-                    return ctx.createError({
-                        message: "Виберіть месенджер",
-                    });
-                }
+                    const isChecked = titleArray.some(Set.prototype.has, new Set(value));
 
-                return true;
-            },
-        })
+                    if (!isChecked) {
+                        return ctx.createError({
+                            message: i18n.t("FormErrors.chooseCallbackMessenger"),
+                        });
+                    }
 
-});
+                    return true;
+                },
+            })
+
+    })
+}

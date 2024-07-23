@@ -93,10 +93,10 @@
     "FormText": "Оберіть месенджер для зв’язку",
     "FormSubmitedMsg": "Вітаємо! Ваше повідомлення відправлено менеджеру."
   },
-  "formErrors": {
+  "FormErrors": {
     "requiredField": "Заповніть це поле",
     "shortName": "Ім’я має бути довшим",
-    "notValidEmail": "Не валідний email",
+    "invalidEmail": "Не валідний email",
     "chooseCallbackMessenger": "Виберіть месенджер"
   },
   "LoadStatus": {

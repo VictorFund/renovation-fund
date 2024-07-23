@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useForm, useController } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { feedbackFormSchema } from "@/yupSchemas/feedbackFormSchema";
@@ -10,7 +10,10 @@ import { useTranslation } from "react-i18next";
 
 import styles from "./FormStyles.module.scss";
 
+
 const FeedbackForm = () => {
+    const schema = useMemo(() => feedbackFormSchema(), []);
+
     const initialValues = {
         defaultValues: {
             name: "",
@@ -20,9 +23,10 @@ const FeedbackForm = () => {
             comment: "",
             callback: [],
         },
-        resolver: yupResolver(feedbackFormSchema),
+        resolver: yupResolver(schema),
         mode: "onChange",
     };
+
     const { t } = useTranslation();
     const form = useForm(initialValues);
     const { register, handleSubmit, formState, reset, control } = form;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useForm, useController } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { partnerFormSchema } from "@/yupSchemas/partnerFormSchema";
@@ -10,7 +10,10 @@ import { useTranslation } from "react-i18next";
 
 import styles from "./FormStyles.module.scss";
 
+
 const PartnerForm = () => {
+    const schema = useMemo(() => partnerFormSchema(), []);
+
     const initialValues = {
         defaultValues: {
             name: "",
@@ -23,7 +26,7 @@ const PartnerForm = () => {
             comment: "",
             callback: [],
         },
-        resolver: yupResolver(partnerFormSchema),
+        resolver: yupResolver(schema),
         mode: "onChange",
     };
     const { t } = useTranslation();
