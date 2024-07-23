@@ -5,51 +5,55 @@ const regexPhone = /^\+\d{12}$/;
 
 const titleArray = callbackData.map(i => i.title)
 
-export const partnerFormSchema = yup.object({
-    name: yup
-        .string()
-        .required("Заповніть це поле")
-        .min(3, "Ім’я має бути довшим"),
-    email: yup
-        .string()
-        .required("Заповніть це поле")
-        .email("Не валідний email"),
-    address: yup
-        .string()
-        .required("Заповніть це поле"),
-    theme: yup
-        .string()
-        .required("Заповніть це поле"),
-    telPersonal: yup
-        .string()
-        .required("Заповніть це поле")
-        .matches(regexPhone, "+380123456789"),
-    telOrganization: yup
-        .string()
-        .required("Заповніть це поле")
-        .matches(regexPhone, "+380123456789"),
+import i18n from 'i18next';
 
-    role: yup
-        .string()
-        .required("Заповніть це поле"),
-    comment: yup
-        .string(),
-    callback: yup
-        .array()
-        .test({
-            name: "callback",
-            test(value, ctx) {
+export const partnerFormSchema = () => {
+    return yup.object({
+        name: yup
+            .string()
+            .required(i18n.t("FormErrors.requiredField"))
+            .min(3, i18n.t("FormErrors.shortName")),
+        email: yup
+            .string()
+            .required(i18n.t("FormErrors.requiredField"))
+            .email(i18n.t("FormErrors.invalidEmail")),
+        address: yup
+            .string()
+            .required(i18n.t("FormErrors.requiredField")),
+        theme: yup
+            .string()
+            .required(i18n.t("FormErrors.requiredField")),
+        telPersonal: yup
+            .string()
+            .required(i18n.t("FormErrors.requiredField"))
+            .matches(regexPhone, "+380123456789"),
+        telOrganization: yup
+            .string()
+            .required(i18n.t("FormErrors.requiredField"))
+            .matches(regexPhone, "+380123456789"),
 
-                const isChecked = titleArray.some(Set.prototype.has, new Set(value));
+        role: yup
+            .string()
+            .required(i18n.t("FormErrors.requiredField")),
+        comment: yup
+            .string(),
+        callback: yup
+            .array()
+            .test({
+                name: "callback",
+                test(value, ctx) {
 
-                if (!isChecked) {
-                    return ctx.createError({
-                        message: "Виберіть месенджер",
-                    });
-                }
+                    const isChecked = titleArray.some(Set.prototype.has, new Set(value));
 
-                return true;
-            },
-        })
+                    if (!isChecked) {
+                        return ctx.createError({
+                            message: i18n.t("FormErrors.chooseCallbackMessenger"),
+                        });
+                    }
 
-});
+                    return true;
+                },
+            })
+
+    })
+}
