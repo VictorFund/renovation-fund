@@ -41,7 +41,7 @@ const ProjectItem = ({
             />
           ) : (
             <Image
-              src={'/images/LogoIkon.webp'}
+              src={'/images/logoIkon.webp'}
               alt={title}
               fill={true}
               className="defaultImg"
