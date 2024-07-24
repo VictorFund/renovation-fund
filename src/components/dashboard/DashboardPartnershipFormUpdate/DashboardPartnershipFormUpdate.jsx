@@ -155,7 +155,7 @@ const DashboardPartnershipFormUpdate = ({ data, mutate, isOwner }) => {
                     options={{ multiple: false }}
                     uploadPreset='unsigned_preset'
                 >
-                    Оновити логотип (WEBP)
+                    Оновити логотип (WEBP) (min 370*230)
                 </CldUploadButton>
 
                 <p className={styles.error}>{errors.newLogo?.message}</p>

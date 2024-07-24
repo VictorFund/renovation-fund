@@ -15,8 +15,8 @@ export const contactsData = [
     {
         id: 3,
         src: "mail-outline",
-        href: "mailto:ads.pvfond@gmail.com",
-        text: "ads.pvfond@gmail.com",
+        href: "mailto:pvfond.info@gmail.com",
+        text: "pvfond.info@gmail.com",
     },
     {
         id: 4,
