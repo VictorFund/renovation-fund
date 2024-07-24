@@ -183,7 +183,7 @@ const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
                     options={{ multiple: false }}
                     uploadPreset='unsigned_preset'
                 >
-                    Оновити фото (WEBP)
+                    Оновити фото (WEBP) (min 695*536)
                 </CldUploadButton>
 
                 <p className={styles.error}>{errors.newImage?.message}</p>

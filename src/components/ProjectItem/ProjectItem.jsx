@@ -3,6 +3,7 @@ import { CldImage } from 'next-cloudinary';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import styles from './ProjectItem.module.scss';
+import Image from 'next/image';
 
 const ProjectItem = ({
   slug,
@@ -31,12 +32,22 @@ const ProjectItem = ({
           <p className={styles.btn}>{t('Buttons.Details')}</p>
         </div>
         <figure className={styles.imgContainer}>
-          <CldImage
-            src={image}
-            alt={title}
-            fill={true}
-            sizes="(max-width: 768px) 239px"
-          />
+          {image ? (
+            <CldImage
+              src={image}
+              alt={title}
+              fill={true}
+              sizes="(max-width: 768px) 239px"
+            />
+          ) : (
+            <Image
+              src={'/images/LogoIkon.webp'}
+              alt={title}
+              fill={true}
+              className="defaultImg"
+              sizes="(max-width: 768px) 239px"
+            />
+          )}
         </figure>
       </Link>
     </li>

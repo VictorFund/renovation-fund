@@ -123,7 +123,7 @@ const DashboardNewsFormCreate = ({ mutate, isOwner }) => {
                     options={{ multiple: false }}
                     uploadPreset='unsigned_preset'
                 >
-                    Додати фото (WEBP)
+                    Додати фото (WEBP) (min 1280*580)
                 </CldUploadButton>
 
                 <p className={styles.error}>{errors.image?.message}</p>
