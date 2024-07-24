@@ -1,9 +1,9 @@
-import { currentLanguages } from '@/data';
-import { CldImage } from 'next-cloudinary';
-import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
-import styles from './ProjectItem.module.scss';
-import Image from 'next/image';
+import { currentLanguages } from "@/data";
+import { CldImage } from "next-cloudinary";
+import Link from "next/link";
+import { useTranslation } from "react-i18next";
+import styles from "./ProjectItem.module.scss";
+import Image from "next/image";
 
 const ProjectItem = ({
   slug,
@@ -29,7 +29,7 @@ const ProjectItem = ({
               ? shortDescriptionEn
               : shortDescription}
           </p>
-          <p className={styles.btn}>{t('Buttons.Details')}</p>
+          <p className={styles.btn}>{t("Buttons.Details")}</p>
         </div>
         <figure className={styles.imgContainer}>
           {image ? (
@@ -41,7 +41,7 @@ const ProjectItem = ({
             />
           ) : (
             <Image
-              src={'/images/LogoIkon.webp'}
+              src={"/images/logoIkon.webp"}
               alt={title}
               fill={true}
               className="defaultImg"
