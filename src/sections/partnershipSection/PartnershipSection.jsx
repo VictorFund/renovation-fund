@@ -71,12 +71,22 @@ const PartnershipSection = () => {
                             className={styles.partnershipItem}
                           >
                             <figure className={styles.imgContainer}>
-                              <CldImage
-                                src={logo}
-                                alt={title}
-                                fill={true}
-                                sizes="(max-width: 768px) 128px, (max-width: 1440px) 100px"
-                              />
+                              {logo ? (
+                                <CldImage
+                                  src={logo}
+                                  alt={title}
+                                  fill={true}
+                                  sizes="(max-width: 768px) 128px, (max-width: 1440px) 100px"
+                                />
+                              ) : (
+                                <Image
+                                  src={'/images/LogoIkon.webp'}
+                                  alt={title}
+                                  fill={true}
+                                  className="defaultImg"
+                                  sizes="(max-width: 768px) 128px, (max-width: 1440px) 100px"
+                                />
+                              )}
                             </figure>
                             <h3
                               className={styles.partnershipTitle}
@@ -125,12 +135,22 @@ const PartnershipSection = () => {
                             className={styles.partnershipSmallItem}
                           >
                             <figure className={styles.imgSmallContainer}>
-                              <CldImage
-                                src={logo}
-                                alt={title}
-                                fill={true}
-                                sizes="(max-width: 768px) 75px"
-                              />
+                              {logo ? (
+                                <CldImage
+                                  src={logo}
+                                  alt={title}
+                                  fill={true}
+                                  sizes="(max-width: 768px) 75px"
+                                />
+                              ) : (
+                                <Image
+                                  src={'/images/LogoIkon.webp'}
+                                  alt={title}
+                                  fill={true}
+                                  className="defaultImg"
+                                  sizes="(max-width: 768px) 75px"
+                                />
+                              )}
                             </figure>
                             <h3
                               className={styles.partnershipSmallTitle}

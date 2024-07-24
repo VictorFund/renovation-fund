@@ -1,4 +1,4 @@
-@import "./_variables";
+@import './_variables';
 
 *,
 *::before,
@@ -199,4 +199,8 @@ ol {
     width: 72px;
     height: 60px;
   }
+}
+
+.defaultImg {
+  opacity: 0.3;
 }
