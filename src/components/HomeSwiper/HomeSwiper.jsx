@@ -13,7 +13,8 @@ import { formatDate } from "@/utils/formatDate";
 import { useTranslation } from "react-i18next";
 import { currentLanguages } from "@/data";
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import Image from "next/image";
+import defaultImg from "../../../public/images/logoIkon.webp";
 
 const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
   const [isLoad, setIsLoad] = useState(true);
@@ -93,13 +94,22 @@ const HomeSwiper = ({ items, dataName, btnClassName, isLoading }) => {
                     )}
                   </div>
                   <div className="imgWrapp">
-                    <CldImage
-                      className="img"
-                      src={el.image}
-                      alt={isLangEn ? el.titleEn : el.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
+                    {el.image ? (
+                      <CldImage
+                        className="img"
+                        src={el.image}
+                        alt={isLangEn ? el.titleEn : el.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    ) : (
+                      <Image
+                        className="swiperDefImg defaultImg "
+                        src={defaultImg}
+                        alt={isLangEn ? el.titleEn : el.title}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    )}
                   </div>
                 </div>
               </SwiperSlide>

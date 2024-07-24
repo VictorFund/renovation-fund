@@ -129,6 +129,9 @@
   overflow: hidden;
   position: relative;
   border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media screen and (min-width: 768px) {
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
@@ -138,6 +141,12 @@
 
 .homeSwiper .imgWrapp .img {
   object-fit: cover;
+}
+
+.homeSwiper .imgWrapp .swiperDefImg {
+  object-position: center;
+  width: auto;
+  height: 80%;
 }
 
 .homeSwiper .swiper-button-prev,
