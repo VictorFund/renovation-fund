@@ -80,7 +80,7 @@ const ProjectIdSection = () => {
                   />
                 ) : (
                   <Image
-                    src={'/images/LogoIkon.webp'}
+                    src={'/images/logoIkon.webp'}
                     alt="фото проекту"
                     fill={true}
                     className="defaultImg"
