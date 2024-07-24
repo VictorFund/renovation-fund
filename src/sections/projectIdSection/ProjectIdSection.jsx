@@ -10,6 +10,7 @@ import {
 } from '@/fetch/clientFetch';
 import { changeStringTypeToArray } from '@/utils/changeStringTypeToArray';
 import { CldImage } from 'next-cloudinary';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styles from './ProjectIdSection.module.scss';
@@ -70,12 +71,22 @@ const ProjectIdSection = () => {
               className={`${styles.contentContainer} ${styles.blockIndentation}`}
             >
               <figure className={styles.imgContainer}>
-                <CldImage
-                  src={changedData?.image}
-                  alt="фото проекту"
-                  fill={true}
-                  sizes="(max-width: 768px) 40vw, (max-width: 1440px) 516px"
-                />
+                {changedData?.image ? (
+                  <CldImage
+                    src={changedData?.image}
+                    alt="фото проекту"
+                    fill={true}
+                    sizes="(max-width: 768px) 40vw, (max-width: 1440px) 516px"
+                  />
+                ) : (
+                  <Image
+                    src={'/images/LogoIkon.webp'}
+                    alt="фото проекту"
+                    fill={true}
+                    className="defaultImg"
+                    sizes="(max-width: 768px) 40vw, (max-width: 1440px) 516px"
+                  />
+                )}
               </figure>
               <div className={styles.contentList}>
                 {changedData?.sum && (
