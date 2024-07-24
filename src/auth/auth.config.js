@@ -24,8 +24,8 @@ export const authConfig = {
 
         //когда результатом authorized будет return false - выполняется redirect - на signIn: "/dashboard/login" в pages (прописано выше)
         authorized({ auth, request }) {
-            const isPrincipal = auth?.user?.email === process.env.NEXT_PUBLIC_OWNER
-            const isAdmin = auth?.user?.isAdmin || auth?.user?.email === process.env.NEXT_PUBLIC_DEVELOPER
+            const isPrincipal = auth?.user?.email === process.env.NEXT_PUBLIC_OWNER;
+            const isAdmin = auth?.user?.isAdmin;
             const isAuthorised = auth?.user;
 
             const isOnPrincipalPages = request.nextUrl?.pathname.startsWith('/dashboard/users');

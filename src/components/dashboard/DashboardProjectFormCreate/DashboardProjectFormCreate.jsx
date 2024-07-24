@@ -136,7 +136,7 @@ const DashboardProjectFormCreate = ({ mutate, isOwner }) => {
                     options={{ multiple: false }}
                     uploadPreset='unsigned_preset'
                 >
-                    Додати фото (WEBP)
+                    Додати фото (WEBP) (min 695*536)
                 </CldUploadButton>
 
                 <p className={styles.error}>{errors.image?.message}</p>
