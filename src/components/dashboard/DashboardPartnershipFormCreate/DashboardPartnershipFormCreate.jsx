@@ -29,14 +29,18 @@ const DashboardPartnershipFormCreate = ({ mutate, isOwner }) => {
     const { errors, isSubmitSuccessful, isErrors, isSubmitting } = formState;
 
     const onSubmit = async (data) => {
+        const forSendData = { ...data };
         const session = await getDashboardSession();
         const editor = session.user?.name;
-        data.editor = editor;
+        forSendData.editor = editor;
+        const trimedSlug = forSendData.slug.trim();
+        forSendData.slug = trimedSlug;
+
 
         try {
             await fetch("/api/partnership", {
                 method: "POST",
-                body: JSON.stringify(data),
+                body: JSON.stringify(forSendData),
             });
             // автоматично оновлює сторінку при зміні кількості карток
             mutate();
