@@ -3,6 +3,7 @@ import { usePathname } from 'next/navigation'
 import { CldImage } from 'next-cloudinary'
 import DashboardEditAndDelete from '../DashboardEditAndDelete/DashboardEditAndDelete'
 import styles from '../DashboardComponents.module.scss'
+import Image from 'next/image'
 
 
 const DashboardPartnershipItem = ({ data, mutate, isOwner }) => {
@@ -19,13 +20,22 @@ const DashboardPartnershipItem = ({ data, mutate, isOwner }) => {
             <p><span className='accentText'>Заголовок англійською:</span> {data.titleEn}</p>
             <p><span className='accentText'>Головний партнер:</span> {data.isMainPartner ? "Так" : "Ні"}</p>
             <div className={styles.partnershipImgWrapper}>
-                <CldImage
-                    className={styles.partnershipImg}
-                    fill
-                    src={data.logo}
-                    sizes='40vw'
-                    alt={`Logo of ${data.titleEn}`}
-                />
+                {data.logo
+                    ? < CldImage
+                        className={styles.partnershipImg}
+                        fill
+                        src={data.logo}
+                        sizes='40vw'
+                        alt={`Logo of ${data.titleEn}`}
+                    />
+                    : <Image
+                        className={styles.partnershipImg}
+                        fill
+                        src={'/images/no-image.webp'}
+                        sizes='40vw'
+                        alt={`Logo of ${data.titleEn}`}
+                    />
+                }
             </div>
             {data.siteLink && <p className={styles.link}><span className='accentText'>Посилання на ресурс:</span> {data.siteLink}</p>}
 
