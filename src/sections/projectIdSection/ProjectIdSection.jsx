@@ -1,25 +1,25 @@
-'use client';
+"use client";
 
-import ButtonLink from '@/components/Buttons/ButtonLink/ButtonLink';
-import Loader from '@/components/Loader/Loader';
-import ProjectItem from '@/components/ProjectItem/ProjectItem';
-import { currentLanguages } from '@/data';
+import ButtonLink from "@/components/Buttons/ButtonLink/ButtonLink";
+import Loader from "@/components/Loader/Loader";
+import ProjectItem from "@/components/ProjectItem/ProjectItem";
+import { currentLanguages } from "@/data";
 import {
   GetDataForHomeByCollection,
   GetDataWithPathname,
-} from '@/fetch/clientFetch';
-import { changeStringTypeToArray } from '@/utils/changeStringTypeToArray';
-import { CldImage } from 'next-cloudinary';
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import styles from './ProjectIdSection.module.scss';
+} from "@/fetch/clientFetch";
+import { changeStringTypeToArray } from "@/utils/changeStringTypeToArray";
+import { CldImage } from "next-cloudinary";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import styles from "./ProjectIdSection.module.scss";
 
 const ProjectIdSection = () => {
   const [projectData, setProjectData] = useState([]);
   const { data, isLoading } = GetDataWithPathname();
 
-  const projectlist = GetDataForHomeByCollection('projects');
+  const projectlist = GetDataForHomeByCollection("projects");
 
   const { i18n, t } = useTranslation();
 
@@ -63,7 +63,7 @@ const ProjectIdSection = () => {
             </h1>
             {data?.startDate && (
               <p className={styles.date}>
-                {t('ProjectsIdPage.DateOfStart')}
+                {t("ProjectsIdPage.DateOfStart")}
                 {data?.startDate}
               </p>
             )}
@@ -80,7 +80,7 @@ const ProjectIdSection = () => {
                   />
                 ) : (
                   <Image
-                    src={'/images/logoIkon.webp'}
+                    src={"/images/logoIkon.webp"}
                     alt="фото проекту"
                     fill={true}
                     className="defaultImg"
@@ -95,68 +95,68 @@ const ProjectIdSection = () => {
                       className={
                         i18n.language === currentLanguages.EN
                           ? styles.purposeCollectionEn +
-                            ' ' +
+                            " " +
                             styles.purposeCollection
                           : styles.purposeCollectionUa +
-                            ' ' +
+                            " " +
                             styles.purposeCollection
                       }
                     >
-                      {t('ProjectsIdPage.Target')}
+                      {t("ProjectsIdPage.Target")}
                       <svg className={styles.icon}>
                         <use href="/sprite.svg#icon-target" />
                       </svg>
                     </p>
                     <p className={styles.price}>
                       {changedData?.sum}
-                      {t('ProjectsIdPage.Currency')}
+                      {t("ProjectsIdPage.Currency")}
                     </p>
                   </>
                 )}
                 <ButtonLink
                   href="/donate"
-                  title={t('Buttons.Donate')}
+                  title={t("Buttons.Donate")}
                   customBtn={
                     changedData?.sum
                       ? styles.btn
-                      : styles.btn + ' ' + styles.btn_sum
+                      : styles.btn + " " + styles.btn_sum
                   }
                 />
               </div>
             </div>
             <div className={styles.blockIndentation}>
               <h3 className={`sectionTitle ${styles.title}`}>
-                {t('ProjectsIdPage.AboutProject')}
+                {t("ProjectsIdPage.AboutProject")}
               </h3>
               <ul className={styles.aboutList}>
                 <li>
                   <span className="accentText">
-                    {t('ProjectsIdPage.Mission')}
-                  </span>{' '}
+                    {t("ProjectsIdPage.Mission")}
+                  </span>{" "}
                   {i18n.language === currentLanguages.EN
                     ? changedData?.missionEn
                     : changedData?.mission}
                 </li>
                 <li>
                   <span className="accentText">
-                    {t('ProjectsIdPage.TargetOfProject')}
-                  </span>{' '}
+                    {t("ProjectsIdPage.TargetOfProject")}
+                  </span>{" "}
                   {i18n.language === currentLanguages.EN
                     ? changedData?.goalEn
                     : changedData?.goal}
                 </li>
                 <li>
                   <span className="accentText">
-                    {t('ProjectsIdPage.TargetAudience')}
-                  </span>{' '}
+                    {t("ProjectsIdPage.TargetAudience")}
+                  </span>{" "}
                   {i18n.language === currentLanguages.EN
                     ? changedData?.audienceEn
                     : changedData?.audience}
                 </li>
                 <li>
                   <span className="accentText">
-                    {t('ProjectsIdPage.Concept')}
-                  </span>{' '}
+                    {t("ProjectsIdPage.Concept")}
+                  </span>{" "}
                   {i18n.language === currentLanguages.EN
                     ? changedData?.conceptEn
                     : changedData?.concept}
@@ -172,7 +172,7 @@ const ProjectIdSection = () => {
             </div>
             <div>
               <h3 className={`sectionTitle ${styles.title}`}>
-                {t('ProjectsIdPage.OtherProjects')}
+                {t("ProjectsIdPage.OtherProjects")}
               </h3>
               <ul className={styles.projectsList}>
                 {projectData.map(

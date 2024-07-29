@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { CldImage } from 'next-cloudinary';
-import { GetDataWithPathname } from '@/fetch/clientFetch';
-import { useWindowResize } from '@/hooks/useWindowResize';
-import PartnerForm from '@/components/Forms/PartnerForm';
+import Image from "next/image";
+import { CldImage } from "next-cloudinary";
+import { GetDataWithPathname } from "@/fetch/clientFetch";
+import { useWindowResize } from "@/hooks/useWindowResize";
+import PartnerForm from "@/components/Forms/PartnerForm";
 
-import styles from './PartnershipSection.module.scss';
-import { useTranslation } from 'react-i18next';
-import { currentLanguages } from '@/data';
-import Loader from '@/components/Loader/Loader';
-import { useEffect, useRef } from 'react';
+import styles from "./PartnershipSection.module.scss";
+import { useTranslation } from "react-i18next";
+import { currentLanguages } from "@/data";
+import Loader from "@/components/Loader/Loader";
+import { useEffect, useRef } from "react";
 
 const PartnershipSection = () => {
-  const { data, isLoading } = GetDataWithPathname('partnership');
+  const { data, isLoading } = GetDataWithPathname("partnership");
 
   const { isMobile } = useWindowResize();
 
@@ -39,7 +39,7 @@ const PartnershipSection = () => {
     <section className="topSection">
       <div className={`container`}>
         <h1 className={`sectionTitle ${styles.title}`}>
-          {!isLoading && t('PartnersPage.Title')}
+          {!isLoading && t("PartnersPage.Title")}
         </h1>
 
         {isLoading ? (
@@ -80,7 +80,7 @@ const PartnershipSection = () => {
                                 />
                               ) : (
                                 <Image
-                                  src={'/images/logoIkon.webp'}
+                                  src={"/images/logoIkon.webp"}
                                   alt={title}
                                   fill={true}
                                   className="defaultImg"
@@ -97,7 +97,7 @@ const PartnershipSection = () => {
                                 : title}
                             </h3>
                             <p className={styles.btn}>
-                              <span>{t('PartnersPage.Details')}</span>
+                              <span>{t("PartnersPage.Details")}</span>
                               <svg className={styles.arrow}>
                                 <use href="/sprite.svg#icon-arrow" />
                               </svg>
@@ -144,7 +144,7 @@ const PartnershipSection = () => {
                                 />
                               ) : (
                                 <Image
-                                  src={'/images/LogoIkon.webp'}
+                                  src={"/images/logoIkon.webp"}
                                   alt={title}
                                   fill={true}
                                   className="defaultImg"
@@ -172,7 +172,7 @@ const PartnershipSection = () => {
         )}
 
         <h2 className={`sectionTitle ${styles.titleForm}`}>
-          {!isLoading && t('PartnersPage.SubTitle')}
+          {!isLoading && t("PartnersPage.SubTitle")}
         </h2>
         <div className={styles.formBox}>
           {!isLoading && <PartnerForm />}

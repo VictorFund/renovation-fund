@@ -8,7 +8,6 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { contactsData } from "@/data";
 
-
 const Footer = () => {
   const [isLoad, setIsLoad] = useState(true);
 
@@ -34,7 +33,7 @@ const Footer = () => {
                 className={styles.street}
               >
                 {t("Footer.AdressCity")},
-                <br /> {t("Footer.AdressStreet")}, 21
+                <br /> {t("Footer.AdressStreet")}, 60
               </a>
             )}
 
@@ -72,9 +71,7 @@ const Footer = () => {
             </a>
 
             {!isLoad && <p>9.00 - 19.00 {t("Footer.WorkDays")}</p>}
-            <a href={contactsData[1].href}>
-              {contactsData[1].text}
-            </a>
+            <a href={contactsData[1].href}>{contactsData[1].text}</a>
           </address>
         </div>
 
@@ -98,6 +95,5 @@ const Footer = () => {
     </footer>
   );
 };
-
 
 export default Footer;
