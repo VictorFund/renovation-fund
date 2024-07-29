@@ -3,8 +3,8 @@ export const contactsData = [
         id: 1,
         src: "map-pin-outline",
         href: "https://maps.app.goo.gl/Rh6PxCxxDbAd3p7q6",
-        text: "вул. Княжий Затон, 21, м. Київ, Україна",
-        textEn: "21, Knyazhyi Zaton street, Kyiv, Ukraine"
+        text: "просп. Науки, 60, м. Київ, Україна",
+        textEn: "60, Nauky Ave., Kyiv, Ukraine"
     },
     {
         id: 2,
