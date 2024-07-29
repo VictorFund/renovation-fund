@@ -28,7 +28,7 @@ const DashboardPartnershipFormUpdate = ({ data, mutate, isOwner }) => {
     const form = useForm(initialValues);
     const { register, handleSubmit, formState, reset, getValues, setValue } =
         form;
-    const { errors, isSubmitSuccessful, isErrors, isSubmitting } = formState;
+    const { errors, isErrors, isSubmitting } = formState;
 
     const router = useRouter();
 
@@ -54,20 +54,23 @@ const DashboardPartnershipFormUpdate = ({ data, mutate, isOwner }) => {
             isApproved: newIsApproved,
         };
 
+        const forSendData = { ...updatedData };
         const session = await getDashboardSession();
         const editor = session.user?.name;
-        updatedData.editor = editor;
+        forSendData.editor = editor;
+        const trimedSlug = forSendData.slug.trim();
+        forSendData.slug = trimedSlug;
 
         try {
             await fetch(`/api/partnership/${slug}`, {
                 method: "PUT",
-                body: JSON.stringify(updatedData),
+                body: JSON.stringify(forSendData),
             });
 
             console.log("Information updated to DB");
 
             // по умові виконується або перехід на іншу сторінку, або оновлення існуючої
-            (slug !== updatedData.slug) ? router.push(`/dashboard/partnership/${updatedData.slug}`) : mutate();
+            (slug !== forSendData.slug) ? router.push(`/dashboard/partnership/${forSendData.slug}`) : mutate();
         } catch (err) {
             console.log(err);
         }
