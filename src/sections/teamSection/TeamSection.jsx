@@ -5,6 +5,7 @@ import { CldImage } from 'next-cloudinary';
 import Loader from '@/components/Loader/Loader';
 import { useTranslation } from 'react-i18next';
 import { currentLanguages } from '@/data';
+import Image from 'next/image';
 
 const TeamSection = () => {
   const { data, isLoading } = GetDataWithPathname();
@@ -20,7 +21,9 @@ const TeamSection = () => {
   return (
     <section className="topSection">
       <div className={`container ${styles.team}`}>
-        <h1 className={`sectionTitle ${styles.title}`}>{!isLoading && t('TeamPage.Title')}</h1>
+        <h1 className={`sectionTitle ${styles.title}`}>
+          {!isLoading && t('TeamPage.Title')}
+        </h1>
         {isLoading ? (
           <Loader />
         ) : (
@@ -39,12 +42,21 @@ const TeamSection = () => {
                   return (
                     <li key={slug} className={styles.teamCard}>
                       <figure className={styles.imgContainer}>
-                        <CldImage
-                          src={photo}
-                          alt={name}
-                          fill={true}
-                          sizes="(max-width: 768px) 224px, (max-width: 1440px) 432px"
-                        />
+                        {photo ? (
+                          <CldImage
+                            src={photo}
+                            alt={name}
+                            fill={true}
+                            sizes="(max-width: 768px) 224px, (max-width: 1440px) 432px"
+                          />
+                        ) : (
+                          <Image
+                            src="/images/defaultImg.webp"
+                            alt={name}
+                            fill={true}
+                            sizes="(max-width: 768px) 224px, (max-width: 1440px) 432px"
+                          />
+                        )}
                       </figure>
                       <div className={styles.content}>
                         <h4 className={styles.contetnTitle}>
