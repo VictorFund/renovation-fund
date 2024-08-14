@@ -207,6 +207,7 @@
 }
 
 .link {
+    color: blue;
     overflow-wrap: break-word;
 }
 
@@ -265,6 +266,10 @@
 
 .projectImg {
     object-fit: cover;
+}
+
+.projectPayLink{
+    color: blue;
 }
 
 .projectDescriptionWrapper p:not(:last-child) {

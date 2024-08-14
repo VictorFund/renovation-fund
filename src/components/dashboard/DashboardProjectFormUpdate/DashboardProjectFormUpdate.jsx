@@ -10,7 +10,7 @@ import styles from '../DashboardComponents.module.scss'
 
 
 const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
-    const { slug, title, titleEn, image, shortDescription, shortDescriptionEn, state, startDate, sum, mission, missionEn, goal, goalEn, audience, audienceEn, concept, conceptEn, description, descriptionEn, link, isApproved } = data;
+    const { slug, title, titleEn, image, shortDescription, shortDescriptionEn, state, startDate, sum, payLink, mission, missionEn, goal, goalEn, audience, audienceEn, concept, conceptEn, description, descriptionEn, link, isApproved } = data;
 
     const initialValues = {
         defaultValues: {
@@ -23,6 +23,7 @@ const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
             newState: state,
             newStartDate: startDate,
             newSum: sum,
+            newPayLink: payLink,
             newMission: mission,
             newMissionEn: missionEn,
             newGoal: goal,
@@ -58,6 +59,7 @@ const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
             newState,
             newStartDate,
             newSum,
+            newPayLink,
             newMission,
             newMissionEn,
             newGoal,
@@ -82,6 +84,7 @@ const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
             state: newState,
             startDate: newStartDate,
             sum: newSum,
+            payLink: newPayLink,
             mission: newMission,
             missionEn: newMissionEn,
             goal: newGoal,
@@ -299,6 +302,22 @@ const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
                 </label>
                 <p className={styles.error}>
                     {errors.newSum?.message}
+                </p>
+            </div>
+
+            <div className={styles.inputGroup}>
+                <input
+                    type='text'
+                    className={styles.formInput}
+                    id='newPayLink'
+                    placeholder=' '
+                    {...register("newPayLink")}
+                />
+                <label htmlFor='newPayLink' className={styles.formLabel}>
+                    Нове посилання для платіжної системи
+                </label>
+                <p className={styles.error}>
+                    {errors.newPayLink?.message}
                 </p>
             </div>
 

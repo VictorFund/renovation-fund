@@ -40,6 +40,9 @@ const projectSchema = new mongoose.Schema(
         sum: {
             type: String,
         },
+        payLink: {
+            type: String,
+        },
         mission: {
             type: String,
             required: true,
