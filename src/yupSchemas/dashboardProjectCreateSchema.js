@@ -31,6 +31,8 @@ export const dashboardProjectCreateSchema = yup.object({
         .nullable()
         .moreThan(-1, "Тільки додатні числа")
         .typeError("Тільки числа"),
+    payLink: yup
+        .string(),
     mission: yup
         .string()
         .required("Місія - обов’язкове поле"),

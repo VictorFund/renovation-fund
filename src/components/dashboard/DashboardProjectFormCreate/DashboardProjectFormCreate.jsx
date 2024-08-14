@@ -21,6 +21,7 @@ const DashboardProjectFormCreate = ({ mutate, isOwner }) => {
             state: "",
             startDate: "",
             sum: "",
+            payLink: "",
             mission: "",
             missionEn: "",
             goal: "",
@@ -245,6 +246,20 @@ const DashboardProjectFormCreate = ({ mutate, isOwner }) => {
                     Сума
                 </label>
                 <p className={styles.error}>{errors.sum?.message}</p>
+            </div>
+
+            <div className={styles.inputGroup}>
+                <input
+                    type='text'
+                    className={styles.formInput}
+                    id='payLink'
+                    placeholder=' '
+                    {...register("payLink")}
+                />
+                <label htmlFor='payLink' className={styles.formLabel}>
+                    Посилання для платіжної системи
+                </label>
+                <p className={styles.error}>{errors.payLink?.message}</p>
             </div>
 
             <div className={styles.inputGroup}>

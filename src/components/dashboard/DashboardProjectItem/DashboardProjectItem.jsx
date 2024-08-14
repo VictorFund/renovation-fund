@@ -1,5 +1,6 @@
 "usr client"
 import { usePathname } from 'next/navigation'
+import Link from 'next/link';
 import { CldImage } from 'next-cloudinary'
 import DashboardEditAndDelete from '../DashboardEditAndDelete/DashboardEditAndDelete'
 import { changeStringTypeToArray } from '@/utils/changeStringTypeToArray';
@@ -38,6 +39,7 @@ const DashboardProjectItem = ({ data, isLoading, mutate, isOwner }) => {
             <p><span className='accentText'>Стан:</span> {changedData.state}</p>
             {changedData.startDate && <p><span className='accentText'>Дата початку:</span> {changedData.startDate}</p>}
             {changedData.sum && <p><span className='accentText'>Сума:</span> {changedData.sum}</p>}
+            {changedData.payLink && <p><span className='accentText'>Посилання для платіжної системи:</span> <Link href={changedData.payLink} target="_blank" rel="noopener noreferrer" className={styles.projectPayLink}>{changedData.payLink}</Link></p>}
             <p><span className='accentText'>Місія:</span> {changedData.mission}</p>
             <p><span className='accentText'>Місія англійською:</span> {changedData.missionEn}</p>
             <p><span className='accentText'>Мета:</span> {changedData.goal}</p>
