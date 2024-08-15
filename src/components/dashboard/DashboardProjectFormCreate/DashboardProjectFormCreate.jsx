@@ -1,12 +1,13 @@
 "use client";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import { CldUploadButton } from "next-cloudinary";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { dashboardProjectCreateSchema } from "@/yupSchemas/dashboardProjectCreateSchema";
 import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudinary";
 import { getDashboardSession } from "@/utils/getDashboardSession";
-import styles from '../DashboardComponents.module.scss'
+import styles from '../DashboardComponents.module.scss';
 
 
 const DashboardProjectFormCreate = ({ mutate, isOwner }) => {
@@ -60,9 +61,11 @@ const DashboardProjectFormCreate = ({ mutate, isOwner }) => {
             // автоматично оновлює сторінку при зміні кількості карток
             mutate();
             console.log("Information added to DB");
+            toast.success(`Картка проєкту "${forSendData.slug}" створена!`);
 
         } catch (err) {
             console.log(err);
+            toast.error(err);
         }
     };
 
@@ -128,15 +131,17 @@ const DashboardProjectFormCreate = ({ mutate, isOwner }) => {
                 <CldUploadButton
                     name='image'
                     className={styles.uploadBtn}
-                    onUpload={(result, widget) => {
+                    onSuccess={(result, widget) => {
                         if (getValues("image") !== "") {
                             const publicId = getValues("image");
                             handleDeleteImgFromCloudinary(publicId);
+                            toast.success("Попереднє фото видалено з Cloudinary!");
                         }
                         setValue("image", result.info.public_id, {
                             shouldValidate: true,
                         });
                         widget.close();
+                        toast.success("Нове фото додано до Cloudinary!");
                     }}
                     options={{ multiple: false }}
                     uploadPreset='unsigned_preset'

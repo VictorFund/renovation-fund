@@ -1,9 +1,9 @@
-"use client"
+'use client';
 import DashboardProjectItem from '@/components/dashboard/DashboardProjectItem/DashboardProjectItem';
 import DashboardProjectFormUpdate from '@/components/dashboard/DashboardProjectFormUpdate/DashboardProjectFormUpdate';
 import Loader from '@/components/Loader/Loader';
 import { GetDataWithPathname } from '@/fetch/clientFetch';
-import styles from '../DashboardSections.module.scss'
+import styles from '../DashboardSections.module.scss';
 
 
 const DashboardProjectIdSection = ({ isOwner }) => {

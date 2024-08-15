@@ -1,9 +1,9 @@
-"use client"
+'use client';
 import DashboardNewsItem from '@/components/dashboard/DashboardNewsItem/DashboardNewsItem';
 import DashboardNewsFormUpdate from '@/components/dashboard/DashboardNewsFormUpdate/DashboardNewsFormUpdate';
 import Loader from '@/components/Loader/Loader';
 import { GetDataWithPathname } from '@/fetch/clientFetch';
-import styles from '../DashboardSections.module.scss'
+import styles from '../DashboardSections.module.scss';
 
 
 const DashboardNewsIdSection = ({ isOwner }) => {

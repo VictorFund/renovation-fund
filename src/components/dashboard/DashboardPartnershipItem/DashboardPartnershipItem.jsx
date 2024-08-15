@@ -1,9 +1,9 @@
-"use client"
-import { usePathname } from 'next/navigation'
-import { CldImage } from 'next-cloudinary'
-import DashboardEditAndDelete from '../DashboardEditAndDelete/DashboardEditAndDelete'
-import styles from '../DashboardComponents.module.scss'
-import Image from 'next/image'
+"use client";
+import { usePathname } from 'next/navigation';
+import Image from 'next/image';
+import { CldImage } from 'next-cloudinary';
+import DashboardEditAndDelete from '../DashboardEditAndDelete/DashboardEditAndDelete';
+import styles from '../DashboardComponents.module.scss';
 
 
 const DashboardPartnershipItem = ({ data, mutate, isOwner }) => {

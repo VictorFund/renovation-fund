@@ -1,9 +1,9 @@
-"usr client"
-import { usePathname } from 'next/navigation'
-import { CldImage } from 'next-cloudinary'
-import DashboardEditAndDelete from '../DashboardEditAndDelete/DashboardEditAndDelete'
+'usr client';
+import { usePathname } from 'next/navigation';
+import { CldImage } from 'next-cloudinary';
+import DashboardEditAndDelete from '../DashboardEditAndDelete/DashboardEditAndDelete';
 import { changeStringTypeToArray } from '@/utils/changeStringTypeToArray';
-import styles from '../DashboardComponents.module.scss'
+import styles from '../DashboardComponents.module.scss';
 
 
 const DashboardNewsItem = ({ data, isLoading, mutate, isOwner }) => {

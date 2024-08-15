@@ -1,5 +1,6 @@
 "use client";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { CldUploadButton } from "next-cloudinary";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -75,8 +76,11 @@ const DashboardCoworkerFormUpdate = ({ data, mutate, isOwner, prioritiesArr }) =
 
             // по умові виконується або перехід на іншу сторінку, або оновлення існуючої
             (slug !== forSendData.slug) ? router.push(`/dashboard/team/${forSendData.slug}`) : mutate();
+
+            toast.success(`Картка колеги "${forSendData.name}" оновлена!`);
         } catch (err) {
             console.log(err);
+            toast.error(err);
         }
     };
 
@@ -149,15 +153,17 @@ const DashboardCoworkerFormUpdate = ({ data, mutate, isOwner, prioritiesArr }) =
                 <CldUploadButton
                     name='newPhoto'
                     className={styles.uploadBtn}
-                    onUpload={(result, widget) => {
+                    onSuccess={(result, widget) => {
                         if (getValues("newPhoto") !== "") {
                             const publicId = getValues("newPhoto");
                             handleDeleteImgFromCloudinary(publicId);
+                            toast.success("Попереднє фото видалено з Cloudinary!");
                         }
                         setValue("newPhoto", result.info.public_id, {
                             shouldValidate: true,
                         });
                         widget.close();
+                        toast.success("Нове фото додано до Cloudinary!");
                     }}
                     options={{ multiple: false }}
                     uploadPreset='unsigned_preset'

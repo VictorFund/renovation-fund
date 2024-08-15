@@ -9,6 +9,9 @@ import TranslatorProvider from "@/translator/i18Provider";
 import SideBtn from "@/components/Buttons/SideBtn/SideBtn";
 import ToTopBtn from "@/components/Buttons/ToTopBtn/ToTopBtn";
 import AuthProvider from "@/components/dashboard/AuthProvider/AuthProvider";
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+
 
 export const metadata = {
   title: "Charity fund",
@@ -33,6 +36,12 @@ export default function RootLayout({ children }) {
             </TranslatorProvider>
           </SiteProvider>
         </AuthProvider>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          pauseOnHover
+          theme="colored"
+        />
       </body>
     </html>
   );

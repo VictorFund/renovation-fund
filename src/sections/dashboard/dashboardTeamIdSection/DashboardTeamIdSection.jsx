@@ -1,9 +1,9 @@
-"use client"
+'use client';
 import DashboardCoworker from '@/components/dashboard/DashboardCoworker/DashboardCoworker';
 import DashboardCoworkerFormUpdate from '@/components/dashboard/DashboardCoworkerFormUpdate/DashboardCoworkerFormUpdate';
 import Loader from '@/components/Loader/Loader';
 import { GetDataForHomeByCollection, GetDataWithPathname } from '@/fetch/clientFetch';
-import styles from '../DashboardSections.module.scss'
+import styles from '../DashboardSections.module.scss';
 
 
 const DashboardTeamIdSection = ({ isOwner }) => {

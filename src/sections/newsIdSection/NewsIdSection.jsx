@@ -1,7 +1,7 @@
-"use client"
-import NewsItem from '@/components/NewsItem/NewsItem'
-import Loader from '@/components/Loader/Loader'
-import { GetDataWithPathname } from '@/fetch/clientFetch'
+'use client';
+import NewsItem from '@/components/NewsItem/NewsItem';
+import Loader from '@/components/Loader/Loader';
+import { GetDataWithPathname } from '@/fetch/clientFetch';
 
 
 const NewsIdSection = () => {
