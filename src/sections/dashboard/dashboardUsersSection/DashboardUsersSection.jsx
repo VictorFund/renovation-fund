@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import DashboardUser from '@/components/dashboard/DashboardUser/DashboardUser';
 import Loader from '@/components/Loader/Loader';
 import { GetDataWithPathname } from '@/fetch/clientFetch';

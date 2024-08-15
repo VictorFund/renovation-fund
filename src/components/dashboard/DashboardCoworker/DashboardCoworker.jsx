@@ -1,8 +1,8 @@
-"usr client"
-import { usePathname } from 'next/navigation'
-import { CldImage } from 'next-cloudinary'
-import DashboardEditAndDelete from '../DashboardEditAndDelete/DashboardEditAndDelete'
-import styles from '../DashboardComponents.module.scss'
+'usr client';
+import { usePathname } from 'next/navigation';
+import { CldImage } from 'next-cloudinary';
+import DashboardEditAndDelete from '../DashboardEditAndDelete/DashboardEditAndDelete';
+import styles from '../DashboardComponents.module.scss';
 
 
 const DashboardCoworker = ({ data, mutate, isOwner }) => {

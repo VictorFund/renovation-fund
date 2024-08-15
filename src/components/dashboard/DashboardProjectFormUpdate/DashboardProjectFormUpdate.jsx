@@ -1,12 +1,13 @@
 "use client";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { CldUploadButton } from "next-cloudinary";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { dashboardProjectUpdateSchema } from "@/yupSchemas/dashboardProjectUpdateSchema";
 import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudinary";
 import { getDashboardSession } from "@/utils/getDashboardSession";
-import styles from '../DashboardComponents.module.scss'
+import styles from '../DashboardComponents.module.scss';
 
 
 const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
@@ -116,8 +117,12 @@ const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
 
             // по умові виконується або перехід на іншу сторінку, або оновлення існуючої
             (slug !== forSendData.slug) ? router.push(`/dashboard/projects/${forSendData.slug}`) : mutate();
+
+            toast.success(`Картка проєкту "${forSendData.slug}" оновлена!`);
+
         } catch (err) {
             console.log(err);
+            toast.error(err);
         }
     };
 
@@ -176,15 +181,17 @@ const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
                 <CldUploadButton
                     name='newImage'
                     className={styles.uploadBtn}
-                    onUpload={(result, widget) => {
+                    onSuccess={(result, widget) => {
                         if (getValues("newImage") !== "") {
                             const publicId = getValues("newImage");
                             handleDeleteImgFromCloudinary(publicId);
+                            toast.success("Попереднє фото видалено з Cloudinary!");
                         }
                         setValue("newImage", result.info.public_id, {
                             shouldValidate: true,
                         });
                         widget.close();
+                        toast.success("Нове фото додано до Cloudinary!");
                     }}
                     options={{ multiple: false }}
                     uploadPreset='unsigned_preset'

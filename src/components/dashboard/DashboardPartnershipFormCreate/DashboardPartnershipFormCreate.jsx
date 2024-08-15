@@ -1,12 +1,13 @@
 "use client";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import { CldUploadButton } from "next-cloudinary";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { dashboardPartnershipCreateSchema } from "@/yupSchemas/dashboardPartnershipCreateSchema";
 import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudinary";
 import { getDashboardSession } from "@/utils/getDashboardSession";
-import styles from '../DashboardComponents.module.scss'
+import styles from '../DashboardComponents.module.scss';
 
 
 const DashboardPartnershipFormCreate = ({ mutate, isOwner }) => {
@@ -45,9 +46,11 @@ const DashboardPartnershipFormCreate = ({ mutate, isOwner }) => {
             // автоматично оновлює сторінку при зміні кількості карток
             mutate();
             console.log("Information added to DB");
+            toast.success(`Картка партнера "${forSendData.slug}" створена!`);
 
         } catch (err) {
             console.log(err);
+            toast.error(err);
         }
     };
 
@@ -127,15 +130,17 @@ const DashboardPartnershipFormCreate = ({ mutate, isOwner }) => {
                 <CldUploadButton
                     name='logo'
                     className={styles.uploadBtn}
-                    onUpload={(result, widget) => {
+                    onSuccess={(result, widget) => {
                         if (getValues("logo") !== "") {
                             const publicId = getValues("logo");
                             handleDeleteImgFromCloudinary(publicId);
+                            toast.success("Попереднє фото видалено з Cloudinary!");
                         }
                         setValue("logo", result.info.public_id, {
                             shouldValidate: true,
                         });
                         widget.close();
+                        toast.success("Нове фото додано до Cloudinary!");
                     }}
                     options={{ multiple: false }}
                     uploadPreset='unsigned_preset'

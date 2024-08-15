@@ -1,5 +1,5 @@
-import DashboardRegisterForm from '@/components/dashboard/DashboardRegisterForm/DashboardRegisterForm'
-import styles from '../DashboardSections.module.scss'
+import DashboardRegisterForm from '@/components/dashboard/DashboardRegisterForm/DashboardRegisterForm';
+import styles from '../DashboardSections.module.scss';
 
 
 const DashboardRegisterSection = () => {

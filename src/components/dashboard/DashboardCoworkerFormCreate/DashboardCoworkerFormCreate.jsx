@@ -1,6 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import { CldUploadButton } from "next-cloudinary";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { dashboardCoworkerCreateSchema } from "@/yupSchemas/dashboardCoworkerCreateSchema";
@@ -46,9 +47,11 @@ const DashboardCoworkerFormCreate = ({ mutate, isOwner, prioritiesArr }) => {
             // автоматично оновлює сторінку при зміні кількості карток
             mutate();
             console.log("Information added to DB");
+            toast.success(`Картка колеги "${forSendData.name}" створена!`);
 
         } catch (err) {
             console.log(err);
+            toast.error(err);
         }
     };
 
@@ -129,15 +132,17 @@ const DashboardCoworkerFormCreate = ({ mutate, isOwner, prioritiesArr }) => {
                 <CldUploadButton
                     name='photo'
                     className={styles.uploadBtn}
-                    onUpload={(result, widget) => {
+                    onSuccess={(result, widget) => {
                         if (getValues("photo") !== "") {
                             const publicId = getValues("photo");
                             handleDeleteImgFromCloudinary(publicId);
+                            toast.success("Попереднє фото видалено з Cloudinary!");
                         }
                         setValue("photo", result.info.public_id, {
                             shouldValidate: true,
                         });
                         widget.close();
+                        toast.success("Нове фото додано до Cloudinary!");
                     }}
                     options={{ multiple: false }}
                     uploadPreset='unsigned_preset'
