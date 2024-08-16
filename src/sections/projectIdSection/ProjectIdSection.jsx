@@ -18,7 +18,7 @@ import styles from "./ProjectIdSection.module.scss";
 const ProjectIdSection = () => {
   const [projectData, setProjectData] = useState([]);
   const { data, isLoading } = GetDataWithPathname();
-
+  console.log("data.link", data?.link);
   const projectlist = GetDataForHomeByCollection("projects");
 
   const { i18n, t } = useTranslation();
@@ -114,13 +114,14 @@ const ProjectIdSection = () => {
                   </>
                 )}
                 <ButtonLink
-                  href="/donate"
+                  href={data.link ? data.link : "/donate"}
                   title={t("Buttons.Donate")}
                   customBtn={
                     changedData?.sum
                       ? styles.btn
                       : styles.btn + " " + styles.btn_sum
                   }
+                  target={data.link ? "_blank" : "_self"}
                 />
               </div>
             </div>
