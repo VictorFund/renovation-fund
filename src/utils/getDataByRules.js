@@ -10,10 +10,6 @@ export const getDataByRules = (data, isLoading, isOwner) => {
     }
 
     const neededData = isOwner ? sortedByUpdateData : filteredByIsNotApproved;
-    // console.log('data', data)
-    // console.log('sortedByUpdateData', sortedByUpdateData)
-    // console.log('filteredByIsNotApproved', filteredByIsNotApproved)
-    // console.log("isOwner:", isOwner, 'neededData:', neededData);
 
     return neededData;
 }

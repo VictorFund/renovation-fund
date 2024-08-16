@@ -46,8 +46,8 @@ const DashboardCoworkerFormCreate = ({ mutate, isOwner, prioritiesArr }) => {
             });
             // автоматично оновлює сторінку при зміні кількості карток
             mutate();
-            console.log("Information added to DB");
-            toast.success(`Картка колеги "${forSendData.name}" створена!`);
+
+            toast.success(`Картка колеги "${forSendData.slug}" створена!`);
 
         } catch (err) {
             console.log(err);
