@@ -1,4 +1,4 @@
-@import '../../app/variables';
+@import "../../app/variables";
 
 .title {
   margin-bottom: 24px;
@@ -59,7 +59,7 @@
   color: $accentColor;
   @media screen and (min-width: $laptop) {
     &::after {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       bottom: -18px;
