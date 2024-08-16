@@ -46,8 +46,9 @@ const DashboardNewsFormCreate = ({ mutate, isOwner }) => {
             });
             // автоматично оновлює сторінку при зміні кількості карток
             mutate();
-            console.log("Information added to DB");
+
             toast.success(`Картка новини "${forSendData.slug}" створена!`);
+
         } catch (err) {
             console.log(err);
             toast.error(err);

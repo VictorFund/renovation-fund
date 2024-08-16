@@ -51,6 +51,8 @@ const PartnerForm = () => {
     const onSubmit = (data) => {
         console.log("partnerFormData:", data);
     };
+
+
     return (
         <form
             onSubmit={handleSubmit(onSubmit)}

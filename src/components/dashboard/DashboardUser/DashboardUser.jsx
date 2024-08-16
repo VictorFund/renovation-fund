@@ -2,17 +2,18 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import DashboardEditAndDelete from "../DashboardEditAndDelete/DashboardEditAndDelete";
-import styles from "../DashboardComponents.module.scss"
+import styles from "../DashboardComponents.module.scss";
 
 
 const DashboardUser = ({ data, mutate, isOwner }) => {
     const pathname = usePathname();
-    const [isAdminRules, setIsAdminRules] = useState(data.isAdmin)
+    const [isAdminRules, setIsAdminRules] = useState(data.isAdmin);
 
     const onSubmit = async () => {
         const updatedData = {
             isAdmin: isAdminRules,
         };
+
         try {
             await fetch(`/api/users/${data.email}`, {
                 method: "PATCH",

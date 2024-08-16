@@ -7,11 +7,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { dashboardNewsUpdateSchema } from "@/yupSchemas/dashboardNewsUpdateSchema";
 import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudinary";
 import { getDashboardSession } from "@/utils/getDashboardSession";
+import { isDeepEqual } from "@/utils/isDeepEqual";
 import styles from '../DashboardComponents.module.scss';
 
 
 const DashboardNewsFormUpdate = ({ data, mutate, isOwner }) => {
-    const { slug, title, titleEn, image, description, descriptionEn, link, isApproved } = data;
+    const { slug, title, titleEn, image, description, descriptionEn, link, isApproved, editor } = data;
+
+    const receivedData = { slug, title, titleEn, image, description, descriptionEn, link, isApproved, editor };
 
     const initialValues = {
         defaultValues: {
@@ -23,6 +26,7 @@ const DashboardNewsFormUpdate = ({ data, mutate, isOwner }) => {
             newDescriptionEn: descriptionEn,
             newLink: link,
             newIsApproved: isApproved,
+            newEditor: editor,
         },
         resolver: yupResolver(dashboardNewsUpdateSchema),
     };
@@ -45,6 +49,7 @@ const DashboardNewsFormUpdate = ({ data, mutate, isOwner }) => {
             newDescriptionEn,
             newLink,
             newIsApproved,
+            newEditor,
         } = data;
 
         const updatedData = {
@@ -56,22 +61,27 @@ const DashboardNewsFormUpdate = ({ data, mutate, isOwner }) => {
             descriptionEn: newDescriptionEn,
             link: newLink,
             isApproved: newIsApproved,
+            editor: newEditor,
         };
+
+        const trimedSlug = updatedData.slug.trim();
+        updatedData.slug = trimedSlug;
+
+        if (isDeepEqual(receivedData, updatedData)) {
+            toast.warn(`Ви не внесли змін в картку "${slug}"`);
+            return;
+        }
 
         const forSendData = { ...updatedData };
         const session = await getDashboardSession();
         const editor = session.user?.name;
         forSendData.editor = editor;
-        const trimedSlug = forSendData.slug.trim();
-        forSendData.slug = trimedSlug;
 
         try {
             await fetch(`/api/news/${slug}`, {
                 method: "PUT",
                 body: JSON.stringify(forSendData),
             });
-
-            console.log("Information updated to DB");
 
             // по умові виконується або перехід на іншу сторінку, або оновлення існуючої
             (slug !== forSendData.slug) ? router.push(`/dashboard/news/${forSendData.slug}`) : mutate();

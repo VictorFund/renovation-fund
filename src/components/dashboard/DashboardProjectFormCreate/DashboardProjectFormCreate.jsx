@@ -60,7 +60,7 @@ const DashboardProjectFormCreate = ({ mutate, isOwner }) => {
             });
             // автоматично оновлює сторінку при зміні кількості карток
             mutate();
-            console.log("Information added to DB");
+
             toast.success(`Картка проєкту "${forSendData.slug}" створена!`);
 
         } catch (err) {

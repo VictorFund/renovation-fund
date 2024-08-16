@@ -7,11 +7,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { dashboardPartnershipUpdateSchema } from "@/yupSchemas/dashboardPartnershipUpdateSchema";
 import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudinary";
 import { getDashboardSession } from "@/utils/getDashboardSession";
+import { isDeepEqual } from "@/utils/isDeepEqual";
 import styles from "../DashboardComponents.module.scss";
 
 
 const DashboardPartnershipFormUpdate = ({ data, mutate, isOwner }) => {
-    const { slug, title, titleEn, isMainPartner, logo, siteLink, isApproved } = data;
+    const { slug, title, titleEn, isMainPartner, logo, siteLink, isApproved, editor } = data;
+
+    const receivedData = { slug, title, titleEn, isMainPartner, logo, siteLink, isApproved, editor }
 
     const initialValues = {
         defaultValues: {
@@ -22,6 +25,7 @@ const DashboardPartnershipFormUpdate = ({ data, mutate, isOwner }) => {
             newLogo: logo,
             newSiteLink: siteLink,
             newIsApproved: isApproved,
+            newEditor: editor,
         },
         resolver: yupResolver(dashboardPartnershipUpdateSchema),
     };
@@ -43,6 +47,7 @@ const DashboardPartnershipFormUpdate = ({ data, mutate, isOwner }) => {
             newLogo,
             newSiteLink,
             newIsApproved,
+            newEditor,
         } = data;
 
         const updatedData = {
@@ -53,22 +58,27 @@ const DashboardPartnershipFormUpdate = ({ data, mutate, isOwner }) => {
             logo: newLogo,
             siteLink: newSiteLink,
             isApproved: newIsApproved,
+            editor: newEditor,
         };
+
+        const trimedSlug = updatedData.slug.trim();
+        updatedData.slug = trimedSlug;
+
+        if (isDeepEqual(receivedData, updatedData)) {
+            toast.warn(`Ви не внесли змін в картку "${slug}"`);
+            return;
+        }
 
         const forSendData = { ...updatedData };
         const session = await getDashboardSession();
         const editor = session.user?.name;
         forSendData.editor = editor;
-        const trimedSlug = forSendData.slug.trim();
-        forSendData.slug = trimedSlug;
 
         try {
             await fetch(`/api/partnership/${slug}`, {
                 method: "PUT",
                 body: JSON.stringify(forSendData),
             });
-
-            console.log("Information updated to DB");
 
             // по умові виконується або перехід на іншу сторінку, або оновлення існуючої
             (slug !== forSendData.slug) ? router.push(`/dashboard/partnership/${forSendData.slug}`) : mutate();

@@ -7,11 +7,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { dashboardProjectUpdateSchema } from "@/yupSchemas/dashboardProjectUpdateSchema";
 import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudinary";
 import { getDashboardSession } from "@/utils/getDashboardSession";
+import { isDeepEqual } from "@/utils/isDeepEqual";
 import styles from '../DashboardComponents.module.scss';
 
 
 const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
-    const { slug, title, titleEn, image, shortDescription, shortDescriptionEn, state, startDate, sum, payLink, mission, missionEn, goal, goalEn, audience, audienceEn, concept, conceptEn, description, descriptionEn, link, isApproved } = data;
+    const { slug, title, titleEn, image, shortDescription, shortDescriptionEn, state, startDate, sum, payLink, mission, missionEn, goal, goalEn, audience, audienceEn, concept, conceptEn, description, descriptionEn, link, isApproved, editor } = data;
+
+    const receivedData = { slug, title, titleEn, image, shortDescription, shortDescriptionEn, state, startDate, sum, payLink, mission, missionEn, goal, goalEn, audience, audienceEn, concept, conceptEn, description, descriptionEn, link, isApproved, editor }
 
     const initialValues = {
         defaultValues: {
@@ -37,6 +40,7 @@ const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
             newDescriptionEn: descriptionEn,
             newLink: link,
             newIsApproved: isApproved,
+            newEditor: editor,
         },
         resolver: yupResolver(dashboardProjectUpdateSchema),
     };
@@ -73,6 +77,7 @@ const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
             newDescriptionEn,
             newLink,
             newIsApproved,
+            newEditor,
         } = data;
 
         const updatedData = {
@@ -98,22 +103,27 @@ const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
             descriptionEn: newDescriptionEn,
             link: newLink,
             isApproved: newIsApproved,
+            editor: newEditor,
         };
+
+        const trimedSlug = updatedData.slug.trim();
+        updatedData.slug = trimedSlug;
+
+        if (isDeepEqual(receivedData, updatedData)) {
+            toast.warn(`Ви не внесли змін в картку "${slug}"`);
+            return;
+        }
 
         const forSendData = { ...updatedData };
         const session = await getDashboardSession();
         const editor = session.user?.name;
         forSendData.editor = editor;
-        const trimedSlug = forSendData.slug.trim();
-        forSendData.slug = trimedSlug;
 
         try {
             await fetch(`/api/projects/${slug}`, {
                 method: "PUT",
                 body: JSON.stringify(forSendData),
             });
-
-            console.log("Information updated to DB");
 
             // по умові виконується або перехід на іншу сторінку, або оновлення існуючої
             (slug !== forSendData.slug) ? router.push(`/dashboard/projects/${forSendData.slug}`) : mutate();

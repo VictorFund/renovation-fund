@@ -45,7 +45,7 @@ const DashboardPartnershipFormCreate = ({ mutate, isOwner }) => {
             });
             // автоматично оновлює сторінку при зміні кількості карток
             mutate();
-            console.log("Information added to DB");
+
             toast.success(`Картка партнера "${forSendData.slug}" створена!`);
 
         } catch (err) {

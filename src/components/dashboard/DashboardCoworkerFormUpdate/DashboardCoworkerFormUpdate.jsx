@@ -7,11 +7,14 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { dashboardCoworkerUpdateSchema } from "@/yupSchemas/dashboardCoworkerUpdateSchema";
 import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudinary";
 import { getDashboardSession } from "@/utils/getDashboardSession";
+import { isDeepEqual } from "@/utils/isDeepEqual";
 import styles from "../DashboardComponents.module.scss";
 
 
 const DashboardCoworkerFormUpdate = ({ data, mutate, isOwner, prioritiesArr }) => {
-    const { slug, priority, name, nameEn, photo, description, descriptionEn, isApproved } = data;
+    const { slug, priority, name, nameEn, photo, description, descriptionEn, isApproved, editor } = data;
+
+    const receivedData = { slug, priority, name, nameEn, photo, description, descriptionEn, isApproved, editor };
 
     const initialValues = {
         defaultValues: {
@@ -23,6 +26,7 @@ const DashboardCoworkerFormUpdate = ({ data, mutate, isOwner, prioritiesArr }) =
             newDescription: description,
             newDescriptionEn: descriptionEn,
             newIsApproved: isApproved,
+            newEditor: editor,
         },
         resolver: yupResolver(dashboardCoworkerUpdateSchema),
         context: prioritiesArr,
@@ -46,6 +50,7 @@ const DashboardCoworkerFormUpdate = ({ data, mutate, isOwner, prioritiesArr }) =
             newDescription,
             newDescriptionEn,
             newIsApproved,
+            newEditor
         } = data;
 
         const updatedData = {
@@ -57,14 +62,21 @@ const DashboardCoworkerFormUpdate = ({ data, mutate, isOwner, prioritiesArr }) =
             description: newDescription,
             descriptionEn: newDescriptionEn,
             isApproved: newIsApproved,
+            editor: newEditor,
         };
+
+        const trimedSlug = updatedData.slug.trim();
+        updatedData.slug = trimedSlug;
+
+        if (isDeepEqual(receivedData, updatedData)) {
+            toast.warn(`Ви не внесли змін в картку "${slug}"`);
+            return;
+        }
 
         const forSendData = { ...updatedData };
         const session = await getDashboardSession();
         const editor = session.user?.name;
         forSendData.editor = editor;
-        const trimedSlug = forSendData.slug.trim();
-        forSendData.slug = trimedSlug;
 
         try {
             await fetch(`/api/team/${slug}`, {
@@ -72,12 +84,11 @@ const DashboardCoworkerFormUpdate = ({ data, mutate, isOwner, prioritiesArr }) =
                 body: JSON.stringify(forSendData),
             });
 
-            console.log("Information updated to DB");
-
             // по умові виконується або перехід на іншу сторінку, або оновлення існуючої
             (slug !== forSendData.slug) ? router.push(`/dashboard/team/${forSendData.slug}`) : mutate();
 
-            toast.success(`Картка колеги "${forSendData.name}" оновлена!`);
+            toast.success(`Картка колеги "${forSendData.slug}" оновлена!`);
+
         } catch (err) {
             console.log(err);
             toast.error(err);
