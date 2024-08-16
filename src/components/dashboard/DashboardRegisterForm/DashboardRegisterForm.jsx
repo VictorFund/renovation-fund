@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import { useEffect } from "react";
 import { useFormState } from "react-dom";
 import Link from 'next/link';
 import { useRouter } from "next/navigation";
 import { register } from "@/auth/actions";
-import styles from '../DashboardComponents.module.scss'
+import styles from '../DashboardComponents.module.scss';
 
 
 const DashboardRegisterForm = () => {

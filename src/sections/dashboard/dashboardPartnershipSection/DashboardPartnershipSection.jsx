@@ -1,10 +1,10 @@
-"use client"
+'use client';
 import DashboardPartnershipItem from '@/components/dashboard/DashboardPartnershipItem/DashboardPartnershipItem';
 import DashboardPartnershipFormCreate from '@/components/dashboard/DashboardPartnershipFormCreate/DashboardPartnershipFormCreate';
 import Loader from '@/components/Loader/Loader';
 import { GetDataWithPathname } from '@/fetch/clientFetch';
 import { getDataByRules } from '@/utils/getDataByRules';
-import styles from '../DashboardSections.module.scss'
+import styles from '../DashboardSections.module.scss';
 
 
 const DashboardPartnershipSection = ({ isOwner }) => {

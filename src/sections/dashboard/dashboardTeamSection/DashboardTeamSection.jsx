@@ -1,10 +1,10 @@
-"use client"
+'use client';
 import DashboardCoworker from '@/components/dashboard/DashboardCoworker/DashboardCoworker';
 import DashboardCoworkerFormCreate from '@/components/dashboard/DashboardCoworkerFormCreate/DashboardCoworkerFormCreate';
 import Loader from '@/components/Loader/Loader';
 import { GetDataWithPathname } from '@/fetch/clientFetch';
 import { getDataByRules } from '@/utils/getDataByRules';
-import styles from '../DashboardSections.module.scss'
+import styles from '../DashboardSections.module.scss';
 
 
 const DashboardTeamSection = ({ isOwner }) => {

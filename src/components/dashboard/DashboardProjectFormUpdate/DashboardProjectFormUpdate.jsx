@@ -1,16 +1,17 @@
 "use client";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { CldUploadButton } from "next-cloudinary";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { dashboardProjectUpdateSchema } from "@/yupSchemas/dashboardProjectUpdateSchema";
 import { handleDeleteImgFromCloudinary } from "@/utils/handleDeleteImgFromCloudinary";
 import { getDashboardSession } from "@/utils/getDashboardSession";
-import styles from '../DashboardComponents.module.scss'
+import styles from '../DashboardComponents.module.scss';
 
 
 const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
-    const { slug, title, titleEn, image, shortDescription, shortDescriptionEn, state, startDate, sum, mission, missionEn, goal, goalEn, audience, audienceEn, concept, conceptEn, description, descriptionEn, link, isApproved } = data;
+    const { slug, title, titleEn, image, shortDescription, shortDescriptionEn, state, startDate, sum, payLink, mission, missionEn, goal, goalEn, audience, audienceEn, concept, conceptEn, description, descriptionEn, link, isApproved } = data;
 
     const initialValues = {
         defaultValues: {
@@ -23,6 +24,7 @@ const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
             newState: state,
             newStartDate: startDate,
             newSum: sum,
+            newPayLink: payLink,
             newMission: mission,
             newMissionEn: missionEn,
             newGoal: goal,
@@ -58,6 +60,7 @@ const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
             newState,
             newStartDate,
             newSum,
+            newPayLink,
             newMission,
             newMissionEn,
             newGoal,
@@ -82,6 +85,7 @@ const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
             state: newState,
             startDate: newStartDate,
             sum: newSum,
+            payLink: newPayLink,
             mission: newMission,
             missionEn: newMissionEn,
             goal: newGoal,
@@ -113,8 +117,12 @@ const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
 
             // по умові виконується або перехід на іншу сторінку, або оновлення існуючої
             (slug !== forSendData.slug) ? router.push(`/dashboard/projects/${forSendData.slug}`) : mutate();
+
+            toast.success(`Картка проєкту "${forSendData.slug}" оновлена!`);
+
         } catch (err) {
             console.log(err);
+            toast.error(err);
         }
     };
 
@@ -173,15 +181,17 @@ const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
                 <CldUploadButton
                     name='newImage'
                     className={styles.uploadBtn}
-                    onUpload={(result, widget) => {
+                    onSuccess={(result, widget) => {
                         if (getValues("newImage") !== "") {
                             const publicId = getValues("newImage");
                             handleDeleteImgFromCloudinary(publicId);
+                            toast.success("Попереднє фото видалено з Cloudinary!");
                         }
                         setValue("newImage", result.info.public_id, {
                             shouldValidate: true,
                         });
                         widget.close();
+                        toast.success("Нове фото додано до Cloudinary!");
                     }}
                     options={{ multiple: false }}
                     uploadPreset='unsigned_preset'
@@ -299,6 +309,22 @@ const DashboardProjectFormUpdate = ({ data, mutate, isOwner }) => {
                 </label>
                 <p className={styles.error}>
                     {errors.newSum?.message}
+                </p>
+            </div>
+
+            <div className={styles.inputGroup}>
+                <input
+                    type='text'
+                    className={styles.formInput}
+                    id='newPayLink'
+                    placeholder=' '
+                    {...register("newPayLink")}
+                />
+                <label htmlFor='newPayLink' className={styles.formLabel}>
+                    Нове посилання для платіжної системи
+                </label>
+                <p className={styles.error}>
+                    {errors.newPayLink?.message}
                 </p>
             </div>
 
