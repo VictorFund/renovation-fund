@@ -33,7 +33,7 @@
   font-family: var(--mediumSerif);
   font-size: clamp(24px, 8vw, 48px);
   margin-bottom: clamp(40px, 8vw, 48px);
-  width: fit-content;
+  // width: fit-content;
 
   color: transparent;
 
@@ -54,11 +54,11 @@
   }
 }
 
-@-webkit-keyframes titleBg {
-  to {
-    background-position-x: left;
-  }
-}
+// @-webkit-keyframes titleBg {
+//   to {
+//     background-position-x: left;
+//   }
+// }
 
 #link {
   width: 100%;
