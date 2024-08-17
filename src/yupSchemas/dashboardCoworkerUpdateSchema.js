@@ -2,9 +2,22 @@ import * as yup from "yup";
 
 
 export const dashboardCoworkerUpdateSchema = yup.object({
-    newSlug: yup
-        .string()
-        .required("Slug - обов’язкове поле"),
+    newSlug: yup.string()
+        .required("Slug - обов’язкове поле")
+        .test({
+            name: "newSlug",
+            test(value, ctx) {
+                const trimedValue = value.trim();
+                // this.options.context - from DashboardCoworkerFormUpdate context: contextsForSchema
+                const isExist = this.options.context.slugs.includes(trimedValue);
+                if (isExist) {
+                    return ctx.createError({
+                        message: "Такий slug вже існує"
+                    })
+                }
+                return true;
+            },
+        }),
     newPriority: yup.number()
         .required("Пріоритет - обовʼязкове поле")
         .moreThan(-1, "Тільки додатні числа")
@@ -12,8 +25,9 @@ export const dashboardCoworkerUpdateSchema = yup.object({
         .test({
             name: "newPriority",
             test(value, ctx) {
-                // this.options.context - from DashboardCoworkerFormUpdate context: prioritiesArr
-                const isExist = this.options.context.includes(value);
+                const trimedValue = value.toString().trim();
+                // this.options.context - from DashboardCoworkerFormUpdate context: contextsForSchema
+                const isExist = this.options.context.priorities.includes(trimedValue);
                 if (isExist) {
                     return ctx.createError({
                         message: "Такий пріоритет вже існує"
