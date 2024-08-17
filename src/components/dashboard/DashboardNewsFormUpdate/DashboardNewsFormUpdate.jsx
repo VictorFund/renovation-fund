@@ -11,7 +11,7 @@ import { isDeepEqual } from "@/utils/isDeepEqual";
 import styles from '../DashboardComponents.module.scss';
 
 
-const DashboardNewsFormUpdate = ({ data, mutate, isOwner }) => {
+const DashboardNewsFormUpdate = ({ data, mutate, isOwner, slugsArr }) => {
     const { slug, title, titleEn, image, description, descriptionEn, link, isApproved, editor } = data;
 
     const receivedData = { slug, title, titleEn, image, description, descriptionEn, link, isApproved, editor };
@@ -29,6 +29,7 @@ const DashboardNewsFormUpdate = ({ data, mutate, isOwner }) => {
             newEditor: editor,
         },
         resolver: yupResolver(dashboardNewsUpdateSchema),
+        context: slugsArr,
     };
 
     const form = useForm(initialValues);

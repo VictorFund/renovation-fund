@@ -10,7 +10,7 @@ import SideBtn from "@/components/Buttons/SideBtn/SideBtn";
 import ToTopBtn from "@/components/Buttons/ToTopBtn/ToTopBtn";
 import AuthProvider from "@/components/dashboard/AuthProvider/AuthProvider";
 import { ToastContainer } from 'react-toastify';
-import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/ReactToastify.css";
 
 
 export const metadata = {

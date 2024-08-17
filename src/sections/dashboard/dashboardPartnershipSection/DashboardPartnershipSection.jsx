@@ -11,6 +11,9 @@ const DashboardPartnershipSection = ({ isOwner }) => {
     const { data, isLoading, mutate } = GetDataWithPathname();
     const neededData = getDataByRules(data, isLoading, isOwner);
 
+    // for yup-validation
+    const slugsArr = data?.map((item) => item.slug).sort((a, b) => { return a - b });
+
 
     return (
         <section className={styles.dashboardSection}>
@@ -20,7 +23,7 @@ const DashboardPartnershipSection = ({ isOwner }) => {
                     <div className={styles.cardsList}>
                         {neededData.map(item => <DashboardPartnershipItem key={item.slug} data={item} mutate={mutate} isOwner={isOwner} />)}
                     </div>
-                    <DashboardPartnershipFormCreate mutate={mutate} isOwner={isOwner} />
+                    <DashboardPartnershipFormCreate mutate={mutate} isOwner={isOwner} slugsArr={slugsArr} />
                 </div>
             }
         </section>

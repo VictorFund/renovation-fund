@@ -10,7 +10,7 @@ import { getDashboardSession } from "@/utils/getDashboardSession";
 import styles from '../DashboardComponents.module.scss';
 
 
-const DashboardProjectFormCreate = ({ mutate, isOwner }) => {
+const DashboardProjectFormCreate = ({ mutate, isOwner, slugsArr }) => {
     const initialValues = {
         defaultValues: {
             slug: "",
@@ -37,6 +37,7 @@ const DashboardProjectFormCreate = ({ mutate, isOwner }) => {
             isApproved: false,
         },
         resolver: yupResolver(dashboardProjectCreateSchema),
+        context: slugsArr,
     };
 
     const form = useForm(initialValues);
