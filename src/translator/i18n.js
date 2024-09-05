@@ -11,22 +11,22 @@ i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        // detection: { order: ["path", "navigator"] },
-        // whitelist: ['ua','en'], 
-        // supportedLngs:['ua','en'],
-        // lng:"ua",
-        fallbackLng: 'ua',
+        supportedLngs:['en','uk','ru'],
+        fallbackLng: {
+            'uk': ['ru'],
+        'default': ['en']
+    },
+    // fallbackLng:false,
+    // preload:false,
         debug: false,
         interpolation: {
             escapeValue: false,
         },
         detection: {
-            order: ['localStorage']
-        }
-        // wait: process && !process.release,
-
+            order: ['cookie','localStorage','sessionStorage', 'navigator', 'htmlTag','path' ]
+        },
+        lookupCookie: 'i18next',
     },
-
-    );
+);
 
 export default i18n;
