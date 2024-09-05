@@ -11,7 +11,7 @@ i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        // supportedLngs:['en','uk','ru'],
+        supportedLngs:['en','uk','ru'],
         fallbackLng: {
             'uk': ['ru'],
         'default': ['en']

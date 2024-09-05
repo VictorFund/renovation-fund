@@ -12,10 +12,9 @@ const TranslatorBtnBlock = () => {
   useEffect(() => {
     const previosLang= localStorage.getItem('previosLng')
     const browserLang=localStorage.getItem('i18nextLng')
-    console.log(browserLang)
+    
     const lang=()=>
     {if (previosLang){return previosLang} else if ((browserLang ==="ru") || (browserLang=== "uk")) {return "uk"} else {return "en"}}
-    console.log(lang())
     setLanguage(lang())
     i18n.changeLanguage(lang())
 
@@ -24,7 +23,6 @@ const TranslatorBtnBlock = () => {
 
   useEffect(() => {
     const handleLanguageChange = (lang) => {
-      console.log(lang)
       setLanguage(lang);
     };
 
