@@ -3,25 +3,28 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import LangSwitcher from './LangSwitcher';
 
-const TranslatorBtnBlock = ({ translatorUk, translatorEn }) => {
+const TranslatorBtnBlock = () => {
   const { i18n } = useTranslation();
-  // const [language, setLanguage] = useState((prev) =>
-  //   !prev || prev === undefined ? 'ua' : prev
-  // );
-
-  const [language, setLanguage] = useState('ua');
+  
+  const [language, setLanguage] = useState("uk")
   const [isLoad, setIsLoad] = useState(true);
-
-  // console.log(language);
-
+  
   useEffect(() => {
-    const lang = localStorage.getItem('i18nextLng') || 'ua';
-    setLanguage(lang);
+    const previosLang= localStorage.getItem('previosLng')
+    const browserLang=localStorage.getItem('i18nextLng')
+    console.log(browserLang)
+    const lang=()=>
+    {if (previosLang){return previosLang} else if ((browserLang ==="ru") || (browserLang=== "uk")) {return "uk"} else {return "en"}}
+    console.log(lang())
+    setLanguage(lang())
+    i18n.changeLanguage(lang())
+
     setIsLoad(false);
-  }, []);
+    }, []);
 
   useEffect(() => {
     const handleLanguageChange = (lang) => {
+      console.log(lang)
       setLanguage(lang);
     };
 
@@ -33,26 +36,10 @@ const TranslatorBtnBlock = ({ translatorUk, translatorEn }) => {
   }, [i18n]);
 
   const changeLanguage = (languageUser) => {
-    localStorage.setItem('i18nextLng', languageUser);
-    i18n.changeLanguage(languageUser);
+    localStorage.setItem('previosLng', languageUser==="en"? "en" : "uk");
+    i18n.changeLanguage(languageUser==="en"? "en" : "uk");
+    
   };
-
-  // const [isLoad, setIsLoad] = useState(true);
-
-  // useEffect(() => {
-  //   const lang = localStorage.getItem('i18nextLng');
-  //   // console.log(lang)
-  //   setLanguage(() => (lang ? lang : 'ua'));
-  //   // setLanguage(() => ( lang=== "ua" ? "ua" : "en"));
-  //   setIsLoad(false);
-  // }, []);
-
-  // const changeLanguage = (languageUser) => {
-  //   localStorage.setItem('i18nextLng', languageUser);
-  //   const language = localStorage.getItem('i18nextLng');
-  //   setLanguage(language);
-  //   i18n.changeLanguage(language);
-  // };
 
   return (
     <>
@@ -60,8 +47,6 @@ const TranslatorBtnBlock = ({ translatorUk, translatorEn }) => {
         <LangSwitcher
           changeLanguage={changeLanguage}
           currentLanguage={language}
-          // translatorUk={translatorUk}
-          // translatorEn={translatorEn}
         />
       )}
     </>

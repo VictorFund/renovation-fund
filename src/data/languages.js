@@ -1,4 +1,4 @@
 export const currentLanguages={
-    UA:"ua",
+    UA:"uk",
     EN:"en"
 }
