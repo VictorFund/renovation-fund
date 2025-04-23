@@ -1,234 +1,234 @@
 @import "../../app/variables";
 
 .headerNav {
-  font-family: var(--montserrat);
-  font-size: 24px;
-  font-weight: 400;
-  display: flex;
-  position: absolute;
-  right: 0;
-  top: 0;
-  flex-direction: column;
-  background-color: $bodyColor;
-  width: 100vw;
-  height: 100vh;
-  gap: 64px;
-  transform: translateX(100%);
-  padding: 16px;
-  overflow-x: hidden;
-  overflow-y: hidden;
-
-  &::after {
-    content: url("../../../public/images/pattern.webp");
+    font-family: var(--montserrat);
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
     position: absolute;
-    transform: translate(120%, 20%) rotate(90deg);
-    transition-duration: 2s;
-  }
-
-  & li {
-    z-index: 200;
-  }
-
-  @media screen and (min-width: $tablet) {
-    padding-left: $sidePaddingTablet;
-    padding-right: $sidePaddingTablet;
-  }
-
-  @media screen and (min-width: $desktop) {
-    position: static;
-    flex-direction: row;
-    padding: 0;
-    width: fit-content;
-    height: 100%;
-    gap: 16px;
-    overflow: visible;
-    transform: translateX(0%);
-    align-items: flex-start;
-    padding-top: 20px;
+    right: 0;
+    top: 0;
+    flex-direction: column;
+    background-color: $bodyColor;
+    width: 100vw;
+    height: 100vh;
+    gap: 64px;
+    transform: translateX(100%);
+    padding: 16px;
+    overflow-x: hidden;
+    overflow-y: hidden;
 
     &::after {
-      display: none;
+        content: url("../../../public/images/pattern.webp");
+        position: absolute;
+        transform: translate(120%, 20%) rotate(90deg);
+        transition-duration: 2s;
     }
-  }
+
+    & li {
+        z-index: 200;
+    }
+
+    @media screen and (min-width: $tablet) {
+        padding-left: $sidePaddingTablet;
+        padding-right: $sidePaddingTablet;
+    }
+
+    @media screen and (min-width: $desktop) {
+        position: static;
+        flex-direction: row;
+        padding: 0;
+        width: fit-content;
+        height: 100%;
+        gap: 16px;
+        overflow: visible;
+        transform: translateX(0%);
+        align-items: flex-start;
+        padding-top: 20px;
+
+        &::after {
+            display: none;
+        }
+    }
 }
 
 .headerNavBurger {
-  transform: translateX(0%);
-  overflow-x: hidden;
-  overflow-y: hidden;
-  padding-bottom: 32px;
-  z-index: 250;
+    transform: translateX(0%);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-bottom: 32px;
+    z-index: 250;
 
-  &::after {
-    transform: translate(-50%, 20%) rotate(8deg);
-  }
+    &::after {
+        transform: translate(-50%, 20%) rotate(8deg);
+    }
 
-  @media screen and (orientation: landscape) and (max-height: $laptop) {
-    overflow-y: scroll;
-  }
+    @media screen and (orientation: landscape) and (max-height: $laptop) {
+        overflow-y: scroll;
+    }
 }
 
 .headerNavBurgerActiveMenu {
-  overflow-y: scroll;
+    overflow-y: scroll;
 }
 
 .mobMenuHeader {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 16px;
-  position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    position: relative;
 
-  @media screen and (min-width: $desktop) {
-    display: none;
-  }
+    @media screen and (min-width: $desktop) {
+        display: none;
+    }
 }
 
 .line {
-  position: absolute;
-  bottom: 0;
+    position: absolute;
+    bottom: 0;
 }
 
 #langSwitcher {
-  margin: 0;
-  font-size: 16px;
-  @media screen and (min-width: $desktop) {
-    display: none;
-  }
+    margin: 0;
+    font-size: 16px;
+    @media screen and (min-width: $desktop) {
+        display: none;
+    }
 }
 .burgerBtn {
-  margin: 0;
-  @media screen and (min-width: $tablet) {
-    margin-left: auto;
-  }
+    margin: 0;
+    @media screen and (min-width: $tablet) {
+        margin-left: auto;
+    }
 }
 
 .navItem {
-  display: flex;
-  gap: 0;
-  margin-left: 10vw;
+    display: flex;
+    gap: 0;
+    margin-left: 10vw;
 
-  & a {
-    background-color: transparent;
-  }
-  @media screen and (min-width: 440px) {
-    width: 60%;
-    margin-left: auto;
-  }
+    & a {
+        background-color: transparent;
+    }
+    @media screen and (min-width: 440px) {
+        width: 60%;
+        margin-left: auto;
+    }
 
-  @media screen and (min-width: $desktop) {
-    margin: 0;
-    width: fit-content;
-  }
+    @media screen and (min-width: $desktop) {
+        margin: 0;
+        width: fit-content;
+    }
 }
 
 .navItemSubmenu {
-  flex-direction: column;
-  overflow: visible;
-  position: relative;
+    flex-direction: column;
+    overflow: visible;
+    position: relative;
 }
 
 .navItemTitle {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  width: max-content;
-  z-index: 10;
-  cursor: pointer;
-  position: relative;
-  &::after {
-    content: "";
-    width: 0%;
-    height: 2px;
-    background-color: $hoverBtnColor;
-    position: absolute;
-    bottom: -8px;
-  }
-
-  &:hover,
-  &:focus {
-    color: $hoverBtnColor;
-    -webkit-text-stroke: 0.5px $hoverBtnColor;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: max-content;
+    z-index: 10;
+    cursor: pointer;
+    position: relative;
     &::after {
-      width: 100%;
+        content: "";
+        width: 0%;
+        height: 2px;
+        background-color: $hoverBtnColor;
+        position: absolute;
+        bottom: -8px;
     }
-    & svg {
-      fill: $hoverBtnColor;
+
+    &:hover,
+    &:focus {
+        color: $hoverBtnColor;
+        -webkit-text-stroke: 0.5px $hoverBtnColor;
+        &::after {
+            width: 100%;
+        }
+        & svg {
+            fill: $hoverBtnColor;
+        }
     }
-  }
-  font-weight: 600;
-  @media screen and (min-width: $desktop) {
-    font-weight: 400;
-  }
+    font-weight: 600;
+    @media screen and (min-width: $desktop) {
+        font-weight: 400;
+    }
 }
 
 .activeTitle {
-  color: $hoverBtnColor;
-  &::after {
-    width: 100%;
-  }
-  & svg {
-    fill: $hoverBtnColor;
-  }
+    color: $hoverBtnColor;
+    &::after {
+        width: 100%;
+    }
+    & svg {
+        fill: $hoverBtnColor;
+    }
 }
 
 .arrow {
-  width: 12px;
-  height: 12px;
+    width: 12px;
+    height: 12px;
 
-  transform: rotate(270deg);
+    transform: rotate(270deg);
 }
 .arrActive {
-  transform: rotate(360deg);
+    transform: rotate(360deg);
 }
 
 .subMenuWrapp {
-  height: 0;
-  overflow: hidden;
+    height: 0;
+    overflow: hidden;
 
-  top: 100%;
-  left: -24px;
+    top: 100%;
+    left: -24px;
 
-  @media screen and (min-width: $desktop) {
-    position: absolute;
-    margin-top: 8px;
-  }
+    @media screen and (min-width: $desktop) {
+        position: absolute;
+        margin-top: 8px;
+    }
 }
 
 .subMenuWrappActive {
-  height: 300px;
+    height: 300px;
 }
 
 .linksWrapp {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding-top: 32px;
-  transform: translateY(-100%);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 32px;
+    transform: translateY(-100%);
 
-  @media screen and (min-width: $desktop) {
-    width: max-content;
-    background-color: $bodyColor;
-    gap: 0;
-    padding: 0;
-  }
+    @media screen and (min-width: $desktop) {
+        width: max-content;
+        background-color: $bodyColor;
+        gap: 0;
+        padding: 0;
+    }
 }
 
 .linksWrappActive {
-  transform: translateY(0%);
+    transform: translateY(0%);
 }
 
 .navLink {
-  &:hover,
-  &:focus {
-    color: $hoverBtnColor;
-    -webkit-text-stroke: 0.5px $hoverBtnColor;
-  }
-  @media screen and (min-width: $desktop) {
-    padding: 16px 24px;
-    border-bottom: 1px solid $textColor;
-    font-size: 20px;
-    &:last-child {
-      border-bottom: none;
+    &:hover,
+    &:focus {
+        color: $hoverBtnColor;
+        -webkit-text-stroke: 0.5px $hoverBtnColor;
     }
-  }
+    @media screen and (min-width: $desktop) {
+        padding: 16px 24px;
+        border-bottom: 1px solid $textColor;
+        font-size: 20px;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
 }

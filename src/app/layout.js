@@ -2,7 +2,7 @@ import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 
 import "./globals.scss";
-import { fonts } from "@/fonts/getFonts";
+import { fonts } from "@/hooks/fonts/getFonts";
 import { SiteProvider } from "@/context/siteContext";
 import TranslatorProvider from "@/translator/i18Provider";
 

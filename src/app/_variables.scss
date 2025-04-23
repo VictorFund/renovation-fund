@@ -3,24 +3,10 @@ $tablet: "768px";
 $laptop: "1024px";
 $desktop: "1440px";
 
-// @media screen and (min-width: $mobile) {
-
-// }
-// @media screen and (min-width: $tablet) {
-
-// }
-
-// @media screen and (min-width: $laptop) {
-
-// }
-
-// @media screen and (min-width: $desktop) {
-
-// }
-
 $textColor: rgb(25, 43, 57);
-$accentColor: rgb(242, 101, 21);
-$hoverBtnColor: rgb(255, 92, 0);
+$accentColor: #19a7ce;
+$buttonColor: #045691;
+$hoverBtnColor: #045691;
 $BorderColor: rgb(188, 188, 188);
 $borderColorLangSwitch: rgba(75, 75, 78, 0.502);
 $dateBgColor: rgba(170, 206, 231, 0.502);

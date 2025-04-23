@@ -1,206 +1,222 @@
-@import './_variables';
+@import "./_variables";
 
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 
-  -webkit-transition-duration: 250ms;
-  transition-duration: 250ms;
+    -webkit-transition-duration: 250ms;
+    transition-duration: 250ms;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  min-height: 100vh;
-  font-family: var(--lightSerif);
-  font-weight: 300;
-  font-style: normal;
-  color: $textColor;
-  background-color: $bodyColor;
+    min-height: 100vh;
+    font-family: var(--lightSerif);
+    font-weight: 300;
+    font-style: normal;
+    color: $textColor;
+    background-color: $bodyColor;
 
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    width: 100%;
 }
 
 header,
 footer {
-  width: inherit;
-  max-width: inherit;
+    width: inherit;
+    max-width: inherit;
 }
 
 section {
-  width: 100%;
-  padding: $topBottomPaddingMobile $sidePaddingMobile;
+    width: 100%;
+    padding: $topBottomPaddingMobile $sidePaddingMobile;
 
-  @media screen and (min-width: $tablet) {
-    padding: $topBottomPaddingTablet $sidePaddingTablet;
-  }
+    @media screen and (min-width: $tablet) {
+        padding: $topBottomPaddingTablet $sidePaddingTablet;
+    }
 
-  @media screen and (min-width: $desktop) {
-    padding: $topBottomPaddingDesktop $sidePaddingDesktop;
-  }
+    @media screen and (min-width: $desktop) {
+        padding: $topBottomPaddingDesktop $sidePaddingDesktop;
+    }
 }
 
 .container {
-  width: 100%;
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
-  display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
 }
 
 ul,
 ol {
-  list-style: none;
+    list-style: none;
 }
 
 .topSection {
-  padding-top: 96px;
+    padding-top: 96px;
 
-  @media screen and (min-width: $tablet) {
-    padding-top: 104px;
-  }
+    @media screen and (min-width: $tablet) {
+        padding-top: 104px;
+    }
 
-  @media screen and (min-width: $laptop) {
-    padding-top: 140px;
-  }
+    @media screen and (min-width: $laptop) {
+        padding-top: 140px;
+    }
 
-  @media screen and (min-width: $desktop) {
-    padding-top: 133px;
-  }
+    @media screen and (min-width: $desktop) {
+        padding-top: 133px;
+    }
 }
 
 // mission
 .pageSection {
-  padding-top: 96px;
-  padding-bottom: 24px;
+    padding-top: 96px;
+    padding-bottom: 24px;
 
-  @media screen and (min-width: $tablet) {
-    padding-top: 117px;
-    padding-bottom: 32px;
-  }
+    @media screen and (min-width: $tablet) {
+        padding-top: 117px;
+        padding-bottom: 32px;
+    }
 
-  @media screen and (min-width: $desktop) {
-    padding-top: 125px;
-    padding-bottom: 40px;
-  }
+    @media screen and (min-width: $desktop) {
+        padding-top: 125px;
+        padding-bottom: 40px;
+    }
 }
 
 .homeSectionTitle {
-  font-family: var(--mediumSerif);
-  font-weight: 500;
-  font-size: 32px;
-  margin-bottom: 24px;
+    font-family: var(--mediumSerif);
+    font-weight: 500;
+    font-size: 32px;
+    margin-bottom: 24px;
 
-  @media screen and (min-width: $tablet) {
-    font-size: 48px;
-    margin-bottom: 32px;
-  }
+    @media screen and (min-width: $tablet) {
+        font-size: 48px;
+        margin-bottom: 32px;
+    }
 
-  @media screen and (min-width: $laptop) {
-    font-size: 64px;
-    margin-bottom: 40px;
-  }
+    @media screen and (min-width: $laptop) {
+        font-size: 64px;
+        margin-bottom: 40px;
+    }
 }
 
 //mission
 .sectionTitle {
-  font-family: var(--mediumSerif);
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 1.2;
+    font-family: var(--mediumSerif);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.2;
 
-  @media screen and (min-width: $tablet) {
-    font-size: 48px;
-  }
+    @media screen and (min-width: $tablet) {
+        font-size: 48px;
+    }
 
-  @media screen and (min-width: $desktop) {
-    font-size: 64px;
-  }
+    @media screen and (min-width: $desktop) {
+        font-size: 64px;
+    }
 }
 
 // mission, titleCardText in UI design
 .titleCardText {
-  font-family: var(--montserrat);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.2;
+    font-family: var(--montserrat);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.2;
 
-  @media screen and (min-width: $tablet) {
-    font-weight: 400;
-    font-size: 24px;
-  }
+    @media screen and (min-width: $tablet) {
+        font-weight: 400;
+        font-size: 24px;
+    }
 
-  @media screen and (min-width: $desktop) {
-    font-size: 40px;
-  }
+    @media screen and (min-width: $desktop) {
+        font-size: 40px;
+    }
 }
 
 //mission, regularText in UI design
 .regularText {
-  font-family: var(--montserrat);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.2;
+    font-family: var(--montserrat);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
 
-  @media screen and (min-width: $tablet) {
-    font-size: 20px;
-  }
+    @media screen and (min-width: $tablet) {
+        font-size: 20px;
+    }
 
-  @media screen and (min-width: $desktop) {
-    font-size: 24px;
-  }
+    @media screen and (min-width: $desktop) {
+        font-size: 24px;
+    }
+}
+
+.regularTable {
+    font-family: var(--montserrat);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+    padding: 10px;
+
+    @media screen and (min-width: $tablet) {
+        font-size: 20px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        font-size: 24px;
+    }
 }
 
 .accentText {
-  color: $accentColor;
+    color: $accentColor;
 }
 
 .headerBtnsSmall {
-  background-color: transparent;
-  outline: none;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 48px;
-  border-radius: 30px;
-  box-shadow: 1px 1px 10px 0px $shadow;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 48px;
+    border-radius: 30px;
+    box-shadow: 1px 1px 10px 0px $shadow;
 
-  &:focus,
-  &:hover {
-    border: 2px solid rgba(59, 111, 125, 0.3);
-    box-shadow: inset 0px 0px 12px 0px rgba(59, 111, 125, 0.3);
-  }
+    &:focus,
+    &:hover {
+        border: 2px solid rgba(59, 111, 125, 0.3);
+        box-shadow: inset 0px 0px 12px 0px rgba(59, 111, 125, 0.3);
+    }
 
-  @media screen and (min-width: $tablet) {
-    width: 72px;
-    height: 60px;
-  }
+    @media screen and (min-width: $tablet) {
+        width: 72px;
+        height: 60px;
+    }
 }
 
 .defaultImg {
-  opacity: 0.3;
+    opacity: 0.3;
 }

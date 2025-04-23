@@ -1,0 +1,127 @@
+@import "../../app/variables";
+
+.title {
+    margin-bottom: 24px;
+
+    @media screen and (min-width: $tablet) {
+        margin-bottom: 32px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 40px;
+    }
+}
+
+.subtitle {
+    margin-bottom: 16px;
+
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 24px;
+    }
+
+    font-weight: 500;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style-type: disc;
+    list-style-position: outside;
+    padding-left: 25px;
+
+    li::marker {
+        color: $accentColor;
+    }
+}
+
+.imgWrapper {
+    width: 100%;
+    height: 30.94vw;
+    position: relative;
+    border-radius: 53px;
+    overflow: hidden;
+    margin-bottom: 24px;
+
+    @media screen and (min-width: $tablet) {
+        height: 30.78vw;
+        margin-bottom: 32px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 1279px;
+        height: 447px;
+        margin-bottom: 40px;
+    }
+}
+
+.img {
+    margin: 30px 0 40px 0;
+    object-fit: cover;
+}
+
+.textWrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    margin-bottom: 10px;
+
+    @media screen and (min-width: $tablet) {
+        row-gap: 10px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 10px;
+    }
+}
+
+.statuteBtn {
+    padding: 16px 24px;
+    width: 280px;
+    height: auto;
+    margin: 10px 0px !important;
+    display: block;
+    border-radius: 54px;
+    border: transparent;
+    box-shadow: 2px 2px 4px 0 $borderColorLangSwitch;
+    font-weight: 500;
+    line-height: 1.2;
+
+    @media screen and (min-width: $tablet) {
+        padding: 24px 32px;
+        width: 704px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 24px;
+        margin: 16px 0px !important;
+
+        & .arrow {
+            width: 24px;
+            height: 23px;
+        }
+
+        &:hover .arrow,
+        &:focus .arrow {
+            transform: rotate(90deg);
+        }
+    }
+
+    @media screen and (min-width: $desktop) {
+        padding: 32px 40px;
+        width: 650px;
+        margin: 0;
+        margin: 32px 0px !important;
+    }
+}
+
+// .arrow {
+//     display: none;
+
+//     @media screen and (min-width: $tablet) {
+//         display: block;
+//         width: 24px;
+//         height: 23px;
+//         fill: $white;
+//     }
+// }
